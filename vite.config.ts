@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(({command}) => {
   return {
-    base: command === 'build' ? '/reports084/' : '/',
+    base: command === 'build' ? '/Maktby/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
