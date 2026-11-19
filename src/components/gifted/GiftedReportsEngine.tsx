@@ -347,11 +347,11 @@ function canvasToJpegDataAndBytes(
 
 const A4_W = 1240;
 const A4_H = 1754;
-const BURGUNDY = '#7F1D3F';
-const BURGUNDY_LIGHT = '#F9EFF2';
-const BURGUNDY_BORDER = '#E6C7D0';
-const CHARCOAL = '#26323B';
-const WARM_BG = '#FAF7F5';
+const BURGUNDY = '#956C2E';
+const BURGUNDY_LIGHT = '#F7EBD5';
+const BURGUNDY_BORDER = '#E5CFA7';
+const CHARCOAL = '#292F33';
+const WARM_BG = '#FBF6EC';
 const MUTED = '#57534E';
 
 interface A4CanvasDocumentBuilder {
@@ -460,7 +460,7 @@ function createA4DocumentBuilder(headerInfo: {
     ctx.textAlign = 'right';
     const rightAnchorX = A4_W - 84;
 
-    ctx.fillStyle = '#0c0a09';
+    ctx.fillStyle = '#292F33';
     ctx.font = 'bold 21px "IBM Plex Sans Arabic", "Tajawal", sans-serif';
     ctx.fillText('المملكة العربية السعودية', rightAnchorX, topY + 6);
 
@@ -2601,7 +2601,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       return (
         <div
           data-testid={`${testIdPrefix}-empty-evidences`}
-          className="rounded-xl border border-dashed border-stone-300 bg-[#FAF7F5] p-5 text-center text-xs text-stone-500 font-semibold"
+          className="rounded-xl border border-dashed border-stone-300 bg-[#FBF6EC] p-5 text-center text-xs text-stone-500 font-semibold"
         >
           لا توجد شواهد أو مرفقات أو روابط مسجلة لهذا النطاق.
         </div>
@@ -2621,23 +2621,23 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <article
                     key={`${ev.sourceRecordId}-${ev.evidenceId}`}
                     data-testid={`visual-evidence-image-card-${ev.evidenceId}`}
-                    className="rounded-xl border border-[#E6C7D0] bg-white overflow-hidden shadow-xs flex flex-col"
+                    className="rounded-xl border border-[#E5CFA7] bg-white overflow-hidden shadow-xs flex flex-col"
                   >
-                    <div className="bg-[#F9EFF2] px-4 py-2.5 border-b border-[#E6C7D0] flex items-center justify-between gap-2">
+                    <div className="bg-[#F7EBD5] px-4 py-2.5 border-b border-[#E5CFA7] flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2 min-w-0">
                         <ImageIcon
-                          className="w-4 h-4 text-[#7F1D3F] shrink-0"
+                          className="w-4 h-4 text-[#956C2E] shrink-0"
                           aria-hidden="true"
                         />
-                        <h5 className="text-xs sm:text-sm font-extrabold text-[#26323B] truncate">
+                        <h5 className="text-xs sm:text-sm font-extrabold text-[#292F33] truncate">
                           {ev.title}
                         </h5>
                       </div>
-                      <span className="px-2 py-0.5 rounded bg-white text-[#7F1D3F] border border-[#E6C7D0] text-[11px] font-bold shrink-0">
+                      <span className="px-2 py-0.5 rounded bg-white text-[#956C2E] border border-[#E5CFA7] text-[11px] font-bold shrink-0">
                         صورة شاهد
                       </span>
                     </div>
-                    <div className="p-3 bg-[#FAF7F5] flex items-center justify-center min-h-[200px]">
+                    <div className="p-3 bg-[#FBF6EC] flex items-center justify-center min-h-[200px]">
                       <img
                         src={ev.imageDataUrl}
                         alt={ev.title}
@@ -2660,13 +2660,13 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <article
                     key={`${ev.sourceRecordId}-${ev.evidenceId}-page-${pdfPage.pageNumber}`}
                     data-testid={`visual-evidence-pdf-page-${ev.evidenceId}-${pdfPage.pageNumber}`}
-                    className="rounded-xl border border-[#E6C7D0] bg-white overflow-hidden shadow-xs flex flex-col"
+                    className="rounded-xl border border-[#E5CFA7] bg-white overflow-hidden shadow-xs flex flex-col"
                   >
-                    <div className="bg-[#F9EFF2] px-4 py-2.5 border-b border-[#E6C7D0] flex items-center justify-between gap-2">
+                    <div className="bg-[#F7EBD5] px-4 py-2.5 border-b border-[#E5CFA7] flex items-center justify-between gap-2">
                       <div className="min-w-0">
                         <h5
                           data-testid={`pdf-page-evidence-title-${ev.evidenceId}-${pdfPage.pageNumber}`}
-                          className="text-xs sm:text-sm font-extrabold text-[#26323B] truncate"
+                          className="text-xs sm:text-sm font-extrabold text-[#292F33] truncate"
                         >
                           {pdfPage.evidenceTitle}
                         </h5>
@@ -2676,12 +2676,12 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       </div>
                       <span
                         data-testid={`pdf-page-number-badge-${ev.evidenceId}-${pdfPage.pageNumber}`}
-                        className="px-2.5 py-1 rounded-md bg-[#7F1D3F] text-white text-[11px] font-extrabold shrink-0 tabular-nums"
+                        className="px-2.5 py-1 rounded-md bg-[#8A6125] text-white text-[11px] font-extrabold shrink-0 tabular-nums"
                       >
                         صفحة {pdfPage.pageNumber} من {pdfPage.totalPages}
                       </span>
                     </div>
-                    <div className="p-3 bg-[#FAF7F5] flex items-center justify-center min-h-[220px]">
+                    <div className="p-3 bg-[#FBF6EC] flex items-center justify-center min-h-[220px]">
                       <img
                         src={pdfPage.dataUrl}
                         alt={`${pdfPage.evidenceTitle} - صفحة ${pdfPage.pageNumber}`}
@@ -2701,10 +2701,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               return (
                 <article
                   key={`${ev.sourceRecordId}-${ev.evidenceId}-loading`}
-                  className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 flex items-center justify-between gap-3"
+                  className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 flex items-center justify-between gap-3"
                 >
                   <div>
-                    <h5 className="text-xs font-extrabold text-[#26323B]">
+                    <h5 className="text-xs font-extrabold text-[#292F33]">
                       {ev.title}
                     </h5>
                     <p className="text-[11px] text-stone-500">
@@ -2727,7 +2727,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             {validLinks.map((lnk) => {
               const qrSvgUrl = generateQrSvgDataUrl(
                 lnk.url,
-                '#26323B',
+                '#292F33',
                 '#FFFFFF',
                 3
               );
@@ -2738,7 +2738,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid={`report-qr-link-card-${lnk.id}`}
-                  className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] hover:bg-[#F9EFF2]/60 p-3.5 flex items-center gap-3.5 transition-colors group"
+                  className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] hover:bg-[#F7EBD5]/60 p-3.5 flex items-center gap-3.5 transition-colors group"
                 >
                   <img
                     src={qrSvgUrl}
@@ -2746,7 +2746,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                     className="w-20 h-20 rounded-lg border border-stone-200 bg-white p-1 shrink-0"
                   />
                   <div className="min-w-0 flex-1 space-y-1">
-                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-[#7F1D3F] group-hover:underline">
+                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-[#956C2E] group-hover:underline">
                       <QrCode className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                       <span className="truncate">{lnk.title}</span>
                       <ExternalLink
@@ -2755,7 +2755,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       />
                     </div>
                     {hasNonEmptyText(lnk.sourceTitle) && (
-                      <p className="text-[11px] font-semibold text-[#26323B] truncate">
+                      <p className="text-[11px] font-semibold text-[#292F33] truncate">
                         {lnk.sourceTitle}
                       </p>
                     )}
@@ -2782,7 +2782,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
     return (
       <header
         data-testid="gifted-report-official-header"
-        className="border-b-2 border-[#E6C7D0] pb-4 mb-2"
+        className="border-b-2 border-[#E5CFA7] pb-4 mb-2"
       >
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 px-2 sm:px-4">
           {/* الجهة اليمنى: المملكة / وزارة التعليم / الإدارة التعليمية / المدرسة */}
@@ -2826,10 +2826,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               data-testid="gifted-report-header-left"
               className="text-center sm:text-left space-y-1 text-xs sm:text-sm leading-relaxed"
             >
-              <p className="font-extrabold text-sm sm:text-base text-[#7F1D3F]">
+              <p className="font-extrabold text-sm sm:text-base text-[#956C2E]">
                 الموهوبين
               </p>
-              <p className="font-bold text-xs text-[#26323B]">
+              <p className="font-bold text-xs text-[#292F33]">
                 سجل {terms.coordinatorSingular}
               </p>
               <p className="font-semibold text-stone-800 tabular-nums text-xs">
@@ -2846,20 +2846,20 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
     <div
       dir="rtl"
       data-testid="gifted-reports-engine"
-      className="space-y-6 text-[#26323B]"
+      className="space-y-6 text-[#292F33]"
     >
       {/* ١. شريط اختيار الفترة (العام الدراسي والفصل الدراسي) للتقارير والتقارير التاريخية دون المساس بالإعدادات المركزية */}
       <section
         data-testid="reports-period-selector-bar"
-        className="rounded-2xl border border-[#E6C7D0] bg-white p-4 sm:p-5 shadow-xs space-y-4"
+        className="rounded-2xl border border-[#E5CFA7] bg-white p-4 sm:p-5 shadow-xs space-y-4"
       >
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-md bg-[#F9EFF2] text-[#7F1D3F] border border-[#E6C7D0] text-xs font-extrabold">
+              <span className="px-2.5 py-0.5 rounded-md bg-[#F7EBD5] text-[#956C2E] border border-[#E5CFA7] text-xs font-extrabold">
                 04 التقارير
               </span>
-              <h3 className="text-base sm:text-lg font-extrabold text-[#26323B]">
+              <h3 className="text-base sm:text-lg font-extrabold text-[#292F33]">
                 مركز التقارير الرسمية لسجل {terms.coordinatorSingular}
               </h3>
             </div>
@@ -2872,7 +2872,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             <div className="space-y-1 min-w-[150px] flex-1 sm:flex-initial">
               <label
                 htmlFor="report-academic-year-select"
-                className="block text-xs font-bold text-[#26323B]"
+                className="block text-xs font-bold text-[#292F33]"
               >
                 العام الدراسي للتقرير
               </label>
@@ -2884,7 +2884,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   setSelectedAcademicYear(e.target.value);
                   setPdfPreviewPages([]);
                 }}
-                className="w-full min-h-[40px] rounded-xl border border-stone-300 bg-[#FAF7F5] px-3 py-1.5 text-xs sm:text-sm font-bold text-[#26323B] focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full min-h-[40px] rounded-xl border border-stone-300 bg-[#FBF6EC] px-3 py-1.5 text-xs sm:text-sm font-bold text-[#292F33] focus:border-[#956C2E] focus:outline-none"
               >
                 {availableAcademicYears.map((yr) => (
                   <option key={yr} value={yr}>
@@ -2897,7 +2897,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             <div className="space-y-1 min-w-[180px] flex-1 sm:flex-initial">
               <label
                 htmlFor="report-semester-select"
-                className="block text-xs font-bold text-[#26323B]"
+                className="block text-xs font-bold text-[#292F33]"
               >
                 الفصل الدراسي للتقرير
               </label>
@@ -2911,7 +2911,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   );
                   setPdfPreviewPages([]);
                 }}
-                className="w-full min-h-[40px] rounded-xl border border-stone-300 bg-[#FAF7F5] px-3 py-1.5 text-xs sm:text-sm font-bold text-[#26323B] focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full min-h-[40px] rounded-xl border border-stone-300 bg-[#FBF6EC] px-3 py-1.5 text-xs sm:text-sm font-bold text-[#292F33] focus:border-[#956C2E] focus:outline-none"
               >
                 {APPROVED_SCHOOL_SEMESTERS.map((sem) => (
                   <option key={sem} value={sem}>
@@ -2931,7 +2931,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   setSelectedSemester(centralSemester);
                   setPdfPreviewPages([]);
                 }}
-                className="min-h-[40px] px-3 py-1.5 rounded-xl border border-[#E6C7D0] bg-[#F9EFF2] text-[#7F1D3F] text-xs font-extrabold hover:bg-[#f2dfe5] transition-colors cursor-pointer"
+                className="min-h-[40px] px-3 py-1.5 rounded-xl border border-[#E5CFA7] bg-[#F7EBD5] text-[#956C2E] text-xs font-extrabold hover:bg-[#EFE0C2] transition-colors cursor-pointer"
               >
                 العودة للفترة المركزية الحالية
               </button>
@@ -2959,15 +2959,15 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 }}
                 className={`min-h-[54px] p-3 rounded-xl border text-right transition-all flex items-start gap-2.5 cursor-pointer ${
                   isActive
-                    ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-xs'
-                    : 'bg-[#FAF7F5] text-[#26323B] border-stone-200 hover:border-[#E6C7D0] hover:bg-white'
+                    ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-xs'
+                    : 'bg-[#FBF6EC] text-[#292F33] border-stone-200 hover:border-[#E5CFA7] hover:bg-white'
                 }`}
               >
                 <span
                   className={`w-7 h-7 rounded-lg text-xs font-extrabold flex items-center justify-center shrink-0 tabular-nums ${
                     isActive
                       ? 'bg-white/20 text-white'
-                      : 'bg-[#F9EFF2] text-[#7F1D3F]'
+                      : 'bg-[#F7EBD5] text-[#956C2E]'
                   }`}
                 >
                   {tab.orderNumber}
@@ -2986,10 +2986,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
         {/* أزرار معاينة وتصدير PDF للتقرير المختار */}
         <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-stone-200/80">
           <div className="text-xs font-semibold text-stone-600 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-[#7F1D3F]" aria-hidden="true" />
+            <FileText className="w-4 h-4 text-[#956C2E]" aria-hidden="true" />
             <span>
               التقرير النشط:{' '}
-              <strong className="text-[#26323B]">
+              <strong className="text-[#292F33]">
                 {
                   APPROVED_REPORT_TABS.find((t) => t.id === activeReportKind)
                     ?.title
@@ -3005,7 +3005,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               data-testid="preview-active-report-pdf-btn"
               disabled={isGeneratingPdf}
               onClick={handlePreviewCurrentReportPdf}
-              className="min-h-[38px] px-3.5 py-1.5 rounded-xl border border-[#7F1D3F] bg-white hover:bg-[#F9EFF2] text-[#7F1D3F] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
+              className="min-h-[38px] px-3.5 py-1.5 rounded-xl border border-[#956C2E] bg-white hover:bg-[#F7EBD5] text-[#956C2E] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
             >
               {isGeneratingPdf ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
@@ -3020,7 +3020,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               data-testid="export-active-report-pdf-btn"
               disabled={isGeneratingPdf}
               onClick={handleExportCurrentReportPdf}
-              className="min-h-[38px] px-4 py-1.5 rounded-xl bg-[#7F1D3F] hover:bg-[#641631] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
+              className="min-h-[38px] px-4 py-1.5 rounded-xl bg-[#8A6125] hover:bg-[#704E1D] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
             >
               {isGeneratingPdf ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
@@ -3037,7 +3037,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       {pdfPreviewPages.length > 0 && (
         <section
           data-testid="report-a4-pdf-preview-section"
-          className="rounded-2xl border-2 border-[#7F1D3F] bg-[#26323B] p-4 sm:p-5 text-white space-y-4"
+          className="rounded-2xl border-2 border-[#956C2E] bg-[#292F33] p-4 sm:p-5 text-white space-y-4"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
@@ -3062,11 +3062,11 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               <div
                 key={`pdf-page-${idx + 1}`}
                 data-testid={`pdf-preview-page-card-${idx + 1}`}
-                className="rounded-xl bg-white p-2.5 text-[#26323B] space-y-2"
+                className="rounded-xl bg-white p-2.5 text-[#292F33] space-y-2"
               >
                 <div className="flex items-center justify-between text-xs font-extrabold px-1">
                   <span>صفحة {idx + 1} من {pdfPreviewPages.length}</span>
-                  <span className="text-[#7F1D3F]">A4 PDF</span>
+                  <span className="text-[#956C2E]">A4 PDF</span>
                 </div>
                 <img
                   src={pageUrl}
@@ -3085,7 +3085,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       {activeReportKind === 'program_or_initiative_report' && (
         <section
           data-testid="report-view-program_or_initiative_report"
-          className="rounded-2xl border border-[#E6C7D0] bg-white p-4 sm:p-6 shadow-xs space-y-6"
+          className="rounded-2xl border border-[#E5CFA7] bg-white p-4 sm:p-6 shadow-xs space-y-6"
         >
           {renderOfficialMaktabiReportHeader(
             selectedProgramRecord?.academicYear || selectedAcademicYear,
@@ -3093,7 +3093,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           )}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-stone-200">
             <div className="space-y-1">
-              <h4 className="text-base sm:text-lg font-extrabold text-[#7F1D3F]">
+              <h4 className="text-base sm:text-lg font-extrabold text-[#956C2E]">
                 ١. تقرير برنامج أو مبادرة
               </h4>
               <p className="text-xs text-stone-600">
@@ -3104,7 +3104,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             <div className="w-full sm:w-80 space-y-1">
               <label
                 htmlFor="select-program-record"
-                className="block text-xs font-bold text-[#26323B]"
+                className="block text-xs font-bold text-[#292F33]"
               >
                 اختيار البرنامج أو المبادرة المحفوظة (
                 {programOrInitiativeRecords.length})
@@ -3117,7 +3117,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   setSelectedProgramRecordId(e.target.value);
                   setPdfPreviewPages([]);
                 }}
-                className="w-full min-h-[42px] rounded-xl border border-stone-300 bg-[#FAF7F5] px-3 py-2 text-xs sm:text-sm font-bold text-[#26323B] focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full min-h-[42px] rounded-xl border border-stone-300 bg-[#FBF6EC] px-3 py-2 text-xs sm:text-sm font-bold text-[#292F33] focus:border-[#956C2E] focus:outline-none"
               >
                 {programOrInitiativeRecords.length === 0 ? (
                   <option value="">لا توجد سجلات محفوظة</option>
@@ -3136,9 +3136,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           {!selectedProgramRecord ? (
             <div
               data-testid="empty-program-report-state"
-              className="rounded-xl border border-dashed border-stone-300 bg-[#FAF7F5] p-8 text-center space-y-2"
+              className="rounded-xl border border-dashed border-stone-300 bg-[#FBF6EC] p-8 text-center space-y-2"
             >
-              <p className="text-sm font-extrabold text-[#26323B]">
+              <p className="text-sm font-extrabold text-[#292F33]">
                 لا توجد برامج أو تقارير أو مبادرات محفوظة في السجل حالياً
               </p>
               <p className="text-xs text-stone-500">
@@ -3148,23 +3148,23 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           ) : (
             <div className="space-y-6">
               {/* بطاقة البيانات الأساسية للسجل المختار — مع إخفاء الحقول الاختيارية الفارغة */}
-              <div className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-4 sm:p-5 space-y-4">
+              <div className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-4 sm:p-5 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <span
                       data-testid="program-report-type-badge"
-                      className="px-3 py-1 rounded-lg bg-[#7F1D3F] text-white text-xs font-extrabold"
+                      className="px-3 py-1 rounded-lg bg-[#8A6125] text-white text-xs font-extrabold"
                     >
                       {selectedProgramRecord.recordType}
                     </span>
                     <h5
                       data-testid="program-report-title"
-                      className="text-base sm:text-lg font-extrabold text-[#26323B]"
+                      className="text-base sm:text-lg font-extrabold text-[#292F33]"
                     >
                       {selectedProgramRecord.title}
                     </h5>
                   </div>
-                  <span className="text-xs font-bold text-[#7F1D3F] bg-white px-3 py-1 rounded-lg border border-[#E6C7D0]">
+                  <span className="text-xs font-bold text-[#956C2E] bg-white px-3 py-1 rounded-lg border border-[#E5CFA7]">
                     {selectedProgramRecord.academicYear} —{' '}
                     {selectedProgramRecord.semester}
                   </span>
@@ -3177,7 +3177,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <span className="block text-[11px] font-bold text-stone-500">
                         تاريخ التنفيذ
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                      <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                         {[
                           selectedProgramRecord.hijriDate,
                           selectedProgramRecord.gregorianDate
@@ -3197,7 +3197,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                         <span className="block text-[11px] font-bold text-stone-500">
                           المدة المعتمدة
                         </span>
-                        <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                        <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                           {selectedProgramRecord.durationOption}
                         </span>
                       </div>
@@ -3211,7 +3211,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <span className="block text-[11px] font-bold text-stone-500">
                         الموقع
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                      <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                         {selectedProgramRecord.location}
                       </span>
                     </div>
@@ -3224,7 +3224,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           <span className="block text-[11px] font-bold text-stone-500">
                             نطاق التنفيذ
                           </span>
-                          <span className="text-xs sm:text-sm font-extrabold text-[#7F1D3F]">
+                          <span className="text-xs sm:text-sm font-extrabold text-[#956C2E]">
                             {
                               selectedProgramRecord.programFields
                                 .executionScope
@@ -3239,7 +3239,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             <span className="block text-[11px] font-bold text-stone-500">
                               نوع البرنامج أو مجاله
                             </span>
-                            <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                            <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                               {
                                 selectedProgramRecord.programFields
                                   .programTypeOrField
@@ -3254,7 +3254,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             <span className="block text-[11px] font-bold text-stone-500">
                               الفئة المستهدفة
                             </span>
-                            <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                            <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                               {
                                 selectedProgramRecord.programFields
                                   .targetAudience
@@ -3269,7 +3269,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             <span className="block text-[11px] font-bold text-stone-500">
                               الجهة المنفذة
                             </span>
-                            <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                            <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                               {
                                 selectedProgramRecord.programFields
                                   .executingEntity
@@ -3289,7 +3289,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                         <span className="block text-[11px] font-bold text-stone-500">
                           الفئة المستهدفة
                         </span>
-                        <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                        <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                           {
                             selectedProgramRecord.initiativeFields
                               .targetAudience
@@ -3301,10 +3301,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
                 {hasNonEmptyText(selectedProgramRecord.description) && (
                   <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                    <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                    <span className="block text-xs font-extrabold text-[#956C2E]">
                       الوصف
                     </span>
-                    <p className="text-xs sm:text-sm text-[#26323B] leading-relaxed whitespace-pre-line">
+                    <p className="text-xs sm:text-sm text-[#292F33] leading-relaxed whitespace-pre-line">
                       {selectedProgramRecord.description}
                     </p>
                   </div>
@@ -3319,10 +3319,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.programFields.objective
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               الهدف
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {selectedProgramRecord.programFields.objective}
                             </p>
                           </div>
@@ -3331,10 +3331,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.programFields.results
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               النتائج
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {selectedProgramRecord.programFields.results}
                             </p>
                           </div>
@@ -3344,10 +3344,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             .notesAndRecommendations
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1 md:col-span-2">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               الملاحظات والتوصيات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.programFields
                                   .notesAndRecommendations
@@ -3365,10 +3365,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.reportFields.reportObjectives
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               أهداف التقرير
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.reportFields
                                   .reportObjectives
@@ -3380,10 +3380,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.reportFields.resultsAndOutputs
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               النتائج والمخرجات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.reportFields
                                   .resultsAndOutputs
@@ -3396,10 +3396,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             .achievementIndicators
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               مؤشرات التحقق
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.reportFields
                                   .achievementIndicators
@@ -3412,10 +3412,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             .challengesAndDifficulties
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               التحديات والصعوبات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.reportFields
                                   .challengesAndDifficulties
@@ -3428,10 +3428,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             .recommendationsAndProposals
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               التوصيات والمقترحات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.reportFields
                                   .recommendationsAndProposals
@@ -3443,10 +3443,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.reportFields.notes
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               ملاحظات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {selectedProgramRecord.reportFields.notes}
                             </p>
                           </div>
@@ -3461,10 +3461,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.initiativeFields.initiativeIdea
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               فكرة المبادرة
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.initiativeFields
                                   .initiativeIdea
@@ -3477,10 +3477,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             .initiativeObjectives
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               أهداف المبادرة
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.initiativeFields
                                   .initiativeObjectives
@@ -3492,10 +3492,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.initiativeFields.executionSteps
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               خطوات التنفيذ
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.initiativeFields
                                   .executionSteps
@@ -3507,10 +3507,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.initiativeFields.resultsAndImpact
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               النتائج والأثر
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.initiativeFields
                                   .resultsAndImpact
@@ -3522,10 +3522,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.initiativeFields.challenges
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               التحديات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {selectedProgramRecord.initiativeFields.challenges}
                             </p>
                           </div>
@@ -3534,10 +3534,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           selectedProgramRecord.initiativeFields.recommendations
                         ) && (
                           <div className="rounded-lg bg-white p-3.5 border border-stone-200 space-y-1">
-                            <span className="block text-xs font-extrabold text-[#7F1D3F]">
+                            <span className="block text-xs font-extrabold text-[#956C2E]">
                               التوصيات
                             </span>
-                            <p className="text-xs sm:text-sm text-[#26323B] whitespace-pre-line">
+                            <p className="text-xs sm:text-sm text-[#292F33] whitespace-pre-line">
                               {
                                 selectedProgramRecord.initiativeFields
                                   .recommendations
@@ -3554,9 +3554,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               {selectedProgramRecord.participants &&
                 selectedProgramRecord.participants.length > 0 && (
                   <div className="space-y-3">
-                    <h5 className="text-sm font-extrabold text-[#26323B] flex items-center gap-2">
+                    <h5 className="text-sm font-extrabold text-[#292F33] flex items-center gap-2">
                       <Users
-                        className="w-4 h-4 text-[#7F1D3F]"
+                        className="w-4 h-4 text-[#956C2E]"
                         aria-hidden="true"
                       />
                       <span>
@@ -3569,7 +3569,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                         data-testid="program-report-participants-table"
                         className="w-full text-right text-xs sm:text-sm"
                       >
-                        <thead className="bg-[#26323B] text-white">
+                        <thead className="bg-[#292F33] text-white">
                           <tr>
                             <th className="px-3 py-2.5 font-bold">#</th>
                             <th className="px-3 py-2.5 font-bold">
@@ -3617,17 +3617,17 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                             return (
                               <tr
                                 key={`${p.studentId}-${idx}`}
-                                className="hover:bg-[#FAF7F5]"
+                                className="hover:bg-[#FBF6EC]"
                               >
                                 <td className="px-3 py-2.5 font-bold tabular-nums">
                                   {idx + 1}
                                 </td>
-                                <td className="px-3 py-2.5 font-extrabold text-[#26323B]">
+                                <td className="px-3 py-2.5 font-extrabold text-[#292F33]">
                                   {st?.name || 'طالب مسجل'}
                                 </td>
                                 <td
                                   data-testid={`program-participant-historical-grade-${p.studentId}`}
-                                  className="px-3 py-2.5 font-semibold text-[#7F1D3F]"
+                                  className="px-3 py-2.5 font-semibold text-[#956C2E]"
                                 >
                                   {historicalGrade}
                                 </td>
@@ -3670,9 +3670,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
               {/* الشواهد المرئية (صور + صفحات PDF) والروابط التفاعلية */}
               <div className="space-y-3">
-                <h5 className="text-sm font-extrabold text-[#26323B] flex items-center gap-2">
+                <h5 className="text-sm font-extrabold text-[#292F33] flex items-center gap-2">
                   <FolderOpen
-                    className="w-4 h-4 text-[#7F1D3F]"
+                    className="w-4 h-4 text-[#956C2E]"
                     aria-hidden="true"
                   />
                   <span>الشواهد والمرفقات والروابط</span>
@@ -3699,12 +3699,12 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       {activeReportKind === 'student_report' && (
         <section
           data-testid="report-view-student_report"
-          className="rounded-2xl border border-[#E6C7D0] bg-white p-4 sm:p-6 shadow-xs space-y-6"
+          className="rounded-2xl border border-[#E5CFA7] bg-white p-4 sm:p-6 shadow-xs space-y-6"
         >
           {renderOfficialMaktabiReportHeader()}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-stone-200">
             <div className="space-y-1">
-              <h4 className="text-base sm:text-lg font-extrabold text-[#7F1D3F]">
+              <h4 className="text-base sm:text-lg font-extrabold text-[#956C2E]">
                 ٢. تقرير طالب
               </h4>
               <p className="text-xs text-stone-600">
@@ -3715,7 +3715,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             <div className="w-full sm:w-80 space-y-1">
               <label
                 htmlFor="select-student-report"
-                className="block text-xs font-bold text-[#26323B]"
+                className="block text-xs font-bold text-[#292F33]"
               >
                 اختيار الطالب من السجل المركزي ({students.length})
               </label>
@@ -3727,7 +3727,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   setSelectedStudentId(e.target.value);
                   setPdfPreviewPages([]);
                 }}
-                className="w-full min-h-[42px] rounded-xl border border-stone-300 bg-[#FAF7F5] px-3 py-2 text-xs sm:text-sm font-bold text-[#26323B] focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full min-h-[42px] rounded-xl border border-stone-300 bg-[#FBF6EC] px-3 py-2 text-xs sm:text-sm font-bold text-[#292F33] focus:border-[#956C2E] focus:outline-none"
               >
                 {students.length === 0 ? (
                   <option value="">لا يوجد طلاب في السجل المركزي</option>
@@ -3745,9 +3745,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           {!selectedStudentReportData ? (
             <div
               data-testid="empty-student-report-state"
-              className="rounded-xl border border-dashed border-stone-300 bg-[#FAF7F5] p-8 text-center space-y-2"
+              className="rounded-xl border border-dashed border-stone-300 bg-[#FBF6EC] p-8 text-center space-y-2"
             >
-              <p className="text-sm font-extrabold text-[#26323B]">
+              <p className="text-sm font-extrabold text-[#292F33]">
                 لا يوجد طلاب مسجلون في السجل المركزي حالياً
               </p>
               <p className="text-xs text-stone-500">
@@ -3759,16 +3759,16 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               {/* البيانات المركزية للطالب (الحقول الاختيارية الفارغة لا تظهر) */}
               <div
                 data-testid="student-report-central-card"
-                className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-4 sm:p-5 space-y-4"
+                className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-4 sm:p-5 space-y-4"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h5
                     data-testid="student-report-name"
-                    className="text-base sm:text-lg font-extrabold text-[#26323B]"
+                    className="text-base sm:text-lg font-extrabold text-[#292F33]"
                   >
                     {selectedStudentReportData.student.name}
                   </h5>
-                  <span className="px-3 py-1 rounded-lg bg-[#7F1D3F] text-white text-xs font-extrabold">
+                  <span className="px-3 py-1 rounded-lg bg-[#8A6125] text-white text-xs font-extrabold">
                     الصف الحالي: {selectedStudentReportData.student.grade}
                   </span>
                 </div>
@@ -3781,7 +3781,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <span className="block text-[11px] font-bold text-stone-500">
                         رقم الهوية الوطنية
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-[#26323B] tabular-nums">
+                      <span className="text-xs sm:text-sm font-extrabold text-[#292F33] tabular-nums">
                         {selectedStudentReportData.student.civilId}
                       </span>
                     </div>
@@ -3794,7 +3794,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <span className="block text-[11px] font-bold text-stone-500">
                         الجنس
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                      <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                         {selectedStudentReportData.student.gender}
                       </span>
                     </div>
@@ -3804,7 +3804,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                     <span className="block text-[11px] font-bold text-stone-500">
                       العام الدراسي والفصل
                     </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                    <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                       {selectedStudentReportData.student.academicYear ||
                         centralAcademicYear}{' '}
                       —{' '}
@@ -3823,7 +3823,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <span className="block text-[11px] font-bold text-stone-500">
                         جوال الطالب
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-[#26323B] tabular-nums">
+                      <span className="text-xs sm:text-sm font-extrabold text-[#292F33] tabular-nums">
                         {selectedStudentReportData.student.studentMobile}
                       </span>
                     </div>
@@ -3839,7 +3839,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <span className="block text-[11px] font-bold text-stone-500">
                         اسم ولي الأمر
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                      <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                         {selectedStudentReportData.student.guardianName}
                       </span>
                     </div>
@@ -3849,9 +3849,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
               {/* مشاركات الطالب في البرامج والتقارير والمبادرات (مع الصف التاريخي وقت المشاركة) */}
               <div className="space-y-3">
-                <h5 className="text-sm font-extrabold text-[#26323B] flex items-center gap-2">
+                <h5 className="text-sm font-extrabold text-[#292F33] flex items-center gap-2">
                   <Layers
-                    className="w-4 h-4 text-[#7F1D3F]"
+                    className="w-4 h-4 text-[#956C2E]"
                     aria-hidden="true"
                   />
                   <span>
@@ -3862,7 +3862,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
                 {selectedStudentReportData.section2Participations.length ===
                 0 ? (
-                  <p className="text-xs text-stone-500 bg-[#FAF7F5] p-4 rounded-xl border border-stone-200">
+                  <p className="text-xs text-stone-500 bg-[#FBF6EC] p-4 rounded-xl border border-stone-200">
                     لا توجد مشاركات مسجلة لهذا الطالب في البرامج والمبادرات حتى الآن.
                   </p>
                 ) : (
@@ -3871,7 +3871,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       data-testid="student-report-participations-table"
                       className="w-full text-right text-xs sm:text-sm"
                     >
-                      <thead className="bg-[#26323B] text-white">
+                      <thead className="bg-[#292F33] text-white">
                         <tr>
                           <th className="px-3 py-2.5 font-bold">النوع</th>
                           <th className="px-3 py-2.5 font-bold">العنوان</th>
@@ -3910,16 +3910,16 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <tbody className="divide-y divide-stone-200 bg-white">
                         {selectedStudentReportData.section2Participations.map(
                           (p) => (
-                            <tr key={p.key} className="hover:bg-[#FAF7F5]">
-                              <td className="px-3 py-2.5 font-bold text-[#7F1D3F]">
+                            <tr key={p.key} className="hover:bg-[#FBF6EC]">
+                              <td className="px-3 py-2.5 font-bold text-[#956C2E]">
                                 {p.recordType}
                               </td>
-                              <td className="px-3 py-2.5 font-extrabold text-[#26323B]">
+                              <td className="px-3 py-2.5 font-extrabold text-[#292F33]">
                                 {p.recordTitle}
                               </td>
                               <td
                                 data-testid={`student-report-historical-grade-${p.recordId}`}
-                                className="px-3 py-2.5 font-bold text-[#7F1D3F] bg-[#F9EFF2]/50"
+                                className="px-3 py-2.5 font-bold text-[#956C2E] bg-[#F7EBD5]/50"
                               >
                                 {p.historicalGrade}
                               </td>
@@ -3971,7 +3971,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   {selectedStudentReportData.achievementsList.length > 0 && (
                     <div className="rounded-xl border border-stone-200 p-4 space-y-2.5">
-                      <h6 className="text-xs sm:text-sm font-extrabold text-[#7F1D3F] flex items-center gap-1.5">
+                      <h6 className="text-xs sm:text-sm font-extrabold text-[#956C2E] flex items-center gap-1.5">
                         <Award className="w-4 h-4" aria-hidden="true" />
                         <span>
                           إنجازات الطالب (
@@ -3982,9 +3982,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                         {selectedStudentReportData.achievementsList.map((a) => (
                           <div
                             key={a.id}
-                            className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 text-xs space-y-1"
+                            className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 text-xs space-y-1"
                           >
-                            <div className="font-extrabold text-[#26323B]">
+                            <div className="font-extrabold text-[#292F33]">
                               {a.achievement}
                             </div>
                             <div className="text-stone-600 flex flex-wrap gap-2">
@@ -4006,7 +4006,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
                   {selectedStudentReportData.giftedLogEntries.length > 0 && (
                     <div className="rounded-xl border border-stone-200 p-4 space-y-2.5">
-                      <h6 className="text-xs sm:text-sm font-extrabold text-[#7F1D3F] flex items-center gap-1.5">
+                      <h6 className="text-xs sm:text-sm font-extrabold text-[#956C2E] flex items-center gap-1.5">
                         <Sparkles className="w-4 h-4" aria-hidden="true" />
                         <span>مجالات الموهبة المسجلة</span>
                       </h6>
@@ -4014,9 +4014,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                         {selectedStudentReportData.giftedLogEntries.map((g) => (
                           <div
                             key={g.id}
-                            className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 text-xs space-y-1"
+                            className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 text-xs space-y-1"
                           >
-                            <div className="font-extrabold text-[#26323B]">
+                            <div className="font-extrabold text-[#292F33]">
                               مجال الموهبة: {g.talentDomain}
                             </div>
                             <div className="text-stone-600">
@@ -4043,12 +4043,12 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       {activeReportKind === 'periodic_coordinator_report' && (
         <section
           data-testid="report-view-periodic_coordinator_report"
-          className="rounded-2xl border border-[#E6C7D0] bg-white p-4 sm:p-6 shadow-xs space-y-6"
+          className="rounded-2xl border border-[#E5CFA7] bg-white p-4 sm:p-6 shadow-xs space-y-6"
         >
           {renderOfficialMaktabiReportHeader()}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-stone-200">
             <div className="space-y-1">
-              <h4 className="text-base sm:text-lg font-extrabold text-[#7F1D3F]">
+              <h4 className="text-base sm:text-lg font-extrabold text-[#956C2E]">
                 ٣. تقرير دوري لأعمال {terms.coordinatorSingular}
               </h4>
               <p className="text-xs text-stone-600">
@@ -4057,7 +4057,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             </div>
             <span
               data-testid="periodic-report-active-period-badge"
-              className="px-3 py-1.5 rounded-xl bg-[#F9EFF2] text-[#7F1D3F] border border-[#E6C7D0] text-xs font-extrabold"
+              className="px-3 py-1.5 rounded-xl bg-[#F7EBD5] text-[#956C2E] border border-[#E5CFA7] text-xs font-extrabold"
             >
               الفترة المعروضة: {selectedAcademicYear} — {selectedSemester}
             </span>
@@ -4065,55 +4065,55 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
           {/* ملخص سريع لأعمال الفترة المختارة */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            <div className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-3 text-center">
+            <div className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-3 text-center">
               <span className="block text-[11px] font-bold text-stone-500">
                 البرامج والمبادرات
               </span>
               <span
                 data-testid="periodic-count-unified-records"
-                className="text-lg font-extrabold text-[#7F1D3F] tabular-nums"
+                className="text-lg font-extrabold text-[#956C2E] tabular-nums"
               >
                 {periodicReportData.periodProgramsAndRecords.length}
               </span>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-3 text-center">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-3 text-center">
               <span className="block text-[11px] font-bold text-stone-500">
                 سجل الموهوبين
               </span>
-              <span className="text-lg font-extrabold text-[#26323B] tabular-nums">
+              <span className="text-lg font-extrabold text-[#292F33] tabular-nums">
                 {periodicReportData.periodGiftedStudentsLog.length}
               </span>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-3 text-center">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-3 text-center">
               <span className="block text-[11px] font-bold text-stone-500">
                 مشاركات البرامج
               </span>
-              <span className="text-lg font-extrabold text-[#26323B] tabular-nums">
+              <span className="text-lg font-extrabold text-[#292F33] tabular-nums">
                 {periodicReportData.periodProgramParticipantsLog.length}
               </span>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-3 text-center">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-3 text-center">
               <span className="block text-[11px] font-bold text-stone-500">
                 سجل الإنجازات
               </span>
-              <span className="text-lg font-extrabold text-[#26323B] tabular-nums">
+              <span className="text-lg font-extrabold text-[#292F33] tabular-nums">
                 {periodicReportData.periodStudentAchievementsLog.length}
               </span>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-3 text-center">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-3 text-center">
               <span className="block text-[11px] font-bold text-stone-500">
                 الاجتماعات والزيارات
               </span>
-              <span className="text-lg font-extrabold text-[#26323B] tabular-nums">
+              <span className="text-lg font-extrabold text-[#292F33] tabular-nums">
                 {periodicReportData.periodMeetingsLog.length +
                   periodicReportData.periodVisitsLog.length}
               </span>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-3 text-center">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-3 text-center">
               <span className="block text-[11px] font-bold text-stone-500">
                 النماذج الجاهزة
               </span>
-              <span className="text-lg font-extrabold text-[#26323B] tabular-nums">
+              <span className="text-lg font-extrabold text-[#292F33] tabular-nums">
                 {periodicReportData.periodReadyTemplates.length}
               </span>
             </div>
@@ -4121,14 +4121,14 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
           {/* أ) البرامج والتقارير والمبادرات في الفترة المختارة */}
           <div className="space-y-3">
-            <h5 className="text-sm font-extrabold text-[#26323B]">
+            <h5 className="text-sm font-extrabold text-[#292F33]">
               أولاً: البرامج والتقارير والمبادرات خلال ({selectedAcademicYear} —{' '}
               {selectedSemester})
             </h5>
             {periodicReportData.periodProgramsAndRecords.length === 0 ? (
               <p
                 data-testid="periodic-empty-programs"
-                className="text-xs text-stone-500 bg-[#FAF7F5] p-4 rounded-xl border border-stone-200"
+                className="text-xs text-stone-500 bg-[#FBF6EC] p-4 rounded-xl border border-stone-200"
               >
                 لا توجد برامج أو تقارير أو مبادرات مسجلة في هذه الفترة ({selectedAcademicYear} — {selectedSemester}).
               </p>
@@ -4138,7 +4138,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   data-testid="periodic-programs-table"
                   className="w-full text-right text-xs sm:text-sm"
                 >
-                  <thead className="bg-[#26323B] text-white">
+                  <thead className="bg-[#292F33] text-white">
                     <tr>
                       <th className="px-3 py-2.5 font-bold">النوع</th>
                       <th className="px-3 py-2.5 font-bold">العنوان</th>
@@ -4149,11 +4149,11 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   </thead>
                   <tbody className="divide-y divide-stone-200 bg-white">
                     {periodicReportData.periodProgramsAndRecords.map((rec) => (
-                      <tr key={rec.id} className="hover:bg-[#FAF7F5]">
-                        <td className="px-3 py-2.5 font-bold text-[#7F1D3F]">
+                      <tr key={rec.id} className="hover:bg-[#FBF6EC]">
+                        <td className="px-3 py-2.5 font-bold text-[#956C2E]">
                           {rec.recordType}
                         </td>
-                        <td className="px-3 py-2.5 font-extrabold text-[#26323B]">
+                        <td className="px-3 py-2.5 font-extrabold text-[#292F33]">
                           {rec.title}
                         </td>
                         <td className="px-3 py-2.5">
@@ -4181,16 +4181,16 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             periodicReportData.periodVisitsLog.length > 0 ||
             periodicReportData.periodReadyTemplates.length > 0) && (
             <div className="space-y-4">
-              <h5 className="text-sm font-extrabold text-[#26323B]">
+              <h5 className="text-sm font-extrabold text-[#292F33]">
                 ثانياً: الاجتماعات والزيارات والنماذج الجاهزة خلال الفترة
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {periodicReportData.periodMeetingsLog.map((m) => (
                   <div
                     key={m.id}
-                    className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 space-y-1.5 text-xs"
+                    className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 space-y-1.5 text-xs"
                   >
-                    <div className="flex items-center justify-between font-extrabold text-[#7F1D3F]">
+                    <div className="flex items-center justify-between font-extrabold text-[#956C2E]">
                       <span>اجتماع: {m.topic}</span>
                       <span>{m.hijriDate || m.date}</span>
                     </div>
@@ -4207,7 +4207,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       </div>
                     )}
                     {hasNonEmptyText(m.keyRecommendations) && (
-                      <div className="text-[#26323B] font-semibold">
+                      <div className="text-[#292F33] font-semibold">
                         أبرز التوصيات: {m.keyRecommendations}
                       </div>
                     )}
@@ -4217,9 +4217,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 {periodicReportData.periodVisitsLog.map((v) => (
                   <div
                     key={v.id}
-                    className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 space-y-1.5 text-xs"
+                    className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 space-y-1.5 text-xs"
                   >
-                    <div className="flex items-center justify-between font-extrabold text-[#7F1D3F]">
+                    <div className="flex items-center justify-between font-extrabold text-[#956C2E]">
                       <span>زيارة/شراكة: {v.entityOrPlace}</span>
                       <span>{v.hijriDate || v.date}</span>
                     </div>
@@ -4227,7 +4227,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       <div className="text-stone-600">الغرض: {v.purpose}</div>
                     )}
                     {hasNonEmptyText(v.keyResults) && (
-                      <div className="text-[#26323B] font-semibold">
+                      <div className="text-[#292F33] font-semibold">
                         أبرز النتائج: {v.keyResults}
                       </div>
                     )}
@@ -4237,9 +4237,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 {periodicReportData.periodReadyTemplates.map((t) => (
                   <div
                     key={t.id}
-                    className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 space-y-1.5 text-xs"
+                    className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 space-y-1.5 text-xs"
                   >
-                    <div className="flex items-center justify-between font-extrabold text-[#7F1D3F]">
+                    <div className="flex items-center justify-between font-extrabold text-[#956C2E]">
                       <span>
                         [{t.templateKind}] {t.title}
                       </span>
@@ -4251,7 +4251,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                       </div>
                     )}
                     {hasNonEmptyText(t.bodyContent) && (
-                      <div className="text-[#26323B]">{t.bodyContent}</div>
+                      <div className="text-[#292F33]">{t.bodyContent}</div>
                     )}
                   </div>
                 ))}
@@ -4263,10 +4263,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           {periodicReportData.legacyAdditionalWorks.length > 0 && (
             <div
               data-testid="periodic-legacy-additional-works-section"
-              className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-4 space-y-3"
+              className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-4 space-y-3"
             >
               <div className="flex items-center justify-between">
-                <h5 className="text-sm font-extrabold text-[#7F1D3F]">
+                <h5 className="text-sm font-extrabold text-[#956C2E]">
                   أرشيف الأعمال الإضافية السابق (قسم مستقل —{' '}
                   {periodicReportData.legacyAdditionalWorks.length})
                 </h5>
@@ -4280,7 +4280,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                     key={w.id}
                     className="rounded-lg bg-white p-3 border border-stone-200 text-xs space-y-1"
                   >
-                    <div className="font-extrabold text-[#26323B]">
+                    <div className="font-extrabold text-[#292F33]">
                       {GIFTED_COORDINATOR_WORK_KIND_LABELS[w.workKind]}
                       {hasNonEmptyText(w.meetingNumber)
                         ? ` (${w.meetingNumber})`
@@ -4306,11 +4306,11 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       {activeReportKind === 'final_record_report' && (
         <section
           data-testid="report-view-final_record_report"
-          className="rounded-2xl border border-[#E6C7D0] bg-white p-4 sm:p-6 shadow-xs space-y-6"
+          className="rounded-2xl border border-[#E5CFA7] bg-white p-4 sm:p-6 shadow-xs space-y-6"
         >
           {renderOfficialMaktabiReportHeader()}
           <div className="pb-4 border-b border-stone-200 space-y-1">
-            <h4 className="text-base sm:text-lg font-extrabold text-[#7F1D3F]">
+            <h4 className="text-base sm:text-lg font-extrabold text-[#956C2E]">
               ٤. التقرير الختامي للسجل (الأقسام السبعة المعتمدة)
             </h4>
             <p className="text-xs text-stone-600">
@@ -4321,7 +4321,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           {/* القسم ١: غلاف رسمي */}
           <div
             data-testid="final-report-section-1-cover"
-            className="rounded-2xl overflow-hidden border-2 border-[#7F1D3F] bg-gradient-to-l from-[#26323B] via-[#312332] to-[#7F1D3F] text-white p-6 space-y-4"
+            className="rounded-2xl overflow-hidden border-2 border-[#956C2E] bg-[#8A6125] text-white p-6 space-y-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="px-3 py-1 rounded-lg bg-white/15 text-white text-xs font-extrabold">
@@ -4338,7 +4338,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               <p className="text-xs sm:text-sm text-stone-200">
                 {basicInfo.educationDepartment} — {basicInfo.schoolName}
               </p>
-              <p className="text-xs sm:text-sm font-bold text-amber-200">
+              <p className="text-xs sm:text-sm font-bold text-[#F7EBD5]">
                 العام الدراسي: {selectedAcademicYear} — {selectedSemester}
               </p>
             </div>
@@ -4365,9 +4365,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           {/* القسم ٢: فهرس */}
           <div
             data-testid="final-report-section-2-toc"
-            className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-4 sm:p-5 space-y-3"
+            className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-4 sm:p-5 space-y-3"
           >
-            <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+            <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
               <BookOpen className="w-4 h-4" aria-hidden="true" />
               <span>القسم ٢ — فهرس التقرير الختامي</span>
             </h5>
@@ -4378,10 +4378,10 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   data-testid={`final-report-toc-item-${sec.id}`}
                   className="rounded-lg bg-white p-3 border border-stone-200 flex items-center gap-2.5"
                 >
-                  <span className="w-7 h-7 rounded-md bg-[#F9EFF2] text-[#7F1D3F] text-xs font-extrabold flex items-center justify-center shrink-0">
+                  <span className="w-7 h-7 rounded-md bg-[#F7EBD5] text-[#956C2E] text-xs font-extrabold flex items-center justify-center shrink-0">
                     {sec.number}
                   </span>
-                  <span className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                     {sec.title}
                   </span>
                 </div>
@@ -4394,7 +4394,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             data-testid="final-report-section-3-students"
             className="rounded-xl border border-stone-200 p-4 sm:p-5 space-y-3"
           >
-            <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+            <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
               <Users className="w-4 h-4" aria-hidden="true" />
               <span>القسم ٣ — بيانات الطلاب ({students.length})</span>
             </h5>
@@ -4405,7 +4405,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             ) : (
               <div className="overflow-x-auto rounded-xl border border-stone-200">
                 <table className="w-full text-right text-xs sm:text-sm">
-                  <thead className="bg-[#26323B] text-white">
+                  <thead className="bg-[#292F33] text-white">
                     <tr>
                       <th className="px-3 py-2 font-bold">#</th>
                       <th className="px-3 py-2 font-bold">الاسم الرباعي</th>
@@ -4423,7 +4423,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   </thead>
                   <tbody className="divide-y divide-stone-200 bg-white">
                     {students.map((st, idx) => (
-                      <tr key={st.id} className="hover:bg-[#FAF7F5]">
+                      <tr key={st.id} className="hover:bg-[#FBF6EC]">
                         <td className="px-3 py-2 font-bold tabular-nums">
                           {idx + 1}
                         </td>
@@ -4432,7 +4432,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                           {st.civilId || ''}
                         </td>
                         <td className="px-3 py-2">{st.gender || ''}</td>
-                        <td className="px-3 py-2 font-semibold text-[#7F1D3F]">
+                        <td className="px-3 py-2 font-semibold text-[#956C2E]">
                           {st.grade}
                         </td>
                         <td className="px-3 py-2 text-stone-600">
@@ -4464,7 +4464,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             data-testid="final-report-section-4-programs"
             className="rounded-xl border border-stone-200 p-4 sm:p-5 space-y-3"
           >
-            <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+            <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
               <Layers className="w-4 h-4" aria-hidden="true" />
               <span>
                 القسم ٤ — البرامج والتقارير والمبادرات ({unifiedRecords.length})
@@ -4477,7 +4477,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             ) : (
               <div className="overflow-x-auto rounded-xl border border-stone-200">
                 <table className="w-full text-right text-xs sm:text-sm">
-                  <thead className="bg-[#26323B] text-white">
+                  <thead className="bg-[#292F33] text-white">
                     <tr>
                       <th className="px-3 py-2 font-bold">النوع</th>
                       <th className="px-3 py-2 font-bold">العنوان</th>
@@ -4489,8 +4489,8 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   </thead>
                   <tbody className="divide-y divide-stone-200 bg-white">
                     {unifiedRecords.map((rec) => (
-                      <tr key={rec.id} className="hover:bg-[#FAF7F5]">
-                        <td className="px-3 py-2 font-bold text-[#7F1D3F]">
+                      <tr key={rec.id} className="hover:bg-[#FBF6EC]">
+                        <td className="px-3 py-2 font-bold text-[#956C2E]">
                           {rec.recordType}
                         </td>
                         <td className="px-3 py-2 font-extrabold">{rec.title}</td>
@@ -4522,54 +4522,54 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             data-testid="final-report-section-5-models-logs"
             className="rounded-xl border border-stone-200 p-4 sm:p-5 space-y-3"
           >
-            <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+            <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
               <FileSpreadsheet className="w-4 h-4" aria-hidden="true" />
               <span>القسم ٥ — النماذج والسجلات</span>
             </h5>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              <div className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 flex items-center justify-between">
+              <div className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-bold">
                   {GIFTED_SECTION3_FIXED_LOG_LABELS.giftedStudentsLog}
                 </span>
-                <strong className="text-sm font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-sm font-extrabold text-[#956C2E] tabular-nums">
                   {section3Data.giftedStudentsLog.length}
                 </strong>
               </div>
-              <div className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 flex items-center justify-between">
+              <div className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-bold">
                   {GIFTED_SECTION3_FIXED_LOG_LABELS.programParticipantsLog}
                 </span>
-                <strong className="text-sm font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-sm font-extrabold text-[#956C2E] tabular-nums">
                   {section3Data.programParticipantsLog.length}
                 </strong>
               </div>
-              <div className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 flex items-center justify-between">
+              <div className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-bold">
                   {GIFTED_SECTION3_FIXED_LOG_LABELS.studentAchievementsLog}
                 </span>
-                <strong className="text-sm font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-sm font-extrabold text-[#956C2E] tabular-nums">
                   {section3Data.studentAchievementsLog.length}
                 </strong>
               </div>
-              <div className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 flex items-center justify-between">
+              <div className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-bold">
                   {GIFTED_SECTION3_FIXED_LOG_LABELS.meetingsLog}
                 </span>
-                <strong className="text-sm font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-sm font-extrabold text-[#956C2E] tabular-nums">
                   {section3Data.meetingsLog.length}
                 </strong>
               </div>
-              <div className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 flex items-center justify-between">
+              <div className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-bold">
                   {GIFTED_SECTION3_FIXED_LOG_LABELS.visitsAndPartnershipsLog}
                 </span>
-                <strong className="text-sm font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-sm font-extrabold text-[#956C2E] tabular-nums">
                   {section3Data.visitsAndPartnershipsLog.length}
                 </strong>
               </div>
-              <div className="rounded-lg bg-[#FAF7F5] p-3 border border-stone-200 flex items-center justify-between">
+              <div className="rounded-lg bg-[#FBF6EC] p-3 border border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-bold">النماذج الجاهزة الأربعة</span>
-                <strong className="text-sm font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-sm font-extrabold text-[#956C2E] tabular-nums">
                   {section3Data.readyTemplates.length}
                 </strong>
               </div>
@@ -4581,7 +4581,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
             data-testid="final-report-section-6-evidences"
             className="rounded-xl border border-stone-200 p-4 sm:p-5 space-y-3"
           >
-            <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+            <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
               <FolderOpen className="w-4 h-4" aria-hidden="true" />
               <span>
                 القسم ٦ — الأدلة والمرفقات (صور الشواهد + صفحات PDF + روابط QR)
@@ -4597,9 +4597,9 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           {/* القسم ٧: الإحصاءات ذات الصلة */}
           <div
             data-testid="final-report-section-7-statistics"
-            className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-4 sm:p-5 space-y-3"
+            className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-4 sm:p-5 space-y-3"
           >
-            <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+            <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
               <BarChart3 className="w-4 h-4" aria-hidden="true" />
               <span>القسم ٧ — الإحصاءات ذات الصلة</span>
             </h5>
@@ -4608,7 +4608,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 <span className="block text-[11px] font-bold text-stone-500">
                   إجمالي الطلاب بالسجل المركزي
                 </span>
-                <strong className="text-lg font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-lg font-extrabold text-[#956C2E] tabular-nums">
                   {studentStatisticalReportData.totalCentralStudents}
                 </strong>
               </div>
@@ -4616,7 +4616,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 <span className="block text-[11px] font-bold text-stone-500">
                   الطلاب المستفيدون فعلياً
                 </span>
-                <strong className="text-lg font-extrabold text-[#26323B] tabular-nums">
+                <strong className="text-lg font-extrabold text-[#292F33] tabular-nums">
                   {studentStatisticalReportData.uniqueBeneficiaryStudentsCount}
                 </strong>
               </div>
@@ -4624,7 +4624,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 <span className="block text-[11px] font-bold text-stone-500">
                   إجمالي المشاركات (دون تكرار)
                 </span>
-                <strong className="text-lg font-extrabold text-[#26323B] tabular-nums">
+                <strong className="text-lg font-extrabold text-[#292F33] tabular-nums">
                   {studentStatisticalReportData.deduplicatedParticipationsCount}
                 </strong>
               </div>
@@ -4632,7 +4632,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                 <span className="block text-[11px] font-bold text-stone-500">
                   نسبة إجراءات البرامج الوزارية
                 </span>
-                <strong className="text-lg font-extrabold text-[#7F1D3F] tabular-nums">
+                <strong className="text-lg font-extrabold text-[#956C2E] tabular-nums">
                   {
                     studentStatisticalReportData.ministerialProgramsStats
                       .ministerialActionsCompletionPct
@@ -4651,11 +4651,11 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
       {activeReportKind === 'statistical_students_report' && (
         <section
           data-testid="report-view-statistical_students_report"
-          className="rounded-2xl border border-[#E6C7D0] bg-white p-4 sm:p-6 shadow-xs space-y-6"
+          className="rounded-2xl border border-[#E5CFA7] bg-white p-4 sm:p-6 shadow-xs space-y-6"
         >
           {renderOfficialMaktabiReportHeader()}
           <div className="pb-4 border-b border-stone-200 space-y-1">
-            <h4 className="text-base sm:text-lg font-extrabold text-[#7F1D3F]">
+            <h4 className="text-base sm:text-lg font-extrabold text-[#956C2E]">
               ٥. التقرير الإحصائي للطلاب
             </h4>
             <p className="text-xs text-stone-600">
@@ -4665,13 +4665,13 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
           {/* ١. المؤشرات الرئيسية للسجل المركزي للطلاب */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-            <div className="rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] p-4 space-y-1">
+            <div className="rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] p-4 space-y-1">
               <span className="text-xs font-bold text-stone-600">
                 إجمالي الطلاب في السجل المركزي
               </span>
               <div
                 data-testid="stat-report-total-central-students"
-                className="text-2xl font-extrabold text-[#7F1D3F] tabular-nums"
+                className="text-2xl font-extrabold text-[#956C2E] tabular-nums"
               >
                 {studentStatisticalReportData.totalCentralStudents}
               </div>
@@ -4681,13 +4681,13 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 space-y-1">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 space-y-1">
               <span className="text-xs font-bold text-stone-600">
                 الطلاب المستفيدون (دون ازدواجية)
               </span>
               <div
                 data-testid="stat-report-unique-beneficiaries"
-                className="text-2xl font-extrabold text-[#26323B] tabular-nums"
+                className="text-2xl font-extrabold text-[#292F33] tabular-nums"
               >
                 {studentStatisticalReportData.uniqueBeneficiaryStudentsCount}
               </div>
@@ -4697,13 +4697,13 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 space-y-1">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 space-y-1">
               <span className="text-xs font-bold text-stone-600">
                 إجمالي المشاركات غير المكررة
               </span>
               <div
                 data-testid="stat-report-deduplicated-participations"
-                className="text-2xl font-extrabold text-[#26323B] tabular-nums"
+                className="text-2xl font-extrabold text-[#292F33] tabular-nums"
               >
                 {studentStatisticalReportData.deduplicatedParticipationsCount}
               </div>
@@ -4712,13 +4712,13 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-[#FAF7F5] p-4 space-y-1">
+            <div className="rounded-xl border border-stone-200 bg-[#FBF6EC] p-4 space-y-1">
               <span className="text-xs font-bold text-stone-600">
                 إجمالي الإنجازات الموثقة
               </span>
               <div
                 data-testid="stat-report-deduplicated-achievements"
-                className="text-2xl font-extrabold text-[#7F1D3F] tabular-nums"
+                className="text-2xl font-extrabold text-[#956C2E] tabular-nums"
               >
                 {studentStatisticalReportData.deduplicatedAchievementsCount}
               </div>
@@ -4732,35 +4732,35 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div
               data-testid="stat-report-ministerial-programs-box"
-              className="rounded-xl border-2 border-[#7F1D3F]/30 bg-[#F9EFF2]/40 p-4 sm:p-5 space-y-3"
+              className="rounded-xl border-2 border-[#956C2E]/30 bg-[#F7EBD5]/40 p-4 sm:p-5 space-y-3"
             >
               <div className="flex items-center justify-between">
-                <h5 className="text-sm sm:text-base font-extrabold text-[#7F1D3F] flex items-center gap-2">
+                <h5 className="text-sm sm:text-base font-extrabold text-[#956C2E] flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
                   <span>أولاً: إحصاءات البرامج الوزارية (مستقلة)</span>
                 </h5>
-                <span className="px-2.5 py-0.5 rounded bg-[#7F1D3F] text-white text-[11px] font-bold">
+                <span className="px-2.5 py-0.5 rounded bg-[#8A6125] text-white text-[11px] font-bold">
                   برامج وزارية
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-xs">
-                <div className="rounded-lg bg-white p-3 border border-[#E6C7D0]">
+                <div className="rounded-lg bg-white p-3 border border-[#E5CFA7]">
                   <span className="block text-stone-500 font-bold">
                     البرامج الوزارية المطبقة
                   </span>
-                  <strong className="text-base font-extrabold text-[#26323B] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#292F33] tabular-nums">
                     {
                       studentStatisticalReportData.ministerialProgramsStats
                         .applicableMinisterialProgramsCount
                     }
                   </strong>
                 </div>
-                <div className="rounded-lg bg-white p-3 border border-[#E6C7D0]">
+                <div className="rounded-lg bg-white p-3 border border-[#E5CFA7]">
                   <span className="block text-stone-500 font-bold">
                     نسبة إنجاز الإجراءات الوزارية
                   </span>
-                  <strong className="text-base font-extrabold text-[#7F1D3F] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#956C2E] tabular-nums">
                     {
                       studentStatisticalReportData.ministerialProgramsStats
                         .ministerialActionsCompletionPct
@@ -4778,22 +4778,22 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                     )
                   </strong>
                 </div>
-                <div className="rounded-lg bg-white p-3 border border-[#E6C7D0]">
+                <div className="rounded-lg bg-white p-3 border border-[#E5CFA7]">
                   <span className="block text-stone-500 font-bold">
                     سجلات البرامج بنطاق وزاري (قسم 02)
                   </span>
-                  <strong className="text-base font-extrabold text-[#26323B] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#292F33] tabular-nums">
                     {
                       studentStatisticalReportData.ministerialProgramsStats
                         .unifiedMinisterialScopeProgramsCount
                     }
                   </strong>
                 </div>
-                <div className="rounded-lg bg-white p-3 border border-[#E6C7D0]">
+                <div className="rounded-lg bg-white p-3 border border-[#E5CFA7]">
                   <span className="block text-stone-500 font-bold">
                     برامج إدارة تعليم / مدرسة (قسم 02)
                   </span>
-                  <strong className="text-base font-extrabold text-[#26323B] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#292F33] tabular-nums">
                     {studentStatisticalReportData.ministerialProgramsStats
                       .unifiedEducationDeptProgramsCount +
                       studentStatisticalReportData.ministerialProgramsStats
@@ -4805,14 +4805,14 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
             <div
               data-testid="stat-report-competitions-initiatives-box"
-              className="rounded-xl border border-stone-300 bg-[#FAF7F5] p-4 sm:p-5 space-y-3"
+              className="rounded-xl border border-stone-300 bg-[#FBF6EC] p-4 sm:p-5 space-y-3"
             >
               <div className="flex items-center justify-between">
-                <h5 className="text-sm sm:text-base font-extrabold text-[#26323B] flex items-center gap-2">
-                  <Award className="w-4 h-4 text-[#7F1D3F]" aria-hidden="true" />
+                <h5 className="text-sm sm:text-base font-extrabold text-[#292F33] flex items-center gap-2">
+                  <Award className="w-4 h-4 text-[#956C2E]" aria-hidden="true" />
                   <span>ثانياً: إحصاءات المسابقات والمبادرات (مستقلة)</span>
                 </h5>
-                <span className="px-2.5 py-0.5 rounded bg-[#26323B] text-white text-[11px] font-bold">
+                <span className="px-2.5 py-0.5 rounded bg-[#292F33] text-white text-[11px] font-bold">
                   مسابقات ومبادرات
                 </span>
               </div>
@@ -4822,7 +4822,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <span className="block text-stone-500 font-bold">
                     المبادرات الموثقة (قسم 02)
                   </span>
-                  <strong className="text-base font-extrabold text-[#7F1D3F] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#956C2E] tabular-nums">
                     {
                       studentStatisticalReportData
                         .initiativesAndCompetitionsStats.unifiedInitiativesCount
@@ -4833,7 +4833,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <span className="block text-stone-500 font-bold">
                     التقارير الموثقة (قسم 02)
                   </span>
-                  <strong className="text-base font-extrabold text-[#26323B] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#292F33] tabular-nums">
                     {
                       studentStatisticalReportData
                         .initiativesAndCompetitionsStats.unifiedReportsCount
@@ -4844,7 +4844,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <span className="block text-stone-500 font-bold">
                     المسابقات العلمية المنفذة
                   </span>
-                  <strong className="text-base font-extrabold text-[#26323B] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#292F33] tabular-nums">
                     {
                       studentStatisticalReportData
                         .initiativesAndCompetitionsStats
@@ -4862,7 +4862,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <span className="block text-stone-500 font-bold">
                     نسبة إنجاز الخطة التنفيذية
                   </span>
-                  <strong className="text-base font-extrabold text-[#7F1D3F] tabular-nums">
+                  <strong className="text-base font-extrabold text-[#956C2E] tabular-nums">
                     {
                       studentStatisticalReportData.kpiSummary
                         .executivePlanMetrics.completionPercentage
@@ -4876,11 +4876,11 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
 
           {/* ٣. جدول توزيع الطلاب حسب الصف الدراسي */}
           <div className="space-y-3">
-            <h5 className="text-sm font-extrabold text-[#26323B]">
+            <h5 className="text-sm font-extrabold text-[#292F33]">
               ثالثاً: توزيع الطلاب في السجل المركزي حسب الصف الدراسي
             </h5>
             {studentStatisticalReportData.distributionByGrade.length === 0 ? (
-              <p className="text-xs text-stone-500 bg-[#FAF7F5] p-4 rounded-xl border border-stone-200">
+              <p className="text-xs text-stone-500 bg-[#FBF6EC] p-4 rounded-xl border border-stone-200">
                 لا توجد بيانات طلاب لعرض التوزيع الإحصائي حسب الصف.
               </p>
             ) : (
@@ -4889,7 +4889,7 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   data-testid="stat-report-grade-distribution-table"
                   className="w-full text-right text-xs sm:text-sm"
                 >
-                  <thead className="bg-[#26323B] text-white">
+                  <thead className="bg-[#292F33] text-white">
                     <tr>
                       <th className="px-3 py-2.5 font-bold">الصف الدراسي</th>
                       <th className="px-3 py-2.5 font-bold">عدد الطلاب</th>
@@ -4899,14 +4899,14 @@ export const GiftedReportsEngine: React.FC<GiftedReportsEngineProps> = ({
                   <tbody className="divide-y divide-stone-200 bg-white">
                     {studentStatisticalReportData.distributionByGrade.map(
                       (row) => (
-                        <tr key={row.grade} className="hover:bg-[#FAF7F5]">
-                          <td className="px-3 py-2.5 font-extrabold text-[#26323B]">
+                        <tr key={row.grade} className="hover:bg-[#FBF6EC]">
+                          <td className="px-3 py-2.5 font-extrabold text-[#292F33]">
                             {row.grade}
                           </td>
                           <td className="px-3 py-2.5 font-bold tabular-nums">
                             {row.count}
                           </td>
-                          <td className="px-3 py-2.5 font-bold text-[#7F1D3F] tabular-nums">
+                          <td className="px-3 py-2.5 font-bold text-[#956C2E] tabular-nums">
                             {row.percentage}%
                           </td>
                         </tr>

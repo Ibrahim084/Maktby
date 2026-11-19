@@ -885,7 +885,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
         </div>
 
         {isAtLimit && (
-          <p className="text-[11px] font-bold text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5">
+          <p className="text-[11px] font-bold text-[#9A4A2E] bg-[#FDF2ED] border border-[#E8C9BA] rounded-lg px-3 py-1.5">
             وصل هذا السجل إلى الحد الأقصى المسموح به للمرفقات (٤ شواهد). يمكنك
             استبدال أحد الشواهد الحالية أو حذفه.
           </p>
@@ -1216,7 +1216,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
             <span className="px-3 py-1.5 rounded-xl bg-plc-soft text-plc tabular-nums">
               عدد الاجتماعات: {meetingsOverview.totalMeetingsCount}
             </span>
-            <span className="px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 tabular-nums">
+            <span className="px-3 py-1.5 rounded-xl bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] tabular-nums">
               توصيات منفذة: {meetingsOverview.completedRecommendationsCount} /{' '}
               {meetingsOverview.totalRecommendationsCount}
             </span>
@@ -1407,7 +1407,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                           }
                           className={`px-3 py-1 rounded-lg text-xs font-extrabold border cursor-pointer ${
                             att.present
-                              ? 'bg-emerald-600 text-white border-emerald-600'
+                              ? 'bg-[#2F6846] text-white border-[#2F6846]'
                               : 'bg-white text-stone-600 border-stone-300'
                           }`}
                         >
@@ -1814,7 +1814,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                       </div>
                       <div className="flex flex-wrap items-center gap-3 text-xs text-stone-600 pt-1">
                         <span>
-                          الحضور: <strong className="text-emerald-700">{presentCount}</strong>
+                          الحضور: <strong className="text-[#2F6846]">{presentCount}</strong>
                         </span>
                         <span>
                           الغياب: <strong className="text-red-700">{absentCount}</strong>
@@ -1925,7 +1925,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                               key={aIdx}
                               className={`px-3 py-1 rounded-lg text-xs font-bold border ${
                                 att.present
-                                  ? 'bg-emerald-50 text-emerald-900 border-emerald-200'
+                                  ? 'bg-[#EEF5EE] text-[#2F6846] border-[#C5DCC7]'
                                   : 'bg-red-50 text-red-900 border-red-200'
                               }`}
                             >
@@ -2019,7 +2019,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                                       </td>
                                       <td className="py-2.5 px-3">
                                         {resolved.isLinkedActionDeleted ? (
-                                          <span className="px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold">
+                                          <span className="px-2 py-0.5 rounded-md bg-[#FDF2ED] text-[#9A4A2E] border border-[#E8C9BA] text-[11px] font-bold">
                                             {resolved.linkedActionDisplayTitle}
                                           </span>
                                         ) : resolved.linkedAction ? (
@@ -2609,7 +2609,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
         {actStatus === 'planned' ? (
           <div
             data-testid="plc-f6-planned-only-notice"
-            className="rounded-xl bg-amber-50 border border-amber-200 p-3.5 text-xs text-amber-900 font-bold"
+            className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-3.5 text-xs text-[#9A4A2E] font-bold"
           >
             تنبيه منهجي: حالة هذا السجل حالياً «مخطط له». تُحفظ هذه البيانات
             كبيانات تخطيط فقط ولا تُعرض كدليل على التنفيذ الفعلي حتى يقوم المستخدم
@@ -2618,7 +2618,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
         ) : (
           <div
             data-testid="plc-f6-execution-details-fields"
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-emerald-50/40 rounded-xl border border-emerald-200 p-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-[#EEF5EE] rounded-xl border border-[#C5DCC7] p-4"
           >
             <div>
               <label className="block text-xs font-extrabold text-stone-800 mb-1">
@@ -2774,11 +2774,11 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                       <span
                         className={`px-2.5 py-1 rounded-lg text-xs font-extrabold border ${
                           rec.status === 'completed'
-                            ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                            ? 'bg-[#EEF5EE] text-[#2F6846] border-[#C5DCC7]'
                             : rec.status === 'planned'
-                              ? 'bg-amber-50 text-amber-800 border-amber-200'
+                              ? 'bg-[#FDF2ED] text-[#9A4A2E] border-[#E8C9BA]'
                               : rec.status === 'in_progress'
-                                ? 'bg-sky-50 text-sky-800 border-sky-200'
+                                ? 'bg-[#E5E9E7] text-[#495D53] border-[#E2E5E6]'
                                 : 'bg-stone-100 text-stone-600 border-stone-200'
                         }`}
                       >
@@ -2978,11 +2978,11 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                   (rec.actualExecutionDescription || rec.results) && (
                     <div
                       data-testid={`plc-activity-executed-details-${idx}`}
-                      className="bg-emerald-50/50 rounded-xl border border-emerald-200 p-3 text-xs space-y-1"
+                      className="bg-[#EEF5EE] rounded-xl border border-[#C5DCC7] p-3 text-xs space-y-1"
                     >
                       {rec.actualExecutionDescription && (
                         <div>
-                          <strong className="text-emerald-900">
+                          <strong className="text-[#2F6846]">
                             ما تم تنفيذه فعلياً:
                           </strong>{' '}
                           {rec.actualExecutionDescription}
@@ -2990,7 +2990,7 @@ export const PlcBatch3Forms: React.FC<PlcBatch3FormsProps> = ({
                       )}
                       {rec.results && (
                         <div>
-                          <strong className="text-emerald-900">
+                          <strong className="text-[#2F6846]">
                             النتائج المتحققة:
                           </strong>{' '}
                           {rec.results}

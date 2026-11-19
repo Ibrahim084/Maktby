@@ -461,7 +461,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
       className="space-y-6"
     >
       {/* Top Navigation & Status Bar */}
-      <div className="bg-white rounded-2xl border border-[#BFDBFE] p-4 sm:p-6 space-y-5 shadow-2xs">
+      <div className="bg-white rounded-2xl border border-[#E2E5E6] p-4 sm:p-6 space-y-5 shadow-2xs">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <button
             type="button"
@@ -480,7 +480,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               onClick={() => setIsAuditLogOpen((v) => !v)}
               className="min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-xs font-bold text-stone-700 inline-flex items-center gap-2 transition-colors cursor-pointer"
             >
-              <History className="w-4 h-4 text-[#2563EB]" aria-hidden="true" />
+              <History className="w-4 h-4 text-[#416B91]" aria-hidden="true" />
               <span>
                 سجل تدقيق الحذف ({overview.deletionAuditLog.length})
               </span>
@@ -491,7 +491,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               data-testid="export-unified-portfolio-pdf-btn"
               disabled={isGeneratingPdf}
               onClick={handleGenerateAndPreviewPdf}
-              className="min-h-[42px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer shadow-2xs"
+              className="min-h-[42px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer shadow-2xs"
             >
               <FileText className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -506,7 +506,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         {/* Main Header & Organizational Summary */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-extrabold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold">
               <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
               <span>ملف شواهد موحد · ربط السجلات والشواهد المستقلة</span>
             </div>
@@ -529,10 +529,10 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
             data-testid="portfolio-organizational-summary"
             className="grid grid-cols-2 sm:grid-cols-3 gap-3 shrink-0"
           >
-            <div className="rounded-xl bg-[#EFF6FF]/70 border border-[#BFDBFE] px-4 py-3 text-center">
+            <div className="rounded-xl bg-[#DCEAF5]/70 border border-[#E2E5E6] px-4 py-3 text-center">
               <div
                 data-testid="portfolio-covered-elements-count"
-                className="text-lg sm:text-xl font-extrabold text-[#1E40AF]"
+                className="text-lg sm:text-xl font-extrabold text-[#294660]"
               >
                 {overview.elementsWithRecordsCount} / {overview.totalElementsCount}
               </div>
@@ -541,10 +541,10 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               </div>
             </div>
 
-            <div className="rounded-xl bg-emerald-50/70 border border-emerald-200 px-4 py-3 text-center">
+            <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] px-4 py-3 text-center">
               <div
                 data-testid="portfolio-total-resolved-links-count"
-                className="text-lg sm:text-xl font-extrabold text-emerald-800"
+                className="text-lg sm:text-xl font-extrabold text-[#2F6846]"
               >
                 {overview.totalCombinedEvidencesCount}
               </div>
@@ -571,7 +571,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         {/* Active Template / Color Info Bar */}
         <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs text-stone-600">
           <div className="inline-flex items-center gap-1.5 font-bold text-stone-600">
-            <Info className="w-4 h-4 text-[#2563EB] shrink-0" aria-hidden="true" />
+            <Info className="w-4 h-4 text-[#416B91] shrink-0" aria-hidden="true" />
             <span>
               مؤشر التغطية معلومة تنظيمية لمتابعة ربط السجلات ولا يعد حكمًا على تحقق الأداء.
             </span>
@@ -587,9 +587,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         <div
           role="alert"
           data-testid="portfolio-storage-warning-banner"
-          className="rounded-2xl border border-amber-300 bg-amber-50 p-4 flex items-start gap-3 text-amber-900"
+          className="rounded-2xl border border-[#E8C9BA] bg-[#FDF2ED] p-4 flex items-start gap-3 text-[#9A4A2E]"
         >
-          <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <ShieldAlert className="w-5 h-5 text-[#9A4A2E] shrink-0 mt-0.5" />
           <div className="text-xs sm:text-sm font-bold leading-relaxed">
             {storageWarning}
           </div>
@@ -601,18 +601,18 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         <div
           role="alert"
           data-testid="portfolio-missing-refs-alert"
-          className="rounded-2xl border border-amber-300 bg-amber-50 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          className="rounded-2xl border border-[#E8C9BA] bg-[#FDF2ED] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div className="flex items-start gap-3">
             <AlertTriangle
-              className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
+              className="w-5 h-5 text-[#9A4A2E] shrink-0 mt-0.5"
               aria-hidden="true"
             />
             <div className="space-y-1">
-              <h3 className="text-sm font-extrabold text-amber-950">
+              <h3 className="text-sm font-extrabold text-[#9A4A2E]">
                 تنبيه مراجع مفقودة أو يتيمة ({overview.totalMissingReferencesCount})
               </h3>
-              <p className="text-xs text-amber-900 leading-relaxed">
+              <p className="text-xs text-[#9A4A2E] leading-relaxed">
                 يوجد {overview.totalMissingReferencesCount} رابط مرجعي يشير إلى سجل لم يعد
                 موجودًا في أرشيف مجموعته المصدرية. يمكنك مراجعتها داخل العناصر أو تنظيفها
                 بأمان دون المساس بأي سجل محفوظ.
@@ -624,7 +624,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
             type="button"
             data-testid="cleanup-all-missing-refs-btn"
             onClick={handleCleanupMissingReferences}
-            className="min-h-[40px] px-4 py-2 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs font-extrabold shrink-0 cursor-pointer transition-colors"
+            className="min-h-[40px] px-4 py-2 rounded-xl bg-[#9A4A2E] hover:bg-[#9A4A2E] text-white text-xs font-extrabold shrink-0 cursor-pointer transition-colors"
           >
             تنظيف المراجع المفقودة ({overview.totalMissingReferencesCount})
           </button>
@@ -638,10 +638,10 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
           data-testid="portfolio-feedback-banner"
           className={`rounded-2xl border p-4 flex items-center justify-between gap-3 text-xs sm:text-sm font-bold ${
             feedbackBanner.type === 'success'
-              ? 'bg-emerald-50 border-emerald-200 text-emerald-900'
+              ? 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
               : feedbackBanner.type === 'error'
                 ? 'bg-red-50 border-red-200 text-red-900'
-                : 'bg-blue-50 border-blue-200 text-blue-900'
+                : 'bg-[#DCEAF5] border-[#E2E5E6] text-[#416B91]'
           }`}
         >
           <span>{feedbackBanner.message}</span>
@@ -664,7 +664,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         >
           <div className="flex items-center justify-between gap-3 border-b border-stone-100 pb-3">
             <div className="flex items-center gap-2">
-              <History className="w-5 h-5 text-[#2563EB]" aria-hidden="true" />
+              <History className="w-5 h-5 text-[#416B91]" aria-hidden="true" />
               <h3 className="text-base font-extrabold text-stone-900">
                 سجل تدقيق فك الارتباط عند حذف السجلات المصدرية
               </h3>
@@ -742,8 +742,8 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   onClick={() => setSelectedElementId(el.id)}
                   className={`rounded-2xl border-2 p-4 transition-all cursor-pointer ${
                     isSelected
-                      ? 'border-[#2563EB] bg-[#EFF6FF]/60 shadow-xs'
-                      : 'border-stone-200 bg-white hover:border-[#93C5FD]'
+                      ? 'border-[#416B91] bg-[#DCEAF5]/60 shadow-xs'
+                      : 'border-stone-200 bg-white hover:border-[#B8D2E8]'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3">
@@ -751,9 +751,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                       <span
                         className={`w-8 h-8 rounded-xl text-xs font-extrabold flex items-center justify-center shrink-0 ${
                           isSelected
-                            ? 'bg-[#2563EB] text-white'
+                            ? 'bg-[#376B70] text-white'
                             : el.hasAnyEvidences
-                              ? 'bg-emerald-600 text-white'
+                              ? 'bg-[#2F6846] text-white'
                               : 'bg-stone-100 text-stone-700'
                         }`}
                       >
@@ -771,7 +771,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                             data-testid={`portfolio-element-count-${el.number}`}
                             className={`px-2.5 py-0.5 rounded-lg text-[11px] font-extrabold border ${
                               el.hasAnyEvidences
-                                ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                                ? 'bg-[#EEF5EE] text-[#2F6846] border-[#C5DCC7]'
                                 : 'bg-stone-100 text-stone-600 border-stone-200'
                             }`}
                           >
@@ -788,7 +788,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           </span>
 
                           {el.missingLinksCount > 0 && (
-                            <span className="px-2 py-0.5 rounded-lg bg-amber-100 text-amber-900 text-[11px] font-extrabold">
+                            <span className="px-2 py-0.5 rounded-lg bg-[#F9E4DA] text-[#9A4A2E] text-[11px] font-extrabold">
                               {el.missingLinksCount} مرجع مفقود
                             </span>
                           )}
@@ -804,7 +804,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           e.stopPropagation();
                           handleOpenStandaloneCreate(el);
                         }}
-                        className="min-h-[34px] px-2.5 py-1 rounded-xl border border-[#BFDBFE] bg-[#EFF6FF] hover:bg-[#DBEAFE] text-[#1D4ED8] text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
+                        className="min-h-[34px] px-2.5 py-1 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-[#335675] text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
                       >
                         <FilePlus2 className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>شاهد مستقل</span>
@@ -817,7 +817,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           e.stopPropagation();
                           handleOpenPickerForElement(el.id);
                         }}
-                        className="min-h-[34px] px-2.5 py-1 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
+                        className="min-h-[34px] px-2.5 py-1 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
                       >
                         <Plus className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>ربط سجل</span>
@@ -833,11 +833,11 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         {/* Right/Left Column: Active Element Linked Records, Standalone Evidences & Actions (7 cols on lg) */}
         <div
           data-testid="portfolio-active-element-panel"
-          className="lg:col-span-7 bg-white rounded-2xl border border-[#BFDBFE] p-5 sm:p-6 space-y-5 shadow-2xs"
+          className="lg:col-span-7 bg-white rounded-2xl border border-[#E2E5E6] p-5 sm:p-6 space-y-5 shadow-2xs"
         >
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-stone-100 pb-4">
             <div className="space-y-1">
-              <div className="inline-flex items-center gap-2 text-xs font-extrabold text-[#2563EB]">
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold text-[#416B91]">
                 <span>العنصر الوظيفي ({activeElement.number} من ١١)</span>
                 <span>·</span>
                 <span>
@@ -857,7 +857,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                 type="button"
                 data-testid="active-element-create-standalone-btn"
                 onClick={() => handleOpenStandaloneCreate(activeElement)}
-                className="min-h-[42px] px-4 py-2 rounded-xl border border-[#2563EB] bg-[#EFF6FF] hover:bg-[#DBEAFE] text-[#1D4ED8] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
+                className="min-h-[42px] px-4 py-2 rounded-xl border border-[#416B91] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-[#335675] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
               >
                 <FilePlus2 className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>إنشاء شاهد مستقل</span>
@@ -867,7 +867,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                 type="button"
                 data-testid="active-element-link-record-btn"
                 onClick={() => handleOpenPickerForElement(activeElement.id)}
-                className="min-h-[42px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
+                className="min-h-[42px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
               >
                 <Link2 className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>ربط سجل موجود</span>
@@ -881,7 +881,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               data-testid="active-element-empty-state"
               className="rounded-2xl border border-dashed border-stone-300 bg-stone-50/70 p-8 text-center space-y-3"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#EFF6FF] text-[#2563EB] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] text-[#416B91] flex items-center justify-center mx-auto">
                 <FolderKanban className="w-6 h-6" aria-hidden="true" />
               </div>
               <h4 className="text-sm sm:text-base font-extrabold text-stone-800">
@@ -896,7 +896,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   type="button"
                   data-testid="empty-state-create-standalone-btn"
                   onClick={() => handleOpenStandaloneCreate(activeElement)}
-                  className="min-h-[42px] px-4 py-2 rounded-xl border border-[#2563EB] bg-white hover:bg-[#EFF6FF] text-[#1D4ED8] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
+                  className="min-h-[42px] px-4 py-2 rounded-xl border border-[#416B91] bg-white hover:bg-[#DCEAF5] text-[#335675] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
                 >
                   <FilePlus2 className="w-4 h-4" aria-hidden="true" />
                   <span>إنشاء شاهد مستقل</span>
@@ -906,7 +906,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   type="button"
                   data-testid="empty-state-open-picker-btn"
                   onClick={() => handleOpenPickerForElement(activeElement.id)}
-                  className="min-h-[42px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
+                  className="min-h-[42px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors"
                 >
                   <Plus className="w-4 h-4" aria-hidden="true" />
                   <span>ربط سجل من المجموعات السبع</span>
@@ -925,19 +925,19 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   <article
                     key={ev.id}
                     data-testid={`standalone-evidence-card-${ev.id}`}
-                    className="rounded-2xl border border-stone-200 hover:border-[#93C5FD] bg-white p-4 sm:p-5 space-y-3 transition-all"
+                    className="rounded-2xl border border-stone-200 hover:border-[#B8D2E8] bg-white p-4 sm:p-5 space-y-3 transition-all"
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div className="space-y-1.5 min-w-0">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="px-2.5 py-0.5 rounded-lg bg-[#EFF6FF] text-[#1D4ED8] border border-[#BFDBFE] text-[11px] font-extrabold">
+                          <span className="px-2.5 py-0.5 rounded-lg bg-[#DCEAF5] text-[#335675] border border-[#E2E5E6] text-[11px] font-extrabold">
                             شاهد مستقل
                           </span>
                           <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 text-stone-700 text-[11px] font-bold">
                             {stItem.typeLabel}
                           </span>
                           {stItem.attachmentsCount > 0 && (
-                            <span className="px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold inline-flex items-center gap-1">
+                            <span className="px-2.5 py-0.5 rounded-lg bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-[11px] font-bold inline-flex items-center gap-1">
                               <ImageIcon className="w-3 h-3" aria-hidden="true" />
                               <span>{stItem.attachmentsCount} صورة</span>
                             </span>
@@ -980,9 +980,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           type="button"
                           data-testid={`preview-standalone-evidence-${ev.id}-btn`}
                           onClick={() => setPreviewedStandaloneItem(stItem)}
-                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#2563EB] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#416B91] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
                         >
-                          <Eye className="w-3.5 h-3.5 text-[#2563EB]" />
+                          <Eye className="w-3.5 h-3.5 text-[#416B91]" />
                           <span>معاينة</span>
                         </button>
 
@@ -992,9 +992,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           onClick={() =>
                             handleOpenStandaloneEdit(activeElement, stItem)
                           }
-                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#2563EB] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#416B91] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
                         >
-                          <Edit3 className="w-3.5 h-3.5 text-[#2563EB]" />
+                          <Edit3 className="w-3.5 h-3.5 text-[#416B91]" />
                           <span>تعديل</span>
                         </button>
 
@@ -1016,7 +1016,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
 
                     {ev.impact && (
                       <div className="rounded-xl bg-stone-50 border border-stone-200 px-3.5 py-2.5 text-xs text-stone-800">
-                        <span className="font-extrabold text-[#1E40AF]">
+                        <span className="font-extrabold text-[#294660]">
                           الأثر أو النتيجة المتحققة:{' '}
                         </span>
                         <span>{ev.impact}</span>
@@ -1036,19 +1036,19 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                     <article
                       key={itemKey}
                       data-testid={`missing-linked-record-${item.ref.sourceRecordId}`}
-                      className="rounded-2xl border-2 border-amber-300 bg-amber-50/70 p-4 sm:p-5 space-y-3"
+                      className="rounded-2xl border-2 border-[#E8C9BA] bg-[#FDF2ED] p-4 sm:p-5 space-y-3"
                     >
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div className="space-y-1">
-                          <span className="px-2.5 py-0.5 rounded-lg bg-amber-200 text-amber-950 text-[11px] font-extrabold">
+                          <span className="px-2.5 py-0.5 rounded-lg bg-[#F2D3C4] text-[#9A4A2E] text-[11px] font-extrabold">
                             مرجع مفقود أو محذوف من مصدره الأصلي
                           </span>
-                          <h4 className="text-sm font-extrabold text-amber-950">
+                          <h4 className="text-sm font-extrabold text-[#9A4A2E]">
                             المجموعة المصدرية: {item.groupTitle} (معرّف السجل:{' '}
                             {item.ref.sourceRecordId})
                           </h4>
                           {item.matchingDeletionAuditEntry && (
-                            <p className="text-xs text-amber-900">
+                            <p className="text-xs text-[#9A4A2E]">
                               سجل التدقيق:{' '}
                               {item.matchingDeletionAuditEntry.deletedRecordTitle ||
                                 ''}{' '}
@@ -1061,7 +1061,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           type="button"
                           data-testid={`unlink-missing-record-${item.ref.sourceRecordId}-btn`}
                           onClick={() => setPendingUnlinkItem(item)}
-                          className="min-h-[38px] px-3.5 py-1.5 rounded-xl bg-amber-800 hover:bg-amber-900 text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer"
+                          className="min-h-[38px] px-3.5 py-1.5 rounded-xl bg-[#9A4A2E] hover:bg-[#7D3A22] text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer"
                         >
                           <Trash2 className="w-3.5 h-3.5" aria-hidden="true" />
                           <span>إزالة المرجع المفقود</span>
@@ -1076,19 +1076,19 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   <article
                     key={itemKey}
                     data-testid={`linked-record-card-${rec.id}`}
-                    className="rounded-2xl border border-stone-200 hover:border-[#93C5FD] bg-stone-50/40 p-4 sm:p-5 space-y-4 transition-all"
+                    className="rounded-2xl border border-stone-200 hover:border-[#B8D2E8] bg-stone-50/40 p-4 sm:p-5 space-y-4 transition-all"
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div className="space-y-1.5">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="px-2.5 py-0.5 rounded-lg bg-[#EFF6FF] text-[#1D4ED8] border border-[#BFDBFE] text-[11px] font-extrabold">
+                          <span className="px-2.5 py-0.5 rounded-lg bg-[#DCEAF5] text-[#335675] border border-[#E2E5E6] text-[11px] font-extrabold">
                             {item.groupTitle}
                           </span>
                           <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 text-stone-700 text-[11px] font-bold">
                             {item.formTitle}
                           </span>
                           {item.attachmentsCount > 0 && (
-                            <span className="px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold inline-flex items-center gap-1">
+                            <span className="px-2.5 py-0.5 rounded-lg bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-[11px] font-bold inline-flex items-center gap-1">
                               <ImageIcon className="w-3 h-3" aria-hidden="true" />
                               <span>{item.attachmentsCount} مرفق/صورة</span>
                             </span>
@@ -1108,9 +1108,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           type="button"
                           data-testid={`preview-linked-record-${rec.id}-btn`}
                           onClick={() => setPreviewedItem(item)}
-                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#2563EB] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#416B91] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
                         >
-                          <Eye className="w-3.5 h-3.5 text-[#2563EB]" />
+                          <Eye className="w-3.5 h-3.5 text-[#416B91]" />
                           <span>معاينة الشاهد</span>
                         </button>
 
@@ -1124,9 +1124,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                                 rec.formId
                               )
                             }
-                            className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#2563EB] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+                            className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#416B91] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
                           >
-                            <ExternalLink className="w-3.5 h-3.5 text-[#2563EB]" />
+                            <ExternalLink className="w-3.5 h-3.5 text-[#416B91]" />
                             <span>المجموعة الأصلية</span>
                           </button>
                         )}
@@ -1135,9 +1135,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           type="button"
                           data-testid={`edit-note-btn-${rec.id}`}
                           onClick={() => handleStartEditNote(item)}
-                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#2563EB] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+                          className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-200 hover:border-[#416B91] text-xs font-bold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
                         >
-                          <Edit3 className="w-3.5 h-3.5 text-[#2563EB]" />
+                          <Edit3 className="w-3.5 h-3.5 text-[#416B91]" />
                           <span>
                             {item.ref.note ? 'تعديل الملاحظة' : 'إضافة ملاحظة'}
                           </span>
@@ -1178,7 +1178,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                     {isEditingNote ? (
                       <div
                         data-testid={`note-editor-${rec.id}`}
-                        className="rounded-xl bg-[#EFF6FF]/70 border border-[#BFDBFE] p-3.5 space-y-2.5"
+                        className="rounded-xl bg-[#DCEAF5]/70 border border-[#E2E5E6] p-3.5 space-y-2.5"
                       >
                         <label
                           htmlFor={`note-input-${rec.id}`}
@@ -1193,7 +1193,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                           value={editingNoteText}
                           onChange={(e) => setEditingNoteText(e.target.value)}
                           placeholder="اكتب توضيحًا مختصرًا لكيفية ارتباط هذا السجل بعنصر الأداء الوظيفي..."
-                          className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                          className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                         />
                         <div className="flex items-center justify-end gap-2">
                           <button
@@ -1211,7 +1211,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                             type="button"
                             data-testid={`save-note-btn-${rec.id}`}
                             onClick={() => handleSaveEditedNote(item)}
-                            className="min-h-[34px] px-3.5 py-1 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold cursor-pointer"
+                            className="min-h-[34px] px-3.5 py-1 rounded-lg bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold cursor-pointer"
                           >
                             حفظ الملاحظة
                           </button>
@@ -1221,9 +1221,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                       item.ref.note && (
                         <div
                           data-testid={`linked-record-note-${rec.id}`}
-                          className="rounded-xl bg-[#EFF6FF]/60 border border-[#BFDBFE] px-3.5 py-2.5 text-xs text-stone-800"
+                          className="rounded-xl bg-[#DCEAF5]/60 border border-[#E2E5E6] px-3.5 py-2.5 text-xs text-stone-800"
                         >
-                          <span className="font-extrabold text-[#1E40AF]">
+                          <span className="font-extrabold text-[#294660]">
                             الملاحظة التوثيقية:{' '}
                           </span>
                           <span>{item.ref.note}</span>
@@ -1251,9 +1251,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
         >
           <div className="bg-white rounded-2xl border border-stone-200 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-xl overflow-hidden">
             {/* Modal Header */}
-            <div className="p-4 sm:p-5 border-b border-stone-100 flex items-start justify-between gap-3 bg-[#EFF6FF]/50">
+            <div className="p-4 sm:p-5 border-b border-stone-100 flex items-start justify-between gap-3 bg-[#DCEAF5]/50">
               <div className="space-y-1">
-                <span className="text-xs font-extrabold text-[#2563EB]">
+                <span className="text-xs font-extrabold text-[#416B91]">
                   إضافة شاهد مرجعي إلى العنصر ({activeElement.number})
                 </span>
                 <h3
@@ -1293,7 +1293,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                     value={pickerSearchQuery}
                     onChange={(e) => setPickerSearchQuery(e.target.value)}
                     placeholder="ابحث بعنوان السجل أو نوع النموذج أو التاريخ..."
-                    className="w-full min-h-[42px] pr-10 pl-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[42px] pr-10 pl-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
 
@@ -1311,7 +1311,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                         e.target.value as TeacherArchiveGroupId | 'all'
                       )
                     }
-                    className="w-full min-h-[42px] pr-10 pl-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[42px] pr-10 pl-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-[#416B91]"
                   >
                     <option value="all">
                       جميع المجموعات السبع المعتمدة (١–٧)
@@ -1354,12 +1354,12 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                     <article
                       key={recKey}
                       data-testid={`picker-record-item-${item.record.id}`}
-                      className="rounded-2xl border border-stone-200 p-4 space-y-3 bg-white hover:border-[#93C5FD] transition-all"
+                      className="rounded-2xl border border-stone-200 p-4 space-y-3 bg-white hover:border-[#B8D2E8] transition-all"
                     >
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="px-2.5 py-0.5 rounded-lg bg-[#EFF6FF] text-[#1D4ED8] text-[11px] font-extrabold">
+                            <span className="px-2.5 py-0.5 rounded-lg bg-[#DCEAF5] text-[#335675] text-[11px] font-extrabold">
                               {item.groupTitle}
                             </span>
                             <span className="px-2.5 py-0.5 rounded-lg bg-stone-100 text-stone-700 text-[11px] font-bold">
@@ -1379,7 +1379,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                         {isAlreadyLinkedHere ? (
                           <span
                             data-testid={`picker-already-linked-badge-${item.record.id}`}
-                            className="px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-extrabold inline-flex items-center gap-1.5"
+                            className="px-3 py-1.5 rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] text-[#2F6846] text-xs font-extrabold inline-flex items-center gap-1.5"
                           >
                             <CheckCircle2 className="w-4 h-4" />
                             <span>مرتبط بهذا العنصر</span>
@@ -1389,7 +1389,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                             type="button"
                             data-testid={`picker-link-record-btn-${item.record.id}`}
                             onClick={() => handleLinkRecord(item)}
-                            className="min-h-[38px] px-4 py-1.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+                            className="min-h-[38px] px-4 py-1.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold inline-flex items-center gap-1.5 cursor-pointer transition-colors"
                           >
                             <Link2 className="w-3.5 h-3.5" />
                             <span>ربط بالعنصر ({activeElement.number})</span>
@@ -1411,7 +1411,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                               }))
                             }
                             placeholder="ملاحظة توثيقية اختيارية عند الربط (مثال: يوثق تنفيذ استراتيجية التعلم التعاوني للصف الخامس)..."
-                            className="w-full min-h-[36px] px-3 py-1.5 rounded-xl border border-stone-200 bg-stone-50 text-xs text-stone-800 focus:outline-none focus:bg-white focus:border-[#2563EB]"
+                            className="w-full min-h-[36px] px-3 py-1.5 rounded-xl border border-stone-200 bg-stone-50 text-xs text-stone-800 focus:outline-none focus:bg-white focus:border-[#416B91]"
                           />
                         </div>
                       )}
@@ -1462,7 +1462,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               </strong>
               ؟
             </p>
-            <p className="text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl p-3 font-bold">
+            <p className="text-xs text-[#2F6846] bg-[#EEF5EE] border border-[#C5DCC7] rounded-xl p-3 font-bold">
               ملاحظة: عملية فك الارتباط تزيل الإشارة المرجعية من هذا العنصر فقط،
               ولا تحذف السجل الأصلي أو تعدله في مجموعته المصدرية.
             </p>
@@ -1501,10 +1501,10 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
           className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
         >
           <div className="bg-white rounded-2xl border border-stone-200 w-full max-w-3xl max-h-[90vh] flex flex-col shadow-xl overflow-hidden">
-            <div className="p-4 sm:p-5 border-b border-stone-100 flex items-start justify-between gap-3 bg-[#EFF6FF]/50">
+            <div className="p-4 sm:p-5 border-b border-stone-100 flex items-start justify-between gap-3 bg-[#DCEAF5]/50">
               <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-lg bg-[#2563EB] text-white text-[11px] font-extrabold">
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#376B70] text-white text-[11px] font-extrabold">
                     {previewedItem.groupTitle}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-lg bg-white border border-stone-200 text-stone-700 text-[11px] font-bold">
@@ -1535,8 +1535,8 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
 
             <div className="p-5 overflow-y-auto space-y-5 flex-1">
               {previewedItem.ref.note && (
-                <div className="rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] p-3.5 text-xs sm:text-sm text-stone-900">
-                  <strong className="text-[#1E40AF]">
+                <div className="rounded-xl bg-[#DCEAF5] border border-[#E2E5E6] p-3.5 text-xs sm:text-sm text-stone-900">
+                  <strong className="text-[#294660]">
                     الملاحظة التوثيقية للارتباط:{' '}
                   </strong>
                   <span>{previewedItem.ref.note}</span>
@@ -1560,7 +1560,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               {/* Hydrated Photos from IndexedDB */}
               <div className="space-y-2.5">
                 <h4 className="text-xs sm:text-sm font-extrabold text-stone-800 flex items-center gap-2">
-                  <ImageIcon className="w-4 h-4 text-[#2563EB]" />
+                  <ImageIcon className="w-4 h-4 text-[#416B91]" />
                   <span>
                     المرفقات والصور المسترجعة من المخزن الأصلي (
                     {previewHydratedPhotos.length})
@@ -1613,7 +1613,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                     setPreviewedItem(null);
                     onNavigateToSourceGroup(grp, fId);
                   }}
-                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
+                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
                 >
                   <ExternalLink className="w-4 h-4" />
                   <span>فتح السجل في مجموعته الأصلية</span>
@@ -1646,9 +1646,9 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
           className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
         >
           <div className="bg-white rounded-2xl border border-stone-200 w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
-            <div className="p-4 sm:p-5 border-b border-stone-100 flex flex-wrap items-center justify-between gap-3 bg-[#EFF6FF]/60">
+            <div className="p-4 sm:p-5 border-b border-stone-100 flex flex-wrap items-center justify-between gap-3 bg-[#DCEAF5]/60">
               <div className="space-y-1">
-                <div className="inline-flex items-center gap-2 text-xs font-extrabold text-[#2563EB]">
+                <div className="inline-flex items-center gap-2 text-xs font-extrabold text-[#416B91]">
                   <BookOpenCheck className="w-4 h-4" />
                   <span>
                     جاهز للتنزيل · إجمالي الصفحات: {generatedPdfResult.pageCount} صفحات
@@ -1668,7 +1668,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   type="button"
                   data-testid="download-unified-portfolio-pdf-btn"
                   onClick={() => handleDownloadGeneratedPdf(generatedPdfResult)}
-                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer"
+                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>تنزيل ملف PDF ({generatedPdfResult.pageCount} صفحات)</span>
@@ -1695,7 +1695,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                   onClick={() => setActivePdfPreviewPage(idx)}
                   className={`min-h-[34px] px-3 py-1 rounded-xl text-xs font-bold shrink-0 cursor-pointer transition-colors ${
                     activePdfPreviewPage === idx
-                      ? 'bg-[#2563EB] text-white'
+                      ? 'bg-[#376B70] text-white'
                       : 'bg-white border border-stone-200 text-stone-700 hover:bg-stone-100'
                   }`}
                 >
@@ -1828,7 +1828,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
             <div className="p-4 sm:p-5 border-b border-stone-100 flex items-start justify-between gap-3 bg-stone-50/80">
               <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-lg bg-[#2563EB] text-white text-[11px] font-extrabold">
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#376B70] text-white text-[11px] font-extrabold">
                     شاهد مستقل داخل العنصر
                   </span>
                   <span className="px-2.5 py-0.5 rounded-lg bg-white border border-stone-200 text-stone-700 text-[11px] font-bold">
@@ -1893,8 +1893,8 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               </div>
 
               {previewedStandaloneItem.evidence.impact && (
-                <div className="rounded-xl border border-[#BFDBFE] bg-[#EFF6FF]/60 p-4 space-y-1.5">
-                  <div className="text-xs font-extrabold text-[#1E40AF]">
+                <div className="rounded-xl border border-[#E2E5E6] bg-[#DCEAF5]/60 p-4 space-y-1.5">
+                  <div className="text-xs font-extrabold text-[#294660]">
                     الأثر أو النتيجة المتحققة
                   </div>
                   <p className="text-xs sm:text-sm text-stone-900 leading-relaxed whitespace-pre-line">
@@ -1906,7 +1906,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               {/* Hydrated Photos */}
               <div className="space-y-2.5">
                 <h4 className="text-xs sm:text-sm font-extrabold text-stone-800 flex items-center gap-2">
-                  <ImageIcon className="w-4 h-4 text-[#2563EB]" />
+                  <ImageIcon className="w-4 h-4 text-[#416B91]" />
                   <span>
                     الصور المرفقة ({previewStandalonePhotos.length})
                   </span>
@@ -1942,7 +1942,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
               {previewedStandaloneItem.electronicLinks.length > 0 && (
                 <div className="space-y-2">
                   <h4 className="text-xs sm:text-sm font-extrabold text-stone-800 flex items-center gap-2">
-                    <QrCode className="w-4 h-4 text-[#2563EB]" />
+                    <QrCode className="w-4 h-4 text-[#416B91]" />
                     <span>
                       الروابط الإلكترونية ({previewedStandaloneItem.electronicLinks.length})
                     </span>
@@ -1975,7 +1975,7 @@ export const TeacherPortfolioHub: React.FC<TeacherPortfolioHubProps> = ({
                     handleOpenStandaloneEdit(elObj, target);
                   }
                 }}
-                className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
+                className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
               >
                 <Edit3 className="w-4 h-4" />
                 <span>تعديل الشاهد</span>

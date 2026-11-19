@@ -16,6 +16,17 @@ import {
   Sparkles,
   Users,
 } from 'lucide-react';
+import {
+  ArrowLeftLineIcon,
+  ClassroomVisitLineIcon,
+  EvidenceLineIcon,
+  FormsLineIcon,
+  LessonsLineIcon,
+  PerformanceLineIcon,
+  PlansLineIcon,
+  ReportsLineIcon,
+  ResultsLineIcon,
+} from '../brand/MaktbyIcons';
 import { useSettings } from '../../context/SettingsContext';
 import { SECTIONS } from '../../data/sections';
 import {
@@ -400,7 +411,7 @@ export const TeacherSectionHub: React.FC = () => {
       <section
         aria-labelledby="professional-reports-catalog-heading"
         data-testid="teacher-professional-reports-catalog"
-        className="bg-white rounded-2xl border border-[#BFDBFE] p-6 sm:p-8 space-y-6"
+        className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <button
@@ -433,7 +444,7 @@ export const TeacherSectionHub: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
             <FolderKanban className="w-3.5 h-3.5" aria-hidden="true" />
             <span>قسم المعلم · مجموعة التقارير المعتمدة</span>
           </div>
@@ -454,14 +465,14 @@ export const TeacherSectionHub: React.FC = () => {
             <article
               key={reportItem.id}
               data-testid={`teacher-report-card-${reportItem.id}`}
-              className="rounded-2xl border border-[#BFDBFE] bg-white hover:border-[#2563EB] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
+              className="rounded-2xl border border-[#E2E5E6] bg-white hover:border-[#416B91] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#DCEAF5] text-[#416B91] border border-[#E2E5E6] flex items-center justify-center shrink-0">
                     {renderReportIcon(reportItem.id)}
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-extrabold border border-[#BFDBFE]">
+                  <span className="px-3 py-1 rounded-full bg-[#DCEAF5] text-[#416B91] text-xs font-extrabold border border-[#E2E5E6]">
                     {reportItem.badge}
                   </span>
                 </div>
@@ -482,7 +493,7 @@ export const TeacherSectionHub: React.FC = () => {
                       className="text-xs text-stone-700 flex items-center gap-2"
                     >
                       <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#2563EB] shrink-0"
+                        className="w-3.5 h-3.5 text-[#416B91] shrink-0"
                         aria-hidden="true"
                       />
                       <span>{hl}</span>
@@ -495,7 +506,7 @@ export const TeacherSectionHub: React.FC = () => {
                 type="button"
                 data-testid={`select-teacher-report-${reportItem.id}`}
                 onClick={() => handleOpenReportForm(reportItem.id)}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white"
               >
                 <span>فتح النموذج وتعبئة البيانات</span>
                 <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -513,7 +524,7 @@ export const TeacherSectionHub: React.FC = () => {
       <section
         aria-labelledby="plans-hub-heading"
         data-testid="teacher-plans-hub"
-        className="bg-white rounded-2xl border border-[#BFDBFE] p-6 sm:p-8 space-y-6"
+        className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <button
@@ -546,7 +557,7 @@ export const TeacherSectionHub: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
             <CalendarRange className="w-3.5 h-3.5" aria-hidden="true" />
             <span>قسم المعلم · مجموعة الخطط المعتمدة</span>
           </div>
@@ -566,18 +577,18 @@ export const TeacherSectionHub: React.FC = () => {
             <article
               key={pathItem.id}
               data-testid={`plans-path-card-${pathItem.id}`}
-              className="rounded-2xl border border-[#BFDBFE] bg-white hover:border-[#2563EB] p-6 sm:p-7 flex flex-col justify-between gap-5 transition-all shadow-2xs"
+              className="rounded-2xl border border-[#E2E5E6] bg-white hover:border-[#416B91] p-6 sm:p-7 flex flex-col justify-between gap-5 transition-all shadow-2xs"
             >
               <div className="space-y-4">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="w-13 h-13 rounded-xl bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+                  <div className="w-13 h-13 rounded-xl bg-[#DCEAF5] text-[#416B91] border border-[#E2E5E6] flex items-center justify-center shrink-0">
                     {pathItem.id === 'teacher-plans' ? (
                       <CalendarRange className="w-6 h-6" aria-hidden="true" />
                     ) : (
                       <Users className="w-6 h-6" aria-hidden="true" />
                     )}
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-extrabold border border-[#BFDBFE]">
+                  <span className="px-3 py-1 rounded-full bg-[#DCEAF5] text-[#416B91] text-xs font-extrabold border border-[#E2E5E6]">
                     {pathItem.badge}
                   </span>
                 </div>
@@ -598,7 +609,7 @@ export const TeacherSectionHub: React.FC = () => {
                       className="text-xs text-stone-700 flex items-center gap-2"
                     >
                       <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#2563EB] shrink-0"
+                        className="w-3.5 h-3.5 text-[#416B91] shrink-0"
                         aria-hidden="true"
                       />
                       <span>{hl}</span>
@@ -611,7 +622,7 @@ export const TeacherSectionHub: React.FC = () => {
                 type="button"
                 data-testid={`select-path-${pathItem.id}`}
                 onClick={() => handleOpenPlanPath(pathItem.id)}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white"
               >
                 <span>فتح مسار {pathItem.title}</span>
                 <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -634,7 +645,7 @@ export const TeacherSectionHub: React.FC = () => {
       <section
         aria-labelledby="plan-path-heading"
         data-testid={`teacher-plan-path-${selectedPlanPathId}`}
-        className="bg-white rounded-2xl border border-[#BFDBFE] p-6 sm:p-8 space-y-6"
+        className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <div className="flex flex-wrap items-center gap-2">
@@ -683,7 +694,7 @@ export const TeacherSectionHub: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
             <CalendarRange className="w-3.5 h-3.5" aria-hidden="true" />
             <span>
               قسم المعلم · الخطط · {pathMeta?.title} ({pathPlans.length} نماذج
@@ -706,20 +717,20 @@ export const TeacherSectionHub: React.FC = () => {
             <article
               key={planItem.id}
               data-testid={`teacher-plan-card-${planItem.id}`}
-              className="rounded-2xl border border-[#BFDBFE] bg-white hover:border-[#2563EB] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
+              className="rounded-2xl border border-[#E2E5E6] bg-white hover:border-[#416B91] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#DCEAF5] text-[#416B91] border border-[#E2E5E6] flex items-center justify-center shrink-0">
                     {renderPlanIcon(planItem.id)}
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
                     {planItem.targetPagesLabel && (
-                      <span className="px-2.5 py-1 rounded-full bg-[#EFF6FF] text-[#1E3A8A] text-[11px] font-bold border border-[#BFDBFE]">
+                      <span className="px-2.5 py-1 rounded-full bg-[#DCEAF5] text-[#294660] text-[11px] font-bold border border-[#E2E5E6]">
                         {planItem.targetPagesLabel}
                       </span>
                     )}
-                    <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-extrabold border border-[#BFDBFE]">
+                    <span className="px-3 py-1 rounded-full bg-[#DCEAF5] text-[#416B91] text-xs font-extrabold border border-[#E2E5E6]">
                       {planItem.badge}
                     </span>
                   </div>
@@ -741,7 +752,7 @@ export const TeacherSectionHub: React.FC = () => {
                       className="text-xs text-stone-700 flex items-center gap-2"
                     >
                       <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#2563EB] shrink-0"
+                        className="w-3.5 h-3.5 text-[#416B91] shrink-0"
                         aria-hidden="true"
                       />
                       <span>{hl}</span>
@@ -754,7 +765,7 @@ export const TeacherSectionHub: React.FC = () => {
                 type="button"
                 data-testid={`select-teacher-plan-${planItem.id}`}
                 onClick={() => handleOpenPlanForm(planItem.id)}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white"
               >
                 <span>فتح الخطة وتعبئة البيانات</span>
                 <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -780,7 +791,7 @@ export const TeacherSectionHub: React.FC = () => {
       <section
         aria-labelledby="meeting-visit-group-heading"
         data-testid={`teacher-group-view-${selectedMeetingVisitGroupId}`}
-        className="bg-white rounded-2xl border border-[#BFDBFE] p-6 sm:p-8 space-y-6"
+        className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <button
@@ -813,7 +824,7 @@ export const TeacherSectionHub: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
             {selectedMeetingVisitGroupId === 'meetings-and-committees' ? (
               <ClipboardList className="w-3.5 h-3.5" aria-hidden="true" />
             ) : (
@@ -837,18 +848,18 @@ export const TeacherSectionHub: React.FC = () => {
             <article
               key={modelItem.id}
               data-testid={`teacher-meeting-visit-card-${modelItem.id}`}
-              className="rounded-2xl border border-[#BFDBFE] bg-white hover:border-[#2563EB] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
+              className="rounded-2xl border border-[#E2E5E6] bg-white hover:border-[#416B91] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#DCEAF5] text-[#416B91] border border-[#E2E5E6] flex items-center justify-center shrink-0">
                     {modelItem.id === 'meeting-minutes' ? (
                       <ClipboardList className="w-6 h-6" aria-hidden="true" />
                     ) : (
                       <Handshake className="w-6 h-6" aria-hidden="true" />
                     )}
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-extrabold border border-[#BFDBFE]">
+                  <span className="px-3 py-1 rounded-full bg-[#DCEAF5] text-[#416B91] text-xs font-extrabold border border-[#E2E5E6]">
                     {modelItem.badge}
                   </span>
                 </div>
@@ -869,7 +880,7 @@ export const TeacherSectionHub: React.FC = () => {
                       className="text-xs text-stone-700 flex items-center gap-2"
                     >
                       <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#2563EB] shrink-0"
+                        className="w-3.5 h-3.5 text-[#416B91] shrink-0"
                         aria-hidden="true"
                       />
                       <span>{hl}</span>
@@ -884,7 +895,7 @@ export const TeacherSectionHub: React.FC = () => {
                 onClick={() =>
                   handleOpenMeetingVisitForm(modelItem.id, modelItem.groupId)
                 }
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white"
               >
                 <span>فتح النموذج وتعبئة البيانات</span>
                 <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -902,7 +913,7 @@ export const TeacherSectionHub: React.FC = () => {
       <section
         aria-labelledby="tests-evaluation-group-heading"
         data-testid="teacher-group-view-tests-and-evaluation"
-        className="bg-white rounded-2xl border border-[#BFDBFE] p-6 sm:p-8 space-y-6"
+        className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <button
@@ -935,7 +946,7 @@ export const TeacherSectionHub: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
             <FileCheck2 className="w-3.5 h-3.5" aria-hidden="true" />
             <span>قسم المعلم · {TEACHER_TESTS_AND_EVALUATION_GROUP.title}</span>
           </div>
@@ -955,18 +966,18 @@ export const TeacherSectionHub: React.FC = () => {
             <article
               key={modelItem.id}
               data-testid={`teacher-test-eval-card-${modelItem.id}`}
-              className="rounded-2xl border border-[#BFDBFE] bg-white hover:border-[#2563EB] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
+              className="rounded-2xl border border-[#E2E5E6] bg-white hover:border-[#416B91] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#DCEAF5] text-[#416B91] border border-[#E2E5E6] flex items-center justify-center shrink-0">
                     {modelItem.id === 'internal-test-execution' ? (
                       <FileCheck2 className="w-6 h-6" aria-hidden="true" />
                     ) : (
                       <ClipboardCheck className="w-6 h-6" aria-hidden="true" />
                     )}
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-extrabold border border-[#BFDBFE]">
+                  <span className="px-3 py-1 rounded-full bg-[#DCEAF5] text-[#416B91] text-xs font-extrabold border border-[#E2E5E6]">
                     {modelItem.badge}
                   </span>
                 </div>
@@ -987,7 +998,7 @@ export const TeacherSectionHub: React.FC = () => {
                       className="text-xs text-stone-700 flex items-center gap-2"
                     >
                       <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#2563EB] shrink-0"
+                        className="w-3.5 h-3.5 text-[#416B91] shrink-0"
                         aria-hidden="true"
                       />
                       <span>{hl}</span>
@@ -1000,7 +1011,7 @@ export const TeacherSectionHub: React.FC = () => {
                 type="button"
                 data-testid={`select-test-eval-form-${modelItem.id}`}
                 onClick={() => handleOpenTestsEvaluationForm(modelItem.id)}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white"
               >
                 <span>فتح النموذج وتعبئة البيانات</span>
                 <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -1018,7 +1029,7 @@ export const TeacherSectionHub: React.FC = () => {
       <section
         aria-labelledby="programs-activities-group-heading"
         data-testid="teacher-group-view-programs-and-activities"
-        className="bg-white rounded-2xl border border-[#BFDBFE] p-6 sm:p-8 space-y-6"
+        className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <button
@@ -1051,7 +1062,7 @@ export const TeacherSectionHub: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
             <Lightbulb className="w-3.5 h-3.5" aria-hidden="true" />
             <span>
               قسم المعلم · {TEACHER_PROGRAMS_AND_ACTIVITIES_GROUP.title}
@@ -1073,14 +1084,14 @@ export const TeacherSectionHub: React.FC = () => {
             <article
               key={modelItem.id}
               data-testid={`teacher-program-activity-card-${modelItem.id}`}
-              className="rounded-2xl border border-[#BFDBFE] bg-white hover:border-[#2563EB] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
+              className="rounded-2xl border border-[#E2E5E6] bg-white hover:border-[#416B91] p-5 sm:p-6 flex flex-col justify-between gap-5 transition-all shadow-2xs"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#DCEAF5] text-[#416B91] border border-[#E2E5E6] flex items-center justify-center shrink-0">
                     <Lightbulb className="w-6 h-6" aria-hidden="true" />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-extrabold border border-[#BFDBFE]">
+                  <span className="px-3 py-1 rounded-full bg-[#DCEAF5] text-[#416B91] text-xs font-extrabold border border-[#E2E5E6]">
                     {modelItem.badge}
                   </span>
                 </div>
@@ -1101,7 +1112,7 @@ export const TeacherSectionHub: React.FC = () => {
                       className="text-xs text-stone-700 flex items-center gap-2"
                     >
                       <CheckCircle2
-                        className="w-3.5 h-3.5 text-[#2563EB] shrink-0"
+                        className="w-3.5 h-3.5 text-[#416B91] shrink-0"
                         aria-hidden="true"
                       />
                       <span>{hl}</span>
@@ -1114,7 +1125,7 @@ export const TeacherSectionHub: React.FC = () => {
                 type="button"
                 data-testid={`select-program-activity-form-${modelItem.id}`}
                 onClick={() => handleOpenProgramsActivitiesForm(modelItem.id)}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between transition-colors cursor-pointer bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white"
               >
                 <span>فتح النموذج وتعبئة البيانات</span>
                 <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -1133,22 +1144,22 @@ export const TeacherSectionHub: React.FC = () => {
       data-testid="teacher-section-groups-hub"
       className="space-y-6"
     >
-      <div className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-8 space-y-6">
-        <div className="border-b border-stone-100 pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <div className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6">
+        <div className="border-b border-[#E2E5E6] pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div>
             <h2
               id="teacher-groups-heading"
-              className="text-lg sm:text-xl font-extrabold font-display text-stone-900"
+              className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]"
             >
               مجموعات وأقسام المعلم المعتمدة
             </h2>
-            <p className="text-xs sm:text-sm text-stone-500 mt-0.5">
+            <p className="text-xs sm:text-sm text-[#626D72] mt-0.5">
               اختر المجموعة للدخول إلى النماذج المعتمدة وإعداد التقارير والخطط
               والمحاضر والزيارات والاختبارات
             </p>
           </div>
-          <span className="text-xs font-bold text-[#2563EB] bg-[#EFF6FF] px-3 py-1.5 rounded-xl border border-[#BFDBFE]">
-            القالب المعتمد: {activeTemplateDef.name} · {palette.name}
+          <span className="text-xs font-medium text-[#626D72]">
+            القالب المعتمد: <strong className="font-semibold text-[#416B91]">{activeTemplateDef.name}</strong> · {palette.name}
           </span>
         </div>
 
@@ -1161,26 +1172,29 @@ export const TeacherSectionHub: React.FC = () => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }
           }}
-          className="group rounded-2xl border-2 border-[#1D4ED8] bg-gradient-to-l from-[#EFF6FF] via-[#EFF6FF]/60 to-white p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-6 shadow-xs hover:border-[#1E40AF] hover:shadow-md transition-all cursor-pointer"
+          className="group rounded-2xl border border-[#C4D8D6] bg-[#EAF2F1]/45 p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:border-[#376B70] hover:shadow-xs transition-all cursor-pointer"
         >
           <div className="space-y-3 max-w-3xl">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <div className="w-12 h-12 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs">
-                <BookOpenCheck className="w-6 h-6" aria-hidden="true" />
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="w-12 h-12 rounded-2xl bg-[#376B70] text-white flex items-center justify-center shrink-0">
+                <EvidenceLineIcon className="w-6 h-6" />
               </div>
-              <span className="px-3.5 py-1 rounded-full bg-[#1D4ED8] text-white text-xs font-extrabold">
-                الطبقة التجميعية الموحدة • ١١ عنصر أداء وظيفي
-              </span>
-              <span className="px-3 py-1 rounded-full bg-white border border-[#BFDBFE] text-[#1D4ED8] text-xs font-bold">
-                ربط مرجعي مباشر من المجموعات ١–٧ دون تكرار للبيانات
-              </span>
+              <div className="text-xs text-[#626D72] flex flex-wrap items-center gap-2">
+                <span className="font-bold text-[#376B70]">
+                  الطبقة التجميعية الموحدة
+                </span>
+                <span aria-hidden="true" className="text-[#9AA5AA]">·</span>
+                <span>١١ عنصر أداء وظيفي</span>
+                <span aria-hidden="true" className="text-[#9AA5AA]">·</span>
+                <span>ربط مرجعي مباشر من المجموعات ١–٧ دون تكرار</span>
+              </div>
             </div>
 
             <div className="space-y-1.5">
-              <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#1D4ED8] transition-colors">
+              <h3 className="text-xl sm:text-2xl font-extrabold font-display text-[#292F33] group-hover:text-[#315E62] transition-colors">
                 ملف شواهد أداء المعلم الموحد
               </h3>
-              <p className="text-sm text-stone-600 leading-relaxed">
+              <p className="text-sm text-[#626D72] leading-relaxed">
                 تنظيم وربط السجلات المحفوظة في المجموعات السبع المعتمدة بعناصر
                 الأداء الوظيفي الأحد عشر، مع الملاحظات التوثيقية وتصدير ملف شواهد
                 الأداء بصيغة PDF موحدة (الغلاف، الفهرس، أقسام العناصر، وملحق
@@ -1199,15 +1213,15 @@ export const TeacherSectionHub: React.FC = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="w-full lg:w-auto shrink-0 min-h-[48px] px-6 py-3 rounded-xl bg-[#1D4ED8] hover:bg-[#1E40AF] active:bg-[#1E3A8A] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+            className="w-full lg:w-auto shrink-0 min-h-[46px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-center gap-2.5 transition-colors cursor-pointer"
           >
             <span>فتح ملف شواهد الأداء الموحد</span>
-            <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+            <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
           </button>
         </article>
 
         {/* Displaying the 7 approved primary group cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Group Card 1: التقارير المهنية والتعليمية */}
           <article
             data-testid="teacher-group-card-professional-reports"
@@ -1217,39 +1231,31 @@ export const TeacherSectionHub: React.FC = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#416B91]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <FolderKanban className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#416B91] flex items-center justify-center transition-colors">
+                  <ReportsLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
+                <span className="text-xs font-medium text-[#626D72] pt-1">
                   ٥ نماذج مستقلة معتمدة
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#335675] transition-colors">
                   {TEACHER_PROFESSIONAL_REPORTS_GROUP.title}
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   {TEACHER_PROFESSIONAL_REPORTS_GROUP.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    تشتمل على ٥ نماذج متخصصة لتوثيق الأنشطة ومعالجة الفجوات
-                    والتحصيل الدراسي والممارسات والإنجازات المهنية
-                  </span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                تشتمل على ٥ نماذج متخصصة لتوثيق الأنشطة ومعالجة الفجوات
+                والتحصيل الدراسي والممارسات والإنجازات المهنية
+              </p>
             </div>
 
             <button
@@ -1262,10 +1268,10 @@ export const TeacherSectionHub: React.FC = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى التقارير المهنية والتعليمية</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
 
@@ -1278,38 +1284,30 @@ export const TeacherSectionHub: React.FC = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#416B91]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <CalendarRange className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#416B91] flex items-center justify-center transition-colors">
+                  <PlansLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
+                <span className="text-xs font-medium text-[#626D72] pt-1">
                   مساران معتمدان
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#335675] transition-colors">
                   {TEACHER_PLANS_GROUP.title}
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   {TEACHER_PLANS_GROUP.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    تشتمل على مسار «خطط المعلم» ومسار «خطط المعلم للطلاب»
-                  </span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                تشتمل على مسار «خطط المعلم» ومسار «خطط المعلم للطلاب»
+              </p>
             </div>
 
             <button
@@ -1322,10 +1320,10 @@ export const TeacherSectionHub: React.FC = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى قسم الخطط</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
 
@@ -1333,36 +1331,30 @@ export const TeacherSectionHub: React.FC = () => {
           <article
             data-testid="teacher-group-card-meetings"
             onClick={() => handleOpenMeetingVisitGroup('meetings-and-committees')}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#416B91]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <ClipboardList className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#416B91] flex items-center justify-center transition-colors">
+                  <FormsLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
+                <span className="text-xs font-medium text-[#626D72] pt-1">
                   {TEACHER_MEETINGS_GROUP.badge}
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#335675] transition-colors">
                   {TEACHER_MEETINGS_GROUP.title}
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   {TEACHER_MEETINGS_GROUP.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>{TEACHER_MEETINGS_GROUP.summaryHighlight}</span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                {TEACHER_MEETINGS_GROUP.summaryHighlight}
+              </p>
             </div>
 
             <button
@@ -1372,10 +1364,10 @@ export const TeacherSectionHub: React.FC = () => {
                 e.stopPropagation();
                 handleOpenMeetingVisitGroup('meetings-and-committees');
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى الاجتماعات واللجان</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
 
@@ -1383,36 +1375,30 @@ export const TeacherSectionHub: React.FC = () => {
           <article
             data-testid="teacher-group-card-peer-visits"
             onClick={() => handleOpenMeetingVisitGroup('peer-visits-and-exchange')}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#416B91]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <Handshake className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#416B91] flex items-center justify-center transition-colors">
+                  <ClassroomVisitLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
+                <span className="text-xs font-medium text-[#626D72] pt-1">
                   {TEACHER_PEER_VISITS_GROUP.badge}
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#335675] transition-colors">
                   {TEACHER_PEER_VISITS_GROUP.title}
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   {TEACHER_PEER_VISITS_GROUP.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>{TEACHER_PEER_VISITS_GROUP.summaryHighlight}</span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                {TEACHER_PEER_VISITS_GROUP.summaryHighlight}
+              </p>
             </div>
 
             <button
@@ -1422,10 +1408,10 @@ export const TeacherSectionHub: React.FC = () => {
                 e.stopPropagation();
                 handleOpenMeetingVisitGroup('peer-visits-and-exchange');
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى الزيارات والتبادل المهني</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
 
@@ -1433,38 +1419,30 @@ export const TeacherSectionHub: React.FC = () => {
           <article
             data-testid="teacher-group-card-tests-evaluation"
             onClick={handleOpenTestsEvaluationGroup}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#416B91]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <FileCheck2 className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#416B91] flex items-center justify-center transition-colors">
+                  <ResultsLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
+                <span className="text-xs font-medium text-[#626D72] pt-1">
                   {TEACHER_TESTS_AND_EVALUATION_GROUP.badge}
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#335675] transition-colors">
                   {TEACHER_TESTS_AND_EVALUATION_GROUP.title}
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   {TEACHER_TESTS_AND_EVALUATION_GROUP.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    {TEACHER_TESTS_AND_EVALUATION_GROUP.summaryHighlight}
-                  </span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                {TEACHER_TESTS_AND_EVALUATION_GROUP.summaryHighlight}
+              </p>
             </div>
 
             <button
@@ -1474,10 +1452,10 @@ export const TeacherSectionHub: React.FC = () => {
                 e.stopPropagation();
                 handleOpenTestsEvaluationGroup();
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى الاختبارات والتقويم</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
 
@@ -1485,38 +1463,30 @@ export const TeacherSectionHub: React.FC = () => {
           <article
             data-testid="teacher-group-card-programs-activities"
             onClick={handleOpenProgramsActivitiesGroup}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#416B91]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <Lightbulb className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#416B91] flex items-center justify-center transition-colors">
+                  <LessonsLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
+                <span className="text-xs font-medium text-[#626D72] pt-1">
                   {TEACHER_PROGRAMS_AND_ACTIVITIES_GROUP.badge}
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#335675] transition-colors">
                   {TEACHER_PROGRAMS_AND_ACTIVITIES_GROUP.title}
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   {TEACHER_PROGRAMS_AND_ACTIVITIES_GROUP.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    {TEACHER_PROGRAMS_AND_ACTIVITIES_GROUP.summaryHighlight}
-                  </span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                {TEACHER_PROGRAMS_AND_ACTIVITIES_GROUP.summaryHighlight}
+              </p>
             </div>
 
             <button
@@ -1526,10 +1496,10 @@ export const TeacherSectionHub: React.FC = () => {
                 e.stopPropagation();
                 handleOpenProgramsActivitiesGroup();
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى البرامج والأنشطة التعليمية</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
 
@@ -1542,38 +1512,30 @@ export const TeacherSectionHub: React.FC = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="group rounded-2xl border-2 border-[#2563EB] bg-gradient-to-b from-[#EFF6FF]/80 to-white p-6 sm:p-8 flex flex-col justify-between gap-6 shadow-xs hover:border-[#1D4ED8] hover:shadow-md transition-all cursor-pointer"
+            className="group rounded-2xl border border-[#E2E5E6] bg-white p-6 flex flex-col justify-between gap-5 hover:border-[#376B70]/60 hover:shadow-xs transition-all cursor-pointer"
           >
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#2563EB] group-hover:bg-[#1D4ED8] text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  <Award className="w-7 h-7" aria-hidden="true" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EAF2F1] border border-[#C4D8D6] text-[#376B70] group-hover:bg-[#376B70] group-hover:text-white group-hover:border-[#376B70] flex items-center justify-center transition-colors">
+                  <PerformanceLineIcon className="w-6 h-6" />
                 </div>
-                <span className="px-3.5 py-1 rounded-full bg-[#2563EB] text-white text-xs font-extrabold">
-                  المجموعة السابعة • ٣ أنواع شهادات
+                <span className="text-xs font-medium text-[#626D72] pt-1">
+                  المجموعة السابعة · ٣ أنواع شهادات
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-stone-900 group-hover:text-[#2563EB] transition-colors">
+              <div className="space-y-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33] group-hover:text-[#315E62] transition-colors">
                   الشهادات
                 </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-sm text-[#626D72] leading-relaxed">
                   إصدار شهادات الشكر والتقدير، وشهادات التفوق، وشهادات التخرج بثلاثة قوالب احترافية وأربعة أنظمة ألوان وباللغتين العربية والإنجليزية للمستفيد المفرد أو المجموعات.
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-600">
-                <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-[#BFDBFE] font-bold text-[#2563EB]">
-                  <CheckCircle2
-                    className="w-4 h-4 text-[#2563EB]"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    شكر وتقدير • تفوق • تخرج • تصدير PDF أفقي موحد (A4 Landscape)
-                  </span>
-                </span>
-              </div>
+              <p className="text-xs text-[#626D72] leading-relaxed pt-1 border-t border-[#E2E5E6]/60">
+                شكر وتقدير · تفوق · تخرج · تصدير PDF أفقي موحد (A4 Landscape)
+              </p>
             </div>
 
             <button
@@ -1586,10 +1548,10 @@ export const TeacherSectionHub: React.FC = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="w-full sm:w-auto self-start min-h-[48px] px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-sm font-extrabold flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-xs"
+              className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
             >
               <span>الدخول إلى الشهادات</span>
-              <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+              <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
             </button>
           </article>
         </div>

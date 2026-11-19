@@ -563,7 +563,7 @@ export const FormField: React.FC<FormFieldProps> = ({
               </button>
 
               {isRepeatableAtMax && field.maxRows && (
-                <span className="text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5">
+                <span className="text-xs font-semibold text-[#9A4A2E] bg-[#FDF2ED] border border-[#E8C9BA] rounded-lg px-3 py-1.5">
                   تم الوصول إلى الحد الأقصى المسموح ({field.maxRows})
                 </span>
               )}

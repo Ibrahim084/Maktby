@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { SECTIONS } from '../../data/sections';
 import { SchoolSettings } from '../../types';
 import {
@@ -22,6 +22,90 @@ interface ReportTemplateProps {
   values: FormValues;
   settings: SchoolSettings;
 }
+
+interface SingleLineAutoFitRecipientProps {
+  text: string;
+  testId: string;
+}
+
+/**
+ * Renders the certificate recipient name on ONE independent centered non-wrapping line,
+ * dynamically scaling font size down for long names while enforcing a readable floor.
+ */
+const SingleLineAutoFitRecipient: React.FC<SingleLineAutoFitRecipientProps> = ({
+  text,
+  testId,
+}) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+  const [fontSizePx, setFontSizePx] = useState<number | null>(null);
+  const [scaleX, setScaleX] = useState<number>(1);
+
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    const textEl = textRef.current;
+    if (!container || !textEl) return;
+
+    const fit = () => {
+      const availableWidth = container.clientWidth;
+      if (availableWidth <= 0) return;
+
+      // Base proportional font size matching the 2400px canvas 44px scale (~3.0% of safe box width)
+      const baseSize = Math.max(9.5, Math.min(23, availableWidth * 0.031));
+      const minReadableSize = Math.max(7.5, Math.min(13, baseSize * 0.545));
+
+      let size = baseSize;
+      textEl.style.fontSize = `${size}px`;
+      textEl.style.transform = 'none';
+
+      const naturalWidth = textEl.scrollWidth;
+      if (naturalWidth > availableWidth && naturalWidth > 0) {
+        const ratio = (availableWidth / naturalWidth) * 0.985;
+        size = Math.max(minReadableSize, Number((baseSize * ratio).toFixed(2)));
+        textEl.style.fontSize = `${size}px`;
+      }
+
+      const fittedWidth = textEl.scrollWidth;
+      const nextScaleX =
+        fittedWidth > availableWidth && fittedWidth > 0
+          ? Number(((availableWidth / fittedWidth) * 0.99).toFixed(3))
+          : 1;
+
+      setFontSizePx(size);
+      setScaleX(nextScaleX);
+    };
+
+    fit();
+
+    if (typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver(() => fit());
+      observer.observe(container);
+      return () => observer.disconnect();
+    }
+  }, [text]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="w-full flex items-center justify-center overflow-hidden px-1"
+    >
+      <p
+        ref={textRef}
+        data-testid={testId}
+        data-single-line="true"
+        data-auto-fit-font-size={fontSizePx ? fontSizePx.toFixed(2) : undefined}
+        className="whitespace-nowrap font-extrabold leading-tight text-[#14191C] origin-center"
+        style={{
+          fontFamily: '"Tajawal", "Cairo", sans-serif',
+          fontSize: fontSizePx ? `${fontSizePx}px` : 'clamp(8px, 2cqw, 22px)',
+          transform: scaleX < 1 ? `scaleX(${scaleX})` : undefined,
+        }}
+      >
+        {text}
+      </p>
+    </div>
+  );
+};
 
 export const ReportTemplate: React.FC<ReportTemplateProps> = ({
   form,
@@ -110,7 +194,7 @@ export const ReportTemplate: React.FC<ReportTemplateProps> = ({
               data-certificate-item="true"
               data-certificate-variant={variant}
               data-certificate-gender={gendered.gender}
-              className="report-print-sheet [container-type:inline-size] relative w-full max-w-[297mm] aspect-[297/210] bg-white text-zinc-900 mx-auto overflow-hidden border border-stone-200 rounded-xl print:border-0 print:rounded-none select-none print:break-after-page last:print:break-after-auto"
+              className="report-print-sheet [container-type:inline-size] relative w-full max-w-[297mm] aspect-[297/210] bg-white text-[#292F33] mx-auto overflow-hidden border border-[#E2E5E6] rounded-xl print:border-0 print:rounded-none select-none print:break-after-page last:print:break-after-auto"
             >
               {/* Clean High-Resolution Official Background Image (MoE Logo, Gold Seal, Left Hexagons, Right Honeycomb Cells, Bottom Gradient Line) */}
               <img
@@ -125,21 +209,30 @@ export const ReportTemplate: React.FC<ReportTemplateProps> = ({
                 {/* Main Central Certificate Lines (Positioned to match the official reference template) */}
                 <div
                   data-testid={`certificate-body-text-${certIndex + 1}`}
-                  className="w-[66%] mx-auto mt-[18.5%] text-center space-y-[1.8%] text-[#18181b] font-bold leading-relaxed"
+                  className="w-[62%] mx-auto mt-[18.2%] text-center space-y-[1.45%] text-[#18181B] font-bold leading-relaxed"
                   style={{
                     fontFamily: '"Tajawal", "Cairo", sans-serif',
-                    fontSize: 'clamp(7px, 1.85cqw, 21px)',
+                    fontSize: 'clamp(7px, 1.75cqw, 20px)',
                   }}
                 >
-                  <p
+                  <div
                     data-testid={`certificate-line-1-${certIndex + 1}`}
-                    className="break-words"
+                    className="space-y-[1.15%]"
                   >
-                    {certContent.line1}
-                  </p>
+                    <p
+                      data-testid={`certificate-intro-${certIndex + 1}`}
+                      className="break-words"
+                    >
+                      {certContent.introLine}
+                    </p>
+                    <SingleLineAutoFitRecipient
+                      text={certContent.recipientLine}
+                      testId={`certificate-recipient-name-${certIndex + 1}`}
+                    />
+                  </div>
                   <p
                     data-testid={`certificate-line-2-${certIndex + 1}`}
-                    className="tabular-nums"
+                    className="tabular-nums text-[#27272A]"
                   >
                     {certContent.line2}
                   </p>
@@ -168,7 +261,7 @@ export const ReportTemplate: React.FC<ReportTemplateProps> = ({
 
                 {/* Official Bottom Stamp & Principal Positions (Matching the attached reference template) */}
                 <div
-                  className="w-full px-[17%] pb-[14.5%] flex items-start justify-between text-[#27272a] font-bold"
+                  className="w-full px-[17%] pb-[14.5%] flex items-start justify-between text-[#27272A] font-bold"
                   style={{
                     fontFamily: '"Tajawal", "Cairo", sans-serif',
                     fontSize: 'clamp(6.5px, 1.6cqw, 18px)',
@@ -189,7 +282,7 @@ export const ReportTemplate: React.FC<ReportTemplateProps> = ({
                   >
                     <div>{certContent.principalTitle}</div>
                     {certContent.principalName && (
-                      <div className="font-bold text-zinc-900">
+                      <div className="font-bold text-[#18181B]">
                         {certContent.principalName}
                       </div>
                     )}
@@ -204,9 +297,9 @@ export const ReportTemplate: React.FC<ReportTemplateProps> = ({
   }
 
   const fieldHeaderTheme = {
-    headerBgHex: '#EFF6FF',
-    borderHex: '#BFDBFE',
-    headerTextHex: '#1E3A8A',
+    headerBgHex: '#EAF2F1',
+    borderHex: '#C4D8D6',
+    headerTextHex: '#315E62',
   };
 
   // Compute summary metrics for Semester Final Report if applicable

@@ -1,6 +1,11 @@
 import React from 'react';
-import { ArrowLeft, GraduationCap, Lightbulb, Presentation } from 'lucide-react';
 import { SectionId, SectionTheme } from '../types';
+import {
+  ArrowLeftLineIcon,
+  GiftedLineIcon,
+  PerformanceLineIcon,
+  ProfessionalDevLineIcon,
+} from './brand/MaktbyIcons';
 
 interface SectionCardProps {
   section: SectionTheme;
@@ -11,11 +16,11 @@ interface SectionCardProps {
 function renderSectionIcon(id: SectionId) {
   switch (id) {
     case 'professional-development':
-      return <Presentation className="w-7 h-7" aria-hidden="true" />;
+      return <ProfessionalDevLineIcon className="w-7 h-7" />;
     case 'gifted':
-      return <Lightbulb className="w-7 h-7" aria-hidden="true" />;
+      return <GiftedLineIcon className="w-7 h-7" />;
     case 'teacher':
-      return <GraduationCap className="w-7 h-7" aria-hidden="true" />;
+      return <PerformanceLineIcon className="w-7 h-7" />;
   }
 }
 
@@ -24,61 +29,47 @@ export const SectionCard: React.FC<SectionCardProps> = ({
   roleTitle,
   onSelect,
 }) => {
-  const isGifted = section.id === 'gifted';
   return (
     <article
       data-testid={`home-section-card-${section.id}`}
-      className={`group relative overflow-hidden bg-white rounded-2xl border ${
-        isGifted
-          ? 'border-[#26323B]/25 hover:border-[#26323B]'
-          : `${section.accentBorderClass} ${section.accentHoverBorderClass}`
-      } p-6 sm:p-7 flex flex-col justify-between transition-all duration-150 hover:shadow-md`}
+      className={`group relative bg-white rounded-2xl border border-[#E2E5E6] ${section.accentHoverBorderClass} p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:shadow-md`}
     >
-      {isGifted && (
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-l from-[#26323B] via-[#312332] to-[#7F1D3F]"
-        />
-      )}
       <div>
-        {/* Top Row: Icon & Section Color Identity */}
+        {/* Top Row: Section-Colored Calm Line Icon & Quiet Role Metadata */}
         <div className="flex items-start justify-between gap-4 mb-5">
           <div
-            className={`w-14 h-14 rounded-2xl ${section.iconBgClass} flex items-center justify-center shrink-0 shadow-xs`}
+            className={`w-13 h-13 rounded-2xl ${section.iconBgClass} flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-[1.03]`}
           >
             {renderSectionIcon(section.id)}
           </div>
-          <span
-            className={`text-xs font-semibold ${
-              isGifted
-                ? 'px-2.5 py-1 rounded-lg bg-[#26323B]/8 text-[#26323B] border border-[#26323B]/15'
-                : section.accentTextClass
-            }`}
-          >
-            الصفة: {roleTitle || 'غير محددة'}
+          <span className="text-xs font-medium text-[#626D72] pt-1 text-left">
+            الصفة:{' '}
+            <strong className="font-semibold text-[#292F33]">
+              {roleTitle || 'غير محددة'}
+            </strong>
           </span>
         </div>
 
         {/* Section Title */}
-        <h2 className="text-xl sm:text-2xl font-bold font-display text-stone-900 mb-2.5">
+        <h2 className="text-xl sm:text-2xl font-bold font-display text-[#292F33] mb-2.5">
           {section.title}
         </h2>
 
         {/* Section Short Description */}
-        <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-6">
+        <p className="text-sm sm:text-base text-[#626D72] leading-relaxed mb-6">
           {section.shortDescription}
         </p>
       </div>
 
       {/* Action Footer */}
-      <div className="pt-4 border-t border-stone-100">
+      <div className="pt-4 border-t border-[#E2E5E6]/80">
         <button
           type="button"
           onClick={() => onSelect(section.id)}
-          className={`w-full min-h-[48px] px-4 py-2.5 rounded-xl font-semibold text-sm flex items-center justify-between transition-colors cursor-pointer ${section.buttonBgClass}`}
+          className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white font-semibold text-sm flex items-center justify-between transition-colors cursor-pointer"
         >
           <span>الدخول إلى قسم {section.title}</span>
-          <ArrowLeft className="w-4 h-4 shrink-0 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+          <ArrowLeftLineIcon className="w-4 h-4 shrink-0 transition-transform group-hover:-translate-x-1" />
         </button>
       </div>
     </article>

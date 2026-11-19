@@ -548,7 +548,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.reportTitle}
               onChange={(e) => updateField('reportTitle', e.target.value)}
               placeholder="تقرير تنفيذ استراتيجية تعليمية"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.reportTitle && (
               <p className="text-xs text-red-600 mt-1">
@@ -571,7 +571,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.strategyName}
               onChange={(e) => updateField('strategyName', e.target.value)}
               placeholder="مثال: التعلم التعاوني (Jigsaw) / الفصل المقلوب / فكر-زاوج-شارك"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.strategyName && (
               <p className="text-xs text-red-600 mt-1">
@@ -594,7 +594,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.subject}
               onChange={(e) => updateField('subject', e.target.value)}
               placeholder="مثال: العلوم / الرياضيات / لغتي"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.subject && (
               <p className="text-xs text-red-600 mt-1">
@@ -616,7 +616,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-executionDate"
               value={data.executionDate}
               onChange={(e) => updateField('executionDate', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.executionDate && (
               <p className="text-xs text-red-600 mt-1">
@@ -637,7 +637,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-stage"
               value={data.stage}
               onChange={(e) => updateField('stage', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             >
               <option value="">اختر المرحلة الدراسية...</option>
               {STAGE_OPTIONS.map((st) => (
@@ -667,7 +667,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.grade}
               onChange={(e) => updateField('grade', e.target.value)}
               placeholder="مثال: الثاني المتوسط"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.grade && (
               <p className="text-xs text-red-600 mt-1">
@@ -691,7 +691,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.studentsCount}
               onChange={(e) => updateField('studentsCount', e.target.value)}
               placeholder="مثال: 28"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.studentsCount && (
               <p className="text-xs text-red-600 mt-1">
@@ -714,7 +714,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.lessonTopic}
               onChange={(e) => updateField('lessonTopic', e.target.value)}
               placeholder="عنوان الدرس المنفذ"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.lessonTopic && (
               <p className="text-xs text-red-600 mt-1">
@@ -747,7 +747,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('strategyObjectives', e.target.value)
               }
               placeholder="اكتب أهداف تطبيق الاستراتيجية (يمكن كتابة كل هدف في سطر مستقل)..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.strategyObjectives && (
               <p className="text-xs text-red-600 mt-1">
@@ -770,7 +770,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.educationalTools}
               onChange={(e) => updateField('educationalTools', e.target.value)}
               placeholder="الوسائل والأدوات الموظفة أثناء تنفيذ الاستراتيجية..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.educationalTools && (
               <p className="text-xs text-red-600 mt-1">
@@ -796,7 +796,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('classroomMechanism', e.target.value)
               }
               placeholder="صف خطوات وآلية تنفيذ الاستراتيجية مع الطلاب داخل الحصة الدراسية..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.classroomMechanism && (
               <p className="text-xs text-red-600 mt-1">
@@ -836,7 +836,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.subject}
               onChange={(e) => updateField('subject', e.target.value)}
               placeholder="مثال: الرياضيات"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.subject && (
               <p className="text-xs text-red-600 mt-1">
@@ -859,7 +859,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.grade}
               onChange={(e) => updateField('grade', e.target.value)}
               placeholder="مثال: الأول المتوسط"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.grade && (
               <p className="text-xs text-red-600 mt-1">
@@ -880,7 +880,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-targetCategory"
               value={data.targetCategory}
               onChange={(e) => updateField('targetCategory', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             >
               {PROBLEM_TARGET_CATEGORIES.map((cat) => (
                 <option key={cat} value={cat}>
@@ -904,7 +904,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.remediationTopic}
               onChange={(e) => updateField('remediationTopic', e.target.value)}
               placeholder="مثال: معالجة ضعف مهارة العمليات على الكسور الاعتيادية"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.remediationTopic && (
               <p className="text-xs text-red-600 mt-1">
@@ -927,7 +927,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.executionLocation}
               onChange={(e) => updateField('executionLocation', e.target.value)}
               placeholder="مثال: الصف الدراسي / مصادر التعلم"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.executionLocation && (
               <p className="text-xs text-red-600 mt-1">
@@ -949,7 +949,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-executionDate"
               value={data.executionDate}
               onChange={(e) => updateField('executionDate', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.executionDate && (
               <p className="text-xs text-red-600 mt-1">
@@ -972,7 +972,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.executionDuration}
               onChange={(e) => updateField('executionDuration', e.target.value)}
               placeholder="مثال: أسبوعان (٤ حصص مساندة)"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.executionDuration && (
               <p className="text-xs text-red-600 mt-1">
@@ -1005,7 +1005,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('problemDescription', e.target.value)
               }
               placeholder="وصّف المشكلة التعليمية المرصودة بدقة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.problemDescription && (
               <p className="text-xs text-red-600 mt-1">
@@ -1028,7 +1028,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.probableCauses}
               onChange={(e) => updateField('probableCauses', e.target.value)}
               placeholder="اذكر الأسباب المحتملة للمشكلة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.probableCauses && (
               <p className="text-xs text-red-600 mt-1">
@@ -1054,7 +1054,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('preRemediationLevel', e.target.value)
               }
               placeholder="وضح مستوى الأداء القبلي أو نتائج التقويم التشخيصي..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.preRemediationLevel && (
               <p className="text-xs text-red-600 mt-1">
@@ -1085,7 +1085,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.objectives}
               onChange={(e) => updateField('objectives', e.target.value)}
               placeholder="أهداف خطة المعالجة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.objectives && (
               <p className="text-xs text-red-600 mt-1">
@@ -1108,7 +1108,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.executionSteps}
               onChange={(e) => updateField('executionSteps', e.target.value)}
               placeholder="الإجراءات والخطوات العملية المنفذة لمعالجة المشكلة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.executionSteps && (
               <p className="text-xs text-red-600 mt-1">
@@ -1134,7 +1134,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('postRemediationLevel', e.target.value)
               }
               placeholder="نتائج التقويم البعدي ومستوى التحسن المتحقق..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.postRemediationLevel && (
               <p className="text-xs text-red-600 mt-1">
@@ -1157,7 +1157,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.recommendations}
               onChange={(e) => updateField('recommendations', e.target.value)}
               placeholder="التوصيات المقترحة لاستدامة التحسن..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.recommendations && (
               <p className="text-xs text-red-600 mt-1">
@@ -1210,7 +1210,7 @@ export const TeacherProfessionalReportForm: React.FC<
               onClick={() => updateField('analysisScope', 'single-exam')}
               className={`min-h-[54px] p-3.5 rounded-xl border text-right transition-colors cursor-pointer flex items-center justify-between ${
                 data.analysisScope === 'single-exam'
-                  ? 'border-[#1E4D8C] bg-[#F0F5FA] text-stone-950 font-bold'
+                  ? 'border-[#416B91] bg-[#DCEAF5] text-stone-950 font-bold'
                   : 'border-stone-200 bg-stone-50/50 text-stone-700 hover:bg-white'
               }`}
             >
@@ -1223,7 +1223,7 @@ export const TeacherProfessionalReportForm: React.FC<
               <span
                 className={`w-4 h-4 rounded-full border flex items-center justify-center ${
                   data.analysisScope === 'single-exam'
-                    ? 'border-[#1E4D8C] bg-[#1E4D8C]'
+                    ? 'border-[#416B91] bg-[#376B70]'
                     : 'border-stone-400'
                 }`}
               >
@@ -1241,7 +1241,7 @@ export const TeacherProfessionalReportForm: React.FC<
               onClick={() => updateField('analysisScope', 'full-semester')}
               className={`min-h-[54px] p-3.5 rounded-xl border text-right transition-colors cursor-pointer flex items-center justify-between ${
                 data.analysisScope === 'full-semester'
-                  ? 'border-[#1E4D8C] bg-[#F0F5FA] text-stone-950 font-bold'
+                  ? 'border-[#416B91] bg-[#DCEAF5] text-stone-950 font-bold'
                   : 'border-stone-200 bg-stone-50/50 text-stone-700 hover:bg-white'
               }`}
             >
@@ -1254,7 +1254,7 @@ export const TeacherProfessionalReportForm: React.FC<
               <span
                 className={`w-4 h-4 rounded-full border flex items-center justify-center ${
                   data.analysisScope === 'full-semester'
-                    ? 'border-[#1E4D8C] bg-[#1E4D8C]'
+                    ? 'border-[#416B91] bg-[#376B70]'
                     : 'border-stone-400'
                 }`}
               >
@@ -1280,7 +1280,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 value={data.subject}
                 onChange={(e) => updateField('subject', e.target.value)}
                 placeholder="مثال: لغتي الخالدة / الرياضيات"
-                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.subject && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1301,7 +1301,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 data-testid="input-stage"
                 value={data.stage}
                 onChange={(e) => updateField('stage', e.target.value)}
-                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               >
                 <option value="">اختر المرحلة الدراسية...</option>
                 {STAGE_OPTIONS.map((st) => (
@@ -1331,7 +1331,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 value={data.grade}
                 onChange={(e) => updateField('grade', e.target.value)}
                 placeholder="مثال: الثالث المتوسط"
-                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.grade && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1352,7 +1352,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 data-testid="input-semester"
                 value={data.semester}
                 onChange={(e) => updateField('semester', e.target.value)}
-                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               >
                 {SEMESTER_OPTIONS.map((sem) => (
                   <option key={sem} value={sem}>
@@ -1379,7 +1379,7 @@ export const TeacherProfessionalReportForm: React.FC<
                   updateField('totalStudentsCount', e.target.value)
                 }
                 placeholder="مثال: 30"
-                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.totalStudentsCount && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1393,7 +1393,7 @@ export const TeacherProfessionalReportForm: React.FC<
           {data.analysisScope === 'single-exam' ? (
             <div
               data-testid="conditional-single-exam-section"
-              className="rounded-xl border border-[#C5D7EE] bg-[#F0F5FA]/60 p-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="rounded-xl border border-[#E2E5E6] bg-[#DCEAF5]/60 p-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               <div>
                 <label
@@ -1409,7 +1409,7 @@ export const TeacherProfessionalReportForm: React.FC<
                   value={data.examName}
                   onChange={(e) => updateField('examName', e.target.value)}
                   placeholder="مثال: اختبار الفترة الأولى / التقويم البنائي للوحدة الثانية"
-                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
                 {validationErrors.examName && (
                   <p className="text-xs text-red-600 mt-1">
@@ -1433,7 +1433,7 @@ export const TeacherProfessionalReportForm: React.FC<
                   onChange={(e) =>
                     updateField('applicationDate', e.target.value)
                   }
-                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
                 {validationErrors.applicationDate && (
                   <p className="text-xs text-red-600 mt-1">
@@ -1445,9 +1445,9 @@ export const TeacherProfessionalReportForm: React.FC<
           ) : (
             <div
               data-testid="conditional-full-semester-section"
-              className="rounded-xl border border-[#C5D7EE] bg-[#F0F5FA]/60 p-4 space-y-4"
+              className="rounded-xl border border-[#E2E5E6] bg-[#DCEAF5]/60 p-4 space-y-4"
             >
-              <div className="text-xs font-bold text-[#1E4D8C]">
+              <div className="text-xs font-bold text-[#416B91]">
                 آلية إدخال نتائج التقويمات خلال الفصل الدراسي الكامل (يصنف كل طالب في مستوى أداء واحد وفق محصلته الفصلية الموحدة دون تكرار احتساب الطالب عبر اختبارات متعددة):
               </div>
 
@@ -1465,7 +1465,7 @@ export const TeacherProfessionalReportForm: React.FC<
                         key={tool}
                         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold cursor-pointer transition-colors ${
                           checked
-                            ? 'border-[#1E4D8C] bg-white text-[#1E4D8C]'
+                            ? 'border-[#416B91] bg-white text-[#416B91]'
                             : 'border-stone-200 bg-white/70 text-stone-700'
                         }`}
                       >
@@ -1473,7 +1473,7 @@ export const TeacherProfessionalReportForm: React.FC<
                           type="checkbox"
                           checked={checked}
                           onChange={() => toggleSemesterTool(tool)}
-                          className="w-3.5 h-3.5 accent-[#1E4D8C]"
+                          className="w-3.5 h-3.5 accent-[#416B91]"
                         />
                         <span>{tool}</span>
                       </label>
@@ -1499,7 +1499,7 @@ export const TeacherProfessionalReportForm: React.FC<
                     updateField('semesterCalculationMethod', e.target.value)
                   }
                   placeholder="وضح آلية احتساب المحصلة الختامية للطلاب خلال الفصل..."
-                  className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
                 {validationErrors.semesterCalculationMethod && (
                   <p className="text-xs text-red-600 mt-1">
@@ -1524,7 +1524,7 @@ export const TeacherProfessionalReportForm: React.FC<
                     updateField('semesterAssessmentsSummary', e.target.value)
                   }
                   placeholder="مثال: اختباران فترتان + مهمتان أدائيتان + التقويم المستمر + الاختبار النهائي..."
-                  className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </div>
             </div>
@@ -1587,7 +1587,7 @@ export const TeacherProfessionalReportForm: React.FC<
                     </label>
                     <span
                       data-testid={`pct-${item.fieldKey}`}
-                      className="text-xs font-extrabold text-[#1E4D8C] bg-[#F0F5FA] px-2 py-0.5 rounded-md border border-[#C5D7EE] tabular-nums"
+                      className="text-xs font-extrabold text-[#416B91] bg-[#DCEAF5] px-2 py-0.5 rounded-md border border-[#E2E5E6] tabular-nums"
                     >
                       {summary.formattedPercentage}
                     </span>
@@ -1603,7 +1603,7 @@ export const TeacherProfessionalReportForm: React.FC<
                       updateField(item.fieldKey, e.target.value)
                     }
                     placeholder="عدد الطلاب"
-                    className="w-full min-h-[38px] px-2.5 py-1 rounded-lg border border-stone-300 bg-white text-sm font-bold text-center text-stone-900 focus:outline-none focus:border-[#1E4D8C] tabular-nums"
+                    className="w-full min-h-[38px] px-2.5 py-1 rounded-lg border border-stone-300 bg-white text-sm font-bold text-center text-stone-900 focus:outline-none focus:border-[#416B91] tabular-nums"
                   />
                 </div>
               );
@@ -1615,7 +1615,7 @@ export const TeacherProfessionalReportForm: React.FC<
             data-is-matched={String(dist.isMatched)}
             className={`rounded-xl border px-4 py-3 text-xs font-bold flex items-center gap-2 ${
               dist.isMatched
-                ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                ? 'border-[#C5DCC7] bg-[#EEF5EE] text-[#2F6846]'
                 : validationErrors.levelsDistribution ||
                     (dist.hasAnyLevelInput &&
                       dist.totalStudents !== null &&
@@ -1626,12 +1626,12 @@ export const TeacherProfessionalReportForm: React.FC<
           >
             {dist.isMatched ? (
               <CheckCircle2
-                className="w-4 h-4 text-emerald-600 shrink-0"
+                className="w-4 h-4 text-[#2F6846] shrink-0"
                 aria-hidden="true"
               />
             ) : (
               <AlertCircle
-                className="w-4 h-4 text-amber-600 shrink-0"
+                className="w-4 h-4 text-[#9A4A2E] shrink-0"
                 aria-hidden="true"
               />
             )}
@@ -1662,7 +1662,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 value={data.strengths}
                 onChange={(e) => updateField('strengths', e.target.value)}
                 placeholder="أبرز المهارات والمعايير التي أتقنها الطلاب..."
-                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.strengths && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1685,7 +1685,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 value={data.weaknesses}
                 onChange={(e) => updateField('weaknesses', e.target.value)}
                 placeholder="المهارات التي تحتاج إلى تعزيز أو معالجة..."
-                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.weaknesses && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1708,7 +1708,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 value={data.keyObservations}
                 onChange={(e) => updateField('keyObservations', e.target.value)}
                 placeholder="ملاحظات عامة حول مستوى التحصيل وتفاعل الطلاب..."
-                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.keyObservations && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1733,7 +1733,7 @@ export const TeacherProfessionalReportForm: React.FC<
                   updateField('actionsAndRecommendations', e.target.value)
                 }
                 placeholder="الخطط العلاجية والإثرائية والتوصيات المقترحة..."
-                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.actionsAndRecommendations && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1754,7 +1754,7 @@ export const TeacherProfessionalReportForm: React.FC<
     data: DistinguishedPracticeReportData
   ) => (
     <div className="space-y-6">
-      <div className="rounded-xl border border-[#C5D7EE] bg-[#F0F5FA] px-4 py-3 text-xs font-bold text-[#1E4D8C] flex items-center gap-2">
+      <div className="rounded-xl border border-[#E2E5E6] bg-[#DCEAF5] px-4 py-3 text-xs font-bold text-[#416B91] flex items-center gap-2">
         <Sparkles className="w-4 h-4 shrink-0" aria-hidden="true" />
         <span>
           هذا التقرير مخصص لتوثيق ممارسة تعليمية متميزة نُفذت بالفعل في الميدان التربوي، وليس لفكرة مستقبلية لم تطبق.
@@ -1781,7 +1781,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.practiceName}
               onChange={(e) => updateField('practiceName', e.target.value)}
               placeholder="مثال: مختبر التحديات الرقمية التفاعلية في مطلع الحصة"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.practiceName && (
               <p className="text-xs text-red-600 mt-1">
@@ -1804,7 +1804,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.subject}
               onChange={(e) => updateField('subject', e.target.value)}
               placeholder="مثال: الحاسب وتقنية المعلومات"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.subject && (
               <p className="text-xs text-red-600 mt-1">
@@ -1825,7 +1825,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-stage"
               value={data.stage}
               onChange={(e) => updateField('stage', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             >
               <option value="">اختر المرحلة الدراسية...</option>
               {STAGE_OPTIONS.map((st) => (
@@ -1855,7 +1855,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.grade}
               onChange={(e) => updateField('grade', e.target.value)}
               placeholder="مثال: الأول الثانوي"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.grade && (
               <p className="text-xs text-red-600 mt-1">
@@ -1880,7 +1880,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('applicationDuration', e.target.value)
               }
               placeholder="مثال: ٨ أسابيع دراسية"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.applicationDuration && (
               <p className="text-xs text-red-600 mt-1">
@@ -1902,7 +1902,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-applicationDate"
               value={data.applicationDate}
               onChange={(e) => updateField('applicationDate', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.applicationDate && (
               <p className="text-xs text-red-600 mt-1">
@@ -1925,7 +1925,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.targetGroup}
               onChange={(e) => updateField('targetGroup', e.target.value)}
               placeholder="مثال: طلاب الصف الأول الثانوي"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.targetGroup && (
               <p className="text-xs text-red-600 mt-1">
@@ -1950,7 +1950,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('applicationLocation', e.target.value)
               }
               placeholder="مثال: معمل الحاسب الآلي / الصف الدراسي"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.applicationLocation && (
               <p className="text-xs text-red-600 mt-1">
@@ -1981,7 +1981,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.practiceIdea}
               onChange={(e) => updateField('practiceIdea', e.target.value)}
               placeholder="لخص فكرة الممارسة التعليمية..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.practiceIdea && (
               <p className="text-xs text-red-600 mt-1">
@@ -2006,7 +2006,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('applicationMotives', e.target.value)
               }
               placeholder="ما الدوافع التربوية لتطبيق هذه الممارسة؟"
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.applicationMotives && (
               <p className="text-xs text-red-600 mt-1">
@@ -2031,7 +2031,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('addressedChallenge', e.target.value)
               }
               placeholder="ما التحدي التعليمي الذي أسهمت الممارسة في معالجته؟"
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.addressedChallenge && (
               <p className="text-xs text-red-600 mt-1">
@@ -2054,7 +2054,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.objectives}
               onChange={(e) => updateField('objectives', e.target.value)}
               placeholder="الأهداف التعليمية والتربوية للممارسة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.objectives && (
               <p className="text-xs text-red-600 mt-1">
@@ -2079,7 +2079,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('executionMechanism', e.target.value)
               }
               placeholder="خطوات وآلية التنفيذ الفعلي..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.executionMechanism && (
               <p className="text-xs text-red-600 mt-1">
@@ -2102,7 +2102,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.toolsAndMeans}
               onChange={(e) => updateField('toolsAndMeans', e.target.value)}
               placeholder="الأدوات والوسائل التقنية والتعليمية المستخدمة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.toolsAndMeans && (
               <p className="text-xs text-red-600 mt-1">
@@ -2133,7 +2133,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.achievedResults}
               onChange={(e) => updateField('achievedResults', e.target.value)}
               placeholder="النتائج الملموسة التي تحققت بعد تطبيق الممارسة..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.achievedResults && (
               <p className="text-xs text-red-600 mt-1">
@@ -2159,7 +2159,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('impactOnStudentLearning', e.target.value)
               }
               placeholder="الأثر التربوي والتحصيلي على تعلم الطلاب..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.impactOnStudentLearning && (
               <p className="text-xs text-red-600 mt-1">
@@ -2182,7 +2182,7 @@ export const TeacherProfessionalReportForm: React.FC<
               onChange={(e) =>
                 updateField('sustainabilityOption', e.target.value)
               }
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             >
               {PRACTICE_SUSTAINABILITY_OPTIONS.map((opt) => (
                 <option key={opt} value={opt}>
@@ -2206,7 +2206,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.recommendations}
               onChange={(e) => updateField('recommendations', e.target.value)}
               placeholder="التوصيات المقترحة لتطوير الممارسة أو تعميمها..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.recommendations && (
               <p className="text-xs text-red-600 mt-1">
@@ -2246,7 +2246,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.achievementName}
               onChange={(e) => updateField('achievementName', e.target.value)}
               placeholder="مثال: حقيبة الأنشطة التفاعلية وأدوات التقويم البنائي الرقمية"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.achievementName && (
               <p className="text-xs text-red-600 mt-1">
@@ -2267,7 +2267,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-achievementType"
               value={data.achievementType}
               onChange={(e) => updateField('achievementType', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             >
               {PROFESSIONAL_ACHIEVEMENT_TYPES.map((typeOpt) => (
                 <option key={typeOpt} value={typeOpt}>
@@ -2281,7 +2281,7 @@ export const TeacherProfessionalReportForm: React.FC<
           {data.achievementType === 'إنجاز آخر' && (
             <div
               data-testid="conditional-custom-achievement-type"
-              className="sm:col-span-3 rounded-xl border border-[#C5D7EE] bg-[#F0F5FA]/60 p-3.5"
+              className="sm:col-span-3 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5]/60 p-3.5"
             >
               <label
                 htmlFor="f5-customAchievementType"
@@ -2298,7 +2298,7 @@ export const TeacherProfessionalReportForm: React.FC<
                   updateField('customAchievementType', e.target.value)
                 }
                 placeholder="اكتب نوع الإنجاز المهني..."
-                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.customAchievementType && (
                 <p className="text-xs text-red-600 mt-1">
@@ -2322,7 +2322,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.subject}
               onChange={(e) => updateField('subject', e.target.value)}
               placeholder="اختياري — يترك فارغًا إن لم يرتبط بمادة محددة"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
           </div>
 
@@ -2338,7 +2338,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-stage"
               value={data.stage}
               onChange={(e) => updateField('stage', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             >
               <option value="">غير محدد (اختياري)</option>
               {STAGE_OPTIONS.map((st) => (
@@ -2363,7 +2363,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.grade}
               onChange={(e) => updateField('grade', e.target.value)}
               placeholder="اختياري — يترك فارغًا إن لم يرتبط بصف محدد"
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
           </div>
 
@@ -2380,7 +2380,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="input-achievementDate"
               value={data.achievementDate}
               onChange={(e) => updateField('achievementDate', e.target.value)}
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.achievementDate && (
               <p className="text-xs text-red-600 mt-1">
@@ -2413,7 +2413,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('achievementDescription', e.target.value)
               }
               placeholder="وصّف الإنجاز المهني ومكوناته..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.achievementDescription && (
               <p className="text-xs text-red-600 mt-1">
@@ -2438,7 +2438,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 updateField('achievementObjective', e.target.value)
               }
               placeholder="الهدف التربوي أو المهني من هذا الإنجاز..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.achievementObjective && (
               <p className="text-xs text-red-600 mt-1">
@@ -2461,7 +2461,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.beneficiaryGroup}
               onChange={(e) => updateField('beneficiaryGroup', e.target.value)}
               placeholder="مثال: طلاب المرحلة المتوسطة / معلمو التخصص..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.beneficiaryGroup && (
               <p className="text-xs text-red-600 mt-1">
@@ -2484,7 +2484,7 @@ export const TeacherProfessionalReportForm: React.FC<
               value={data.resultsAndImpact}
               onChange={(e) => updateField('resultsAndImpact', e.target.value)}
               placeholder="النتائج المتحققة وأثر الإنجاز على تجويد العملية التعليمية..."
-              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
             />
             {validationErrors.resultsAndImpact && (
               <p className="text-xs text-red-600 mt-1">
@@ -2503,7 +2503,7 @@ export const TeacherProfessionalReportForm: React.FC<
       className="space-y-6"
     >
       {/* Top Bar: Back to Reports Group + Form Header + Quick Actions */}
-      <section className="bg-white rounded-2xl border border-[#C5D7EE] p-5 sm:p-6 space-y-4 print:hidden">
+      <section className="bg-white rounded-2xl border border-[#E2E5E6] p-5 sm:p-6 space-y-4 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <button
             type="button"
@@ -2522,8 +2522,8 @@ export const TeacherProfessionalReportForm: React.FC<
               onClick={() => setIsArchiveOpen((prev) => !prev)}
               className={`min-h-[42px] px-3.5 py-2 rounded-xl border text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isArchiveOpen
-                  ? 'border-[#1E4D8C] bg-[#1E4D8C] text-white'
-                  : 'border-[#C5D7EE] bg-white hover:bg-[#F0F5FA] text-[#1E4D8C]'
+                  ? 'border-[#416B91] bg-[#376B70] text-white'
+                  : 'border-[#E2E5E6] bg-white hover:bg-[#DCEAF5] text-[#416B91]'
               }`}
             >
               <Archive className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -2545,7 +2545,7 @@ export const TeacherProfessionalReportForm: React.FC<
               data-testid="save-report-to-archive-btn"
               disabled={isSavingArchive}
               onClick={handleSaveToArchive}
-              className="min-h-[42px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
+              className="min-h-[42px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
             >
               <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -2561,7 +2561,7 @@ export const TeacherProfessionalReportForm: React.FC<
               type="button"
               data-testid="fill-sample-report-data-btn"
               onClick={handleFillSampleData}
-              className="min-h-[42px] px-3.5 py-2 rounded-xl border border-[#C5D7EE] bg-[#F0F5FA] hover:bg-[#E3EDF8] text-xs font-bold text-[#1E4D8C] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[42px] px-3.5 py-2 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-xs font-bold text-[#416B91] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Wand2 className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>تعبئة بيانات نموذجية للتجربة</span>
@@ -2589,14 +2589,14 @@ export const TeacherProfessionalReportForm: React.FC<
             {activeArchivedRecordId ? (
               <span
                 data-testid="active-record-status-text"
-                className="text-emerald-800"
+                className="text-[#2F6846]"
               >
                 سجل محفوظ في الأرشيف (المعرف الثابت: {activeArchivedRecordId})
               </span>
             ) : (
               <span
                 data-testid="active-record-status-text"
-                className="text-[#1E4D8C]"
+                className="text-[#416B91]"
               >
                 مسودة قيد التحرير (لا تُحتسب شاهدًا إلا بعد الحفظ في الأرشيف)
               </span>
@@ -2606,7 +2606,7 @@ export const TeacherProfessionalReportForm: React.FC<
             <button
               type="button"
               onClick={() => setIsArchiveOpen(true)}
-              className="text-xs font-bold text-[#2563EB] hover:underline cursor-pointer"
+              className="text-xs font-bold text-[#416B91] hover:underline cursor-pointer"
             >
               استعراض {savedRecords.length} سجل محفوظ
             </button>
@@ -2617,7 +2617,7 @@ export const TeacherProfessionalReportForm: React.FC<
         {isArchiveOpen && (
           <div
             data-testid="reports-archive-panel"
-            className="rounded-2xl border border-[#BFDBFE] bg-[#F8FAFC] p-4 sm:p-5 space-y-4"
+            className="rounded-2xl border border-[#E2E5E6] bg-[#FBFBF9] p-4 sm:p-5 space-y-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
               <div>
@@ -2645,7 +2645,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 className={`rounded-xl border p-4 space-y-3 ${
                   pendingDeleteTarget.impact.isLinked
                     ? 'border-red-300 bg-red-50 text-red-950'
-                    : 'border-amber-300 bg-amber-50 text-amber-950'
+                    : 'border-[#E8C9BA] bg-[#FDF2ED] text-[#9A4A2E]'
                 }`}
               >
                 <div className="flex items-start gap-2.5">
@@ -2706,7 +2706,7 @@ export const TeacherProfessionalReportForm: React.FC<
                       data-testid={`archive-record-item-${rec.id}`}
                       className={`rounded-xl border bg-white p-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 ${
                         isCurrent
-                          ? 'border-[#2563EB] ring-1 ring-[#2563EB]/20'
+                          ? 'border-[#416B91] ring-1 ring-[#416B91]/20'
                           : 'border-stone-200'
                       }`}
                     >
@@ -2730,7 +2730,7 @@ export const TeacherProfessionalReportForm: React.FC<
                           type="button"
                           data-testid={`open-archive-record-${rec.id}`}
                           onClick={() => handleOpenArchivedRecord(rec)}
-                          className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#BFDBFE] bg-[#EFF6FF] hover:bg-[#DBEAFE] text-xs font-bold text-[#1E40AF] inline-flex items-center gap-1.5 cursor-pointer"
+                          className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-xs font-bold text-[#294660] inline-flex items-center gap-1.5 cursor-pointer"
                         >
                           <FolderOpen className="w-3.5 h-3.5" aria-hidden="true" />
                           <span>{isCurrent ? 'مفتوح حاليًا' : 'فتح وتعديل'}</span>
@@ -2757,7 +2757,7 @@ export const TeacherProfessionalReportForm: React.FC<
 
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-t border-stone-100 pt-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0F5FA] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
               <FileText className="w-3.5 h-3.5" aria-hidden="true" />
               <span>التقارير المهنية والتعليمية · {metadata.badge}</span>
             </div>
@@ -2777,7 +2777,7 @@ export const TeacherProfessionalReportForm: React.FC<
               onClick={() => setActiveTab('edit')}
               className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-bold inline-flex items-center gap-2 border transition-colors cursor-pointer ${
                 activeTab === 'edit'
-                  ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                  ? 'bg-[#376B70] text-white border-[#416B91]'
                   : 'bg-white text-stone-800 border-stone-300 hover:bg-stone-50'
               }`}
             >
@@ -2791,7 +2791,7 @@ export const TeacherProfessionalReportForm: React.FC<
               onClick={handleSwitchToPreview}
               className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-bold inline-flex items-center gap-2 border transition-colors cursor-pointer ${
                 activeTab === 'preview'
-                  ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                  ? 'bg-[#376B70] text-white border-[#416B91]'
                   : 'bg-white text-stone-800 border-stone-300 hover:bg-stone-50'
               }`}
             >
@@ -2820,7 +2820,7 @@ export const TeacherProfessionalReportForm: React.FC<
           <div className="rounded-xl border border-stone-200 bg-stone-50/70 p-3 flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
               <Sparkles
-                className="w-3.5 h-3.5 text-[#1E4D8C]"
+                className="w-3.5 h-3.5 text-[#416B91]"
                 aria-hidden="true"
               />
               <span>قالب PDF المعتمد:</span>
@@ -2837,7 +2837,7 @@ export const TeacherProfessionalReportForm: React.FC<
                     onClick={() => handleSelectTemplate(tplId)}
                     className={`min-h-[34px] px-3 py-1 rounded-lg border text-xs font-bold transition-colors cursor-pointer ${
                       isSelected
-                        ? 'border-[#15445A] bg-[#15445A] text-white'
+                        ? 'border-[#416B91] bg-[#376B70] text-white'
                         : 'border-stone-200 bg-white text-stone-700 hover:bg-stone-100'
                     }`}
                   >
@@ -2851,7 +2851,7 @@ export const TeacherProfessionalReportForm: React.FC<
           <div className="rounded-xl border border-stone-200 bg-stone-50/70 p-3 flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
               <Palette
-                className="w-3.5 h-3.5 text-[#1E4D8C]"
+                className="w-3.5 h-3.5 text-[#416B91]"
                 aria-hidden="true"
               />
               <span>النظام اللوني:</span>
@@ -2868,7 +2868,7 @@ export const TeacherProfessionalReportForm: React.FC<
                     onClick={() => handleSelectColorSystem(colId)}
                     className={`min-h-[34px] px-3 py-1 rounded-lg border text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer ${
                       isSelected
-                        ? 'border-[#15445A] bg-white text-stone-950 shadow-2xs'
+                        ? 'border-[#416B91] bg-white text-stone-950 shadow-2xs'
                         : 'border-stone-200 bg-white/80 text-stone-700 hover:bg-white'
                     }`}
                   >
@@ -2890,10 +2890,10 @@ export const TeacherProfessionalReportForm: React.FC<
             data-testid="teacher-report-status-banner"
             className={`rounded-xl border px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 ${
               statusBanner.type === 'success'
-                ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                ? 'border-[#C5DCC7] bg-[#EEF5EE] text-[#2F6846]'
                 : statusBanner.type === 'error'
                   ? 'border-red-200 bg-red-50 text-red-800'
-                  : 'border-[#C5D7EE] bg-[#F0F5FA] text-[#1E4D8C]'
+                  : 'border-[#E2E5E6] bg-[#DCEAF5] text-[#416B91]'
             }`}
           >
             {statusBanner.type === 'error' ? (
@@ -2946,7 +2946,7 @@ export const TeacherProfessionalReportForm: React.FC<
                   value={formData.teacherName}
                   onChange={(e) => updateField('teacherName', e.target.value)}
                   placeholder={`أدخل ${teacherLabel}...`}
-                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
                 {validationErrors.teacherName && (
                   <p className="text-xs text-red-600 mt-1">
@@ -2981,7 +2981,7 @@ export const TeacherProfessionalReportForm: React.FC<
                 type="button"
                 data-testid="bottom-preview-report-btn"
                 onClick={handleSwitchToPreview}
-                className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-sm font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
+                className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <Eye className="w-4 h-4" aria-hidden="true" />
                 <span>معاينة التقرير قبل التصدير</span>
@@ -3008,7 +3008,7 @@ export const TeacherProfessionalReportForm: React.FC<
         <section className="space-y-4">
           <div className="bg-white rounded-2xl border border-stone-200 p-4 flex flex-wrap items-center justify-between gap-3 print:hidden">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-stone-800">
-              <Eye className="w-4 h-4 text-[#1E4D8C]" aria-hidden="true" />
+              <Eye className="w-4 h-4 text-[#416B91]" aria-hidden="true" />
               <span>
                 المعاينة الحية المطابقة ١٠٠٪ لملف PDF ({metadata.title} ·{' '}
                 {activeTemplateDef.name} · {palette.name} · عدد الصفحات:{' '}
@@ -3083,7 +3083,7 @@ export const TeacherProfessionalReportForm: React.FC<
                         width: `${widthPct}%`,
                         height: `${heightPct}%`,
                       }}
-                      className="absolute block rounded-lg ring-2 ring-transparent hover:ring-[#07A869] hover:bg-black/5 transition-all cursor-pointer"
+                      className="absolute block rounded-lg ring-2 ring-transparent hover:ring-[#2F6846] hover:bg-black/5 transition-all cursor-pointer"
                     />
                   );
                 })}

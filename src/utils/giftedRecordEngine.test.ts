@@ -94,19 +94,18 @@ import {
 } from './giftedReportPdfGenerator';
 import { SchoolSettings } from '../types';
 
-test('Phase 1 Visual Identity: Gifted section uses Burgundy (#7F1D3F) & Charcoal (#26323B) without affecting other sections', () => {
+test('Visual Identity: Each section adopts its own calm, harmonious web palette while preserving Gifted PDF report identity', () => {
   assert.equal(GIFTED_VISUAL_IDENTITY.primaryBurgundyHex, '#7F1D3F');
   assert.equal(GIFTED_VISUAL_IDENTITY.charcoalHex, '#26323B');
   assert.equal(GIFTED_VISUAL_IDENTITY.whiteHex, '#FFFFFF');
 
-  // Gifted section updated
-  assert.equal(SECTIONS.gifted.primaryHex, '#7F1D3F');
-  assert.ok(SECTIONS.gifted.accentSoftBgClass.includes('#F9EFF2'));
-  assert.ok(SECTIONS.gifted.accentBorderClass.includes('#E6C7D0'));
+  // Distinct calm per-section web identities (no brown, no purple/pink, no single uniform color)
+  assert.equal(SECTIONS.gifted.primaryHex, '#956C2E');
+  assert.ok(SECTIONS.gifted.accentSoftBgClass.includes('#F7EBD5'));
+  assert.ok(SECTIONS.gifted.accentBorderClass.includes('#E5CFA7'));
 
-  // Other sections strictly untouched
-  assert.equal(SECTIONS['professional-development'].primaryHex, '#7C1D34');
-  assert.equal(SECTIONS.teacher.primaryHex, '#1E4D8C');
+  assert.equal(SECTIONS['professional-development'].primaryHex, '#477B59');
+  assert.equal(SECTIONS.teacher.primaryHex, '#416B91');
 });
 
 test('Phase 1 Catalog: 10 sections in exact order with Sections 1-4 active in Phase 1', () => {

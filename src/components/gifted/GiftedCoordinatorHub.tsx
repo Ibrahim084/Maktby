@@ -1,14 +1,16 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Briefcase,
   Download,
   FileArchive,
-  FileText,
-  Layers,
   RotateCcw,
   Upload,
-  Users,
 } from 'lucide-react';
+import {
+  FormsLineIcon,
+  GiftedLineIcon,
+  PlcLineIcon,
+  ReportsLineIcon,
+} from '../brand/MaktbyIcons';
 import { useSettings } from '../../context/SettingsContext';
 import {
   cleanupOrphanedAttachmentGenerations,
@@ -44,25 +46,25 @@ const APPROVED_HUB_SECTIONS: HubSectionTab[] = [
     id: 'students',
     code: '01',
     title: 'الطلاب والطالبات',
-    icon: <Users className="w-4 h-4 shrink-0" aria-hidden="true" />,
+    icon: <PlcLineIcon className="w-4 h-4 shrink-0" />,
   },
   {
     id: 'programs',
     code: '02',
     title: 'البرامج والتقارير والمبادرات',
-    icon: <Layers className="w-4 h-4 shrink-0" aria-hidden="true" />,
+    icon: <GiftedLineIcon className="w-4 h-4 shrink-0" />,
   },
   {
     id: 'coordinator_works',
     code: '03',
     title: 'نماذج أخرى',
-    icon: <Briefcase className="w-4 h-4 shrink-0" aria-hidden="true" />,
+    icon: <FormsLineIcon className="w-4 h-4 shrink-0" />,
   },
   {
     id: 'reports',
     code: '04',
     title: 'التقارير',
-    icon: <FileText className="w-4 h-4 shrink-0" aria-hidden="true" />,
+    icon: <ReportsLineIcon className="w-4 h-4 shrink-0" />,
   },
 ];
 
@@ -244,11 +246,11 @@ export const GiftedCoordinatorHub: React.FC = () => {
     <div
       dir="rtl"
       data-testid="gifted-coordinator-hub"
-      className="space-y-6 text-[#26323B]"
+      className="space-y-6 text-[#292F33]"
     >
       {/* الرأس الرئيسي وشريط الحفظ والنسخ الاحتياطي وإعادة الضبط */}
-      <section className="rounded-2xl overflow-hidden border border-[#E6C7D0] bg-white shadow-xs print:hidden">
-        <div className="bg-gradient-to-l from-[#26323B] via-[#312332] to-[#7F1D3F] text-white px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <section className="rounded-2xl overflow-hidden border border-[#E5CFA7] bg-white shadow-xs print:hidden">
+        <div className="bg-[#8A6125] text-white px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="space-y-1">
             <h2 className="text-xl sm:text-2xl font-extrabold font-display tracking-tight text-white">
               سجل {terms.coordinatorSingular}
@@ -274,7 +276,7 @@ export const GiftedCoordinatorHub: React.FC = () => {
               data-testid="export-gifted-zip-btn"
               disabled={isExportingZip}
               onClick={handleExportZipBackup}
-              className="min-h-[38px] px-3.5 py-1.5 rounded-lg bg-[#7F1D3F] hover:bg-[#641631] border border-white/20 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
+              className="min-h-[38px] px-3.5 py-1.5 rounded-lg bg-[#8A6125] hover:bg-[#704E1D] border border-white/20 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
             >
               <Download className="w-3.5 h-3.5" aria-hidden="true" />
               <span>
@@ -302,7 +304,7 @@ export const GiftedCoordinatorHub: React.FC = () => {
                 type="button"
                 data-testid="reset-gifted-record-btn"
                 onClick={() => setConfirmResetOpen(true)}
-                className="min-h-[38px] px-3 py-1.5 rounded-lg bg-white text-[#26323B] hover:bg-stone-100 text-xs font-semibold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="min-h-[38px] px-3 py-1.5 rounded-lg bg-white text-[#292F33] hover:bg-stone-100 text-xs font-semibold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>إعادة ضبط</span>
@@ -337,10 +339,10 @@ export const GiftedCoordinatorHub: React.FC = () => {
             data-testid="backup-status-banner"
             className={`px-6 py-3 text-xs sm:text-sm font-semibold flex items-center justify-between gap-3 border-t ${
               backupBanner.type === 'success'
-                ? 'bg-emerald-50 text-emerald-900 border-emerald-200'
+                ? 'bg-[#EEF5EE] text-[#2F6846] border-[#C5DCC7]'
                 : backupBanner.type === 'error'
                   ? 'bg-red-50 text-red-900 border-red-200'
-                  : 'bg-[#F9EFF2] text-[#7F1D3F] border-[#E6C7D0]'
+                  : 'bg-[#F7EBD5] text-[#956C2E] border-[#E5CFA7]'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -361,7 +363,7 @@ export const GiftedCoordinatorHub: React.FC = () => {
         <nav
           aria-label="أقسام سجل منسق الموهوبين"
           data-testid="gifted-four-engines-nav"
-          className="bg-[#FAF7F5] px-4 sm:px-6 py-3.5 border-t border-[#E6C7D0]/70"
+          className="bg-[#FBF6EC] px-4 sm:px-6 py-3.5 border-t border-[#E5CFA7]/70"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {APPROVED_HUB_SECTIONS.map((sec) => {
@@ -375,8 +377,8 @@ export const GiftedCoordinatorHub: React.FC = () => {
                   onClick={() => setActiveEngine(sec.id)}
                   className={`min-h-[48px] px-4 py-3 rounded-xl border-2 text-right transition-all flex items-center gap-3 cursor-pointer ${
                     isActive
-                      ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-xs'
-                      : 'bg-white text-[#26323B] border-stone-200 hover:border-[#E6C7D0] hover:bg-white/90'
+                      ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-xs'
+                      : 'bg-white text-[#292F33] border-stone-200 hover:border-[#E5CFA7] hover:bg-white/90'
                   }`}
                 >
                   <span
@@ -384,7 +386,7 @@ export const GiftedCoordinatorHub: React.FC = () => {
                     className={`w-8 h-8 rounded-lg text-xs font-extrabold flex items-center justify-center shrink-0 tabular-nums ${
                       isActive
                         ? 'bg-white/20 text-white'
-                        : 'bg-[#F9EFF2] text-[#7F1D3F]'
+                        : 'bg-[#F7EBD5] text-[#956C2E]'
                     }`}
                   >
                     {sec.code}

@@ -738,7 +738,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
       className="space-y-6"
     >
       {/* Top Navigation & Template/Color Bar */}
-      <div className="bg-white rounded-2xl border border-[#C5D7EE] p-5 sm:p-6 space-y-5 print:hidden">
+      <div className="bg-white rounded-2xl border border-[#E2E5E6] p-5 sm:p-6 space-y-5 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -768,8 +768,8 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               onClick={() => setIsArchiveOpen((prev) => !prev)}
               className={`min-h-[40px] px-3.5 py-2 rounded-xl border text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isArchiveOpen
-                  ? 'border-[#1E4D8C] bg-[#1E4D8C] text-white'
-                  : 'border-[#C5D7EE] bg-white hover:bg-[#F0F5FA] text-[#1E4D8C]'
+                  ? 'border-[#416B91] bg-[#376B70] text-white'
+                  : 'border-[#E2E5E6] bg-white hover:bg-[#DCEAF5] text-[#416B91]'
               }`}
             >
               <Archive className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -791,7 +791,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               data-testid="save-test-eval-to-archive-btn"
               disabled={isSavingArchive}
               onClick={handleSaveToArchive}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
             >
               <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -807,7 +807,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               type="button"
               data-testid="load-sample-test-eval-btn"
               onClick={handleLoadSample}
-              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#F0F5FA] hover:bg-[#E1ECF7] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#DCEAF5] hover:bg-[#CCE0F0] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Wand2 className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>تعبئة نموذجية للتجربة</span>
@@ -835,14 +835,14 @@ export const TeacherTestsAndEvaluationForm: React.FC<
             {activeArchivedRecordId ? (
               <span
                 data-testid="test-eval-active-record-status-text"
-                className="text-emerald-800"
+                className="text-[#2F6846]"
               >
                 سجل محفوظ في الأرشيف (المعرف الثابت: {activeArchivedRecordId})
               </span>
             ) : (
               <span
                 data-testid="test-eval-active-record-status-text"
-                className="text-[#1E4D8C]"
+                className="text-[#416B91]"
               >
                 مسودة قيد التحرير (لا تُحتسب شاهدًا إلا بعد الحفظ والربط لاحقًا)
               </span>
@@ -852,7 +852,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
             <button
               type="button"
               onClick={() => setIsArchiveOpen(true)}
-              className="text-xs font-bold text-[#2563EB] hover:underline cursor-pointer"
+              className="text-xs font-bold text-[#416B91] hover:underline cursor-pointer"
             >
               استعراض {savedRecords.length} سجل محفوظ
             </button>
@@ -863,7 +863,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
         {isArchiveOpen && (
           <div
             data-testid="tests-eval-archive-panel"
-            className="rounded-2xl border border-[#BFDBFE] bg-[#F8FAFC] p-4 sm:p-5 space-y-4"
+            className="rounded-2xl border border-[#E2E5E6] bg-[#FBFBF9] p-4 sm:p-5 space-y-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
               <div>
@@ -896,7 +896,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                   value={archiveSearchQuery}
                   onChange={(e) => setArchiveSearchQuery(e.target.value)}
                   placeholder="ابحث بالعنوان أو المادة أو الصف أو المعرف..."
-                  className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </div>
             )}
@@ -909,7 +909,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                 className={`rounded-xl border p-4 space-y-3 ${
                   pendingDeleteTarget.impact.isLinked
                     ? 'border-red-300 bg-red-50 text-red-950'
-                    : 'border-amber-300 bg-amber-50 text-amber-950'
+                    : 'border-[#E8C9BA] bg-[#FDF2ED] text-[#9A4A2E]'
                 }`}
               >
                 <div className="flex items-start gap-2.5">
@@ -991,7 +991,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         data-testid={`test-eval-archive-record-item-${rec.id}`}
                         className={`rounded-xl border bg-white p-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 ${
                           isCurrent
-                            ? 'border-[#2563EB] ring-1 ring-[#2563EB]/20'
+                            ? 'border-[#416B91] ring-1 ring-[#416B91]/20'
                             : 'border-stone-200'
                         }`}
                       >
@@ -1015,7 +1015,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                             type="button"
                             data-testid={`open-test-eval-archive-record-${rec.id}`}
                             onClick={() => handleOpenArchivedRecord(rec)}
-                            className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#BFDBFE] bg-[#EFF6FF] hover:bg-[#DBEAFE] text-xs font-bold text-[#1E40AF] inline-flex items-center gap-1.5 cursor-pointer"
+                            className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-xs font-bold text-[#294660] inline-flex items-center gap-1.5 cursor-pointer"
                           >
                             <FolderOpen
                               className="w-3.5 h-3.5"
@@ -1047,7 +1047,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
         {/* Form Header & Export Action */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="space-y-1.5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0F5FA] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold">
               {formId === 'internal-test-execution' ? (
                 <FileCheck2 className="w-3.5 h-3.5" aria-hidden="true" />
               ) : (
@@ -1070,7 +1070,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               onClick={() =>
                 setActiveTab((prev) => (prev === 'edit' ? 'preview' : 'edit'))
               }
-              className="xl:hidden min-h-[44px] px-4 py-2.5 rounded-xl border border-[#C5D7EE] bg-[#F0F5FA] text-[#1E4D8C] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer"
+              className="xl:hidden min-h-[44px] px-4 py-2.5 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5] text-[#416B91] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer"
             >
               <Eye className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -1085,7 +1085,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               data-testid="export-test-eval-pdf-btn"
               disabled={isExporting}
               onClick={handleExportPdf}
-              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
+              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
             >
               <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -1114,7 +1114,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                   onClick={() => handleSelectTemplate(tpl)}
                   className={`min-h-[34px] px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
                     isSelected
-                      ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                      ? 'bg-[#376B70] text-white border-[#416B91]'
                       : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-stone-100'
                   }`}
                 >
@@ -1126,7 +1126,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-extrabold text-stone-700 inline-flex items-center gap-1">
-              <Palette className="w-3.5 h-3.5 text-[#1E4D8C]" />
+              <Palette className="w-3.5 h-3.5 text-[#416B91]" />
               <span>النظام اللوني:</span>
             </span>
             {ALL_COLOR_SYSTEMS.map((col) => {
@@ -1161,10 +1161,10 @@ export const TeacherTestsAndEvaluationForm: React.FC<
             data-testid="test-eval-status-banner"
             className={`rounded-xl border px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 ${
               statusBanner.type === 'success'
-                ? 'bg-emerald-50 border-emerald-200 text-emerald-900'
+                ? 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
                 : statusBanner.type === 'error'
                   ? 'bg-red-50 border-red-200 text-red-900'
-                  : 'bg-[#EFF6FF] border-[#BFDBFE] text-[#1E40AF]'
+                  : 'bg-[#DCEAF5] border-[#E2E5E6] text-[#294660]'
             }`}
           >
             {statusBanner.type === 'error' ? (
@@ -1173,8 +1173,8 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               <CheckCircle2
                 className={`w-4 h-4 shrink-0 ${
                   statusBanner.type === 'success'
-                    ? 'text-emerald-600'
-                    : 'text-[#2563EB]'
+                    ? 'text-[#2F6846]'
+                    : 'text-[#416B91]'
                 }`}
               />
             )}
@@ -1243,7 +1243,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: الاختبار التقويمي الأول لوحدة الجبر والمعادلات..."
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                     />
                   </div>
 
@@ -1267,7 +1267,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: الرياضيات"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
 
@@ -1291,7 +1291,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: المرحلة المتوسطة"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                       <datalist id="ite-stage-suggestions">
                         {STAGE_SUGGESTIONS.map((st) => (
@@ -1319,7 +1319,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: الصف الثاني المتوسط"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
                   </div>
@@ -1343,7 +1343,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                               e.target.value as InternalTestCategoryOption,
                           }))
                         }
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       >
                         {INTERNAL_TEST_CATEGORY_OPTIONS.map((catOpt) => (
                           <option key={catOpt} value={catOpt}>
@@ -1373,7 +1373,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="١٤٤٧/٠٨/٢٥هـ"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
                   </div>
@@ -1399,7 +1399,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="اكتب تصنيف الاختبار..."
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
                   )}
@@ -1440,7 +1440,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: 20 أو 30 أو 40"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C] tabular-nums"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91] tabular-nums"
                     />
                   </div>
 
@@ -1467,7 +1467,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                             }
                             className={`min-h-[42px] px-3 py-2 rounded-xl border text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                               isSelected
-                                ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                                ? 'bg-[#376B70] text-white border-[#416B91]'
                                 : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-stone-100'
                             }`}
                           >
@@ -1501,7 +1501,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: 32"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C] tabular-nums"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91] tabular-nums"
                     />
                   </div>
 
@@ -1526,7 +1526,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: 30"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C] tabular-nums"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91] tabular-nums"
                     />
                   </div>
 
@@ -1538,7 +1538,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                       data-testid="ite-absent-count-display"
                       className={`w-full min-h-[42px] px-3.5 py-2 rounded-xl border text-sm font-extrabold flex items-center justify-between tabular-nums ${
                         studentCountCalc.isValid
-                          ? 'bg-[#F0F5FA] border-[#C5D7EE] text-[#1E4D8C]'
+                          ? 'bg-[#DCEAF5] border-[#E2E5E6] text-[#416B91]'
                           : 'bg-stone-100 border-stone-200 text-stone-500'
                       }`}
                     >
@@ -1589,7 +1589,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                     }))
                   }
                   placeholder="أضف أي ملاحظات تنظيمية حول تنفيذ الاختبار (اختياري)..."
-                  className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </section>
             </>
@@ -1631,7 +1631,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: تصميم نماذج هندسية تطبيقية لحساب المساحات والحجوم..."
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                     />
                   </div>
 
@@ -1655,7 +1655,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: الرياضيات"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
 
@@ -1679,7 +1679,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: المرحلة المتوسطة"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                       <datalist id="pte-stage-suggestions">
                         {STAGE_SUGGESTIONS.map((st) => (
@@ -1707,7 +1707,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: الصف الثاني المتوسط"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
                   </div>
@@ -1730,7 +1730,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                             taskType: e.target.value as PerformanceTaskTypeOption,
                           }))
                         }
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       >
                         {PERFORMANCE_TASK_TYPE_OPTIONS.map((typeOpt) => (
                           <option key={typeOpt} value={typeOpt}>
@@ -1760,7 +1760,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="مثال: ١٤٤٧/٠٨/٢٥هـ أو الأسبوع الرابع"
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
                   </div>
@@ -1786,7 +1786,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           }))
                         }
                         placeholder="اكتب نوع المهمة الأدائية..."
-                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                     </div>
                   )}
@@ -1827,7 +1827,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: 32"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C] tabular-nums"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91] tabular-nums"
                     />
                   </div>
 
@@ -1852,7 +1852,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                         }))
                       }
                       placeholder="مثال: 29"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C] tabular-nums"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91] tabular-nums"
                     />
                   </div>
 
@@ -1864,7 +1864,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                       data-testid="pte-not-completed-count-display"
                       className={`w-full min-h-[42px] px-3.5 py-2 rounded-xl border text-sm font-extrabold flex items-center justify-between tabular-nums ${
                         studentCountCalc.isValid
-                          ? 'bg-[#F0F5FA] border-[#C5D7EE] text-[#1E4D8C]'
+                          ? 'bg-[#DCEAF5] border-[#E2E5E6] text-[#416B91]'
                           : 'bg-stone-100 border-stone-200 text-stone-500'
                       }`}
                     >
@@ -1923,7 +1923,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                       }))
                     }
                     placeholder="وضّح ما يُتوقع من الطلاب تعلمه أو تطبيقه من خلال هذه المهمة الأدائية..."
-                    className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
 
@@ -1947,7 +1947,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                       }))
                     }
                     placeholder="صف خطوات تنفيذ المهمة الأدائية وما قام به الطلاب لإنجازها..."
-                    className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
 
@@ -1973,7 +1973,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                       }))
                     }
                     placeholder="صف باختصار كيف تم تقويم أداء الطلاب..."
-                    className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
               </section>
@@ -2001,7 +2001,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                     }))
                   }
                   placeholder="أضف أي ملاحظات إضافية حول تنفيذ المهمة الأدائية (اختياري)..."
-                  className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </section>
             </>
@@ -2016,7 +2016,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               <div>
                 <h3 className="text-base font-extrabold font-display text-stone-900 flex items-center gap-2">
                   <Camera
-                    className="w-4 h-4 text-[#1E4D8C]"
+                    className="w-4 h-4 text-[#416B91]"
                     aria-hidden="true"
                   />
                   <span>
@@ -2042,7 +2042,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
             {mediaNotice && (
               <div
                 data-testid="te-media-store-notice"
-                className="rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-2 text-xs font-bold text-emerald-900"
+                className="rounded-xl border border-[#C5DCC7] bg-[#EEF5EE] px-3.5 py-2 text-xs font-bold text-[#2F6846]"
               >
                 {mediaNotice}
               </div>
@@ -2129,7 +2129,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                   type="button"
                   data-testid="te-add-photo-btn"
                   onClick={() => addPhotoInputRef.current?.click()}
-                  className="min-h-[38px] px-3.5 py-1.5 rounded-xl border border-dashed border-[#15445A]/50 bg-[#F4F8FC] hover:bg-[#E8F1FA] text-xs font-bold text-[#15445A] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  className="min-h-[38px] px-3.5 py-1.5 rounded-xl border border-dashed border-[#416B91]/50 bg-[#FBFBF9] hover:bg-[#DCEAF5] text-xs font-bold text-[#416B91] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <ImagePlus className="w-4 h-4" />
                   <span>رفع صورة من الجهاز (JPG / PNG / WebP)</span>
@@ -2157,7 +2157,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div>
                 <h3 className="text-base font-extrabold font-display text-stone-900 flex items-center gap-2">
-                  <QrCode className="w-4 h-4 text-[#1E4D8C]" />
+                  <QrCode className="w-4 h-4 text-[#416B91]" />
                   <span>روابط إلكترونية</span>
                 </h3>
                 <p className="text-xs text-stone-500 mt-0.5">
@@ -2210,7 +2210,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                           className={`w-full min-h-[38px] px-3 py-1.5 rounded-lg border bg-white text-xs sm:text-sm text-stone-900 focus:outline-none ${
                             cleanUrl && !isUrlValid
                               ? 'border-red-400 focus:border-red-600'
-                              : 'border-stone-300 focus:border-[#1E4D8C]'
+                              : 'border-stone-300 focus:border-[#416B91]'
                           }`}
                         />
                         {cleanUrl && !isUrlValid && (
@@ -2265,7 +2265,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                   type="button"
                   data-testid="te-add-link-btn"
                   onClick={handleAddLink}
-                  className="min-h-[38px] px-3.5 py-1.5 rounded-xl border border-dashed border-[#15445A]/50 bg-[#F4F8FC] hover:bg-[#E8F1FA] text-xs font-bold text-[#15445A] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  className="min-h-[38px] px-3.5 py-1.5 rounded-xl border border-dashed border-[#416B91]/50 bg-[#FBFBF9] hover:bg-[#DCEAF5] text-xs font-bold text-[#416B91] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <Link2 className="w-4 h-4" />
                   <span>إضافة رابط إلكتروني (مع رمز QR مستقل)</span>
@@ -2293,7 +2293,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
             activeTab === 'edit' ? 'hidden xl:block' : ''
           }`}
         >
-          <div className="bg-white rounded-2xl border border-[#C5D7EE] p-4 sm:p-5 space-y-4">
+          <div className="bg-white rounded-2xl border border-[#E2E5E6] p-4 sm:p-5 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div>
                 <h3 className="text-sm sm:text-base font-extrabold font-display text-stone-900">
@@ -2305,7 +2305,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
               </div>
               <span
                 data-testid="test-eval-page-count-badge"
-                className="px-3 py-1 rounded-full bg-[#F0F5FA] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold tabular-nums"
+                className="px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold tabular-nums"
               >
                 عدد الصفحات: {paginatedPages.length}
               </span>
@@ -2347,7 +2347,7 @@ export const TeacherTestsAndEvaluationForm: React.FC<
                                 width: `${(lnk.wPx / page.pixelWidth) * 100}%`,
                                 height: `${(lnk.hPx / page.pixelHeight) * 100}%`,
                               }}
-                              className="block rounded-md hover:ring-2 hover:ring-[#1E4D8C] transition-shadow cursor-pointer"
+                              className="block rounded-md hover:ring-2 hover:ring-[#416B91] transition-shadow cursor-pointer"
                             >
                               <span className="sr-only">
                                 فتح الرابط الإلكتروني ({lIdx + 1})

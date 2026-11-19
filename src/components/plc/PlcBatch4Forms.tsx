@@ -1092,8 +1092,8 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
               data-testid="plc-f7-exec-data-status-badge"
               className={`px-3 py-1 rounded-lg text-xs font-extrabold ${
                 derivedExecSummary.hasSufficientData
-                  ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                  : 'bg-amber-50 text-amber-800 border border-amber-200'
+                  ? 'bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7]'
+                  : 'bg-[#FDF2ED] text-[#9A4A2E] border border-[#E8C9BA]'
               }`}
             >
               {derivedExecSummary.hasSufficientData
@@ -1105,12 +1105,12 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
           {!derivedExecSummary.hasSufficientData ? (
             <div
               data-testid="plc-f7-insufficient-data-notice"
-              className="rounded-xl border border-amber-200 bg-amber-50/80 p-5 text-center space-y-1.5"
+              className="rounded-xl border border-[#E8C9BA] bg-[#FDF2ED] p-5 text-center space-y-1.5"
             >
-              <div className="text-sm font-extrabold text-amber-900">
+              <div className="text-sm font-extrabold text-[#9A4A2E]">
                 لا توجد بيانات كافية للحساب
               </div>
-              <p className="text-xs text-amber-800">
+              <p className="text-xs text-[#9A4A2E]">
                 لم يتم تسجيل إجراءات في الخطة التشغيلية (النموذج 4) أو سجلات
                 تنفيذ في النموذج 6 حتى الآن. لا يعرض النظام صفراً كنتيجة افتراضية
                 قبل إدخال بيانات التخطيط والتنفيذ الفعلية.
@@ -1134,7 +1134,7 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
                 </div>
 
                 {!derivedExecSummary.hasPlanData ? (
-                  <p className="text-xs font-bold text-amber-800">
+                  <p className="text-xs font-bold text-[#9A4A2E]">
                     لا توجد بيانات كافية للحساب في الخطة التشغيلية (لم تُسجل
                     إجراءات بعد).
                   </p>
@@ -1151,22 +1151,22 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
                         {derivedExecSummary.plannedActionsTotalCount}
                       </div>
                     </div>
-                    <div className="rounded-xl bg-emerald-50/70 border border-emerald-200 p-2.5">
-                      <div className="text-[11px] font-bold text-emerald-800">
+                    <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-2.5">
+                      <div className="text-[11px] font-bold text-[#2F6846]">
                         الإجراءات المنفذة
                       </div>
                       <div
                         data-testid="plc-f7-plan-executed-count"
-                        className="text-base font-extrabold text-emerald-900 tabular-nums mt-0.5"
+                        className="text-base font-extrabold text-[#2F6846] tabular-nums mt-0.5"
                       >
                         {derivedExecSummary.executedActionsCount}
                       </div>
                     </div>
-                    <div className="rounded-xl bg-amber-50/70 border border-amber-200 p-2.5">
-                      <div className="text-[11px] font-bold text-amber-800">
+                    <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-2.5">
+                      <div className="text-[11px] font-bold text-[#9A4A2E]">
                         قيد التنفيذ
                       </div>
-                      <div className="text-base font-extrabold text-amber-900 tabular-nums mt-0.5">
+                      <div className="text-base font-extrabold text-[#9A4A2E] tabular-nums mt-0.5">
                         {derivedExecSummary.inProgressActionsCount}
                       </div>
                     </div>
@@ -1215,7 +1215,7 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
                 </div>
 
                 {!derivedExecSummary.hasActivitiesData ? (
-                  <p className="text-xs font-bold text-amber-800">
+                  <p className="text-xs font-bold text-[#9A4A2E]">
                     لا توجد بيانات كافية للحساب في سجلات التنفيذ (النموذج 6).
                   </p>
                 ) : (
@@ -1264,10 +1264,10 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
                               <td className="py-2 px-3 text-center text-stone-700 tabular-nums">
                                 {row.planned}
                               </td>
-                              <td className="py-2 px-3 text-center text-amber-800 font-bold tabular-nums">
+                              <td className="py-2 px-3 text-center text-[#9A4A2E] font-bold tabular-nums">
                                 {row.inProgress}
                               </td>
-                              <td className="py-2 px-3 text-center text-emerald-800 font-extrabold tabular-nums">
+                              <td className="py-2 px-3 text-center text-[#2F6846] font-extrabold tabular-nums">
                                 {row.executed}
                               </td>
                               <td className="py-2 px-3 text-center text-stone-500 tabular-nums">
@@ -1289,7 +1289,7 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
                           <td className="py-2.5 px-3 text-center tabular-nums">
                             {derivedExecSummary.inProgressExecutionRecordsCount}
                           </td>
-                          <td className="py-2.5 px-3 text-center text-emerald-800 tabular-nums">
+                          <td className="py-2.5 px-3 text-center text-[#2F6846] tabular-nums">
                             {derivedExecSummary.executedExecutionRecordsCount}
                           </td>
                           <td className="py-2.5 px-3 text-center tabular-nums">
@@ -2062,7 +2062,7 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
                             data-testid={`plc-f7-kpi-achievement-${idx}`}
                             className={`inline-block px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums ${
                               resolved.achievement.isCalculated
-                                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                                ? 'bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7]'
                                 : 'bg-stone-100 text-stone-700 border border-stone-200'
                             }`}
                           >
@@ -3471,7 +3471,7 @@ export const PlcBatch4Forms: React.FC<PlcBatch4FormsProps> = ({
             </p>
 
             {pendingDeleteEvidence.requiresForceConfirmation && (
-              <div className="rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs text-amber-900">
+              <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-3 text-xs text-[#9A4A2E]">
                 الشاهد <strong>«{pendingDeleteEvidence.evidence.title}»</strong>{' '}
                 مرتبط حالياً بـ{' '}
                 <strong>{pendingDeleteEvidence.linkedCount}</strong> سجل داخل

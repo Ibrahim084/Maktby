@@ -748,13 +748,13 @@ export const GiftedCoordinatorWorksEngine: React.FC<
           className={`rounded-xl border p-4 flex items-start gap-3 ${
             feedbackBanner.type === 'error'
               ? 'bg-red-50 border-red-200 text-red-900'
-              : 'bg-emerald-50 border-emerald-200 text-emerald-900'
+              : 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
           }`}
         >
           {feedbackBanner.type === 'error' ? (
             <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
           ) : (
-            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 text-[#2F6846] shrink-0 mt-0.5" />
           )}
           <div className="text-xs font-bold flex-1">
             {feedbackBanner.message}
@@ -778,7 +778,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
       >
         <div className="border-b border-stone-100 pb-3">
           <h3 className="text-base font-extrabold text-stone-900 flex items-center gap-2">
-            <FolderOpen className="w-4 h-4 text-[#7F1D3F]" />
+            <FolderOpen className="w-4 h-4 text-[#956C2E]" />
             <span>السجلات الخمسة الثابتة</span>
           </h3>
         </div>
@@ -802,7 +802,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 onClick={() => handleSwitchFixedLog(logKind)}
                 className={`px-3 py-2.5 rounded-xl border text-right transition-all flex items-center justify-between gap-2 ${
                   isActive
-                    ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-sm'
+                    ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-sm'
                     : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-stone-100'
                 }`}
               >
@@ -829,7 +829,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
           className="rounded-xl border border-stone-200 bg-stone-50/50 p-4 space-y-4"
         >
           <div className="flex items-center justify-between gap-2 border-b border-stone-200 pb-2.5">
-            <h4 className="text-xs font-extrabold text-[#7F1D3F]">
+            <h4 className="text-xs font-extrabold text-[#956C2E]">
               {editingRowId ? 'تعديل صف في ' : 'إضافة صف إلى '}
               {GIFTED_SECTION3_FIXED_LOG_LABELS[activeLogKind]}
             </h4>
@@ -859,7 +859,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   id="gsl-student-select"
                   value={gslStudentId}
                   onChange={(e) => setGslStudentId(e.target.value)}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 >
                   <option value="">— اختر الطالب من السجل المركزي —</option>
                   {students.map((stu) => (
@@ -900,7 +900,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={gslTalentDomain}
                   onChange={(e) => setGslTalentDomain(e.target.value)}
                   placeholder="مثال: تفوق علمي / ابتكار / رياضيات"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -917,7 +917,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={gslNotes}
                   onChange={(e) => setGslNotes(e.target.value)}
                   placeholder="ملاحظات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -937,7 +937,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   id="ppl-student-select"
                   value={pplStudentId}
                   onChange={(e) => setPplStudentId(e.target.value)}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 >
                   <option value="">— اختر الطالب من السجل المركزي —</option>
                   {students.map((stu) => (
@@ -978,7 +978,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={pplProgramTitle}
                   onChange={(e) => setPplProgramTitle(e.target.value)}
                   placeholder="اسم البرنامج..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -995,7 +995,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   dir="ltr"
                   value={pplParticipationDate}
                   onChange={(e) => setPplParticipationDate(e.target.value)}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1012,7 +1012,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={pplParticipationType}
                   onChange={(e) => setPplParticipationType(e.target.value)}
                   placeholder="مثال: حضور / بحث / مشروع"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1032,7 +1032,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   id="sal-student-select"
                   value={salStudentId}
                   onChange={(e) => setSalStudentId(e.target.value)}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 >
                   <option value="">— اختر الطالب من السجل المركزي —</option>
                   {students.map((stu) => (
@@ -1073,7 +1073,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={salAchievement}
                   onChange={(e) => setSalAchievement(e.target.value)}
                   placeholder="مثال: المركز الأول / ميدالية ذهبية"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1090,7 +1090,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={salEntityOrCompetition}
                   onChange={(e) => setSalEntityOrCompetition(e.target.value)}
                   placeholder="مثال: أولمبياد إبداع / موهبة"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1107,7 +1107,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   dir="ltr"
                   value={salDate}
                   onChange={(e) => setSalDate(e.target.value)}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1130,7 +1130,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                     dir="ltr"
                     value={mtgDate}
                     onChange={(e) => setMtgDate(e.target.value)}
-                    className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                 </div>
 
@@ -1147,7 +1147,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                     value={mtgTopic}
                     onChange={(e) => setMtgTopic(e.target.value)}
                     placeholder="موضوع الاجتماع..."
-                    className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                 </div>
               </div>
@@ -1155,7 +1155,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
               {/* قسم الحضور (طلاب عبر studentId + معلمون/أعضاء لجنة/إداريون يدوياً مع roleTitle) */}
               <div className="rounded-xl border border-stone-200 bg-white p-3.5 space-y-3">
                 <div className="text-xs font-extrabold text-stone-800 flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5 text-[#7F1D3F]" />
+                  <Users className="w-3.5 h-3.5 text-[#956C2E]" />
                   <span>الحضور ({mtgAttendees.length})</span>
                 </div>
 
@@ -1166,7 +1166,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                       aria-label="اختيار طالب للحضور في الاجتماع"
                       value={mtgSelectedStudentId}
                       onChange={(e) => setMtgSelectedStudentId(e.target.value)}
-                      className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                      className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                     >
                       <option value="">
                         — إضافة طالب من السجل المركزي —
@@ -1195,7 +1195,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                       value={mtgStaffName}
                       onChange={(e) => setMtgStaffName(e.target.value)}
                       placeholder="اسم المعلم / عضو اللجنة / الإداري"
-                      className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                      className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                     />
                     <input
                       id="mtg-staff-role"
@@ -1203,12 +1203,12 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                       value={mtgStaffRoleTitle}
                       onChange={(e) => setMtgStaffRoleTitle(e.target.value)}
                       placeholder="الصفة (roleTitle) مثل: عضو لجنة"
-                      className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                      className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                     />
                     <button
                       type="button"
                       onClick={handleAddMeetingStaffAttendee}
-                      className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg bg-[#7F1D3F]/10 hover:bg-[#7F1D3F]/20 text-xs font-bold text-[#7F1D3F] shrink-0"
+                      className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg bg-[#8A6125]/10 hover:bg-[#8A6125]/20 text-xs font-bold text-[#956C2E] shrink-0"
                     >
                       <UserPlus className="w-3.5 h-3.5" />
                       <span>إضافة للحضور</span>
@@ -1239,7 +1239,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                             </span>
                           )}
                           {!isStu && att.roleTitle && (
-                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#7F1D3F]/10 text-[#7F1D3F]">
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#8A6125]/10 text-[#956C2E]">
                               {att.roleTitle}
                             </span>
                           )}
@@ -1271,7 +1271,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={mtgKeyRecommendations}
                   onChange={(e) => setMtgKeyRecommendations(e.target.value)}
                   placeholder="أبرز التوصيات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1293,7 +1293,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={vplEntityOrPlace}
                   onChange={(e) => setVplEntityOrPlace(e.target.value)}
                   placeholder="الجهة أو المكان..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1310,7 +1310,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   dir="ltr"
                   value={vplDate}
                   onChange={(e) => setVplDate(e.target.value)}
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1327,7 +1327,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={vplPurpose}
                   onChange={(e) => setVplPurpose(e.target.value)}
                   placeholder="الهدف من الزيارة أو الشراكة..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1344,7 +1344,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={vplKeyResults}
                   onChange={(e) => setVplKeyResults(e.target.value)}
                   placeholder="أبرز النتائج..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1353,7 +1353,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
           <div className="flex justify-end pt-1">
             <button
               type="submit"
-              className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-extrabold text-white bg-[#7F1D3F] hover:bg-[#681733] transition-colors shadow-sm"
+              className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-extrabold text-white bg-[#8A6125] hover:bg-[#704E1D] transition-colors shadow-sm"
             >
               <Plus className="w-4 h-4" />
               <span>
@@ -1674,7 +1674,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                                   </span>
                                 )}
                                 {!isStu && att.roleTitle && (
-                                  <span className="text-[#7F1D3F]">
+                                  <span className="text-[#956C2E]">
                                     ({att.roleTitle})
                                   </span>
                                 )}
@@ -1807,7 +1807,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
       >
         <div className="border-b border-stone-100 pb-3">
           <h3 className="text-base font-extrabold text-stone-900 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-[#7F1D3F]" />
+            <FileText className="w-4 h-4 text-[#956C2E]" />
             <span>النماذج الجاهزة الأربعة</span>
           </h3>
         </div>
@@ -1832,7 +1832,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 }}
                 className={`px-3 py-2.5 rounded-xl border text-xs font-extrabold transition-all flex items-center justify-between gap-2 ${
                   isSelected
-                    ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-sm'
+                    ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-sm'
                     : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-stone-100'
                 }`}
               >
@@ -1857,7 +1857,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
           className="rounded-xl border border-stone-200 bg-stone-50/50 p-4 space-y-4"
         >
           <div className="flex items-center justify-between gap-2 border-b border-stone-200 pb-2">
-            <h4 className="text-xs font-extrabold text-[#7F1D3F]">
+            <h4 className="text-xs font-extrabold text-[#956C2E]">
               {editingTemplateId ? 'تعديل نموذج: ' : 'تعبئة نموذج: '}
               {selectedTemplateKind}
             </h4>
@@ -1887,7 +1887,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 value={tplTitle}
                 onChange={(e) => setTplTitle(e.target.value)}
                 placeholder={`عنوان ${selectedTemplateKind}...`}
-                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
               />
             </div>
 
@@ -1904,7 +1904,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 dir="ltr"
                 value={tplDate}
                 onChange={(e) => setTplDate(e.target.value)}
-                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
               />
             </div>
 
@@ -1921,7 +1921,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 value={tplRecipientOrEntity}
                 onChange={(e) => setTplRecipientOrEntity(e.target.value)}
                 placeholder="الجهة المعنية..."
-                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
               />
             </div>
           </div>
@@ -1940,7 +1940,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 value={tplSubjectOrPurpose}
                 onChange={(e) => setTplSubjectOrPurpose(e.target.value)}
                 placeholder="موضوع النموذج..."
-                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
               />
             </div>
 
@@ -1957,7 +1957,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                 value={tplRecommendationsOrNotes}
                 onChange={(e) => setTplRecommendationsOrNotes(e.target.value)}
                 placeholder="توصيات أو ملاحظات..."
-                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
               />
             </div>
           </div>
@@ -1975,7 +1975,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
               value={tplBodyContent}
               onChange={(e) => setTplBodyContent(e.target.value)}
               placeholder={`اكتب نص ومحتوى ${selectedTemplateKind}...`}
-              className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
             />
           </div>
 
@@ -1991,7 +1991,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   aria-label="اختيار طالب للنموذج الجاهز"
                   value={tplSelectedStudentId}
                   onChange={(e) => setTplSelectedStudentId(e.target.value)}
-                  className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 >
                   <option value="">— اختيار طالب من السجل المركزي —</option>
                   {students.map((stu) => (
@@ -2017,7 +2017,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={tplStaffName}
                   onChange={(e) => setTplStaffName(e.target.value)}
                   placeholder="اسم المعلم / عضو اللجنة / الإداري"
-                  className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
                 <input
                   id="tpl-staff-role"
@@ -2025,12 +2025,12 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                   value={tplStaffRoleTitle}
                   onChange={(e) => setTplStaffRoleTitle(e.target.value)}
                   placeholder="الصفة (roleTitle)"
-                  className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="flex-1 rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
                 <button
                   type="button"
                   onClick={handleAddTemplateStaffParticipant}
-                  className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg bg-[#7F1D3F]/10 hover:bg-[#7F1D3F]/20 text-xs font-bold text-[#7F1D3F] shrink-0"
+                  className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg bg-[#8A6125]/10 hover:bg-[#8A6125]/20 text-xs font-bold text-[#956C2E] shrink-0"
                 >
                   <UserPlus className="w-3.5 h-3.5" />
                   <span>إضافة</span>
@@ -2061,7 +2061,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
                         </span>
                       )}
                       {!isStu && p.roleTitle && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#7F1D3F]/10 text-[#7F1D3F]">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#8A6125]/10 text-[#956C2E]">
                           {p.roleTitle}
                         </span>
                       )}
@@ -2082,7 +2082,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
           <div className="flex justify-end pt-1">
             <button
               type="submit"
-              className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-extrabold text-white bg-[#7F1D3F] hover:bg-[#681733] transition-colors shadow-sm"
+              className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-extrabold text-white bg-[#8A6125] hover:bg-[#704E1D] transition-colors shadow-sm"
             >
               <Plus className="w-4 h-4" />
               <span>
@@ -2106,7 +2106,7 @@ export const GiftedCoordinatorWorksEngine: React.FC<
               >
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="px-2 py-0.5 rounded-md bg-[#7F1D3F]/10 text-[#7F1D3F] text-xs font-extrabold">
+                    <span className="px-2 py-0.5 rounded-md bg-[#8A6125]/10 text-[#956C2E] text-xs font-extrabold">
                       {entry.templateKind}
                     </span>
                     <span className="text-xs font-extrabold text-stone-900">

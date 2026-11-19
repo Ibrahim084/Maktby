@@ -668,7 +668,7 @@ test('١٥. جولة التصميم الثانية: حذف «حُررت بتار
   );
 });
 
-test('١٦. توحيد الهوية اللونية لبطاقة وأيقونات قسم الشهادات داخل قسم المعلم باللون الأزرق الرسمي (#2563EB) دون المساس بألوان القوالب الداخلية', () => {
+test('١٦. اعتماد الهوية البصرية النهائية (الأزرق البترولي الهادئ #376B70 وألوان الأقسام المتمايزة) في بطاقة وواجهة الشهادات دون المساس بألوان القوالب الداخلية', () => {
   const teacherHubSource = fs.readFileSync(
     path.join(process.cwd(), 'src/components/teacher/TeacherSectionHub.tsx'),
     'utf8'
@@ -678,31 +678,35 @@ test('١٦. توحيد الهوية اللونية لبطاقة وأيقونات
     'utf8'
   );
 
-  // ١. التأكد من استخدام الأزرق الرسمي #2563EB ودرجاته التفاعلية في بطاقة الشهادات ومجموعات المعلم
+  // ١. التأكد من اعتماد الأزرق البترولي الهادئ #376B70 ودرجاته (#315E62 / #EAF2F1) ولون قسم المعلم الهادئ (#416B91 / #DCEAF5)
   assert.ok(
     teacherHubSource.includes('data-testid="teacher-group-card-certificates"') &&
-      teacherHubSource.includes('#2563EB') &&
-      teacherHubSource.includes('#1D4ED8') &&
-      teacherHubSource.includes('#1E40AF') &&
-      teacherHubSource.includes('#EFF6FF'),
-    'يجب أن تعتمد بطاقة قسم الشهادات وبقية بطاقات المعلم اللون الأزرق الرسمي #2563EB ودرجات التحويم والنشاط'
+      teacherHubSource.includes('#376B70') &&
+      teacherHubSource.includes('#315E62') &&
+      teacherHubSource.includes('#EAF2F1') &&
+      teacherHubSource.includes('#416B91') &&
+      teacherHubSource.includes('#DCEAF5'),
+    'يجب أن تعتمد بطاقة قسم الشهادات اللون البترولي الهادئ (#376B70 / #EAF2F1) وبطاقات المعلم لون قسم المعلم الهادئ (#416B91 / #DCEAF5)'
   );
 
-  // ٢. التأكد من خلو بطاقة الشهادات وواجهة الشهادات من الألوان الخضراء/التركوازية السابقة
+  // ٢. التأكد من خلو بطاقة الشهادات وواجهة الشهادات من الألوان السابقة (البني الترابي والعنابي والأخضر الفاقع)
   assert.ok(
-    !teacherHubSource.includes('#07A869') &&
+    !teacherHubSource.includes('#795548') &&
+      !teacherHubSource.includes('#634439') &&
+      !teacherHubSource.includes('#07A869') &&
       !teacherHubSource.includes('#0DA9A6') &&
-      !teacherHubSource.includes('#058c56') &&
+      !teacherHubSource.includes('#7A0F2E') &&
       !teacherHubSource.includes('emerald-'),
-    'يجب عدم بقاء أي لون أخضر أو تركوازي في بطاقة الشهادات داخل قسم المعلم'
+    'يجب عدم بقاء أي لون بني ترابي أو عنابي أو أخضر فاقع في بطاقة الشهادات داخل قسم المعلم'
   );
   assert.ok(
-    certsHubSource.includes('#2563EB') &&
-      certsHubSource.includes('#1D4ED8') &&
+    certsHubSource.includes('#376B70') &&
+      certsHubSource.includes('#315E62') &&
+      certsHubSource.includes('#EAF2F1') &&
+      !certsHubSource.includes('#795548') &&
       !certsHubSource.includes('#07A869') &&
-      !certsHubSource.includes('#0DA9A6') &&
-      !certsHubSource.includes('#058c56'),
-    'يجب توحيد ألوان عناصر التنقل والتحكم والأيقونات في واجهة الشهادات باللون الأزرق الرسمي #2563EB'
+      !certsHubSource.includes('#0DA9A6'),
+    'يجب اعتماد الأزرق البترولي الهادئ #376B70 ودرجاته في عناصر التنقل والتحكم والأيقونات في واجهة الشهادات'
   );
 
   // ٣. التأكد من عدم تأثر ألوان القوالب الداخلية للشهادات والزخارف الذهبية

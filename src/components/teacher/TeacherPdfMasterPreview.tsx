@@ -452,7 +452,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
       <section className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-8 space-y-6 print:hidden">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-stone-100 pb-5">
           <div className="space-y-1.5">
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#1E4D8C]">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#416B91]">
               <Sliders className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>محرك الهوية البصرية ونظام الشواهد الموحد — قسم المعلم</span>
             </div>
@@ -475,7 +475,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
               }
               className={`min-h-[48px] px-4 py-2.5 rounded-xl border text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer ${
                 viewMode === 'compare'
-                  ? 'border-[#15445A] bg-[#F0F6FC] text-[#15445A]'
+                  ? 'border-[#416B91] bg-[#DCEAF5] text-[#416B91]'
                   : 'border-stone-300 bg-white text-stone-800 hover:bg-stone-50'
               }`}
             >
@@ -509,10 +509,10 @@ export const TeacherPdfMasterPreview: React.FC = () => {
           <div
             role="status"
             data-testid="teacher-export-status"
-            className="rounded-xl border border-[#B2E4CE] bg-[#ECFDF5] px-4 py-3 flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#15445A]"
+            className="rounded-xl border border-[#C5DCC7] bg-[#EEF5EE] px-4 py-3 flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#416B91]"
           >
             <CheckCircle2
-              className="w-4 h-4 shrink-0 text-[#07A869]"
+              className="w-4 h-4 shrink-0 text-[#2F6846]"
               aria-hidden="true"
             />
             <span>{exportStatus}</span>
@@ -526,7 +526,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
             <div className="flex items-center justify-between gap-2">
               <span className="text-sm font-bold text-stone-900 flex items-center gap-2">
                 <Sparkles
-                  className="w-4 h-4 text-[#1E4D8C]"
+                  className="w-4 h-4 text-[#416B91]"
                   aria-hidden="true"
                 />
                 <span>١. القالب البصري (٣ قوالب)</span>
@@ -551,7 +551,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                     onClick={() => handleSelectTemplate(tplId)}
                     className={`min-h-[58px] px-2.5 py-2 rounded-xl border text-right transition-colors cursor-pointer flex flex-col justify-between ${
                       isSelected
-                        ? 'border-[#15445A] bg-white text-stone-950 font-bold shadow-2xs'
+                        ? 'border-[#416B91] bg-white text-stone-950 font-bold shadow-2xs'
                         : 'border-stone-200 bg-white/70 text-stone-700 hover:bg-white'
                     }`}
                   >
@@ -572,7 +572,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
             <div className="flex items-center justify-between gap-2">
               <span className="text-sm font-bold text-stone-900 flex items-center gap-2">
                 <Palette
-                  className="w-4 h-4 text-[#1E4D8C]"
+                  className="w-4 h-4 text-[#416B91]"
                   aria-hidden="true"
                 />
                 <span>٢. نظام الألوان</span>
@@ -597,7 +597,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                     onClick={() => handleSelectColorSystem(sysId)}
                     className={`min-h-[58px] px-2.5 py-2 rounded-xl border text-right flex items-center justify-between gap-1.5 transition-colors cursor-pointer ${
                       isSelected
-                        ? 'border-[#15445A] bg-white text-stone-950 font-bold shadow-2xs'
+                        ? 'border-[#416B91] bg-white text-stone-950 font-bold shadow-2xs'
                         : 'border-stone-200 bg-white/70 text-stone-700 hover:bg-white'
                     }`}
                   >
@@ -631,7 +631,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
             <div className="flex items-center justify-between gap-2">
               <span className="text-sm font-bold text-stone-900 flex items-center gap-2">
                 <Layers
-                  className="w-4 h-4 text-[#1E4D8C]"
+                  className="w-4 h-4 text-[#416B91]"
                   aria-hidden="true"
                 />
                 <span>٣. طول المحتوى وتعدد الصفحات</span>
@@ -651,7 +651,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                 onClick={() => setContentMode('short')}
                 className={`min-h-[38px] px-2.5 py-1.5 rounded-xl border text-xs font-bold transition-colors cursor-pointer ${
                   contentMode === 'short'
-                    ? 'border-[#15445A] bg-white text-stone-950'
+                    ? 'border-[#416B91] bg-white text-stone-950'
                     : 'border-stone-200 bg-white/70 text-stone-700 hover:bg-white'
                 }`}
               >
@@ -663,7 +663,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                 onClick={() => setContentMode('multi-page')}
                 className={`min-h-[38px] px-2.5 py-1.5 rounded-xl border text-xs font-bold transition-colors cursor-pointer ${
                   contentMode === 'multi-page'
-                    ? 'border-[#15445A] bg-white text-stone-950'
+                    ? 'border-[#416B91] bg-white text-stone-950'
                     : 'border-stone-200 bg-white/70 text-stone-700 hover:bg-white'
                 }`}
               >
@@ -678,7 +678,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   data-testid="teacher-toggle-executor"
                   checked={includeExecutor}
                   onChange={(e) => setIncludeExecutor(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded accent-[#15445A]"
+                  className="w-3.5 h-3.5 rounded accent-[#416B91]"
                 />
                 <span>المنفذ</span>
               </label>
@@ -688,7 +688,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   data-testid="teacher-toggle-national-id"
                   checked={includeNationalId}
                   onChange={(e) => setIncludeNationalId(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded accent-[#15445A]"
+                  className="w-3.5 h-3.5 rounded accent-[#416B91]"
                 />
                 <span>السجل المدني</span>
               </label>
@@ -698,7 +698,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   data-testid="teacher-toggle-signature"
                   checked={includeSignature}
                   onChange={(e) => setIncludeSignature(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded accent-[#15445A]"
+                  className="w-3.5 h-3.5 rounded accent-[#416B91]"
                 />
                 <span>التوقيع</span>
               </label>
@@ -708,7 +708,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   data-testid="teacher-toggle-principal"
                   checked={includePrincipal}
                   onChange={(e) => setIncludePrincipal(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded accent-[#15445A]"
+                  className="w-3.5 h-3.5 rounded accent-[#416B91]"
                 />
                 <span>مدير المدرسة</span>
               </label>
@@ -726,7 +726,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <Camera
-                  className="w-4 h-4 text-[#1E4D8C] shrink-0"
+                  className="w-4 h-4 text-[#416B91] shrink-0"
                   aria-hidden="true"
                 />
                 <span className="text-sm font-bold text-stone-900">
@@ -751,7 +751,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   onClick={() => handleSetPhotoPresetCount(cnt)}
                   className={`min-h-[36px] px-3 py-1.5 rounded-lg border text-xs font-bold transition-colors cursor-pointer ${
                     evidencePhotos.length === cnt
-                      ? 'border-[#15445A] bg-white text-stone-950 shadow-2xs'
+                      ? 'border-[#416B91] bg-white text-stone-950 shadow-2xs'
                       : 'border-stone-200 bg-white/70 text-stone-700 hover:bg-white'
                   }`}
                 >
@@ -864,7 +864,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <Link2
-                  className="w-4 h-4 text-[#1E4D8C] shrink-0"
+                  className="w-4 h-4 text-[#416B91] shrink-0"
                   aria-hidden="true"
                 />
                 <span className="text-sm font-bold text-stone-900">
@@ -889,7 +889,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   onClick={() => handleSetLinkPresetCount(cnt)}
                   className={`min-h-[36px] px-3 py-1.5 rounded-lg border text-xs font-bold transition-colors cursor-pointer ${
                     evidenceLinks.length === cnt
-                      ? 'border-[#15445A] bg-white text-stone-950 shadow-2xs'
+                      ? 'border-[#416B91] bg-white text-stone-950 shadow-2xs'
                       : 'border-stone-200 bg-white/70 text-stone-700 hover:bg-white'
                   }`}
                 >
@@ -1087,7 +1087,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                     onClick={() => handleSelectColorSystem(sysId)}
                     className={`px-3 py-1.5 rounded-lg border text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer ${
                       colorSystem === sysId
-                        ? 'border-[#15445A] bg-stone-900 text-white'
+                        ? 'border-[#416B91] bg-stone-900 text-white'
                         : 'border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100'
                     }`}
                   >
@@ -1114,7 +1114,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                   data-testid={`compare-card-${tplId}`}
                   className={`rounded-2xl border-2 p-4 flex flex-col justify-between gap-4 transition-all ${
                     isCurrent
-                      ? 'border-[#15445A] bg-[#F4F8FC]/60'
+                      ? 'border-[#416B91] bg-[#FBFBF9]/60'
                       : 'border-stone-200 bg-stone-50/40'
                   }`}
                 >
@@ -1183,7 +1183,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
       <section className="space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2 px-1 print:hidden">
           <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-stone-800">
-            <Eye className="w-4 h-4 text-[#1E4D8C]" aria-hidden="true" />
+            <Eye className="w-4 h-4 text-[#416B91]" aria-hidden="true" />
             <span>
               المعاينة الحية المطابقة ١٠٠٪ لملف PDF (مقاس A4 طولي ·{' '}
               {activeTemplateDef.name} · {palette.name})
@@ -1240,7 +1240,7 @@ export const TeacherPdfMasterPreview: React.FC = () => {
                       width: `${widthPct}%`,
                       height: `${heightPct}%`,
                     }}
-                    className="absolute block rounded-lg ring-2 ring-transparent hover:ring-[#07A869] hover:bg-black/5 transition-all cursor-pointer"
+                    className="absolute block rounded-lg ring-2 ring-transparent hover:ring-[#2F6846] hover:bg-black/5 transition-all cursor-pointer"
                   />
                 );
               })}

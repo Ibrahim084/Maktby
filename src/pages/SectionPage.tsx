@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {
-  ArrowLeft,
-  ArrowRight,
-  FileCheck2,
-  FolderOpen,
-  GraduationCap,
-  Lightbulb,
-  Presentation,
-  Settings,
-} from 'lucide-react';
+  ArrowLeftLineIcon,
+  ArrowRightLineIcon,
+  EvidenceLineIcon,
+  FormsLineIcon,
+  GiftedLineIcon,
+  PerformanceLineIcon,
+  ProfessionalDevLineIcon,
+  SettingsLineIcon,
+} from '../components/brand/MaktbyIcons';
 import { FormRenderer } from '../components/forms/FormRenderer';
 import { GiftedCoordinatorHub } from '../components/gifted/GiftedCoordinatorHub';
 import { OfficialInfoBar } from '../components/OfficialInfoBar';
@@ -31,11 +31,11 @@ interface SectionPageProps {
 function renderSectionHeaderIcon(id: SectionId) {
   switch (id) {
     case 'professional-development':
-      return <Presentation className="w-8 h-8" aria-hidden="true" />;
+      return <ProfessionalDevLineIcon className="w-8 h-8" />;
     case 'gifted':
-      return <Lightbulb className="w-8 h-8" aria-hidden="true" />;
+      return <GiftedLineIcon className="w-8 h-8" />;
     case 'teacher':
-      return <GraduationCap className="w-8 h-8" aria-hidden="true" />;
+      return <PerformanceLineIcon className="w-8 h-8" />;
   }
 }
 
@@ -62,26 +62,24 @@ export const SectionPage: React.FC<SectionPageProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home')}
-          className="min-h-[44px] px-4 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold text-stone-800 hover:bg-stone-100 transition-colors inline-flex items-center gap-2 cursor-pointer"
+          className="min-h-[44px] px-4 py-2 rounded-xl bg-white border border-[#E2E5E6] text-sm font-semibold text-[#292F33] hover:bg-[#EAF2F1] hover:border-[#C4D8D6] hover:text-[#315E62] transition-colors inline-flex items-center gap-2 cursor-pointer"
         >
-          <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+          <ArrowRightLineIcon className="w-4 h-4 shrink-0 text-[#376B70]" />
           <span>العودة للرئيسية</span>
         </button>
 
         <button
           type="button"
           onClick={() => onNavigate('settings')}
-          className="min-h-[44px] px-4 py-2 rounded-xl bg-white border border-stone-200 text-xs sm:text-sm font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition-colors inline-flex items-center gap-2 cursor-pointer"
+          className="min-h-[44px] px-4 py-2 rounded-xl bg-[#EAF2F1] border border-[#C4D8D6] text-xs sm:text-sm font-semibold text-[#315E62] hover:bg-[#DCE9E8] transition-colors inline-flex items-center gap-2 cursor-pointer"
         >
-          <Settings className="w-4 h-4 shrink-0" aria-hidden="true" />
+          <SettingsLineIcon className="w-4 h-4 shrink-0" />
           <span>تعديل الصفة أو بيانات المدرسة</span>
         </button>
       </div>
 
-      {/* Section Header Card */}
-      <section
-        className={`bg-white rounded-2xl border ${section.accentBorderClass} p-6 sm:p-8 print:hidden`}
-      >
+      {/* Section Header Card — Displays Section's Dedicated Calm Palette */}
+      <section className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 print:hidden">
         <div className="flex flex-col sm:flex-row sm:items-start gap-5">
           <div
             className={`w-16 h-16 rounded-2xl ${section.iconBgClass} flex items-center justify-center shrink-0`}
@@ -90,21 +88,24 @@ export const SectionPage: React.FC<SectionPageProps> = ({
           </div>
 
           <div className="space-y-2 flex-1">
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-semibold">
-              <span className={section.accentTextClass}>قسم مستقل</span>
-              <span aria-hidden="true" className="text-stone-300">
+            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium text-[#626D72]">
+              <span className={`font-semibold ${section.badgeTextClass}`}>قسم مستقل</span>
+              <span aria-hidden="true" className="text-[#9AA5AA]">
                 ·
               </span>
-              <span className="text-stone-700">
-                الصفة المعتمدة: {roleTitle || 'غير محددة'}
+              <span>
+                الصفة المعتمدة:{' '}
+                <strong className="font-semibold text-[#292F33]">
+                  {roleTitle || 'غير محددة'}
+                </strong>
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-stone-900">
+            <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-[#292F33]">
               {section.title}
             </h1>
 
-            <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-4xl">
+            <p className="text-sm sm:text-base text-[#626D72] leading-relaxed max-w-4xl">
               {section.detailedDescription}
             </p>
           </div>
@@ -139,22 +140,22 @@ export const SectionPage: React.FC<SectionPageProps> = ({
       ) : (
         <section
           aria-labelledby="future-forms-heading"
-          className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-10"
+          className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-10"
         >
-          <div className="border-b border-stone-100 pb-4 mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div className="border-b border-[#E2E5E6] pb-4 mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div>
               <h2
                 id="future-forms-heading"
-                className="text-lg sm:text-xl font-bold font-display text-stone-900"
+                className="text-lg sm:text-xl font-bold font-display text-[#292F33]"
               >
                 مساحة النماذج والتقارير المعتمدة — {section.title}
               </h2>
-              <p className="text-xs sm:text-sm text-stone-500 mt-0.5">
+              <p className="text-xs sm:text-sm text-[#626D72] mt-0.5">
                 مرتبطة تلقائياً ببيانات الإعدادات المركزية وصفة (
                 {roleTitle || 'غير محددة'})
               </p>
             </div>
-            <span className="text-xs text-stone-500 tabular-nums">
+            <span className="text-xs text-[#626D72] tabular-nums">
               النماذج المسجلة حالياً: {registeredForms.length}
             </span>
           </div>
@@ -164,43 +165,41 @@ export const SectionPage: React.FC<SectionPageProps> = ({
               {registeredForms.map((formItem) => (
                 <article
                   key={formItem.id}
-                  className={`rounded-2xl border ${section.accentBorderClass} p-5 flex flex-col justify-between gap-4 bg-white hover:shadow-xs transition-shadow`}
+                  className={`rounded-2xl border border-[#E2E5E6] ${section.accentHoverBorderClass} p-5 flex flex-col justify-between gap-4 bg-white hover:shadow-xs transition-all`}
                 >
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold font-display text-stone-900 mb-1.5">
+                    <h3 className="text-base sm:text-lg font-bold font-display text-[#292F33] mb-1.5">
                       {formItem.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#626D72] leading-relaxed">
                       {formItem.description}
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setActiveForm(formItem)}
-                    className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer ${section.buttonBgClass}`}
+                    className="min-h-[44px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer"
                   >
                     <span>فتح النموذج وإعداد التقرير</span>
-                    <ArrowLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
+                    <ArrowLeftLineIcon className="w-4 h-4 shrink-0" />
                   </button>
                 </article>
               ))}
             </div>
           ) : (
-            <div
-              className={`rounded-2xl border border-dashed ${section.accentBorderClass} ${section.accentSoftBgClass} p-8 sm:p-12 text-center max-w-2xl mx-auto my-2 space-y-5`}
-            >
+            <div className="rounded-2xl border border-dashed border-[#C4D8D6] bg-[#FBFBF9] p-8 sm:p-12 text-center max-w-2xl mx-auto my-2 space-y-5">
               <div
                 className={`w-12 h-12 rounded-xl ${section.iconBgClass} flex items-center justify-center mx-auto`}
               >
-                <FolderOpen className="w-6 h-6" aria-hidden="true" />
+                <FormsLineIcon className="w-6 h-6" />
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-base sm:text-lg font-bold font-display text-stone-900">
+                <h3 className="text-base sm:text-lg font-bold font-display text-[#292F33]">
                   النماذج ستضاف لاحقاً
                 </h3>
 
-                <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#626D72] leading-relaxed">
                   {section.futureFormsMessage}
                 </p>
               </div>
@@ -214,9 +213,9 @@ export const SectionPage: React.FC<SectionPageProps> = ({
                       createEngineVerificationForm(section.id, section.title)
                     )
                   }
-                  className={`min-h-[44px] px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer ${section.buttonBgClass}`}
+                  className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
-                  <FileCheck2 className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  <EvidenceLineIcon className="w-4 h-4 shrink-0" />
                   <span>تجربة محرك النماذج والتقارير الموحد</span>
                 </button>
               </div>

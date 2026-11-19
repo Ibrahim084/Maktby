@@ -21,6 +21,11 @@ import {
 import {
   buildOfficialCertificateContent,
   buildPdfFromJpegBytes,
+  CERTIFICATE_RECIPIENT_MAX_FONT_PX,
+  CERTIFICATE_RECIPIENT_MIN_FONT_PX,
+  CERTIFICATE_RECIPIENT_SAFE_WIDTH_PX,
+  computeSingleLineAutoFitFontSize,
+  generateCertificatePdfBytes,
 } from './certificatePdfGenerator';
 import {
   buildMultiPagePdfFromJpegs,
@@ -684,5 +689,116 @@ test('Section 8: Professional Development reports support ONLY PDF export (no Wo
   assert.ok(finalPdfText.includes('/MediaBox [0 0 595.28 841.89]'));
   assert.ok(finalPdfText.trim().endsWith('%%EOF'));
 });
+
+test('Certificate Long-Name Single-Line Auto-Fit: Short, medium, long, and very long Arabic names stay on 1 independent line above National ID for both Trainer and Trainee certificates', async () => {
+  const settings = {
+    schoolName: 'متوسطة وثانوية الأمير سلطان التعليمية',
+    educationDepartment: 'تعليم الرياض',
+    principalName: 'فهد بن سعد القحطاني',
+    userName: 'محمد بن علي السالم',
+    academicYear: '1447 - 1448 هـ',
+    gender: 'male' as const,
+    roles: {
+      professionalDevelopment: 'منسق التطوير المهني',
+      gifted: 'منسق الموهوبين',
+      teacher: 'معلم',
+    },
+  };
+
+  const baseValues = createInitialFormValues(PD_TRAINER_CERTIFICATE_FORM);
+  baseValues.schoolNameInput = settings.schoolName;
+  baseValues.programTitle = 'مهارات التصميم التعليمي وتقنيات التعلم النشط';
+  baseValues.daysCount = '3';
+  baseValues.hoursCount = '15';
+  baseValues.startDate = '1447/06/01 هـ';
+  baseValues.endDate = '1447/06/03 هـ';
+  baseValues.principalNameInput = settings.principalName;
+
+  const testCases = [
+    {
+      label: 'short',
+      name: 'أحمد علي',
+      expectedScaleDown: false,
+      expectedMinFloor: false,
+    },
+    {
+      label: 'medium',
+      name: 'سلطان بن عبدالرحمن الشهري',
+      expectedScaleDown: false,
+      expectedMinFloor: false,
+    },
+    {
+      label: 'long',
+      name: 'عبدالرحمن بن محمد بن عبدالعزيز بن إبراهيم آل عبداللطيف السبيعي',
+      expectedScaleDown: true,
+      expectedMinFloor: false,
+    },
+    {
+      label: 'very-long',
+      name: 'عبدالعزيز بن عبدالرحمن بن محمد بن عبدالله بن إبراهيم بن سليمان آل عبداللطيف القحطاني الدوسري الشمراني',
+      expectedScaleDown: true,
+      expectedMinFloor: true,
+    },
+  ];
+
+  // Realistic Arabic bold glyph width model (~0.56 * fontSize per Arabic character)
+  const measureArabicLineWidth = (text: string) => (fontSizePx: number) =>
+    text.length * fontSizePx * 0.56;
+
+  for (const variant of ['trainer', 'trainee'] as const) {
+    let previousFontSize = CERTIFICATE_RECIPIENT_MAX_FONT_PX;
+
+    for (const tc of testCases) {
+      const content = buildOfficialCertificateContent(
+        variant,
+        { name: tc.name, nationalId: '1045678901' },
+        baseValues,
+        settings
+      );
+
+      // 1. Intro line and Recipient name are cleanly separated so the name sits on 1 independent line
+      assert.equal(content.introLine, `تشهد إدارة مدرسة ${settings.schoolName} بأن`);
+      assert.equal(content.recipientLine, `الأستاذ ${tc.name}`);
+      // 2. National ID is ALWAYS on its own separate line (line2)
+      assert.equal(content.line2, 'رقم الهوية / 1045678901');
+      assert.equal(content.recipientLine.includes('رقم الهوية'), false);
+
+      // 3. Auto-fit calculation scales progressively down and respects the readable minimum floor
+      const fit = computeSingleLineAutoFitFontSize(
+        content.recipientLine,
+        CERTIFICATE_RECIPIENT_SAFE_WIDTH_PX,
+        measureArabicLineWidth(content.recipientLine)
+      );
+
+      assert.equal(fit.didScaleDown, tc.expectedScaleDown, `${variant}/${tc.label} scaleDown`);
+      assert.equal(fit.reachedMinFontSize, tc.expectedMinFloor, `${variant}/${tc.label} minFloor`);
+      assert.ok(
+        fit.fontSizePx >= CERTIFICATE_RECIPIENT_MIN_FONT_PX &&
+          fit.fontSizePx <= CERTIFICATE_RECIPIENT_MAX_FONT_PX,
+        `${variant}/${tc.label} font size stays within [${CERTIFICATE_RECIPIENT_MIN_FONT_PX}, ${CERTIFICATE_RECIPIENT_MAX_FONT_PX}]`
+      );
+      assert.ok(
+        fit.fontSizePx <= previousFontSize,
+        `${variant}/${tc.label} font size scales monotonically downward for longer names`
+      );
+      if (!tc.expectedMinFloor) {
+        assert.equal(
+          fit.fitsWithinMaxWidth,
+          true,
+          `${variant}/${tc.label} fits cleanly inside safe width without overflow`
+        );
+      }
+      previousFontSize = fit.fontSizePx;
+
+      // 4. PDF generation succeeds with valid A4 Landscape PDF 1.4 binary
+      const pdfBytes = await generateCertificatePdfBytes(content);
+      const pdfStr = new TextDecoder('latin1').decode(pdfBytes);
+      assert.ok(pdfStr.startsWith('%PDF-1.4'));
+      assert.ok(pdfStr.includes('/MediaBox [0 0 841.89 595.28]'));
+      assert.ok(pdfStr.trim().endsWith('%%EOF'));
+    }
+  }
+});
+
 
 

@@ -830,7 +830,7 @@ export const PlcBatch2Forms: React.FC<PlcBatch2FormsProps> = ({
     }
     if (priority === 'medium') {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-xs font-extrabold">
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#FDF2ED] text-[#9A4A2E] border border-[#E8C9BA] text-xs font-extrabold">
           <span>أولوية: {PLC_PRIORITY_LABELS.medium}</span>
         </span>
       );
@@ -1845,7 +1845,7 @@ export const PlcBatch2Forms: React.FC<PlcBatch2FormsProps> = ({
             >
               أولًا: الرؤية
             </label>
-            <span className="text-[11px] font-bold text-emerald-700">
+            <span className="text-[11px] font-bold text-[#2F6846]">
               حفظ تلقائي وفوري
             </span>
           </div>
@@ -1894,7 +1894,7 @@ export const PlcBatch2Forms: React.FC<PlcBatch2FormsProps> = ({
             >
               ثانيًا: الرسالة
             </label>
-            <span className="text-[11px] font-bold text-emerald-700">
+            <span className="text-[11px] font-bold text-[#2F6846]">
               {readOnly ? 'للقراءة فقط' : 'حفظ تلقائي وفوري'}
             </span>
           </div>
@@ -2341,7 +2341,7 @@ export const PlcBatch2Forms: React.FC<PlcBatch2FormsProps> = ({
                       <td className="py-3 px-4 font-extrabold text-stone-900">
                         <div>{need.description}</div>
                         {linkedPlanActionsCount > 0 && (
-                          <span className="inline-block mt-1 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-extrabold">
+                          <span className="inline-block mt-1 px-2 py-0.5 rounded-md bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-[10px] font-extrabold">
                             مرتبط بـ {linkedPlanActionsCount} إجراء في الخطة
                             التشغيلية
                           </span>

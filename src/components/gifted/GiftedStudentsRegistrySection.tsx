@@ -408,27 +408,27 @@ export const GiftedStudentsRegistrySection: React.FC<
     <div
       dir="rtl"
       data-testid="gifted-students-registry-section"
-      className="space-y-6 text-[#26323B]"
+      className="space-y-6 text-[#292F33]"
     >
       {/* نموذج إضافة أو تعديل طالب/طالبة بالحقول الثمانية المعتمدة فقط */}
       <section
         data-testid="student-registry-form-card"
         className={`rounded-2xl border p-5 sm:p-6 transition-all ${
           editingStudentId
-            ? 'bg-[#F9EFF2]/50 border-[#7F1D3F]'
-            : 'bg-white border-[#E6C7D0]'
+            ? 'bg-[#F7EBD5]/50 border-[#956C2E]'
+            : 'bg-white border-[#E5CFA7]'
         }`}
       >
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
           <div className="flex items-center gap-2.5">
-            <span className="w-8 h-8 rounded-lg bg-[#7F1D3F] text-white flex items-center justify-center">
+            <span className="w-8 h-8 rounded-lg bg-[#8A6125] text-white flex items-center justify-center">
               {editingStudentId ? (
                 <Edit3 className="w-4 h-4" aria-hidden="true" />
               ) : (
                 <Plus className="w-4 h-4" aria-hidden="true" />
               )}
             </span>
-            <h3 className="text-base sm:text-lg font-extrabold font-display text-[#26323B]">
+            <h3 className="text-base sm:text-lg font-extrabold font-display text-[#292F33]">
               {editingStudentId
                 ? 'تعديل بيانات الطالب / الطالبة'
                 : 'إضافة طالب / طالبة'}
@@ -465,7 +465,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                 setFormState((s) => ({ ...s, name: e.target.value }));
               }}
               placeholder="الاسم الرباعي الكامل..."
-              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:border-[#956C2E]"
             />
           </label>
 
@@ -484,7 +484,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                 setFormState((s) => ({ ...s, civilId: e.target.value }));
               }}
               placeholder="رقم الهوية الوطنية (١٠ أرقام)"
-              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm tabular-nums focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm tabular-nums focus:outline-none focus:border-[#956C2E]"
             />
           </label>
 
@@ -502,7 +502,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                   gender: e.target.value as GiftedStudentGender,
                 }))
               }
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold focus:outline-none focus:border-[#956C2E]"
             >
               {GIFTED_APPROVED_STUDENT_GENDERS.map((g) => (
                 <option key={g} value={g}>
@@ -523,7 +523,7 @@ export const GiftedStudentsRegistrySection: React.FC<
               onChange={(e) =>
                 setFormState((s) => ({ ...s, grade: e.target.value }))
               }
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold focus:outline-none focus:border-[#956C2E]"
             >
               <option value="" disabled>
                 اختر الصف
@@ -549,7 +549,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                 setFormState((s) => ({ ...s, academicYear: e.target.value }))
               }
               placeholder="مثال: ١٤٤٧هـ"
-              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:border-[#956C2E]"
             />
           </label>
 
@@ -567,7 +567,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                   semester: normalizeApprovedSemester(e.target.value),
                 }))
               }
-              className="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold focus:outline-none focus:border-[#956C2E]"
             >
               {APPROVED_SCHOOL_SEMESTERS.map((sem) => (
                 <option key={sem} value={sem}>
@@ -591,7 +591,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                 setFormState((s) => ({ ...s, studentMobile: e.target.value }))
               }
               placeholder="اختياري..."
-              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm tabular-nums focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm tabular-nums focus:outline-none focus:border-[#956C2E]"
             />
           </label>
 
@@ -608,7 +608,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                 setFormState((s) => ({ ...s, guardianName: e.target.value }))
               }
               placeholder="اختياري..."
-              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:border-[#7F1D3F]"
+              className="w-full min-h-[42px] px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:border-[#956C2E]"
             />
           </label>
 
@@ -619,7 +619,7 @@ export const GiftedStudentsRegistrySection: React.FC<
               data-testid="student-save-btn"
               disabled={duplicateCheck.status === 'duplicate_blocked'}
               onClick={handleSaveStudent}
-              className="w-full sm:w-auto min-h-[42px] px-6 py-2 rounded-xl bg-[#7F1D3F] hover:bg-[#641631] disabled:opacity-50 text-white text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              className="w-full sm:w-auto min-h-[42px] px-6 py-2 rounded-xl bg-[#8A6125] hover:bg-[#704E1D] disabled:opacity-50 text-white text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -650,10 +650,10 @@ export const GiftedStudentsRegistrySection: React.FC<
         {duplicateCheck.status === 'similar_warning' && (
           <div
             data-testid="student-similar-warning-alert"
-            className="mt-4 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs font-semibold text-amber-900 flex items-center gap-2"
+            className="mt-4 rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] px-4 py-3 text-xs font-semibold text-[#9A4A2E] flex items-center gap-2"
           >
             <AlertTriangle
-              className="w-4 h-4 text-amber-700 shrink-0"
+              className="w-4 h-4 text-[#9A4A2E] shrink-0"
               aria-hidden="true"
             />
             <span>
@@ -672,7 +672,7 @@ export const GiftedStudentsRegistrySection: React.FC<
           data-testid="student-feedback-banner"
           className={`rounded-xl px-4 py-3 text-xs sm:text-sm font-semibold flex items-center justify-between gap-3 border ${
             feedbackBanner.type === 'success'
-              ? 'bg-emerald-50 text-emerald-900 border-emerald-200'
+              ? 'bg-[#EEF5EE] text-[#2F6846] border-[#C5DCC7]'
               : 'bg-red-50 text-red-900 border-red-200'
           }`}
         >
@@ -710,11 +710,11 @@ export const GiftedStudentsRegistrySection: React.FC<
       )}
 
       {/* جدول عرض الطلاب والطالبات بالحقول الثمانية المعتمدة فقط */}
-      <section className="bg-white rounded-2xl border border-[#E6C7D0] overflow-hidden shadow-xs">
-        <div className="p-4 sm:p-5 bg-[#FAF7F5] border-b border-[#E6C7D0] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <section className="bg-white rounded-2xl border border-[#E5CFA7] overflow-hidden shadow-xs">
+        <div className="p-4 sm:p-5 bg-[#FBF6EC] border-b border-[#E5CFA7] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Users className="w-5 h-5 text-[#7F1D3F]" aria-hidden="true" />
-            <h4 className="text-sm sm:text-base font-extrabold text-[#26323B]">
+            <Users className="w-5 h-5 text-[#956C2E]" aria-hidden="true" />
+            <h4 className="text-sm sm:text-base font-extrabold text-[#292F33]">
               سجل الطلاب والطالبات ({filteredStudents.length})
             </h4>
           </div>
@@ -731,7 +731,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="بحث بالاسم أو الهوية..."
-                className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#956C2E]"
               />
             </div>
 
@@ -740,7 +740,7 @@ export const GiftedStudentsRegistrySection: React.FC<
               value={gradeFilter}
               onChange={(e) => setGradeFilter(e.target.value)}
               aria-label="تصفية حسب الصف"
-              className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-300 text-xs font-semibold text-stone-700 focus:outline-none focus:border-[#7F1D3F]"
+              className="min-h-[38px] px-3 py-1.5 rounded-xl bg-white border border-stone-300 text-xs font-semibold text-stone-700 focus:outline-none focus:border-[#956C2E]"
             >
               <option value="all">جميع الصفوف</option>
               {APPROVED_TEN_STUDENT_GRADES.map((gr) => (
@@ -799,13 +799,13 @@ export const GiftedStudentsRegistrySection: React.FC<
                       key={stu.id}
                       data-testid={`student-row-${stu.id}`}
                       className={
-                        isEditingThis ? 'bg-[#F9EFF2]/40' : 'hover:bg-stone-50/70'
+                        isEditingThis ? 'bg-[#F7EBD5]/40' : 'hover:bg-stone-50/70'
                       }
                     >
                       <td className="py-3 px-3 text-center font-bold text-stone-500 tabular-nums">
                         {idx + 1}
                       </td>
-                      <td className="py-3 px-3 font-extrabold text-[#26323B]">
+                      <td className="py-3 px-3 font-extrabold text-[#292F33]">
                         {stu.name}
                       </td>
                       <td className="py-3 px-3 text-stone-700 font-semibold tabular-nums">
@@ -854,7 +854,7 @@ export const GiftedStudentsRegistrySection: React.FC<
                               type="button"
                               data-testid={`student-edit-btn-${stu.id}`}
                               onClick={() => handleStartEditStudent(stu)}
-                              className="px-2.5 py-1.5 rounded-lg bg-white border border-stone-300 hover:border-[#7F1D3F] text-[#26323B] text-xs font-bold inline-flex items-center gap-1 cursor-pointer"
+                              className="px-2.5 py-1.5 rounded-lg bg-white border border-stone-300 hover:border-[#956C2E] text-[#292F33] text-xs font-bold inline-flex items-center gap-1 cursor-pointer"
                             >
                               <Edit3 className="w-3.5 h-3.5" aria-hidden="true" />
                               <span>تعديل</span>

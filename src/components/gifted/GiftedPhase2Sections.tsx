@@ -59,14 +59,14 @@ const STATUS_BADGE_STYLES: Record<
   { bgHex: string; textHex: string; borderHex: string }
 > = {
   executed: {
-    bgHex: '#E8F5EE',
-    textHex: '#166534',
-    borderHex: '#BBF7D0',
+    bgHex: '#EEF5EE',
+    textHex: '#2F6846',
+    borderHex: '#C5DCC7',
   },
   pending: {
-    bgHex: '#FEF3C7',
-    textHex: '#92400E',
-    borderHex: '#FDE68A',
+    bgHex: '#FDF2ED',
+    textHex: '#9A4A2E',
+    borderHex: '#E8C9BA',
   },
   not_executed: {
     bgHex: '#FEE2E2',
@@ -335,15 +335,15 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
       {activeSection === 5 && (
         <section data-testid="gifted-section-5-view" className="space-y-6">
           {/* Section 05 Header */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#7F1D3F] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
+              <div className="w-12 h-12 rounded-xl bg-[#8A6125] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
                 05
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#7F1D3F] rotate-45 inline-block" />
-                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#26323B]">
+                  <span className="w-2 h-2 bg-[#8A6125] rotate-45 inline-block" />
+                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]">
                     مؤشرات التنفيذ ونسب الإنجاز المعتمدة
                   </h3>
                 </div>
@@ -357,7 +357,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               <button
                 type="button"
                 onClick={() => onNavigateToSection(6)}
-                className="min-h-[40px] px-4 py-2 rounded-xl bg-[#7F1D3F] hover:bg-[#681633] text-white text-xs font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
+                className="min-h-[40px] px-4 py-2 rounded-xl bg-[#8A6125] hover:bg-[#704E1D] text-white text-xs font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <ClipboardCheck className="w-4 h-4" />
                 <span>الانتقال إلى سجل التنفيذ (القسم 06)</span>
@@ -365,7 +365,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               <button
                 type="button"
                 onClick={() => onNavigateToSection(7)}
-                className="min-h-[40px] px-4 py-2 rounded-xl bg-[#26323B] hover:bg-[#1B242B] text-white text-xs font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
+                className="min-h-[40px] px-4 py-2 rounded-xl bg-[#292F33] hover:bg-[#292F33] text-white text-xs font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <Users className="w-4 h-4" />
                 <span>سجل الطلاب والمشاركات (القسم 07)</span>
@@ -378,14 +378,14 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
             {/* Primary Indicator 1: Executive Plan Completion */}
             <div
               data-testid="section5-executive-plan-card"
-              className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 space-y-4"
+              className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 space-y-4"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <span className="inline-block px-2.5 py-0.5 rounded bg-[#F9EFF2] text-[#7F1D3F] text-[11px] font-bold">
+                  <span className="inline-block px-2.5 py-0.5 rounded bg-[#F7EBD5] text-[#956C2E] text-[11px] font-bold">
                     المؤشر المستقل الأول • القسم 02
                   </span>
-                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#26323B] mt-1">
+                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#292F33] mt-1">
                     مؤشر إنجاز بنود الخطة التنفيذية العامة
                   </h4>
                   <p className="text-xs text-stone-500 mt-0.5">
@@ -395,7 +395,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 <div className="text-left shrink-0">
                   <div
                     data-testid="section5-plan-percentage"
-                    className="text-3xl font-extrabold text-[#7F1D3F] tabular-nums"
+                    className="text-3xl font-extrabold text-[#956C2E] tabular-nums"
                   >
                     {metrics.executivePlanMetrics.completionPercentage}%
                   </div>
@@ -409,7 +409,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               {/* Burgundy Progress Bar */}
               <div className="w-full h-3 rounded-full bg-stone-200 overflow-hidden">
                 <div
-                  className="h-full bg-[#7F1D3F] rounded-full transition-all duration-300"
+                  className="h-full bg-[#8A6125] rounded-full transition-all duration-300"
                   style={{
                     width: `${metrics.executivePlanMetrics.completionPercentage}%`,
                   }}
@@ -418,19 +418,19 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
 
               {/* Independent Breakdown Boxes: Executed, Pending, Not Executed */}
               <div className="grid grid-cols-3 gap-3 pt-1">
-                <div className="rounded-xl bg-emerald-50/80 border border-emerald-200 p-3 text-center">
-                  <div className="text-[11px] text-emerald-800 font-bold">
+                <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-3 text-center">
+                  <div className="text-[11px] text-[#2F6846] font-bold">
                     بنود منفذة (نفذ)
                   </div>
-                  <div className="text-xl font-extrabold text-emerald-800 tabular-nums mt-0.5">
+                  <div className="text-xl font-extrabold text-[#2F6846] tabular-nums mt-0.5">
                     {metrics.executivePlanMetrics.executed}
                   </div>
                 </div>
-                <div className="rounded-xl bg-amber-50/80 border border-amber-200 p-3 text-center">
-                  <div className="text-[11px] text-amber-900 font-bold">
+                <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-3 text-center">
+                  <div className="text-[11px] text-[#9A4A2E] font-bold">
                     معلقة / قيد التنفيذ
                   </div>
-                  <div className="text-xl font-extrabold text-amber-800 tabular-nums mt-0.5">
+                  <div className="text-xl font-extrabold text-[#9A4A2E] tabular-nums mt-0.5">
                     {metrics.executivePlanMetrics.pending}
                   </div>
                 </div>
@@ -448,14 +448,14 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
             {/* Primary Indicator 2: Program Actions Completion */}
             <div
               data-testid="section5-program-actions-card"
-              className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 space-y-4"
+              className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 space-y-4"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <span className="inline-block px-2.5 py-0.5 rounded bg-[#26323B] text-white text-[11px] font-bold">
+                  <span className="inline-block px-2.5 py-0.5 rounded bg-[#292F33] text-white text-[11px] font-bold">
                     المؤشر المستقل الثاني • القسم 06
                   </span>
-                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#26323B] mt-1">
+                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#292F33] mt-1">
                     مؤشر إنجاز الإجراءات التفصيلية للبرامج المطبقة
                   </h4>
                   <p className="text-xs text-stone-500 mt-0.5">
@@ -465,7 +465,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 <div className="text-left shrink-0">
                   <div
                     data-testid="section5-actions-percentage"
-                    className="text-3xl font-extrabold text-[#7F1D3F] tabular-nums"
+                    className="text-3xl font-extrabold text-[#956C2E] tabular-nums"
                   >
                     {metrics.programActionsMetrics.completionPercentage}%
                   </div>
@@ -479,7 +479,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               {/* Burgundy Progress Bar */}
               <div className="w-full h-3 rounded-full bg-stone-200 overflow-hidden">
                 <div
-                  className="h-full bg-[#7F1D3F] rounded-full transition-all duration-300"
+                  className="h-full bg-[#8A6125] rounded-full transition-all duration-300"
                   style={{
                     width: `${metrics.programActionsMetrics.completionPercentage}%`,
                   }}
@@ -488,19 +488,19 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
 
               {/* Independent Breakdown Boxes: Executed, Pending, Not Executed */}
               <div className="grid grid-cols-3 gap-3 pt-1">
-                <div className="rounded-xl bg-emerald-50/80 border border-emerald-200 p-3 text-center">
-                  <div className="text-[11px] text-emerald-800 font-bold">
+                <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-3 text-center">
+                  <div className="text-[11px] text-[#2F6846] font-bold">
                     إجراءات منفذة (نفذ)
                   </div>
-                  <div className="text-xl font-extrabold text-emerald-800 tabular-nums mt-0.5">
+                  <div className="text-xl font-extrabold text-[#2F6846] tabular-nums mt-0.5">
                     {metrics.programActionsMetrics.executed}
                   </div>
                 </div>
-                <div className="rounded-xl bg-amber-50/80 border border-amber-200 p-3 text-center">
-                  <div className="text-[11px] text-amber-900 font-bold">
+                <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-3 text-center">
+                  <div className="text-[11px] text-[#9A4A2E] font-bold">
                     معلقة / قيد التنفيذ
                   </div>
-                  <div className="text-xl font-extrabold text-amber-800 tabular-nums mt-0.5">
+                  <div className="text-xl font-extrabold text-[#9A4A2E] tabular-nums mt-0.5">
                     {metrics.programActionsMetrics.pending}
                   </div>
                 </div>
@@ -518,12 +518,12 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
 
           {/* Secondary KPI Row: Initiatives, Competitions, Students, & Qualifications */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 space-y-2">
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 space-y-2">
               <div className="flex items-center justify-between text-xs font-bold text-stone-500">
                 <span>مبادرات وبرامج المنسق</span>
-                <Sparkles className="w-4 h-4 text-[#7F1D3F]" />
+                <Sparkles className="w-4 h-4 text-[#956C2E]" />
               </div>
-              <div className="text-2xl font-extrabold text-[#26323B] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#292F33] tabular-nums">
                 {metrics.customInitiativesMetrics.completionPercentage}%
               </div>
               <div className="text-[11px] text-stone-600 tabular-nums">
@@ -533,12 +533,12 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 space-y-2">
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 space-y-2">
               <div className="flex items-center justify-between text-xs font-bold text-stone-500">
                 <span>المسابقات العلمية</span>
-                <Trophy className="w-4 h-4 text-[#7F1D3F]" />
+                <Trophy className="w-4 h-4 text-[#956C2E]" />
               </div>
-              <div className="text-2xl font-extrabold text-[#26323B] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#292F33] tabular-nums">
                 {metrics.competitionsMetrics.completionPercentage}%
               </div>
               <div className="text-[11px] text-stone-600 tabular-nums">
@@ -548,12 +548,12 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 space-y-2">
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 space-y-2">
               <div className="flex items-center justify-between text-xs font-bold text-stone-500">
                 <span>حصر الطلبة الموهوبين</span>
-                <Users className="w-4 h-4 text-[#7F1D3F]" />
+                <Users className="w-4 h-4 text-[#956C2E]" />
               </div>
-              <div className="text-2xl font-extrabold text-[#7F1D3F] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#956C2E] tabular-nums">
                 {studentsSummary.totalStudents}
               </div>
               <div className="text-[11px] text-stone-600 tabular-nums">
@@ -562,12 +562,12 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 space-y-2">
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 space-y-2">
               <div className="flex items-center justify-between text-xs font-bold text-stone-500">
                 <span>المشاركات والتأهل والإنجازات</span>
-                <Award className="w-4 h-4 text-[#7F1D3F]" />
+                <Award className="w-4 h-4 text-[#956C2E]" />
               </div>
-              <div className="text-2xl font-extrabold text-[#26323B] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#292F33] tabular-nums">
                 {studentsSummary.totalParticipations}
               </div>
               <div className="text-[11px] text-stone-600 tabular-nums">
@@ -578,12 +578,12 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
           </div>
 
           {/* Per-Program Execution Breakdown Table (Matching Reference Image 2 Page 5 "متابعة التنفيذ") */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 space-y-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-[#7F1D3F]" />
+                <BarChart3 className="w-5 h-5 text-[#956C2E]" />
                 <div>
-                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#26323B]">
+                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#292F33]">
                     متابعة التنفيذ التفصيلية للبرامج الوزارية السبعة
                   </h4>
                   <p className="text-xs text-stone-500">
@@ -599,7 +599,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 className="w-full text-right text-xs sm:text-sm border-collapse"
               >
                 <thead>
-                  <tr className="bg-[#7F1D3F] text-white">
+                  <tr className="bg-[#8A6125] text-white">
                     <th className="py-3 px-3 font-bold w-10 text-center">م</th>
                     <th className="py-3 px-3 font-bold min-w-[230px]">
                       البرنامج الوزاري المعتمد
@@ -636,18 +636,18 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                           ? 'bg-stone-100/80 text-stone-400'
                           : idx % 2 === 0
                           ? 'bg-white'
-                          : 'bg-[#FAF7F5]/60'
+                          : 'bg-[#FBF6EC]/60'
                       }
                     >
                       <td className="py-3 px-3 font-bold text-center tabular-nums">
                         {idx + 1}
                       </td>
-                      <td className="py-3 px-3 font-bold text-[#26323B]">
+                      <td className="py-3 px-3 font-bold text-[#292F33]">
                         {item.programTitle}
                       </td>
                       <td className="py-3 px-3 text-center">
                         {item.applicableToSchool ? (
-                          <span className="inline-block px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
+                          <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-[11px] font-bold">
                             مطبق (يدخل بالمؤشر)
                           </span>
                         ) : (
@@ -661,13 +661,13 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                           <div className="flex items-center gap-3">
                             <div className="flex-1 h-2.5 rounded-full bg-stone-200 overflow-hidden">
                               <div
-                                className="h-full bg-[#7F1D3F] rounded-full transition-all"
+                                className="h-full bg-[#8A6125] rounded-full transition-all"
                                 style={{
                                   width: `${item.completionPercentage}%`,
                                 }}
                               />
                             </div>
-                            <span className="w-11 text-left font-extrabold text-[#7F1D3F] tabular-nums text-xs">
+                            <span className="w-11 text-left font-extrabold text-[#956C2E] tabular-nums text-xs">
                               {item.completionPercentage}%
                             </span>
                           </div>
@@ -677,16 +677,16 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                           </span>
                         )}
                       </td>
-                      <td className="py-3 px-2.5 text-center font-bold text-emerald-700 tabular-nums">
+                      <td className="py-3 px-2.5 text-center font-bold text-[#2F6846] tabular-nums">
                         {item.applicableToSchool ? item.executed : '—'}
                       </td>
-                      <td className="py-3 px-2.5 text-center font-bold text-amber-700 tabular-nums">
+                      <td className="py-3 px-2.5 text-center font-bold text-[#9A4A2E] tabular-nums">
                         {item.applicableToSchool ? item.pending : '—'}
                       </td>
                       <td className="py-3 px-2.5 text-center font-bold text-red-700 tabular-nums">
                         {item.applicableToSchool ? item.notExecuted : '—'}
                       </td>
-                      <td className="py-3 px-2.5 text-center font-extrabold text-[#26323B] tabular-nums">
+                      <td className="py-3 px-2.5 text-center font-extrabold text-[#292F33] tabular-nums">
                         {item.applicableToSchool ? item.totalActive : '—'}
                       </td>
                       <td className="py-3 px-3 text-center">
@@ -695,7 +695,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                           onClick={() =>
                             handleOpenProgramInSection6(item.programId)
                           }
-                          className="px-2.5 py-1 rounded-lg bg-[#FAF7F5] hover:bg-[#7F1D3F] text-[#7F1D3F] hover:text-white border border-[#E6C7D0] text-xs font-bold transition-colors cursor-pointer"
+                          className="px-2.5 py-1 rounded-lg bg-[#FBF6EC] hover:bg-[#8A6125] text-[#956C2E] hover:text-white border border-[#E5CFA7] text-xs font-bold transition-colors cursor-pointer"
                         >
                           متابعة الإجراءات
                         </button>
@@ -715,15 +715,15 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
       {activeSection === 6 && (
         <section data-testid="gifted-section-6-view" className="space-y-6">
           {/* Section 06 Header */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#7F1D3F] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
+              <div className="w-12 h-12 rounded-xl bg-[#8A6125] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
                 06
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#7F1D3F] rotate-45 inline-block" />
-                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#26323B]">
+                  <span className="w-2 h-2 bg-[#8A6125] rotate-45 inline-block" />
+                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]">
                     سجل التنفيذ ومحرك الإجراءات الموحد
                   </h3>
                 </div>
@@ -734,15 +734,15 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
             </div>
 
             {/* Sub-tab Switcher */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-[#FAF7F5] p-1.5 rounded-xl border border-[#E6C7D0]">
+            <div className="flex flex-wrap items-center gap-1.5 bg-[#FBF6EC] p-1.5 rounded-xl border border-[#E5CFA7]">
               <button
                 type="button"
                 data-testid="section6-tab-ministerial"
                 onClick={() => setSection6Tab('ministerial_actions')}
                 className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                   section6Tab === 'ministerial_actions'
-                    ? 'bg-[#7F1D3F] text-white'
-                    : 'text-[#26323B] hover:bg-white'
+                    ? 'bg-[#8A6125] text-white'
+                    : 'text-[#292F33] hover:bg-white'
                 }`}
               >
                 إجراءات البرامج الوزارية ({metrics.programActionsMetrics.totalActive})
@@ -753,8 +753,8 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 onClick={() => setSection6Tab('initiatives_and_competitions')}
                 className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                   section6Tab === 'initiatives_and_competitions'
-                    ? 'bg-[#7F1D3F] text-white'
-                    : 'text-[#26323B] hover:bg-white'
+                    ? 'bg-[#8A6125] text-white'
+                    : 'text-[#292F33] hover:bg-white'
                 }`}
               >
                 تنفيذ مبادرات المنسق والمسابقات (
@@ -768,13 +768,13 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
           {section6Tab === 'ministerial_actions' && (
             <div className="space-y-5">
               {/* Filter & Search Bar */}
-              <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 sm:p-5 space-y-4">
+              <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 sm:p-5 space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
                   {/* Program Selector */}
                   <div className="md:col-span-4">
                     <label
                       htmlFor="section6-program-filter"
-                      className="block text-xs font-bold text-[#26323B] mb-1"
+                      className="block text-xs font-bold text-[#292F33] mb-1"
                     >
                       تصفية حسب البرنامج الوزاري
                     </label>
@@ -783,7 +783,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       data-testid="section6-program-filter"
                       value={selectedProgramFilter}
                       onChange={(e) => setSelectedProgramFilter(e.target.value)}
-                      className="w-full min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-[#FAF7F5] text-xs font-bold text-[#26323B]"
+                      className="w-full min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-[#FBF6EC] text-xs font-bold text-[#292F33]"
                     >
                       <option value="all">
                         جميع البرامج الوزارية (٧ برامج)
@@ -800,7 +800,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   <div className="md:col-span-3">
                     <label
                       htmlFor="section6-status-filter"
-                      className="block text-xs font-bold text-[#26323B] mb-1"
+                      className="block text-xs font-bold text-[#292F33] mb-1"
                     >
                       تصفية حسب حالة التنفيذ
                     </label>
@@ -813,7 +813,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                           e.target.value as GiftedExecutionStatus | 'all'
                         )
                       }
-                      className="w-full min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-[#FAF7F5] text-xs font-bold text-[#26323B]"
+                      className="w-full min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-[#FBF6EC] text-xs font-bold text-[#292F33]"
                     >
                       <option value="all">جميع الحالات (نفذ / معلق / لم ينفذ)</option>
                       <option value="executed">المنفذة فقط (نفذ)</option>
@@ -826,7 +826,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   <div className="md:col-span-5">
                     <label
                       htmlFor="section6-action-search"
-                      className="block text-xs font-bold text-[#26323B] mb-1"
+                      className="block text-xs font-bold text-[#292F33] mb-1"
                     >
                       بحث نصي في الإجراءات أو أسباب عدم التنفيذ
                     </label>
@@ -845,14 +845,14 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 </div>
 
                 <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-stone-200/70 text-xs">
-                  <label className="inline-flex items-center gap-2 font-bold text-[#26323B] cursor-pointer">
+                  <label className="inline-flex items-center gap-2 font-bold text-[#292F33] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={onlyApplicableProgramsFilter}
                       onChange={(e) =>
                         setOnlyApplicableProgramsFilter(e.target.checked)
                       }
-                      className="rounded accent-[#7F1D3F] w-4 h-4"
+                      className="rounded accent-[#956C2E] w-4 h-4"
                     />
                     <span>
                       عرض البرامج المطبقة على مرحلة المدرسة فقط (إخفاء المستبعدة)
@@ -863,7 +863,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     <span>
                       الإجراءات المطابقة للعرض الحالي: {filteredFlatActionsCount}
                     </span>
-                    <span className="text-[#7F1D3F] font-extrabold">
+                    <span className="text-[#956C2E] font-extrabold">
                       إجمالي الإنجاز الموزون: {metrics.programActionsMetrics.completionPercentage}% (
                       {metrics.programActionsMetrics.executed} من{' '}
                       {metrics.programActionsMetrics.totalActive})
@@ -906,21 +906,21 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     data-testid={`section6-program-block-${prog.code}`}
                     className={`bg-white rounded-2xl border transition-all overflow-hidden ${
                       prog.applicableToSchool
-                        ? 'border-[#E6C7D0]'
+                        ? 'border-[#E5CFA7]'
                         : 'border-stone-200 opacity-85'
                     }`}
                   >
                     {/* Program Top Bar */}
-                    <div className="bg-[#FAF7F5] border-b border-[#E6C7D0]/80 px-5 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+                    <div className="bg-[#FBF6EC] border-b border-[#E5CFA7]/80 px-5 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="px-2 py-0.5 rounded bg-[#7F1D3F] text-white text-xs font-extrabold tabular-nums">
+                          <span className="px-2 py-0.5 rounded bg-[#8A6125] text-white text-xs font-extrabold tabular-nums">
                             ص {prog.sourcePageNumber}
                           </span>
-                          <h4 className="text-sm sm:text-base font-extrabold font-display text-[#26323B]">
+                          <h4 className="text-sm sm:text-base font-extrabold font-display text-[#292F33]">
                             {prog.title}
                           </h4>
-                          <span className="px-2.5 py-0.5 rounded-full bg-[#F9EFF2] text-[#7F1D3F] border border-[#E6C7D0] text-[11px] font-bold tabular-nums">
+                          <span className="px-2.5 py-0.5 rounded-full bg-[#F7EBD5] text-[#956C2E] border border-[#E5CFA7] text-[11px] font-bold tabular-nums">
                             {prog.actions.length} إجراءات معتمدة
                           </span>
                           {!prog.applicableToSchool && (
@@ -930,24 +930,24 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                           )}
                         </div>
                         <p className="text-xs text-stone-600">
-                          المرحلة: <strong className="text-[#26323B]">{prog.stageLabel}</strong> • الفئة المستهدفة:{' '}
-                          <strong className="text-[#26323B]">{prog.targetAudience}</strong> • الموعد:{' '}
-                          <strong className="text-[#26323B]">{prog.scheduledPeriod}</strong>
+                          المرحلة: <strong className="text-[#292F33]">{prog.stageLabel}</strong> • الفئة المستهدفة:{' '}
+                          <strong className="text-[#292F33]">{prog.targetAudience}</strong> • الموعد:{' '}
+                          <strong className="text-[#292F33]">{prog.scheduledPeriod}</strong>
                         </p>
                       </div>
 
                       {/* Program Progress Summary */}
                       <div className="flex flex-wrap items-center gap-2">
                         {progSummary && prog.applicableToSchool && (
-                          <div className="px-3 py-1.5 rounded-xl bg-white border border-[#E6C7D0] text-xs font-bold tabular-nums flex items-center gap-2">
-                            <span className="text-[#7F1D3F] font-extrabold">
+                          <div className="px-3 py-1.5 rounded-xl bg-white border border-[#E5CFA7] text-xs font-bold tabular-nums flex items-center gap-2">
+                            <span className="text-[#956C2E] font-extrabold">
                               {progSummary.completionPercentage}%
                             </span>
                             <span className="text-stone-400">|</span>
-                            <span className="text-emerald-700">
+                            <span className="text-[#2F6846]">
                               نفذ: {progSummary.executed}
                             </span>
-                            <span className="text-amber-700">
+                            <span className="text-[#9A4A2E]">
                               معلق: {progSummary.pending}
                             </span>
                             <span className="text-red-700">
@@ -963,7 +963,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div className="overflow-x-auto rounded-xl border border-stone-200">
                         <table className="w-full text-right text-xs sm:text-sm border-collapse">
                           <thead>
-                            <tr className="bg-[#7F1D3F] text-white">
+                            <tr className="bg-[#8A6125] text-white">
                               <th className="py-2.5 px-2.5 font-bold w-10 text-center">
                                 م
                               </th>
@@ -990,7 +990,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                 key={act.id}
                                 className={
                                   act.status === 'executed'
-                                    ? 'bg-emerald-50/30'
+                                    ? 'bg-[#EEF5EE]'
                                     : act.status === 'not_executed'
                                     ? 'bg-red-50/30'
                                     : 'bg-white'
@@ -1000,7 +1000,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                   {act.order}
                                 </td>
                                 <td className="py-2.5 px-3">
-                                  <div className="font-semibold text-[#26323B] leading-relaxed">
+                                  <div className="font-semibold text-[#292F33] leading-relaxed">
                                     {act.actionText}
                                   </div>
                                 </td>
@@ -1021,7 +1021,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                         )
                                       );
                                     }}
-                                    className="w-full rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs focus:border-[#7F1D3F] focus:outline-none"
+                                    className="w-full rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs focus:border-[#956C2E] focus:outline-none"
                                   />
                                 </td>
                                 <td className="py-2.5 px-2.5">
@@ -1041,7 +1041,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                         )
                                       );
                                     }}
-                                    className="w-full rounded-lg border border-stone-200 bg-white px-2 py-1 text-xs focus:border-[#7F1D3F] focus:outline-none"
+                                    className="w-full rounded-lg border border-stone-200 bg-white px-2 py-1 text-xs focus:border-[#956C2E] focus:outline-none"
                                   />
                                 </td>
                                 <td className="py-2.5 px-2.5">
@@ -1060,7 +1060,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                         )
                                       );
                                     }}
-                                    className="w-full rounded-lg border border-stone-300 bg-white px-2 py-1 text-xs font-bold text-[#26323B]"
+                                    className="w-full rounded-lg border border-stone-300 bg-white px-2 py-1 text-xs font-bold text-[#292F33]"
                                   >
                                     <option value="executed">نفذ</option>
                                     <option value="pending">
@@ -1109,10 +1109,10 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
           {section6Tab === 'initiatives_and_competitions' && (
             <div className="space-y-6">
               {/* Custom Initiatives Execution Tracking */}
-              <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 space-y-4">
                 <div className="flex items-center justify-between gap-2">
                   <div>
-                    <h4 className="text-base sm:text-lg font-extrabold font-display text-[#26323B]">
+                    <h4 className="text-base sm:text-lg font-extrabold font-display text-[#292F33]">
                       سجل تنفيذ البرامج والمبادرات المعدة من منسق الموهوبين (ص 27)
                     </h4>
                     <p className="text-xs text-stone-500">
@@ -1122,21 +1122,21 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   <button
                     type="button"
                     onClick={() => onNavigateToSection(3)}
-                    className="px-3 py-1.5 rounded-lg bg-[#FAF7F5] hover:bg-[#F9EFF2] text-[#7F1D3F] border border-[#E6C7D0] text-xs font-bold cursor-pointer"
+                    className="px-3 py-1.5 rounded-lg bg-[#FBF6EC] hover:bg-[#F7EBD5] text-[#956C2E] border border-[#E5CFA7] text-xs font-bold cursor-pointer"
                   >
                     إدارة المبادرات في القسم 03
                   </button>
                 </div>
 
                 {record.customInitiatives.length === 0 ? (
-                  <div className="rounded-xl bg-[#FAF7F5] border border-dashed border-[#E6C7D0] p-6 text-center text-xs text-stone-600">
+                  <div className="rounded-xl bg-[#FBF6EC] border border-dashed border-[#E5CFA7] p-6 text-center text-xs text-stone-600">
                     لا توجد مبادرات إضافية مسجلة حالياً — يمكنك إضافة مبادرات المنسق من «القسم 03: البرامج والمبادرات» وستظهر هنا تلقائياً لمتابعة تنفيذها.
                   </div>
                 ) : (
                   <div className="overflow-x-auto rounded-xl border border-stone-200">
                     <table className="w-full text-right text-xs sm:text-sm border-collapse">
                       <thead>
-                        <tr className="bg-[#7F1D3F] text-white">
+                        <tr className="bg-[#8A6125] text-white">
                           <th className="py-2.5 px-2.5 font-bold w-10 text-center">
                             م
                           </th>
@@ -1162,11 +1162,11 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       </thead>
                       <tbody className="divide-y divide-stone-200">
                         {record.customInitiatives.map((init, idx) => (
-                          <tr key={init.id} className="hover:bg-[#FAF7F5]">
+                          <tr key={init.id} className="hover:bg-[#FBF6EC]">
                             <td className="py-2.5 px-2.5 font-bold text-center tabular-nums">
                               {idx + 1}
                             </td>
-                            <td className="py-2.5 px-3 font-bold text-[#26323B]">
+                            <td className="py-2.5 px-3 font-bold text-[#292F33]">
                               {init.title}
                             </td>
                             <td className="py-2.5 px-2.5 text-xs font-semibold">
@@ -1194,7 +1194,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                       ),
                                   }));
                                 }}
-                                className="w-full rounded-lg border border-stone-300 bg-white px-2 py-1 text-xs font-bold text-[#26323B]"
+                                className="w-full rounded-lg border border-stone-300 bg-white px-2 py-1 text-xs font-bold text-[#292F33]"
                               >
                                 <option value="executed">نفذ</option>
                                 <option value="pending">
@@ -1224,7 +1224,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                   className="w-full rounded border border-red-300 bg-red-50 px-2 py-1 text-xs text-red-900"
                                 />
                               ) : (
-                                <span className="font-semibold text-[#7F1D3F]">
+                                <span className="font-semibold text-[#956C2E]">
                                   {init.achievementIndicator}
                                 </span>
                               )}
@@ -1238,9 +1238,9 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               </div>
 
               {/* Scientific Competitions Execution Tracking */}
-              <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 space-y-4">
                 <div>
-                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#26323B]">
+                  <h4 className="text-base sm:text-lg font-extrabold font-display text-[#292F33]">
                     سجل تنفيذ المسابقات العلمية (ص 28)
                   </h4>
                   <p className="text-xs text-stone-500">
@@ -1251,7 +1251,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 <div className="overflow-x-auto rounded-xl border border-stone-200">
                   <table className="w-full text-right text-xs sm:text-sm border-collapse">
                     <thead>
-                      <tr className="bg-[#26323B] text-white">
+                      <tr className="bg-[#292F33] text-white">
                         <th className="py-2.5 px-2.5 font-bold w-10 text-center">
                           م
                         </th>
@@ -1270,11 +1270,11 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     </thead>
                     <tbody className="divide-y divide-stone-200">
                       {record.scientificCompetitions.map((comp, idx) => (
-                        <tr key={comp.id} className="hover:bg-[#FAF7F5]">
+                        <tr key={comp.id} className="hover:bg-[#FBF6EC]">
                           <td className="py-2.5 px-2.5 font-bold text-center tabular-nums">
                             {idx + 1}
                           </td>
-                          <td className="py-2.5 px-3 font-bold text-[#26323B]">
+                          <td className="py-2.5 px-3 font-bold text-[#292F33]">
                             {comp.title}
                           </td>
                           <td className="py-2.5 px-3 text-xs font-semibold">
@@ -1299,7 +1299,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                     ),
                                 }));
                               }}
-                              className="w-full rounded-lg border border-stone-300 bg-white px-2 py-1 text-xs font-bold text-[#26323B]"
+                              className="w-full rounded-lg border border-stone-300 bg-white px-2 py-1 text-xs font-bold text-[#292F33]"
                             >
                               <option value="executed">نفذ</option>
                               <option value="pending">معلق / قيد التنفيذ</option>
@@ -1347,15 +1347,15 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
       {activeSection === 7 && (
         <section data-testid="gifted-section-7-view" className="space-y-6">
           {/* Section 07 Header */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#7F1D3F] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
+              <div className="w-12 h-12 rounded-xl bg-[#8A6125] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
                 07
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#7F1D3F] rotate-45 inline-block" />
-                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#26323B]">
+                  <span className="w-2 h-2 bg-[#8A6125] rotate-45 inline-block" />
+                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]">
                     سجل الطلاب والمشاركات والترشيحات والتأهل والإنجازات
                   </h3>
                 </div>
@@ -1366,15 +1366,15 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
             </div>
 
             {/* Section 7 Sub-Tab Switcher */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-[#FAF7F5] p-1.5 rounded-xl border border-[#E6C7D0]">
+            <div className="flex flex-wrap items-center gap-1.5 bg-[#FBF6EC] p-1.5 rounded-xl border border-[#E5CFA7]">
               <button
                 type="button"
                 data-testid="section7-tab-students"
                 onClick={() => setSection7Tab('students_registry')}
                 className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                   section7Tab === 'students_registry'
-                    ? 'bg-[#7F1D3F] text-white'
-                    : 'text-[#26323B] hover:bg-white'
+                    ? 'bg-[#8A6125] text-white'
+                    : 'text-[#292F33] hover:bg-white'
                 }`}
               >
                 ١. حصر الطلبة الموهوبين ({studentsSummary.totalStudents})
@@ -1385,8 +1385,8 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 onClick={() => setSection7Tab('participations_and_achievements')}
                 className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                   section7Tab === 'participations_and_achievements'
-                    ? 'bg-[#7F1D3F] text-white'
-                    : 'text-[#26323B] hover:bg-white'
+                    ? 'bg-[#8A6125] text-white'
+                    : 'text-[#292F33] hover:bg-white'
                 }`}
               >
                 ٢. المشاركات والتأهل والإنجازات ({studentsSummary.totalParticipations})
@@ -1398,59 +1398,59 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4">
             <div
               data-testid="students-kpi-total"
-              className="bg-white rounded-2xl border border-[#E6C7D0] p-4 text-center space-y-1"
+              className="bg-white rounded-2xl border border-[#E5CFA7] p-4 text-center space-y-1"
             >
-              <Users className="w-5 h-5 text-[#7F1D3F] mx-auto" />
+              <Users className="w-5 h-5 text-[#956C2E] mx-auto" />
               <div className="text-xs font-bold text-stone-500">
                 إجمالي الموهوبين
               </div>
-              <div className="text-2xl font-extrabold text-[#26323B] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#292F33] tabular-nums">
                 {studentsSummary.totalStudents}
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 text-center space-y-1">
-              <Sparkles className="w-5 h-5 text-[#7F1D3F] mx-auto" />
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 text-center space-y-1">
+              <Sparkles className="w-5 h-5 text-[#956C2E] mx-auto" />
               <div className="text-xs font-bold text-stone-500">
                 موهبة استثنائية
               </div>
-              <div className="text-2xl font-extrabold text-[#7F1D3F] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#956C2E] tabular-nums">
                 {studentsSummary.exceptionalGiftedCount}
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 text-center space-y-1">
-              <GraduationCap className="w-5 h-5 text-[#26323B] mx-auto" />
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 text-center space-y-1">
+              <GraduationCap className="w-5 h-5 text-[#292F33] mx-auto" />
               <div className="text-xs font-bold text-stone-500">
                 موهوب / واعد
               </div>
-              <div className="text-2xl font-extrabold text-[#26323B] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#292F33] tabular-nums">
                 {studentsSummary.giftedCount + studentsSummary.promisingCount}
               </div>
             </div>
 
             <div
               data-testid="students-kpi-participations"
-              className="bg-white rounded-2xl border border-[#E6C7D0] p-4 text-center space-y-1"
+              className="bg-white rounded-2xl border border-[#E5CFA7] p-4 text-center space-y-1"
             >
-              <Layers className="w-5 h-5 text-[#7F1D3F] mx-auto" />
+              <Layers className="w-5 h-5 text-[#956C2E] mx-auto" />
               <div className="text-xs font-bold text-stone-500">
                 إجمالي المشاركات والترشيحات
               </div>
-              <div className="text-2xl font-extrabold text-[#26323B] tabular-nums">
+              <div className="text-2xl font-extrabold text-[#292F33] tabular-nums">
                 {studentsSummary.totalParticipations}
               </div>
             </div>
 
             <div
               data-testid="students-kpi-qualified"
-              className="col-span-2 sm:col-span-1 bg-white rounded-2xl border border-[#E6C7D0] p-4 text-center space-y-1"
+              className="col-span-2 sm:col-span-1 bg-white rounded-2xl border border-[#E5CFA7] p-4 text-center space-y-1"
             >
-              <Trophy className="w-5 h-5 text-[#7F1D3F] mx-auto" />
+              <Trophy className="w-5 h-5 text-[#956C2E] mx-auto" />
               <div className="text-xs font-bold text-stone-500">
                 المتأهلون والإنجازات
               </div>
-              <div className="text-2xl font-extrabold text-emerald-700 tabular-nums">
+              <div className="text-2xl font-extrabold text-[#2F6846] tabular-nums">
                 {studentsSummary.qualifiedStudentsCount} /{' '}
                 {studentsSummary.documentedAchievementsCount}
               </div>
@@ -1480,7 +1480,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               (ص 13، 15، 16، 18، 19، 22، 26، 29)
              ================================================================= */}
           {section7Tab === 'participations_and_achievements' && (
-            <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 space-y-5">
+            <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 space-y-5">
               {/* Category Filter Pills */}
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
                 <div className="flex flex-wrap items-center gap-1.5">
@@ -1489,8 +1489,8 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     onClick={() => setParticipationCategoryFilter('all')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                       participationCategoryFilter === 'all'
-                        ? 'bg-[#7F1D3F] text-white'
-                        : 'bg-[#FAF7F5] text-[#26323B] border border-[#E6C7D0]'
+                        ? 'bg-[#8A6125] text-white'
+                        : 'bg-[#FBF6EC] text-[#292F33] border border-[#E5CFA7]'
                     }`}
                   >
                     الكل ({studentsSummary.totalParticipations})
@@ -1513,8 +1513,8 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       }}
                       className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                         participationCategoryFilter === cat
-                          ? 'bg-[#7F1D3F] text-white'
-                          : 'bg-[#FAF7F5] text-[#26323B] border border-[#E6C7D0]'
+                          ? 'bg-[#8A6125] text-white'
+                          : 'bg-[#FBF6EC] text-[#292F33] border border-[#E5CFA7]'
                       }`}
                     >
                       {GIFTED_PARTICIPATION_CATEGORY_LABELS[cat]} (
@@ -1524,13 +1524,13 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                 </div>
 
                 {/* Qualified Only Toggle (ص 16 للمرحلة الثانية للبحثي، ص 19 للنهائي للعلمي) */}
-                <label className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-900 cursor-pointer shrink-0">
+                <label className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] text-xs font-bold text-[#2F6846] cursor-pointer shrink-0">
                   <input
                     type="checkbox"
                     data-testid="filter-only-qualified-checkbox"
                     checked={onlyQualifiedFilter}
                     onChange={(e) => setOnlyQualifiedFilter(e.target.checked)}
-                    className="rounded accent-emerald-700 w-4 h-4"
+                    className="rounded accent-[#956C2E] w-4 h-4"
                   />
                   <span>
                     عرض المتأهلين للمرحلة الثانية / النهائي فقط ({studentsSummary.qualifiedStudentsCount})
@@ -1542,10 +1542,10 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
               <form
                 onSubmit={handleAddParticipationSubmit}
                 data-testid="add-student-participation-form"
-                className="bg-[#FAF7F5] rounded-xl border border-[#E6C7D0] p-4 space-y-3.5"
+                className="bg-[#FBF6EC] rounded-xl border border-[#E5CFA7] p-4 space-y-3.5"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="text-xs font-extrabold text-[#7F1D3F] flex items-center gap-1.5">
+                  <div className="text-xs font-extrabold text-[#956C2E] flex items-center gap-1.5">
                     <UserCheck className="w-4 h-4" />
                     <span>
                       ربط طالب/ـة ببرنامج أو أولمبياد أو مسابقة وتوثيق الترشيح والتأهل والإنجاز
@@ -1557,7 +1557,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     onClick={() =>
                       setQuickAddStudentMode((prevMode) => !prevMode)
                     }
-                    className="text-xs font-bold text-[#7F1D3F] underline cursor-pointer"
+                    className="text-xs font-bold text-[#956C2E] underline cursor-pointer"
                   >
                     {quickAddStudentMode
                       ? 'العودة لاختيار طالب مسجل مسبقاً'
@@ -1571,7 +1571,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     <div>
                       <label
                         htmlFor="part-student-select"
-                        className="block text-[11px] font-bold text-[#26323B] mb-1"
+                        className="block text-[11px] font-bold text-[#292F33] mb-1"
                       >
                         الطالب/ـة (من قاعدة بيانات الموهوبين) *
                       </label>
@@ -1590,7 +1590,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                             studentId: e.target.value,
                           }))
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-xs font-bold text-[#26323B]"
+                        className="w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-xs font-bold text-[#292F33]"
                       >
                         {record.students.map((stu) => (
                           <option key={stu.id} value={stu.id}>
@@ -1604,7 +1604,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="quick-stu-name"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           اسم الطالب/ـة الجديد *
                         </label>
@@ -1626,7 +1626,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="quick-stu-grade"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           الصف الدراسي *
                         </label>
@@ -1652,7 +1652,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   <div>
                     <label
                       htmlFor="part-category-select"
-                      className="block text-[11px] font-bold text-[#26323B] mb-1"
+                      className="block text-[11px] font-bold text-[#292F33] mb-1"
                     >
                       البرنامج / المسار / المسابقة *
                     </label>
@@ -1667,7 +1667,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                             .value as GiftedParticipationCategory,
                         }))
                       }
-                      className="w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-xs font-bold text-[#26323B]"
+                      className="w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-xs font-bold text-[#292F33]"
                     >
                       {(
                         Object.keys(
@@ -1688,7 +1688,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="part-nomination-select"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           نوع الترشيح (ص 13)
                         </label>
@@ -1711,7 +1711,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="part-nat-score"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           الدرجة والتصنيف (ص 13)
                         </label>
@@ -1751,7 +1751,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="part-project-title"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           اسم المشروع البحثي (ص 15)
                         </label>
@@ -1773,7 +1773,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="part-project-field"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           مجال المشروع (ص 15–16)
                         </label>
@@ -1799,7 +1799,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     <div>
                       <label
                         htmlFor="part-scientific-track"
-                        className="block text-[11px] font-bold text-[#26323B] mb-1"
+                        className="block text-[11px] font-bold text-[#292F33] mb-1"
                       >
                         المسار العلمي (ص 18–19)
                       </label>
@@ -1824,7 +1824,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     <div>
                       <label
                         htmlFor="part-enrichment-unit"
-                        className="block text-[11px] font-bold text-[#26323B] mb-1"
+                        className="block text-[11px] font-bold text-[#292F33] mb-1"
                       >
                         الوحدة الإثرائية (ص 22)
                       </label>
@@ -1850,7 +1850,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="part-accel-score"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           درجة المقياس (ص 26)
                         </label>
@@ -1871,7 +1871,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                       <div>
                         <label
                           htmlFor="part-accel-approval"
-                          className="block text-[11px] font-bold text-[#26323B] mb-1"
+                          className="block text-[11px] font-bold text-[#292F33] mb-1"
                         >
                           حالة الموافقة (ص 26)
                         </label>
@@ -1900,7 +1900,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     <div>
                       <label
                         htmlFor="part-competition-title"
-                        className="block text-[11px] font-bold text-[#26323B] mb-1"
+                        className="block text-[11px] font-bold text-[#292F33] mb-1"
                       >
                         المسابقة العلمية (ص 29)
                       </label>
@@ -1931,7 +1931,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   <div>
                     <label
                       htmlFor="part-achievement-input"
-                      className="block text-[11px] font-bold text-[#26323B] mb-1"
+                      className="block text-[11px] font-bold text-[#292F33] mb-1"
                     >
                       الإنجاز المحقق / النتيجة
                     </label>
@@ -1952,7 +1952,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   </div>
 
                   <div className="flex items-end justify-between gap-2 sm:col-span-2">
-                    <label className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white border border-stone-300 text-xs font-bold text-[#26323B] cursor-pointer">
+                    <label className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white border border-stone-300 text-xs font-bold text-[#292F33] cursor-pointer">
                       <input
                         type="checkbox"
                         data-testid="part-qualified-checkbox"
@@ -1963,7 +1963,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                             qualifiedToNextStage: e.target.checked,
                           }))
                         }
-                        className="rounded accent-[#7F1D3F] w-4 h-4"
+                        className="rounded accent-[#956C2E] w-4 h-4"
                       />
                       <span>
                         متأهل للمرحلة الثانية / النهائي (يُدرج تلقائياً في جداول المتأهلين ص 16 وص 19)
@@ -1973,7 +1973,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                     <button
                       type="submit"
                       data-testid="submit-student-participation-btn"
-                      className="h-[36px] px-4 rounded-lg bg-[#7F1D3F] hover:bg-[#681633] text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer shrink-0"
+                      className="h-[36px] px-4 rounded-lg bg-[#8A6125] hover:bg-[#704E1D] text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer shrink-0"
                     >
                       <Plus className="w-4 h-4" />
                       <span>تسجيل المشاركة</span>
@@ -1989,7 +1989,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                   className="w-full text-right text-xs sm:text-sm border-collapse"
                 >
                   <thead>
-                    <tr className="bg-[#7F1D3F] text-white">
+                    <tr className="bg-[#8A6125] text-white">
                       <th className="py-3 px-2.5 font-bold w-10 text-center">
                         م
                       </th>
@@ -2034,13 +2034,13 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                         <tr
                           key={part.id}
                           className={
-                            idx % 2 === 0 ? 'bg-white' : 'bg-[#FAF7F5]/60'
+                            idx % 2 === 0 ? 'bg-white' : 'bg-[#FBF6EC]/60'
                           }
                         >
                           <td className="py-2.5 px-2.5 font-bold text-center tabular-nums">
                             {idx + 1}
                           </td>
-                          <td className="py-2.5 px-3 font-bold text-[#26323B]">
+                          <td className="py-2.5 px-3 font-bold text-[#292F33]">
                             {part.studentName}
                           </td>
                           <td className="py-2.5 px-3 text-xs font-semibold">
@@ -2050,11 +2050,11 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                             {part.studentCivilId || '—'}
                           </td>
                           <td className="py-2.5 px-3">
-                            <span className="inline-block px-2.5 py-0.5 rounded bg-[#F9EFF2] text-[#7F1D3F] text-[11px] font-bold">
+                            <span className="inline-block px-2.5 py-0.5 rounded bg-[#F7EBD5] text-[#956C2E] text-[11px] font-bold">
                               {GIFTED_PARTICIPATION_CATEGORY_LABELS[part.category]}
                             </span>
                           </td>
-                          <td className="py-2.5 px-3 text-xs text-[#26323B]">
+                          <td className="py-2.5 px-3 text-xs text-[#292F33]">
                             {part.category === 'national_identification' && (
                               <span>
                                 الترشيح:{' '}
@@ -2133,7 +2133,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                               }
                               className={`px-2.5 py-1 rounded-full text-[11px] font-bold cursor-pointer transition-colors ${
                                 part.qualifiedToNextStage
-                                  ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
+                                  ? 'bg-[#DFEFE0] text-[#2F6846] border border-[#C5DCC7]'
                                   : 'bg-stone-100 text-stone-600 border border-stone-200'
                               }`}
                             >
@@ -2159,7 +2159,7 @@ export const GiftedPhase2Sections: React.FC<GiftedPhase2SectionsProps> = ({
                                   )
                                 );
                               }}
-                              className="w-full bg-transparent text-xs font-semibold text-[#7F1D3F] border-b border-stone-200 focus:border-[#7F1D3F] focus:outline-none py-0.5"
+                              className="w-full bg-transparent text-xs font-semibold text-[#956C2E] border-b border-stone-200 focus:border-[#956C2E] focus:outline-none py-0.5"
                             />
                           </td>
                           <td className="py-2.5 px-2 text-center">

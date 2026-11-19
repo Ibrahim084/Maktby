@@ -571,7 +571,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
           className={`rounded-xl border p-4 flex items-center gap-3 text-xs sm:text-sm font-semibold print:hidden ${
             feedbackMessage.type === 'error'
               ? 'bg-red-50 border-red-200 text-red-800'
-              : 'bg-[#EFF8F3] border-[#C2E2D2] text-[#156B46]'
+              : 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
           }`}
         >
           {feedbackMessage.type === 'error' ? (
@@ -589,11 +589,11 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
           role="dialog"
           aria-modal="true"
           aria-labelledby="confirm-dialog-title"
-          className="rounded-2xl border-2 border-amber-300 bg-[#FAF6EE] p-5 sm:p-6 space-y-4 print:hidden"
+          className="rounded-2xl border-2 border-[#E8C9BA] bg-[#FBFBF9] p-5 sm:p-6 space-y-4 print:hidden"
         >
           <div className="flex items-start gap-3">
             <AlertTriangle
-              className="w-6 h-6 text-amber-700 shrink-0 mt-0.5"
+              className="w-6 h-6 text-[#9A4A2E] shrink-0 mt-0.5"
               aria-hidden="true"
             />
             <div className="space-y-1">
@@ -643,7 +643,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 pb-3">
             <div className="flex items-center gap-2">
               <FolderSync
-                className="w-5 h-5 text-[#7C1D34]"
+                className="w-5 h-5 text-[#376B70]"
                 aria-hidden="true"
               />
               <h3 className="text-base sm:text-lg font-extrabold font-display text-stone-900">
@@ -657,9 +657,9 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
             </span>
           </div>
 
-          <div className="rounded-xl border border-amber-200 bg-[#FAF6EE] px-4 py-2.5 text-xs sm:text-sm text-stone-800 flex items-center gap-2">
+          <div className="rounded-xl border border-[#E8C9BA] bg-[#FBFBF9] px-4 py-2.5 text-xs sm:text-sm text-stone-800 flex items-center gap-2">
             <AlertTriangle
-              className="w-4 h-4 text-amber-700 shrink-0"
+              className="w-4 h-4 text-[#9A4A2E] shrink-0"
               aria-hidden="true"
             />
             <span>
@@ -687,7 +687,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                       data-testid={`saved-course-item-${course.id}`}
                       className={`rounded-xl border p-3.5 transition-colors ${
                         isChecked
-                          ? 'border-[#7C1D34]/50 bg-[#FAF1F3]/40'
+                          ? 'border-[#376B70]/50 bg-[#EAF2F1]/40'
                           : 'border-stone-200 bg-stone-50/50'
                       }`}
                     >
@@ -776,7 +776,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                             <button
                               type="button"
                               onClick={handleSaveEditedCourse}
-                              className="min-h-[36px] px-3.5 py-1.5 rounded-lg bg-[#7C1D34] text-white text-xs font-semibold cursor-pointer"
+                              className="min-h-[36px] px-3.5 py-1.5 rounded-lg bg-[#376B70] text-white text-xs font-semibold cursor-pointer"
                             >
                               حفظ التعديلات
                             </button>
@@ -801,7 +801,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                               onChange={() =>
                                 handleToggleSelectSavedCourse(course.id)
                               }
-                              className="w-4 h-4 accent-[#7C1D34] rounded mt-1 sm:mt-0 shrink-0"
+                              className="w-4 h-4 accent-[#376B70] rounded mt-1 sm:mt-0 shrink-0"
                             />
                             <div className="space-y-0.5 text-xs sm:text-sm">
                               <div className="flex flex-wrap items-center gap-2">
@@ -871,7 +871,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
         generatedCertFiles.length > 0 && (
           <section
             data-testid="generated-certificates-panel"
-            className="bg-white rounded-2xl border border-[#E6C7CF] p-5 sm:p-6 space-y-4 print:hidden"
+            className="bg-white rounded-2xl border border-[#E2E5E6] p-5 sm:p-6 space-y-4 print:hidden"
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-100 pb-4">
               <div>
@@ -888,7 +888,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                 type="button"
                 data-testid="download-all-certificates-zip-btn"
                 onClick={handleDownloadAllCertificatesZip}
-                className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#7C1D34] hover:bg-[#631629] text-white text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
                 <Archive className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>
@@ -958,15 +958,15 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
           {/* Save Course to Local Registry Bar (Only in Training Execution Report) */}
           {form.enableCourseSaveToLocalRegistry && (
             <div className="pt-4 border-t border-stone-200 space-y-3">
-              <div className="rounded-xl border border-[#E6C7CF] bg-[#FAF1F3]/60 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="rounded-xl border border-[#E2E5E6] bg-[#EAF2F1]/60 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-1">
                   <div className="flex flex-wrap items-center gap-2">
-                    <h4 className="text-sm font-bold text-[#7C1D34]">
+                    <h4 className="text-sm font-bold text-[#376B70]">
                       حفظ الدورة في سجل الدورات التدريبية المحلي (للتقرير الختامي)
                     </h4>
                     <span
                       data-testid="saved-courses-count-badge"
-                      className="text-xs font-bold px-2.5 py-0.5 rounded-md bg-white border border-[#E6C7CF] text-[#7C1D34] tabular-nums"
+                      className="text-xs font-bold px-2.5 py-0.5 rounded-md bg-white border border-[#E2E5E6] text-[#376B70] tabular-nums"
                     >
                       الدورات المحفوظة حالياً: {savedCourses.length}
                     </span>
@@ -974,7 +974,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                   <p className="text-xs text-stone-700 leading-relaxed">
                     يتيح لك هذا الخيار حفظ بيانات الدورة الأساسية (دون الصور أو التوقيعات أو السجل المدني) لاستدعائها تلقائياً عند إعداد التقرير الختامي للفصل الدراسي.
                   </p>
-                  <p className="text-xs font-semibold text-amber-800">
+                  <p className="text-xs font-semibold text-[#9A4A2E]">
                     تنبيه: حذف بيانات المتصفح أو تغيير الجهاز قد يؤدي إلى فقدان سجل الدورات المحفوظة.
                   </p>
                 </div>
@@ -983,7 +983,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                   type="button"
                   data-testid="save-course-to-local-registry-btn"
                   onClick={handleSaveCourseToRegistry}
-                  className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#7C1D34] hover:bg-[#631629] text-white text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 shrink-0 transition-colors cursor-pointer"
+                  className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 shrink-0 transition-colors cursor-pointer"
                 >
                   <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>حفظ الدورة في سجل الدورات المحلية</span>
@@ -996,7 +996,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                   className={`rounded-xl border px-4 py-3 flex items-center gap-2.5 text-xs sm:text-sm font-bold ${
                     feedbackMessage.type === 'error'
                       ? 'bg-red-50 border-red-200 text-red-800'
-                      : 'bg-[#EFF8F3] border-[#C2E2D2] text-[#156B46]'
+                      : 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
                   }`}
                 >
                   {feedbackMessage.type === 'error' ? (
@@ -1021,7 +1021,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ form, onClose }) => 
                   type="button"
                   data-testid="generate-batch-certificates-btn"
                   onClick={handleGenerateBatchCertificates}
-                  className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#7C1D34] hover:bg-[#631629] text-white text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-bold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <FileBadge className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>إنشاء الشهادات</span>

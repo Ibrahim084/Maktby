@@ -232,19 +232,19 @@ const RECORD_TYPE_BADGE_STYLES: Record<
   { bg: string; text: string; border: string }
 > = {
   برنامج: {
-    bg: 'bg-[#7F1D3F]/10',
-    text: 'text-[#7F1D3F]',
-    border: 'border-[#7F1D3F]/25',
+    bg: 'bg-[#8A6125]/10',
+    text: 'text-[#956C2E]',
+    border: 'border-[#956C2E]/25',
   },
   تقرير: {
-    bg: 'bg-amber-50',
-    text: 'text-amber-900',
-    border: 'border-amber-200',
+    bg: 'bg-[#FDF2ED]',
+    text: 'text-[#9A4A2E]',
+    border: 'border-[#E8C9BA]',
   },
   مبادرة: {
-    bg: 'bg-emerald-50',
-    text: 'text-emerald-900',
-    border: 'border-emerald-200',
+    bg: 'bg-[#EEF5EE]',
+    text: 'text-[#2F6846]',
+    border: 'border-[#C5DCC7]',
   },
 };
 
@@ -1202,13 +1202,13 @@ export const GiftedProgramsLibrarySection: React.FC<
           className={`rounded-xl border p-4 flex items-start gap-3 ${
             feedbackBanner.type === 'error'
               ? 'bg-red-50 border-red-200 text-red-900'
-              : 'bg-emerald-50 border-emerald-200 text-emerald-900'
+              : 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
           }`}
         >
           {feedbackBanner.type === 'error' ? (
             <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
           ) : (
-            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 text-[#2F6846] shrink-0 mt-0.5" />
           )}
           <div className="text-xs font-bold flex-1">
             {feedbackBanner.message}
@@ -1232,12 +1232,12 @@ export const GiftedProgramsLibrarySection: React.FC<
           <h3 className="text-sm font-extrabold text-stone-900 flex items-center gap-2">
             {editingRecordId ? (
               <>
-                <Edit3 className="w-4 h-4 text-[#7F1D3F]" />
+                <Edit3 className="w-4 h-4 text-[#956C2E]" />
                 <span>تعديل السجل ({recordType})</span>
               </>
             ) : (
               <>
-                <Plus className="w-4 h-4 text-[#7F1D3F]" />
+                <Plus className="w-4 h-4 text-[#956C2E]" />
                 <span>إضافة سجل جديد ({recordType})</span>
               </>
             )}
@@ -1270,7 +1270,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                   aria-pressed={active}
                   className={`py-2.5 px-4 rounded-xl border text-xs font-extrabold transition-all ${
                     active
-                      ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-sm'
+                      ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-sm'
                       : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-stone-100'
                   }`}
                 >
@@ -1299,7 +1299,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder={`عنوان ال${recordType}`}
-                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#956C2E] focus:outline-none"
               />
             </div>
 
@@ -1317,7 +1317,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 value={academicYear}
                 onChange={(e) => setAcademicYear(e.target.value)}
                 placeholder="مثال: 1447هـ"
-                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#956C2E] focus:outline-none"
               />
             </div>
 
@@ -1335,7 +1335,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 onChange={(e) =>
                   setSemester(e.target.value as ApprovedSchoolSemester)
                 }
-                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#956C2E] focus:outline-none"
               >
                 {APPROVED_SCHOOL_SEMESTERS.map((sem) => (
                   <option key={sem} value={sem}>
@@ -1361,7 +1361,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder={`وصف موجز عن ال${recordType}...`}
-                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2 text-sm text-stone-900 focus:bg-white focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2 text-sm text-stone-900 focus:bg-white focus:border-[#956C2E] focus:outline-none"
               />
             </div>
 
@@ -1379,7 +1379,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="مثال: قاعة الموهوبين / عن بعد"
-                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#7F1D3F] focus:outline-none"
+                className="w-full rounded-xl border border-stone-300 bg-stone-50/60 px-3.5 py-2.5 text-sm text-stone-900 focus:bg-white focus:border-[#956C2E] focus:outline-none"
               />
             </div>
           </div>
@@ -1396,7 +1396,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                   onClick={() => setDateOrDurationMode('date')}
                   className={`px-3 py-1 rounded-md text-xs font-bold transition-colors ${
                     dateOrDurationMode === 'date'
-                      ? 'bg-[#7F1D3F] text-white'
+                      ? 'bg-[#8A6125] text-white'
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
@@ -1407,7 +1407,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                   onClick={() => setDateOrDurationMode('duration')}
                   className={`px-3 py-1 rounded-md text-xs font-bold transition-colors ${
                     dateOrDurationMode === 'duration'
-                      ? 'bg-[#7F1D3F] text-white'
+                      ? 'bg-[#8A6125] text-white'
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
@@ -1432,7 +1432,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     value={hijriDate}
                     onChange={(e) => handleHijriDateChange(e.target.value)}
                     placeholder="1448/04/15"
-                    className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                   {gregorianDate && (
                     <p className="text-[11px] text-stone-500 mt-1">
@@ -1454,7 +1454,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     dir="ltr"
                     value={gregorianDate}
                     onChange={(e) => handleGregorianDateChange(e.target.value)}
-                    className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                 </div>
               </div>
@@ -1474,7 +1474,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                       e.target.value as GiftedApprovedDurationOption
                     )
                   }
-                  className="w-full sm:w-72 rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full sm:w-72 rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 >
                   {GIFTED_APPROVED_DURATION_OPTIONS.map((opt) => (
                     <option key={opt} value={opt}>
@@ -1489,7 +1489,7 @@ export const GiftedProgramsLibrarySection: React.FC<
 
         {/* الحقول الخاصة بحسب النوع المختار */}
         <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-4 space-y-4">
-          <h4 className="text-xs font-extrabold text-[#7F1D3F] border-b border-stone-200 pb-2">
+          <h4 className="text-xs font-extrabold text-[#956C2E] border-b border-stone-200 pb-2">
             حقول {recordType === 'برنامج' ? 'البرنامج' : recordType === 'تقرير' ? 'التقرير' : 'المبادرة'}
           </h4>
 
@@ -1513,7 +1513,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                         .value as GiftedProgramExecutionScope,
                     }))
                   }
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 >
                   {GIFTED_PROGRAM_EXECUTION_SCOPES.map((sc) => (
                     <option key={sc} value={sc}>
@@ -1542,7 +1542,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="مثال: إثرائي علمي / بحثي / تقني"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1565,7 +1565,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="مثال: الطلاب الموهوبون في المرحلة المتوسطة"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1588,7 +1588,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="مثال: منسق الموهوبين / إدارة الموهوبين"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1611,7 +1611,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="أهداف البرنامج..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1634,7 +1634,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="أبرز النتائج المحققة..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1657,7 +1657,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="ملاحظات أو توصيات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1684,7 +1684,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="أهداف التقرير..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1707,7 +1707,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="النتائج أو المخرجات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1730,7 +1730,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="مؤشرات الإنجاز..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1753,7 +1753,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="التحديات أو الصعوبات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1776,7 +1776,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="التوصيات أو المقترحات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1799,7 +1799,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="ملاحظات إضافية..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1826,7 +1826,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="فكرة المبادرة..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1849,7 +1849,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="أهداف المبادرة..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1872,7 +1872,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="مثال: الطلاب الموهوبون في المرحلة المتوسطة"
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1895,7 +1895,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="خطوات التنفيذ..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1918,7 +1918,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="النتائج أو الأثر..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1941,7 +1941,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="التحديات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
 
@@ -1964,7 +1964,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     }))
                   }
                   placeholder="التوصيات..."
-                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             </div>
@@ -1975,7 +1975,7 @@ export const GiftedProgramsLibrarySection: React.FC<
         <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-4 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-stone-200 pb-2">
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-[#7F1D3F]" />
+              <Users className="w-4 h-4 text-[#956C2E]" />
               <span className="text-xs font-extrabold text-stone-900">
                 الطلاب المشاركون من السجل المركزي ({participants.length})
               </span>
@@ -1991,7 +1991,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                   value={studentSearchQuery}
                   onChange={(e) => setStudentSearchQuery(e.target.value)}
                   placeholder="بحث عن طالب في السجل المركزي..."
-                  className="w-full rounded-lg border border-stone-300 bg-white pr-8 pl-3 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                  className="w-full rounded-lg border border-stone-300 bg-white pr-8 pl-3 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                 />
               </div>
             )}
@@ -2016,7 +2016,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     aria-pressed={isSelected}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all ${
                       isSelected
-                        ? 'bg-[#7F1D3F] text-white border-[#7F1D3F]'
+                        ? 'bg-[#8A6125] text-white border-[#956C2E]'
                         : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-100'
                     }`}
                   >
@@ -2088,7 +2088,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                             )
                           }
                           placeholder="مثال: 98% / ممتاز"
-                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                         />
                       </div>
 
@@ -2106,7 +2106,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                               e.target.value
                             )
                           }
-                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                         >
                           <option value="">— غير محدد —</option>
                           {GIFTED_PARTICIPANT_STATUS_ROLES.map((role) => (
@@ -2133,7 +2133,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                             )
                           }
                           placeholder="مثال: بحث علمي / ورشة"
-                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                         />
                       </div>
 
@@ -2153,7 +2153,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                             )
                           }
                           placeholder="مثال: المركز الأول"
-                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                          className="w-full rounded-lg border border-stone-300 px-2.5 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                         />
                       </div>
                     </div>
@@ -2170,7 +2170,7 @@ export const GiftedProgramsLibrarySection: React.FC<
           <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-4 space-y-3">
             <div className="flex items-center justify-between border-b border-stone-200 pb-2">
               <div className="flex items-center gap-1.5">
-                <ImageIcon className="w-4 h-4 text-[#7F1D3F]" />
+                <ImageIcon className="w-4 h-4 text-[#956C2E]" />
                 <span className="text-xs font-extrabold text-stone-900">
                   الشواهد والمرفقات ({evidences.length}/
                   {MAX_GIFTED_SECTION2_EVIDENCES})
@@ -2189,14 +2189,14 @@ export const GiftedProgramsLibrarySection: React.FC<
                     value={newEvidenceTitle}
                     onChange={(e) => setNewEvidenceTitle(e.target.value)}
                     placeholder="عنوان الشاهد (اختياري)"
-                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                   <input
                     type="text"
                     value={newEvidenceCaption}
                     onChange={(e) => setNewEvidenceCaption(e.target.value)}
                     placeholder="تعليق توضيحي (اختياري)"
-                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -2214,7 +2214,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     onClick={() => evidenceFileInputRef.current?.click()}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-stone-300 hover:bg-stone-100 text-xs font-bold text-stone-800 transition-colors"
                   >
-                    <Upload className="w-3.5 h-3.5 text-[#7F1D3F]" />
+                    <Upload className="w-3.5 h-3.5 text-[#956C2E]" />
                     <span>
                       {isUploadingEvidence
                         ? 'جاري الحفظ...'
@@ -2224,7 +2224,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 </div>
               </div>
             ) : (
-              <p className="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+              <p className="text-xs font-bold text-[#9A4A2E] bg-[#FDF2ED] border border-[#E8C9BA] rounded-lg px-3 py-2">
                 تم الوصول إلى الحد الأقصى للشواهد (
                 {MAX_GIFTED_SECTION2_EVIDENCES} شواهد لكل سجل).
               </p>
@@ -2275,7 +2275,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                               </div>
                             </object>
                             <div className="flex items-center justify-between bg-stone-50 px-2.5 py-1.5 rounded-lg border border-stone-200">
-                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#7F1D3F]">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#956C2E]">
                                 <FileText className="w-3.5 h-3.5" />
                                 <span>معاينة وثيقة PDF</span>
                               </span>
@@ -2283,7 +2283,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                                 href={preview.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[11px] font-bold text-stone-700 underline hover:text-[#7F1D3F]"
+                                className="text-[11px] font-bold text-stone-700 underline hover:text-[#956C2E]"
                               >
                                 فتح الوثيقة كاملة
                               </a>
@@ -2312,7 +2312,7 @@ export const GiftedProgramsLibrarySection: React.FC<
           <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-4 space-y-3">
             <div className="flex items-center justify-between border-b border-stone-200 pb-2">
               <div className="flex items-center gap-1.5">
-                <Link2 className="w-4 h-4 text-[#7F1D3F]" />
+                <Link2 className="w-4 h-4 text-[#956C2E]" />
                 <span className="text-xs font-extrabold text-stone-900">
                   الروابط الإلكترونية ورموز QR ({links.length}/
                   {MAX_GIFTED_SECTION2_LINKS})
@@ -2332,7 +2332,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     value={newLinkTitle}
                     onChange={(e) => setNewLinkTitle(e.target.value)}
                     placeholder="عنوان الرابط"
-                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                   <input
                     id="sec2-new-link-url"
@@ -2341,7 +2341,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     value={newLinkUrl}
                     onChange={(e) => setNewLinkUrl(e.target.value)}
                     placeholder="https://example.com"
-                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#7F1D3F] focus:outline-none"
+                    className="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs text-stone-900 focus:border-[#956C2E] focus:outline-none"
                   />
                 </div>
                 <button
@@ -2349,12 +2349,12 @@ export const GiftedProgramsLibrarySection: React.FC<
                   onClick={handleAddLink}
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-stone-300 hover:bg-stone-100 text-xs font-bold text-stone-800 transition-colors"
                 >
-                  <QrCode className="w-3.5 h-3.5 text-[#7F1D3F]" />
+                  <QrCode className="w-3.5 h-3.5 text-[#956C2E]" />
                   <span>إضافة الرابط وتوليد QR</span>
                 </button>
               </div>
             ) : (
-              <p className="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+              <p className="text-xs font-bold text-[#9A4A2E] bg-[#FDF2ED] border border-[#E8C9BA] rounded-lg px-3 py-2">
                 تم الوصول إلى الحد الأقصى للروابط ({MAX_GIFTED_SECTION2_LINKS}{' '}
                 روابط لكل سجل).
               </p>
@@ -2365,7 +2365,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 {links.map((lnk) => {
                   const qrDataUrl = generateQrSvgDataUrl(
                     lnk.url,
-                    '#7F1D3F',
+                    '#956C2E',
                     '#FFFFFF',
                     2
                   );
@@ -2381,7 +2381,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                             target="_blank"
                             rel="noopener noreferrer"
                             title={`فتح الرابط: ${lnk.title}`}
-                            className="shrink-0 block rounded-lg border border-stone-200 p-1 hover:border-[#7F1D3F] transition-colors"
+                            className="shrink-0 block rounded-lg border border-stone-200 p-1 hover:border-[#956C2E] transition-colors"
                           >
                             <img
                               src={qrDataUrl}
@@ -2399,7 +2399,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                             target="_blank"
                             rel="noopener noreferrer"
                             dir="ltr"
-                            className="text-[11px] text-[#7F1D3F] underline truncate block"
+                            className="text-[11px] text-[#956C2E] underline truncate block"
                           >
                             {lnk.url}
                           </a>
@@ -2425,7 +2425,7 @@ export const GiftedProgramsLibrarySection: React.FC<
         <div className="flex items-center justify-end gap-2 pt-2 border-t border-stone-100">
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-extrabold text-white bg-[#7F1D3F] hover:bg-[#681733] transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-extrabold text-white bg-[#8A6125] hover:bg-[#704E1D] transition-colors shadow-sm"
           >
             {editingRecordId ? (
               <>
@@ -2455,7 +2455,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 onClick={() => setTypeFilter('all')}
                 className={`px-2.5 py-1 rounded-lg text-xs font-bold ${
                   typeFilter === 'all'
-                    ? 'bg-[#7F1D3F] text-white'
+                    ? 'bg-[#8A6125] text-white'
                     : 'text-stone-600 hover:text-stone-900'
                 }`}
               >
@@ -2468,7 +2468,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                   onClick={() => setTypeFilter(t)}
                   className={`px-2.5 py-1 rounded-lg text-xs font-bold ${
                     typeFilter === t
-                      ? 'bg-[#7F1D3F] text-white'
+                      ? 'bg-[#8A6125] text-white'
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
@@ -2485,7 +2485,7 @@ export const GiftedProgramsLibrarySection: React.FC<
               value={listSearchQuery}
               onChange={(e) => setListSearchQuery(e.target.value)}
               placeholder="بحث في البرامج والتقارير والمبادرات..."
-              className="w-full rounded-xl border border-stone-300 bg-stone-50/60 pr-9 pl-3 py-2 text-xs text-stone-900 focus:bg-white focus:border-[#7F1D3F] focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 bg-stone-50/60 pr-9 pl-3 py-2 text-xs text-stone-900 focus:bg-white focus:border-[#956C2E] focus:outline-none"
             />
           </div>
         </div>
@@ -2548,7 +2548,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                           setPreviewRecordId(isPreviewOpen ? null : rec.id)
                         }
                         aria-label={`معاينة ${rec.title}`}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-[#7F1D3F] bg-[#7F1D3F]/10 hover:bg-[#7F1D3F]/20 transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-[#956C2E] bg-[#8A6125]/10 hover:bg-[#8A6125]/20 transition-colors"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>
@@ -2607,12 +2607,12 @@ export const GiftedProgramsLibrarySection: React.FC<
       {previewRecord && (
         <div
           data-testid="sec2-record-preview"
-          className="bg-white rounded-2xl border-2 border-[#7F1D3F]/30 shadow-md p-6 space-y-5"
+          className="bg-white rounded-2xl border-2 border-[#956C2E]/30 shadow-md p-6 space-y-5"
         >
           <div className="flex items-start justify-between gap-3 border-b border-stone-200 pb-4">
             <div>
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-lg bg-[#7F1D3F] text-white text-xs font-extrabold">
+                <span className="px-2.5 py-0.5 rounded-lg bg-[#8A6125] text-white text-xs font-extrabold">
                   {previewRecord.recordType}
                 </span>
                 <h3 className="text-base font-extrabold text-stone-900">
@@ -2705,7 +2705,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                     key={row.label}
                     className="rounded-xl bg-stone-50 p-3 border border-stone-200"
                   >
-                    <div className="text-[11px] font-bold text-[#7F1D3F] mb-1">
+                    <div className="text-[11px] font-bold text-[#956C2E] mb-1">
                       {row.label}
                     </div>
                     <div className="text-xs font-semibold text-stone-900 whitespace-pre-wrap">
@@ -2821,14 +2821,14 @@ export const GiftedProgramsLibrarySection: React.FC<
                               </div>
                             </object>
                             <div className="flex items-center justify-between bg-white px-3 py-1.5 rounded-lg border border-stone-200">
-                              <span className="text-[11px] font-bold text-[#7F1D3F]">
+                              <span className="text-[11px] font-bold text-[#956C2E]">
                                 وثيقة PDF مضمنة
                               </span>
                               <a
                                 href={preview.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-[11px] font-bold text-stone-800 hover:text-[#7F1D3F] underline"
+                                className="inline-flex items-center gap-1 text-[11px] font-bold text-stone-800 hover:text-[#956C2E] underline"
                               >
                                 <ExternalLink className="w-3 h-3" />
                                 <span>عرض الوثيقة كاملة</span>
@@ -2864,7 +2864,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                 {previewRecord.links.map((lnk) => {
                   const qrSvgUrl = generateQrSvgDataUrl(
                     lnk.url,
-                    '#7F1D3F',
+                    '#956C2E',
                     '#FFFFFF',
                     3
                   );
@@ -2879,7 +2879,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`رمز QR قابل للنقر للرابط ${lnk.title}`}
-                          className="shrink-0 rounded-xl border border-stone-200 bg-white p-1.5 hover:border-[#7F1D3F] transition-colors"
+                          className="shrink-0 rounded-xl border border-stone-200 bg-white p-1.5 hover:border-[#956C2E] transition-colors"
                         >
                           <img
                             src={qrSvgUrl}
@@ -2897,7 +2897,7 @@ export const GiftedProgramsLibrarySection: React.FC<
                           target="_blank"
                           rel="noopener noreferrer"
                           dir="ltr"
-                          className="inline-flex items-center gap-1 text-xs font-bold text-[#7F1D3F] underline break-all"
+                          className="inline-flex items-center gap-1 text-xs font-bold text-[#956C2E] underline break-all"
                         >
                           <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                           <span>{lnk.url}</span>

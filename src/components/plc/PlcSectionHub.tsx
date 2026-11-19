@@ -346,16 +346,16 @@ export const PlcSectionHub: React.FC = () => {
   const renderStatusBadge = (status: PlcCommunityStatus) => {
     if (status === 'active') {
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-extrabold">
-          <span className="w-2 h-2 rounded-full bg-emerald-600" />
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-xs font-extrabold">
+          <span className="w-2 h-2 rounded-full bg-[#2F6846]" />
           <span>{PLC_STATUS_LABELS.active}</span>
         </span>
       );
     }
     if (status === 'paused') {
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 text-xs font-extrabold">
-          <span className="w-2 h-2 rounded-full bg-amber-500" />
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#FDF2ED] text-[#9A4A2E] border border-[#E8C9BA] text-xs font-extrabold">
+          <span className="w-2 h-2 rounded-full bg-[#9A4A2E]" />
           <span>{PLC_STATUS_LABELS.paused}</span>
         </span>
       );
@@ -382,29 +382,29 @@ export const PlcSectionHub: React.FC = () => {
         {/* شريط التنبيه العلوي الإلزامي لوضع المعاينة التجريبية */}
         <div
           data-testid="plc-demo-preview-banner-card"
-          className="bg-amber-50/90 rounded-2xl border-2 border-amber-300 p-5 sm:p-6 space-y-4 shadow-xs"
+          className="bg-[#FDF2ED] rounded-2xl border-2 border-[#E8C9BA] p-5 sm:p-6 space-y-4 shadow-xs"
         >
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2">
                 <span
                   data-testid="plc-demo-preview-badge"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-lg bg-amber-800 text-white text-xs font-extrabold"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-lg bg-[#9A4A2E] text-white text-xs font-extrabold"
                 >
                   <Sparkles className="w-3.5 h-3.5 shrink-0" />
                   <span>معاينة تجريبية</span>
                 </span>
-                <span className="px-3 py-1 rounded-lg bg-white border border-amber-300 text-amber-900 text-xs font-bold">
+                <span className="px-3 py-1 rounded-lg bg-white border border-[#E8C9BA] text-[#9A4A2E] text-xs font-bold">
                   للقراءة والاستكشاف فقط • معزول تماماً عن مجتمعاتك الفعلية
                 </span>
-                <span className="px-3 py-1 rounded-lg bg-white border border-amber-200 text-stone-700 text-xs font-bold">
+                <span className="px-3 py-1 rounded-lg bg-white border border-[#E8C9BA] text-stone-700 text-xs font-bold">
                   المدرسة الافتراضية: {PLC_DEMO_SCHOOL_NAME}
                 </span>
               </div>
 
               <p
                 data-testid="plc-demo-preview-warning"
-                className="text-sm sm:text-base font-extrabold text-amber-950 leading-relaxed"
+                className="text-sm sm:text-base font-extrabold text-[#9A4A2E] leading-relaxed"
               >
                 «أنت تستعرض مجتمعًا نموذجيًا ببيانات تجريبية. لن يتم حفظ أي تعديل ضمن مجتمعاتك الفعلية.»
               </p>
@@ -446,9 +446,9 @@ export const PlcSectionHub: React.FC = () => {
           {bannerMessage && (
             <div
               data-testid="plc-demo-feedback-banner"
-              className="rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-xs sm:text-sm font-bold text-emerald-900 flex items-center gap-2"
+              className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] px-4 py-3 text-xs sm:text-sm font-bold text-[#2F6846] flex items-center gap-2"
             >
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#2F6846] shrink-0" />
               <span>{bannerMessage}</span>
             </div>
           )}
@@ -574,19 +574,19 @@ export const PlcSectionHub: React.FC = () => {
                     {meetingsOverview.totalRecommendationsCount}
                   </div>
                 </div>
-                <div className="rounded-xl bg-emerald-50/70 border border-emerald-200/80 p-2.5">
-                  <div className="text-[11px] font-bold text-emerald-800">
+                <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-2.5">
+                  <div className="text-[11px] font-bold text-[#2F6846]">
                     تم التنفيذ
                   </div>
-                  <div className="text-sm font-extrabold text-emerald-900 tabular-nums mt-0.5">
+                  <div className="text-sm font-extrabold text-[#2F6846] tabular-nums mt-0.5">
                     {meetingsOverview.completedRecommendationsCount}
                   </div>
                 </div>
-                <div className="rounded-xl bg-amber-50/70 border border-amber-200/80 p-2.5">
-                  <div className="text-[11px] font-bold text-amber-800">
+                <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-2.5">
+                  <div className="text-[11px] font-bold text-[#9A4A2E]">
                     قيد التنفيذ
                   </div>
-                  <div className="text-sm font-extrabold text-amber-900 tabular-nums mt-0.5">
+                  <div className="text-sm font-extrabold text-[#9A4A2E] tabular-nums mt-0.5">
                     {meetingsOverview.inProgressRecommendationsCount}
                   </div>
                 </div>
@@ -722,7 +722,7 @@ export const PlcSectionHub: React.FC = () => {
                       <span className="text-xs font-extrabold text-plc">
                         النموذج {formEntry.formNumber}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-extrabold">
+                      <span className="px-2.5 py-0.5 rounded-md bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-[11px] font-extrabold">
                         مكتمل للمعاينة
                       </span>
                     </div>
@@ -812,9 +812,9 @@ export const PlcSectionHub: React.FC = () => {
           {bannerMessage && (
             <div
               data-testid="plc-workspace-banner"
-              className="rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-xs sm:text-sm font-bold text-emerald-900 flex items-center gap-2"
+              className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] px-4 py-3 text-xs sm:text-sm font-bold text-[#2F6846] flex items-center gap-2"
             >
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#2F6846] shrink-0" />
               <span>{bannerMessage}</span>
             </div>
           )}
@@ -945,19 +945,19 @@ export const PlcSectionHub: React.FC = () => {
                     {meetingsOverview.totalRecommendationsCount}
                   </div>
                 </div>
-                <div className="rounded-xl bg-emerald-50/70 border border-emerald-200/80 p-2.5">
-                  <div className="text-[11px] font-bold text-emerald-800">
+                <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-2.5">
+                  <div className="text-[11px] font-bold text-[#2F6846]">
                     تم التنفيذ
                   </div>
-                  <div className="text-sm font-extrabold text-emerald-900 tabular-nums mt-0.5">
+                  <div className="text-sm font-extrabold text-[#2F6846] tabular-nums mt-0.5">
                     {meetingsOverview.completedRecommendationsCount}
                   </div>
                 </div>
-                <div className="rounded-xl bg-amber-50/70 border border-amber-200/80 p-2.5">
-                  <div className="text-[11px] font-bold text-amber-800">
+                <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-2.5">
+                  <div className="text-[11px] font-bold text-[#9A4A2E]">
                     قيد التنفيذ
                   </div>
-                  <div className="text-sm font-extrabold text-amber-900 tabular-nums mt-0.5">
+                  <div className="text-sm font-extrabold text-[#9A4A2E] tabular-nums mt-0.5">
                     {meetingsOverview.inProgressRecommendationsCount}
                   </div>
                 </div>
@@ -1062,13 +1062,13 @@ export const PlcSectionHub: React.FC = () => {
 
               <div className="rounded-xl bg-stone-50 border border-stone-200/80 px-3.5 py-2.5 text-xs text-stone-700 flex flex-wrap items-center justify-between gap-2">
                 <span>
-                  <strong className="text-emerald-800">منفذ فعلياً:</strong>{' '}
+                  <strong className="text-[#2F6846]">منفذ فعلياً:</strong>{' '}
                   <span className="font-extrabold tabular-nums">
                     {executionOverview.completedCount}
                   </span>
                 </span>
                 <span>
-                  <strong className="text-amber-800">قيد التنفيذ:</strong>{' '}
+                  <strong className="text-[#9A4A2E]">قيد التنفيذ:</strong>{' '}
                   <span className="font-extrabold tabular-nums">
                     {executionOverview.inProgressCount}
                   </span>
@@ -1123,11 +1123,11 @@ export const PlcSectionHub: React.FC = () => {
 
               const stateBadge =
                 formStatus.state === 'completed' ? (
-                  <span className="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-extrabold">
+                  <span className="px-2.5 py-0.5 rounded-md bg-[#EEF5EE] text-[#2F6846] border border-[#C5DCC7] text-[11px] font-extrabold">
                     مكتمل
                   </span>
                 ) : formStatus.state === 'in_progress' ? (
-                  <span className="px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-extrabold">
+                  <span className="px-2.5 py-0.5 rounded-md bg-[#FDF2ED] text-[#9A4A2E] border border-[#E8C9BA] text-[11px] font-extrabold">
                     قيد الإعداد
                   </span>
                 ) : (
@@ -1527,7 +1527,7 @@ export const PlcSectionHub: React.FC = () => {
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2 text-xs font-extrabold text-plc">
               <span className="px-3 py-1 rounded-lg bg-plc-soft border border-plc-border">
-                قسم مستقل • الهوية التركوازية المعتمدة
+                قسم مستقل • ٩ نماذج مترابطة
               </span>
               {settings.academicYear && (
                 <span className="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 tabular-nums">
@@ -1595,25 +1595,25 @@ export const PlcSectionHub: React.FC = () => {
             </span>
           </div>
 
-          <div className="rounded-xl bg-emerald-50/70 border border-emerald-200 p-3.5">
-            <span className="block text-xs font-bold text-emerald-900">
+          <div className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-3.5">
+            <span className="block text-xs font-bold text-[#2F6846]">
               مجتمعات نشطة
             </span>
             <span
               data-testid="plc-stat-active"
-              className="text-2xl font-extrabold text-emerald-800 tabular-nums"
+              className="text-2xl font-extrabold text-[#2F6846] tabular-nums"
             >
               {communities.filter((c) => c.status === 'active').length}
             </span>
           </div>
 
-          <div className="rounded-xl bg-amber-50/70 border border-amber-200 p-3.5">
-            <span className="block text-xs font-bold text-amber-900">
+          <div className="rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] p-3.5">
+            <span className="block text-xs font-bold text-[#9A4A2E]">
               متوقفة مؤقتًا
             </span>
             <span
               data-testid="plc-stat-paused"
-              className="text-2xl font-extrabold text-amber-800 tabular-nums"
+              className="text-2xl font-extrabold text-[#9A4A2E] tabular-nums"
             >
               {communities.filter((c) => c.status === 'paused').length}
             </span>
@@ -1635,9 +1635,9 @@ export const PlcSectionHub: React.FC = () => {
         {bannerMessage && (
           <div
             data-testid="plc-main-banner"
-            className="rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-xs sm:text-sm font-bold text-emerald-900 flex items-center gap-2"
+            className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] px-4 py-3 text-xs sm:text-sm font-bold text-[#2F6846] flex items-center gap-2"
           >
-            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#2F6846] shrink-0" />
             <span>{bannerMessage}</span>
           </div>
         )}

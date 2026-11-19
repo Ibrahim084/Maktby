@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { AlertCircle, ArrowRight, CheckCircle2, Info, RotateCcw, Save } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Info, RotateCcw, Save } from 'lucide-react';
+import {
+  ArrowRightLineIcon,
+  SettingsLineIcon,
+} from '../components/brand/MaktbyIcons';
 import { useSettings } from '../context/SettingsContext';
 import { DEFAULT_SCHOOL_SETTINGS } from '../data/defaultSettings';
 import {
@@ -104,6 +108,9 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
     setStatusMessage('تمت استعادة القيم الأولية (تفريغ الحقول) بنجاح.');
   };
 
+  const inputClass =
+    'w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-[#E2E5E6] bg-white text-[#292F33] text-sm sm:text-base focus:outline-none focus:border-[#376B70] focus:ring-2 focus:ring-[#376B70]/20 transition-colors';
+
   return (
     <div className="space-y-6">
       {/* Top Action Bar with Return to Home */}
@@ -111,30 +118,37 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
         <button
           type="button"
           onClick={() => onNavigate('home')}
-          className="min-h-[44px] px-4 py-2 rounded-xl bg-white border border-stone-300 text-sm font-semibold text-stone-800 hover:bg-stone-100 transition-colors inline-flex items-center gap-2 cursor-pointer"
+          className="min-h-[44px] px-4 py-2 rounded-xl bg-white border border-[#E2E5E6] text-sm font-semibold text-[#292F33] hover:bg-[#EAF2F1] hover:border-[#C4D8D6] hover:text-[#315E62] transition-colors inline-flex items-center gap-2 cursor-pointer"
         >
-          <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+          <ArrowRightLineIcon className="w-4 h-4 shrink-0 text-[#376B70]" />
           <span>العودة للرئيسية</span>
         </button>
       </div>
 
-      {/* Page Heading */}
-      <section className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-8">
-        <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-stone-900">
-          الإعدادات المركزية
-        </h1>
-        <p className="mt-2 text-sm sm:text-base text-stone-600 leading-relaxed max-w-4xl">
-          تُعد هذه الصفحة المصدر الموحد لبيانات المدرسة والمعلم والصفات الوظيفية التي ستظهر تلقائياً في جميع النماذج والتقارير الرسمية لاحقاً.
-        </p>
+      {/* Page Heading — Settings Dedicated Calm Palette (#EEF0F3 / #65727A) */}
+      <section className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8">
+        <div className="flex items-start gap-4">
+          <div className="w-14 h-14 rounded-2xl bg-[#EEF0F3] border border-[#D2D8DE] text-[#65727A] flex items-center justify-center shrink-0">
+            <SettingsLineIcon className="w-7 h-7" />
+          </div>
+          <div className="space-y-1.5 flex-1">
+            <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-[#292F33]">
+              الإعدادات المركزية
+            </h1>
+            <p className="text-sm sm:text-base text-[#626D72] leading-relaxed max-w-4xl">
+              تُعد هذه الصفحة المصدر الموحد لبيانات المدرسة والمعلم والصفات الوظيفية التي ستظهر تلقائياً في جميع النماذج والتقارير الرسمية لاحقاً.
+            </p>
+          </div>
+        </div>
 
-        {/* Browser Local Storage Notice */}
+        {/* Browser Local Storage Notice (WCAG 2.2 AA Accessible Warning Banner with Icon + Text) */}
         <div
           role="note"
-          className="mt-5 rounded-xl bg-[#FAF6EE] border border-amber-200/80 p-4 flex items-start gap-3 text-xs sm:text-sm text-stone-800"
+          className="mt-5 rounded-xl bg-[#FBF3E7] border border-[#E5CFA7] p-4 flex items-start gap-3 text-xs sm:text-sm text-[#292F33]"
         >
-          <Info className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" aria-hidden="true" />
+          <Info className="w-5 h-5 text-[#8A531E] shrink-0 mt-0.5" aria-hidden="true" />
           <p className="leading-relaxed">
-            <strong>تنبيه حول الحفظ المحلي:</strong> تُحفظ هذه الإعدادات محلياً داخل متصفحك فقط دون إرسالها إلى أي خادم خارجي. يُرجى ملاحظة أن مسح بيانات المتصفح (سجل التصفح أو بيانات المواقع) قد يؤدي إلى فقدان التعديلات وعودتها إلى القيم الأولية.
+            <strong className="text-[#785522]">تنبيه حول الحفظ المحلي:</strong> تُحفظ هذه الإعدادات محلياً داخل متصفحك فقط دون إرسالها إلى أي خادم خارجي. يُرجى ملاحظة أن مسح بيانات المتصفح (سجل التصفح أو بيانات المواقع) قد يؤدي إلى فقدان التعديلات وعودتها إلى القيم الأولية.
           </p>
         </div>
       </section>
@@ -142,31 +156,31 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
       {/* Settings Form */}
       <form onSubmit={handleSubmit} noValidate className="space-y-6">
         {/* Part 1: School & General Information */}
-        <section className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-8 space-y-6">
-          <div className="border-b border-stone-100 pb-4">
-            <h2 className="text-lg sm:text-xl font-bold font-display text-stone-900">
+        <section className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6">
+          <div className="border-b border-[#E2E5E6] pb-4">
+            <h2 className="text-lg sm:text-xl font-bold font-display text-[#292F33]">
               أولاً: البيانات الأساسية للمدرسة والمعلم
             </h2>
-            <p className="text-xs sm:text-sm text-stone-500 mt-1">
-              بيانات موحدة تشترك فيها جميع أقسام النظام الثلاثة
+            <p className="text-xs sm:text-sm text-[#626D72] mt-1">
+              بيانات موحدة تشترك فيها جميع أقسام النظام
             </p>
           </div>
 
           {/* Gender / Wording Mode Selection: معلم / معلمة */}
-          <div className="rounded-xl border border-stone-200 bg-stone-50/70 p-4 space-y-2.5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="rounded-xl border border-[#E2E5E6] bg-[#FBFBF9] p-4 space-y-2.5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <span className="block text-sm font-bold text-stone-900">
+                <span className="block text-sm font-bold text-[#292F33]">
                   الصفة العامة والصياغة اللغوية (معلم / معلمة)
                 </span>
-                <p className="text-xs text-stone-600 mt-0.5">
+                <p className="text-xs text-[#626D72] mt-0.5">
                   تتغير بناءً على هذا الاختيار الصياغة تلقائياً في الشهادات والنماذج ({gendered.honorific} · {gendered.trainerExecutedPhrase} · {gendered.traineeAttendedPhrase} · {gendered.principalTitle})
                 </p>
               </div>
               <div
                 role="radiogroup"
                 aria-label="الصفة العامة والصياغة اللغوية"
-                className="inline-flex items-center gap-2 bg-white p-1.5 rounded-xl border border-stone-200 shrink-0"
+                className="inline-flex items-center gap-1.5 bg-white p-1.5 rounded-xl border border-[#E2E5E6] shrink-0"
               >
                 <button
                   type="button"
@@ -176,8 +190,8 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                   onClick={() => handleGenderChange('male')}
                   className={`min-h-[40px] px-5 py-2 rounded-lg text-sm font-bold transition-colors cursor-pointer ${
                     formData.gender !== 'female'
-                      ? 'bg-stone-900 text-white'
-                      : 'text-stone-700 hover:bg-stone-100'
+                      ? 'bg-[#376B70] text-white'
+                      : 'text-[#626D72] hover:bg-[#EAF2F1] hover:text-[#315E62]'
                   }`}
                 >
                   معلم
@@ -190,8 +204,8 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                   onClick={() => handleGenderChange('female')}
                   className={`min-h-[40px] px-5 py-2 rounded-lg text-sm font-bold transition-colors cursor-pointer ${
                     formData.gender === 'female'
-                      ? 'bg-stone-900 text-white'
-                      : 'text-stone-700 hover:bg-stone-100'
+                      ? 'bg-[#376B70] text-white'
+                      : 'text-[#626D72] hover:bg-[#EAF2F1] hover:text-[#315E62]'
                   }`}
                 >
                   معلمة
@@ -205,7 +219,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
             <div>
               <label
                 htmlFor="schoolName"
-                className="block text-sm font-semibold text-stone-800 mb-2"
+                className="block text-sm font-semibold text-[#292F33] mb-2"
               >
                 اسم المدرسة
               </label>
@@ -214,10 +228,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.schoolName}
                 onChange={(e) => handleFieldChange('schoolName', e.target.value)}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-stone-800"
+                className={inputClass}
               />
               {errors.schoolName && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.schoolName}</span>
                 </p>
@@ -228,7 +242,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
             <div>
               <label
                 htmlFor="educationDepartment"
-                className="block text-sm font-semibold text-stone-800 mb-2"
+                className="block text-sm font-semibold text-[#292F33] mb-2"
               >
                 الإدارة التعليمية
               </label>
@@ -237,10 +251,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.educationDepartment}
                 onChange={(e) => handleFieldChange('educationDepartment', e.target.value)}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-stone-800"
+                className={inputClass}
               />
               {errors.educationDepartment && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.educationDepartment}</span>
                 </p>
@@ -251,7 +265,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
             <div>
               <label
                 htmlFor="userName"
-                className="block text-sm font-semibold text-stone-800 mb-2"
+                className="block text-sm font-semibold text-[#292F33] mb-2"
               >
                 اسم المستخدم
               </label>
@@ -260,10 +274,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.userName}
                 onChange={(e) => handleFieldChange('userName', e.target.value)}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-stone-800"
+                className={inputClass}
               />
               {errors.userName && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.userName}</span>
                 </p>
@@ -274,7 +288,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
             <div>
               <label
                 htmlFor="principalName"
-                className="block text-sm font-semibold text-stone-800 mb-2"
+                className="block text-sm font-semibold text-[#292F33] mb-2"
               >
                 {gendered.principalTitle}
               </label>
@@ -283,10 +297,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.principalName}
                 onChange={(e) => handleFieldChange('principalName', e.target.value)}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-stone-800"
+                className={inputClass}
               />
               {errors.principalName && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.principalName}</span>
                 </p>
@@ -297,7 +311,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
             <div>
               <label
                 htmlFor="academicYear"
-                className="block text-sm font-semibold text-stone-800 mb-2"
+                className="block text-sm font-semibold text-[#292F33] mb-2"
               >
                 العام الدراسي
               </label>
@@ -306,10 +320,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.academicYear}
                 onChange={(e) => handleFieldChange('academicYear', e.target.value)}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base tabular-nums focus:outline-none focus:ring-2 focus:ring-stone-800"
+                className={`${inputClass} tabular-nums`}
               />
               {errors.academicYear && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.academicYear}</span>
                 </p>
@@ -320,7 +334,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
             <div>
               <label
                 htmlFor="semester"
-                className="block text-sm font-semibold text-stone-800 mb-2"
+                className="block text-sm font-semibold text-[#292F33] mb-2"
               >
                 الفصل الدراسي
               </label>
@@ -328,7 +342,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 id="semester"
                 value={formData.semester || 'الفصل الدراسي الأول'}
                 onChange={(e) => handleFieldChange('semester', e.target.value)}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-stone-800"
+                className={inputClass}
               >
                 {APPROVED_SCHOOL_SEMESTERS.map((sem) => (
                   <option key={sem} value={sem}>
@@ -340,27 +354,27 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
           </div>
         </section>
 
-        {/* Part 2: Independent Job Roles per Section */}
-        <section className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-8 space-y-6">
-          <div className="border-b border-stone-100 pb-4">
-            <h2 className="text-lg sm:text-xl font-bold font-display text-stone-900">
+        {/* Part 2: Independent Job Roles per Section (Tinted subtly by each section's own palette) */}
+        <section className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6">
+          <div className="border-b border-[#E2E5E6] pb-4">
+            <h2 className="text-lg sm:text-xl font-bold font-display text-[#292F33]">
               ثانياً: الصفات الوظيفية المستقلة لكل قسم
             </h2>
-            <p className="text-xs sm:text-sm text-stone-500 mt-1">
+            <p className="text-xs sm:text-sm text-[#626D72] mt-1">
               كل قسم يحتفظ بصفته الوظيفية الخاصة بشكل منفصل تماماً لاستخدامها في توقيع وتوثيق نماذجه المستقلة
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Role 1: Professional Development (Maroon) */}
-            <div className="rounded-xl border border-[#E6C7CF] bg-[#FAF1F3]/50 p-4">
+            {/* Role 1: Professional Development (#E1EFE5 / #477B59) */}
+            <div className="rounded-xl border border-[#BBD8C4] bg-[#E1EFE5]/45 p-4">
               <label
                 htmlFor="roleProfessionalDevelopment"
-                className="block text-sm font-bold text-[#7C1D34] mb-1"
+                className="block text-sm font-bold text-[#386347] mb-1"
               >
                 قسم التطوير المهني
               </label>
-              <p className="text-xs text-stone-600 mb-3">
+              <p className="text-xs text-[#626D72] mb-3">
                 الصفة الوظيفية المعتمدة في تقارير التطوير المهني
               </p>
               <input
@@ -368,25 +382,25 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.roles.professionalDevelopment}
                 onChange={(e) => handleRoleChange('professionalDevelopment', e.target.value)}
-                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#7C1D34]"
+                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#BBD8C4] bg-white text-[#292F33] text-sm focus:outline-none focus:border-[#477B59] focus:ring-2 focus:ring-[#477B59]/20"
               />
               {errors.professionalDevelopment && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.professionalDevelopment}</span>
                 </p>
               )}
             </div>
 
-            {/* Role 2: Gifted (Burgundy & Charcoal #7F1D3F / #26323B) */}
-            <div className="rounded-xl border border-[#E6C7D0] bg-[#F9EFF2]/50 p-4">
+            {/* Role 2: Gifted (#F7EBD5 / #956C2E) */}
+            <div className="rounded-xl border border-[#E5CFA7] bg-[#F7EBD5]/50 p-4">
               <label
                 htmlFor="roleGifted"
-                className="block text-sm font-bold text-[#7F1D3F] mb-1"
+                className="block text-sm font-bold text-[#785522] mb-1"
               >
                 قسم الموهوبين
               </label>
-              <p className="text-xs text-stone-600 mb-3">
+              <p className="text-xs text-[#626D72] mb-3">
                 الصفة الوظيفية المعتمدة في سجل وتقارير الموهوبين
               </p>
               <input
@@ -394,25 +408,25 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.roles.gifted}
                 onChange={(e) => handleRoleChange('gifted', e.target.value)}
-                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#7F1D3F]"
+                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#E5CFA7] bg-white text-[#292F33] text-sm focus:outline-none focus:border-[#956C2E] focus:ring-2 focus:ring-[#956C2E]/20"
               />
               {errors.gifted && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.gifted}</span>
                 </p>
               )}
             </div>
 
-            {/* Role 3: Teacher (Blue) */}
-            <div className="rounded-xl border border-[#C5D7EE] bg-[#F0F5FA]/50 p-4">
+            {/* Role 3: Teacher (#DCEAF5 / #416B91) */}
+            <div className="rounded-xl border border-[#B8D2E8] bg-[#DCEAF5]/45 p-4">
               <label
                 htmlFor="roleTeacher"
-                className="block text-sm font-bold text-[#1E4D8C] mb-1"
+                className="block text-sm font-bold text-[#335675] mb-1"
               >
                 قسم المعلم
               </label>
-              <p className="text-xs text-stone-600 mb-3">
+              <p className="text-xs text-[#626D72] mb-3">
                 الصفة الوظيفية المعتمدة في تقارير المعلم
               </p>
               <input
@@ -420,10 +434,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                 type="text"
                 value={formData.roles.teacher}
                 onChange={(e) => handleRoleChange('teacher', e.target.value)}
-                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E4D8C]"
+                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#B8D2E8] bg-white text-[#292F33] text-sm focus:outline-none focus:border-[#416B91] focus:ring-2 focus:ring-[#416B91]/20"
               />
               {errors.teacher && (
-                <p className="mt-1.5 text-xs text-red-700 flex items-center gap-1">
+                <p className="mt-1.5 text-xs text-[#A63A32] flex items-center gap-1">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                   <span>{errors.teacher}</span>
                 </p>
@@ -433,19 +447,19 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
         </section>
 
         {/* Part 3: Teacher Section Unified PDF Template & Color System */}
-        <section className="bg-white rounded-2xl border border-stone-200/90 p-6 sm:p-8 space-y-6">
-          <div className="border-b border-stone-100 pb-4">
-            <h2 className="text-lg sm:text-xl font-bold font-display text-stone-900">
+        <section className="bg-white rounded-2xl border border-[#E2E5E6] p-6 sm:p-8 space-y-6">
+          <div className="border-b border-[#E2E5E6] pb-4">
+            <h2 className="text-lg sm:text-xl font-bold font-display text-[#292F33]">
               ثالثاً: إعدادات محرك وتقارير قسم المعلم (القالب البصري ونظام الألوان)
             </h2>
-            <p className="text-xs sm:text-sm text-stone-500 mt-1">
+            <p className="text-xs sm:text-sm text-[#626D72] mt-1">
               اختر القالب البصري والنظام اللوني المعتمد لتقارير قسم المعلم. يُطبق نظام لوني واحد مستقل لكل تقرير.
             </p>
           </div>
 
           {/* Visual Template Selection */}
           <div className="space-y-3">
-            <h3 className="text-sm font-bold text-stone-800">
+            <h3 className="text-sm font-bold text-[#292F33]">
               ١. القالب البصري لصفحة التقرير (ثلاثة قوالب مرجعية مستقلة - A4 طولي):
             </h3>
             <div
@@ -469,14 +483,14 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                     onClick={() => handleTeacherTemplateChange(tplId)}
                     className={`min-h-[82px] p-4 rounded-xl border-2 text-right transition-colors cursor-pointer ${
                       isSelected
-                        ? 'border-[#15445A] bg-[#F0F6FC]/60'
-                        : 'border-stone-200 bg-white hover:bg-stone-50'
+                        ? 'border-[#376B70] bg-[#EAF2F1]/75'
+                        : 'border-[#E2E5E6] bg-white hover:bg-[#FBFBF9]'
                     }`}
                   >
-                    <div className="text-sm font-bold text-stone-900">
+                    <div className="text-sm font-bold text-[#292F33]">
                       {tpl.name}
                     </div>
-                    <div className="text-xs text-stone-600 mt-1 leading-relaxed">
+                    <div className="text-xs text-[#626D72] mt-1 leading-relaxed">
                       {tpl.description}
                     </div>
                   </button>
@@ -487,7 +501,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
 
           {/* Color System Selection */}
           <div className="space-y-3">
-            <h3 className="text-sm font-bold text-stone-800">
+            <h3 className="text-sm font-bold text-[#292F33]">
               ٢. النظام اللوني المستقل لتقارير المعلم:
             </h3>
             <div
@@ -511,15 +525,15 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
                     onClick={() => handleTeacherColorChange(sysId)}
                     className={`min-h-[70px] p-4 rounded-xl border-2 text-right flex items-center justify-between gap-3 transition-colors cursor-pointer ${
                       isSelected
-                        ? 'border-[#15445A] bg-stone-50'
-                        : 'border-stone-200 bg-white hover:bg-stone-50'
+                        ? 'border-[#376B70] bg-[#EAF2F1]/75'
+                        : 'border-[#E2E5E6] bg-white hover:bg-[#FBFBF9]'
                     }`}
                   >
                     <div className="space-y-1">
-                      <div className="text-sm font-bold text-stone-900">
+                      <div className="text-sm font-bold text-[#292F33]">
                         {sys.name}
                       </div>
-                      <div className="text-xs text-stone-600 leading-relaxed">
+                      <div className="text-xs text-[#626D72] leading-relaxed">
                         {sys.description}
                       </div>
                     </div>
@@ -545,7 +559,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
           <div
             role="status"
             aria-live="polite"
-            className="rounded-xl bg-[#EFF8F3] border border-[#C2E2D2] p-4 flex items-center gap-3 text-sm font-semibold text-[#156B46]"
+            className="rounded-xl bg-[#ECF5EF] border border-[#BDD9C6] p-4 flex items-center gap-3 text-sm font-semibold text-[#2F6846]"
           >
             <CheckCircle2 className="w-5 h-5 shrink-0" aria-hidden="true" />
             <span>{statusMessage}</span>
@@ -553,10 +567,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
         )}
 
         {/* Form Actions */}
-        <div className="bg-white rounded-2xl border border-stone-200/90 p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <div className="bg-white rounded-2xl border border-[#E2E5E6] p-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
           <button
             type="submit"
-            className="min-h-[48px] px-6 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            className="min-h-[48px] px-6 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
           >
             <Save className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>حفظ الإعدادات</span>
@@ -565,7 +579,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onNavigate }) => {
           <button
             type="button"
             onClick={handleResetDefaults}
-            className="min-h-[48px] px-5 py-2.5 rounded-xl border border-stone-300 hover:bg-stone-100 text-stone-700 text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            className="min-h-[48px] px-5 py-2.5 rounded-xl border border-[#C4D8D6] bg-[#EAF2F1] hover:bg-[#DCE9E8] text-[#315E62] text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
           >
             <RotateCcw className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>استعادة القيم الأولية</span>

@@ -592,7 +592,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 data-testid="input-planTitle"
                 value={d.planTitle}
                 onChange={(e) => updateField('planTitle', e.target.value)}
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.planTitle && (
                 <p className="text-xs text-red-600 mt-1">
@@ -614,7 +614,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                     e.target.value as 'سنوية' | 'قصيرة المدى'
                   )
                 }
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               >
                 {PLAN_TYPE_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>
@@ -637,7 +637,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                     e.target.value as 'قيد التنفيذ' | 'مكتملة'
                   )
                 }
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               >
                 {PLAN_STATUS_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>
@@ -657,7 +657,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 value={d.subject}
                 onChange={(e) => updateField('subject', e.target.value)}
                 placeholder="مثال: الرياضيات / العلوم / لغتي"
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
             </div>
 
@@ -671,7 +671,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 value={d.stageAndGrade}
                 onChange={(e) => updateField('stageAndGrade', e.target.value)}
                 placeholder="مثال: المرحلة المتوسطة — الثاني المتوسط"
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
             </div>
 
@@ -685,7 +685,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 value={d.academicPeriod}
                 onChange={(e) => updateField('academicPeriod', e.target.value)}
                 placeholder="مثال: ١٤٤٧هـ — الفصل الدراسي الأول"
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
             </div>
           </div>
@@ -701,7 +701,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 onChange={(e) =>
                   updateField('needDiagnosisCategory', e.target.value)
                 }
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               >
                 {NEED_DIAGNOSIS_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>
@@ -730,7 +730,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                     updateField('customNeedDiagnosis', e.target.value)
                   }
                   placeholder="اكتب الاحتياج التطويري الآخر هنا..."
-                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
                 />
                 {validationErrors.customNeedDiagnosis && (
                   <p className="text-xs text-red-600 mt-1">
@@ -752,7 +752,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                   updateField('needDiagnosisDetails', e.target.value)
                 }
                 placeholder="وضح معطيات تشخيص الاحتياج التطويري..."
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
             </div>
           </div>
@@ -773,7 +773,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="add-pd-goal-btn"
               onClick={addGoal}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
               <span>إضافة هدف تطويري جديد</span>
@@ -791,10 +791,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               <div
                 key={goal.id}
                 data-testid={`pd-goal-item-${idx}`}
-                className="rounded-2xl border border-[#C5D7EE] bg-[#F0F5FA]/40 p-4 sm:p-5 space-y-3.5"
+                className="rounded-2xl border border-[#E2E5E6] bg-[#DCEAF5]/40 p-4 sm:p-5 space-y-3.5"
               >
-                <div className="flex items-center justify-between gap-2 border-b border-[#C5D7EE]/60 pb-2.5">
-                  <span className="text-xs sm:text-sm font-extrabold text-[#1E4D8C]">
+                <div className="flex items-center justify-between gap-2 border-b border-[#E2E5E6]/60 pb-2.5">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#416B91]">
                     الهدف التطويري ({idx + 1})
                   </span>
                   {d.goals.length > 1 && (
@@ -949,7 +949,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                   updateField('followUpFrequency', e.target.value)
                 }
                 placeholder="شهرية"
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
               <datalist id="follow-up-period-suggestions">
                 {FOLLOW_UP_PERIOD_OPTIONS.map((p) => (
@@ -968,7 +968,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 value={d.followUpNotes}
                 onChange={(e) => updateField('followUpNotes', e.target.value)}
                 placeholder="ملاحظات المتابعة الشهرية أو المرحلية..."
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
             </div>
 
@@ -984,7 +984,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                   updateField('impactEvaluation', e.target.value)
                 }
                 placeholder="وضح أثر الخطة على تحسين الممارسات التدريسية وتحصيل الطلاب..."
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
               {validationErrors.impactEvaluation && (
                 <p className="text-xs text-red-600 mt-1">
@@ -1003,7 +1003,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 value={d.principalNotes}
                 onChange={(e) => updateField('principalNotes', e.target.value)}
                 placeholder={`ملاحظات وتوجيهات ${gendered.principalTitle}...`}
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                className="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
               />
             </div>
 
@@ -1016,7 +1016,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                   onChange={(e) =>
                     updateField('includePrincipalApproval', e.target.checked)
                   }
-                  className="w-4 h-4 rounded border-stone-300 text-[#1E4D8C] focus:ring-[#1E4D8C]"
+                  className="w-4 h-4 rounded border-stone-300 text-[#416B91] focus:ring-[#416B91]"
                 />
                 <span className="text-xs sm:text-sm font-bold text-stone-800">
                   إظهار اعتماد {gendered.principalTitle} في أسفل الصفحة الأخيرة من ملف PDF (اختياري)
@@ -1172,7 +1172,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="add-weekly-lesson-btn"
               onClick={addLesson}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
               <span>إضافة درس / موضوع جديد</span>
@@ -1190,10 +1190,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               <div
                 key={lesson.id}
                 data-testid={`weekly-lesson-item-${idx}`}
-                className="rounded-2xl border border-[#C5D7EE] bg-[#F0F5FA]/40 p-4 sm:p-5 space-y-3.5"
+                className="rounded-2xl border border-[#E2E5E6] bg-[#DCEAF5]/40 p-4 sm:p-5 space-y-3.5"
               >
-                <div className="flex items-center justify-between gap-2 border-b border-[#C5D7EE]/60 pb-2.5">
-                  <span className="text-xs sm:text-sm font-extrabold text-[#1E4D8C]">
+                <div className="flex items-center justify-between gap-2 border-b border-[#E2E5E6]/60 pb-2.5">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#416B91]">
                     الدرس / الموضوع ({idx + 1})
                   </span>
                   {d.lessons.length > 1 && (
@@ -1372,7 +1372,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             <h3 className="text-base font-bold font-display text-stone-900">
               ١. بيانات الطالب ومصدر الضعف والاختبار التشخيصي
             </h3>
-            <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+            <span className="px-3 py-1 rounded-full bg-[#EEF5EE] border border-[#C5DCC7] text-[#2F6846] text-xs font-bold">
               صفحة واحدة مستهدفة · حد أقصى صفحتان
             </span>
           </div>
@@ -1586,7 +1586,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                     onClick={() => updateField('hasDiagnosticTest', choice)}
                     className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
                       d.hasDiagnosticTest === choice
-                        ? 'bg-[#1E4D8C] text-white'
+                        ? 'bg-[#376B70] text-white'
                         : 'text-stone-700 hover:bg-stone-200/60'
                     }`}
                   >
@@ -1597,7 +1597,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             </div>
 
             {d.hasDiagnosticTest === 'نعم' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 rounded-xl border border-[#C5D7EE] bg-[#F0F5FA]/50 p-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5]/50 p-4">
                 <div>
                   <label className="block text-xs font-bold text-stone-800 mb-1">
                     بيانات / اسم الاختبار التشخيصي
@@ -1654,7 +1654,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="add-individual-goal-btn"
               onClick={addGoal}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
               <span>إضافة هدف علاجي</span>
@@ -1672,10 +1672,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               <div
                 key={goal.id}
                 data-testid={`ind-goal-item-${idx}`}
-                className="rounded-2xl border border-[#C5D7EE] bg-[#F0F5FA]/40 p-4 sm:p-5 space-y-3.5"
+                className="rounded-2xl border border-[#E2E5E6] bg-[#DCEAF5]/40 p-4 sm:p-5 space-y-3.5"
               >
-                <div className="flex items-center justify-between gap-2 border-b border-[#C5D7EE]/60 pb-2">
-                  <span className="text-xs sm:text-sm font-extrabold text-[#1E4D8C]">
+                <div className="flex items-center justify-between gap-2 border-b border-[#E2E5E6]/60 pb-2">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#416B91]">
                     الهدف العلاجي ({idx + 1})
                   </span>
                   {d.goals.length > 1 && (
@@ -1865,7 +1865,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             <h3 className="text-base font-bold font-display text-stone-900">
               ١. نطاق المستفيدين وبيانات الصف والجدول الزمني
             </h3>
-            <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+            <span className="px-3 py-1 rounded-full bg-[#EEF5EE] border border-[#C5DCC7] text-[#2F6846] text-xs font-bold">
               حد أقصى ٣ صفحات
             </span>
           </div>
@@ -2064,7 +2064,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="add-group-skill-btn"
               onClick={addSkill}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
               <span>إضافة مهارة مستهدفة</span>
@@ -2082,10 +2082,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               <div
                 key={skill.id}
                 data-testid={`group-skill-item-${idx}`}
-                className="rounded-2xl border border-[#C5D7EE] bg-[#F0F5FA]/40 p-4 sm:p-5 space-y-3"
+                className="rounded-2xl border border-[#E2E5E6] bg-[#DCEAF5]/40 p-4 sm:p-5 space-y-3"
               >
-                <div className="flex items-center justify-between gap-2 border-b border-[#C5D7EE]/60 pb-2">
-                  <span className="text-xs sm:text-sm font-extrabold text-[#1E4D8C]">
+                <div className="flex items-center justify-between gap-2 border-b border-[#E2E5E6]/60 pb-2">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#416B91]">
                     المهارة المستهدفة ({idx + 1})
                   </span>
                   {d.skills.length > 1 && (
@@ -2345,7 +2345,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             <h3 className="text-base font-bold font-display text-stone-900">
               ١. المستفيدون وسبب الترشيح وأنواع الإثراء والجدول الزمني
             </h3>
-            <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+            <span className="px-3 py-1 rounded-full bg-[#EEF5EE] border border-[#C5DCC7] text-[#2F6846] text-xs font-bold">
               حد أقصى ٣ صفحات
             </span>
           </div>
@@ -2475,7 +2475,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                     key={typeOpt}
                     className={`p-3 rounded-xl border text-xs font-bold flex items-center gap-2.5 cursor-pointer transition-colors ${
                       checked
-                        ? 'border-[#1E4D8C] bg-[#F0F5FA] text-[#1E4D8C]'
+                        ? 'border-[#416B91] bg-[#DCEAF5] text-[#416B91]'
                         : 'border-stone-200 bg-white text-stone-700 hover:bg-stone-50'
                     }`}
                   >
@@ -2484,7 +2484,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                       data-testid={`checkbox-enrichmentType-${typeOpt}`}
                       checked={checked}
                       onChange={() => toggleEnrichmentType(typeOpt)}
-                      className="w-4 h-4 rounded border-stone-300 text-[#1E4D8C]"
+                      className="w-4 h-4 rounded border-stone-300 text-[#416B91]"
                     />
                     <span>{typeOpt}</span>
                   </label>
@@ -2610,7 +2610,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="add-enrichment-activity-btn"
               onClick={addActivity}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
               <span>إضافة نشاط إثرائي</span>
@@ -2628,10 +2628,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               <div
                 key={act.id}
                 data-testid={`enrichment-activity-item-${idx}`}
-                className="rounded-2xl border border-[#C5D7EE] bg-[#F0F5FA]/40 p-4 sm:p-5 space-y-3"
+                className="rounded-2xl border border-[#E2E5E6] bg-[#DCEAF5]/40 p-4 sm:p-5 space-y-3"
               >
-                <div className="flex items-center justify-between gap-2 border-b border-[#C5D7EE]/60 pb-2">
-                  <span className="text-xs sm:text-sm font-extrabold text-[#1E4D8C]">
+                <div className="flex items-center justify-between gap-2 border-b border-[#E2E5E6]/60 pb-2">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#416B91]">
                     النشاط الإثرائي ({idx + 1})
                   </span>
                   {d.activities.length > 1 && (
@@ -2720,7 +2720,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="add-student-product-btn"
               onClick={addProduct}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" aria-hidden="true" />
               <span>إضافة منتج طلابي</span>
@@ -2732,10 +2732,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               <div
                 key={prod.id}
                 data-testid={`student-product-item-${idx}`}
-                className="rounded-2xl border border-[#C5D7EE] bg-[#F0F5FA]/40 p-4 sm:p-5 space-y-3"
+                className="rounded-2xl border border-[#E2E5E6] bg-[#DCEAF5]/40 p-4 sm:p-5 space-y-3"
               >
-                <div className="flex items-center justify-between gap-2 border-b border-[#C5D7EE]/60 pb-2">
-                  <span className="text-xs sm:text-sm font-extrabold text-[#1E4D8C]">
+                <div className="flex items-center justify-between gap-2 border-b border-[#E2E5E6]/60 pb-2">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#416B91]">
                     المنتج / الإنجاز الطلابي ({idx + 1})
                   </span>
                   {d.studentProducts.length > 1 && (
@@ -2926,7 +2926,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
   return (
     <div data-testid={`teacher-plan-form-${formId}`} className="space-y-6">
       {/* Top Bar: Navigation + Title + Mode Tabs + PDF Export */}
-      <section className="bg-white rounded-2xl border border-[#C5D7EE] p-5 sm:p-6 space-y-4 print:hidden">
+      <section className="bg-white rounded-2xl border border-[#E2E5E6] p-5 sm:p-6 space-y-4 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -2956,8 +2956,8 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               onClick={() => setIsArchiveOpen((prev) => !prev)}
               className={`min-h-[42px] px-3.5 py-2 rounded-xl border text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isArchiveOpen
-                  ? 'border-[#1E4D8C] bg-[#1E4D8C] text-white'
-                  : 'border-[#C5D7EE] bg-white hover:bg-[#F0F5FA] text-[#1E4D8C]'
+                  ? 'border-[#416B91] bg-[#376B70] text-white'
+                  : 'border-[#E2E5E6] bg-white hover:bg-[#DCEAF5] text-[#416B91]'
               }`}
             >
               <Archive className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -2979,7 +2979,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               data-testid="save-plan-to-archive-btn"
               disabled={isSavingArchive}
               onClick={handleSaveToArchive}
-              className="min-h-[42px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
+              className="min-h-[42px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60"
             >
               <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -2995,7 +2995,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               type="button"
               data-testid="fill-sample-plan-data-btn"
               onClick={handleFillSampleData}
-              className="min-h-[42px] px-3.5 py-2 rounded-xl border border-[#C5D7EE] bg-[#F0F5FA] hover:bg-[#E3EDF8] text-xs font-bold text-[#1E4D8C] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="min-h-[42px] px-3.5 py-2 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-xs font-bold text-[#416B91] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Wand2 className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>تعبئة بيانات نموذجية للتجربة</span>
@@ -3023,14 +3023,14 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             {activeArchivedRecordId ? (
               <span
                 data-testid="plan-active-record-status-text"
-                className="text-emerald-800"
+                className="text-[#2F6846]"
               >
                 سجل محفوظ في الأرشيف (المعرف الثابت: {activeArchivedRecordId})
               </span>
             ) : (
               <span
                 data-testid="plan-active-record-status-text"
-                className="text-[#1E4D8C]"
+                className="text-[#416B91]"
               >
                 مسودة قيد التحرير (لا تُحتسب شاهدًا إلا بعد الحفظ والربط لاحقًا)
               </span>
@@ -3040,7 +3040,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             <button
               type="button"
               onClick={() => setIsArchiveOpen(true)}
-              className="text-xs font-bold text-[#2563EB] hover:underline cursor-pointer"
+              className="text-xs font-bold text-[#416B91] hover:underline cursor-pointer"
             >
               استعراض {savedRecords.length} سجل محفوظ
             </button>
@@ -3051,7 +3051,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
         {isArchiveOpen && (
           <div
             data-testid="plans-archive-panel"
-            className="rounded-2xl border border-[#BFDBFE] bg-[#F8FAFC] p-4 sm:p-5 space-y-4"
+            className="rounded-2xl border border-[#E2E5E6] bg-[#FBFBF9] p-4 sm:p-5 space-y-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
               <div>
@@ -3079,7 +3079,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 className={`rounded-xl border p-4 space-y-3 ${
                   pendingDeleteTarget.impact.isLinked
                     ? 'border-red-300 bg-red-50 text-red-950'
-                    : 'border-amber-300 bg-amber-50 text-amber-950'
+                    : 'border-[#E8C9BA] bg-[#FDF2ED] text-[#9A4A2E]'
                 }`}
               >
                 <div className="flex items-start gap-2.5">
@@ -3140,7 +3140,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                       data-testid={`plan-archive-record-item-${rec.id}`}
                       className={`rounded-xl border bg-white p-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 ${
                         isCurrent
-                          ? 'border-[#2563EB] ring-1 ring-[#2563EB]/20'
+                          ? 'border-[#416B91] ring-1 ring-[#416B91]/20'
                           : 'border-stone-200'
                       }`}
                     >
@@ -3164,7 +3164,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                           type="button"
                           data-testid={`open-plan-archive-record-${rec.id}`}
                           onClick={() => handleOpenArchivedPlan(rec)}
-                          className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#BFDBFE] bg-[#EFF6FF] hover:bg-[#DBEAFE] text-xs font-bold text-[#1E40AF] inline-flex items-center gap-1.5 cursor-pointer"
+                          className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-xs font-bold text-[#294660] inline-flex items-center gap-1.5 cursor-pointer"
                         >
                           <FolderOpen className="w-3.5 h-3.5" aria-hidden="true" />
                           <span>{isCurrent ? 'مفتوح حاليًا' : 'فتح وتعديل'}</span>
@@ -3191,7 +3191,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
 
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-t border-stone-100 pt-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0F5FA] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-bold">
               <CalendarRange className="w-3.5 h-3.5" aria-hidden="true" />
               <span>
                 الخطط · {pathLabel} · {metadata.badge}
@@ -3212,7 +3212,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               onClick={() => setActiveTab('edit')}
               className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-bold inline-flex items-center gap-2 border transition-colors cursor-pointer ${
                 activeTab === 'edit'
-                  ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                  ? 'bg-[#376B70] text-white border-[#416B91]'
                   : 'bg-white text-stone-800 border-stone-300 hover:bg-stone-50'
               }`}
             >
@@ -3226,7 +3226,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
               onClick={handleSwitchToPreview}
               className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-bold inline-flex items-center gap-2 border transition-colors cursor-pointer ${
                 activeTab === 'preview'
-                  ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                  ? 'bg-[#376B70] text-white border-[#416B91]'
                   : 'bg-white text-stone-800 border-stone-300 hover:bg-stone-50'
               }`}
             >
@@ -3258,7 +3258,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 pt-2 border-t border-stone-100">
           <div className="rounded-xl border border-stone-200 bg-stone-50/70 p-3 flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
-              <Palette className="w-4 h-4 text-[#1E4D8C]" aria-hidden="true" />
+              <Palette className="w-4 h-4 text-[#416B91]" aria-hidden="true" />
               <span>قالب PDF المعتمد:</span>
             </span>
             <div className="flex flex-wrap items-center gap-1.5">
@@ -3273,7 +3273,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                     onClick={() => handleSelectTemplate(tplId)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                        ? 'bg-[#376B70] text-white border-[#416B91]'
                         : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-100'
                     }`}
                   >
@@ -3286,7 +3286,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
 
           <div className="rounded-xl border border-stone-200 bg-stone-50/70 p-3 flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
-              <Palette className="w-4 h-4 text-[#07A869]" aria-hidden="true" />
+              <Palette className="w-4 h-4 text-[#2F6846]" aria-hidden="true" />
               <span>النظام اللوني:</span>
             </span>
             <div className="flex flex-wrap items-center gap-1.5">
@@ -3323,10 +3323,10 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
             data-testid="teacher-plan-status-banner"
             className={`rounded-xl border px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 ${
               statusBanner.type === 'success'
-                ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                ? 'border-[#C5DCC7] bg-[#EEF5EE] text-[#2F6846]'
                 : statusBanner.type === 'error'
                   ? 'border-red-200 bg-red-50 text-red-800'
-                  : 'border-[#C5D7EE] bg-[#F0F5FA] text-[#1E4D8C]'
+                  : 'border-[#E2E5E6] bg-[#DCEAF5] text-[#416B91]'
             }`}
           >
             {statusBanner.type === 'error' ? (
@@ -3374,7 +3374,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                   value={formData.teacherName}
                   onChange={(e) => updateField('teacherName', e.target.value)}
                   placeholder={`أدخل ${teacherLabel}...`}
-                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-[#416B91]"
                 />
                 {validationErrors.teacherName && (
                   <p className="text-xs text-red-600 mt-1">
@@ -3409,7 +3409,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                 type="button"
                 data-testid="bottom-preview-plan-btn"
                 onClick={handleSwitchToPreview}
-                className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-sm font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
+                className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-sm font-bold inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <Eye className="w-4 h-4" aria-hidden="true" />
                 <span>معاينة الخطة قبل التصدير</span>
@@ -3436,7 +3436,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
         <section className="space-y-4">
           <div className="bg-white rounded-2xl border border-stone-200 p-4 flex flex-wrap items-center justify-between gap-3 print:hidden">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-stone-800">
-              <Eye className="w-4 h-4 text-[#1E4D8C]" aria-hidden="true" />
+              <Eye className="w-4 h-4 text-[#416B91]" aria-hidden="true" />
               <span>
                 المعاينة الحية المطابقة ١٠٠٪ لملف PDF ({metadata.title} ·{' '}
                 {activeTemplateDef.name} · {palette.name} · عدد الصفحات:{' '}
@@ -3505,7 +3505,7 @@ export const TeacherPlanForm: React.FC<TeacherPlanFormProps> = ({
                       width: `${(lnk.wPx / pageData.pixelWidth) * 100}%`,
                       height: `${(lnk.hPx / pageData.pixelHeight) * 100}%`,
                     }}
-                    className="block hover:ring-2 hover:ring-[#1E4D8C]/40 rounded-lg transition-all"
+                    className="block hover:ring-2 hover:ring-[#416B91]/40 rounded-lg transition-all"
                   >
                     <span className="sr-only">فتح الرابط الإلكتروني</span>
                   </a>

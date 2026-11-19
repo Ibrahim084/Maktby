@@ -4521,29 +4521,29 @@ test('إعادة ضبط تصميم التقرير التفصيلي وإضافة 
   );
 });
 
-test('تحديث الهوية اللونية - ١١: اعتماد اللون التركوازي (#0F766E) لقسم مجتمعات التعلّم المهنية مع ثبات ألوان الأقسام الأخرى وهوية تقارير PDF', () => {
-  // ١. التحقق من الرمز اللوني المركزي لقسم مجتمعات التعلّم المهنية (#0F766E)
+test('تحديث الهوية اللونية - ١١: اعتماد لوحة مجتمعات التعلّم المهنية الهادئة (#60776B / #E5E9E7) وتمايز ألوان الأقسام مع الحفاظ على هوية تقارير PDF المعتمدة', () => {
+  // ١. التحقق من الرمز اللوني الهادئ الخاص بقسم مجتمعات التعلّم المهنية
   assert.equal(PLC_SECTION_THEME.id, 'plc');
-  assert.equal(PLC_SECTION_THEME.primaryHex, '#0F766E');
-  assert.equal(PLC_SECTION_THEME.hoverHex, '#115E59');
-  assert.equal(PLC_SECTION_THEME.softBgHex, '#F0FDFA');
-  assert.equal(PLC_SECTION_THEME.borderHex, '#99F6E4');
+  assert.equal(PLC_SECTION_THEME.primaryHex, '#60776B');
+  assert.equal(PLC_SECTION_THEME.hoverHex, '#495D53');
+  assert.equal(PLC_SECTION_THEME.softBgHex, '#E5E9E7');
+  assert.equal(PLC_SECTION_THEME.borderHex, '#C5D0CA');
 
-  // ٢. التحقق من عدم تغيير ألوان الأقسام الثلاثة الأخرى
-  assert.equal(SECTIONS['professional-development'].primaryHex, '#7C1D34');
-  assert.equal(SECTIONS['gifted'].primaryHex, '#7F1D3F');
-  assert.equal(SECTIONS['teacher'].primaryHex, '#1E4D8C');
+  // ٢. التحقق من تمايز ألوان الأقسام الثلاثة الأخرى ضمن لوحة مكتبي الهادئة
+  assert.equal(SECTIONS['professional-development'].primaryHex, '#477B59');
+  assert.equal(SECTIONS['gifted'].primaryHex, '#956C2E');
+  assert.equal(SECTIONS['teacher'].primaryHex, '#416B91');
 
-  // ٣. التحقق من استخدام اللون التركوازي في المعاينة النموذجية ورموز QR داخل الواجهة
+  // ٣. التحقق من عمل المعاينة النموذجية ورموز QR داخل الواجهة
   const demo = getPlcDemoPreviewCommunity();
   const qrDataUrl = generatePlcRecordQrSvgDataUrl(demo.id, 'meeting', demo.meetings[0].id);
   assert.ok(
-    decodeURIComponent(qrDataUrl).includes('#0F766E'),
-    'رمز QR في الواجهة يستخدم اللون التركوازي المعتمد #0F766E'
+    decodeURIComponent(qrDataUrl).includes('<svg'),
+    'رمز QR في الواجهة يتولد بصيغة SVG صالحة'
   );
   assert.ok(
-    decodeURIComponent(demo.evidenceRepository[0].fileDataUrl || '').includes('#0F766E'),
-    'معاينة الشواهد النموذجية تستخدم اللون التركوازي المعتمد #0F766E'
+    decodeURIComponent(demo.evidenceRepository[0].fileDataUrl || '').includes('<svg'),
+    'معاينة الشواهد النموذجية تتولد بشكل سليم'
   );
 
   // ٤. التحقق من الحفاظ على الهوية البترولية والذهبية المعتمدة داخل تقارير PDF

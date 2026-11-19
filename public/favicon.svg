@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#F9F8F5" stroke="#E2E5E6" stroke-width="3"/>
+  <path d="M4 96C34 102 68 108 106 86C116 80 124 72 124 72V96C124 111.464 111.464 124 96 124H32C16.536 124 4 111.464 4 96Z" fill="#5D8C91"/>
+  <path d="M20 105C44 92 78 90 108 98" stroke="#9AA5AA" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Folder back tab -->
+  <path d="M35 37C35 32.582 38.582 29 43 29H57L63 35H89C93.418 35 97 38.582 97 43V63H35V37Z" fill="#376B70"/>
+  <!-- Papers peeking out -->
+  <rect x="46" y="21" width="38" height="34" rx="4" transform="rotate(6 46 21)" fill="#FFFFFF" stroke="#E2E5E6" stroke-width="2"/>
+  <line x1="53" y1="30" x2="76" y2="32.5" stroke="#9AA5AA" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="52" y1="37" x2="74" y2="39.3" stroke="#9AA5AA" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="51" y1="44" x2="68" y2="45.8" stroke="#C9D2D5" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Folder front flap -->
+  <path d="M32 45C32 41.686 34.686 39 38 39H57L62.5 44.5H93C96.314 44.5 99 47.186 99 50.5V65C99 68.314 96.314 71 93 71H38C34.686 71 32 68.314 32 65V45Z" fill="#5D8C91"/>
+  <path d="M35 46H55.5L61 51H95" stroke="#EAF2F1" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+  <!-- Angled Pen -->
+  <g transform="rotate(33 34 62)">
+    <rect x="29" y="34" width="10" height="40" rx="5" fill="#292F33"/>
+    <rect x="29" y="45" width="10" height="3" fill="#9AA5AA"/>
+    <path d="M30 72L34 83L38 72H30Z" fill="#9AA5AA"/>
+    <path d="M32.3 78L34 83L35.7 78H32.3Z" fill="#292F33"/>
+    <rect x="33" y="37" width="2" height="10" rx="1" fill="#9AA5AA"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="68" y="92" text-anchor="middle" direction="rtl" fill="#292F33" font-family="Tajawal, Cairo, sans-serif" font-weight="800" font-size="28">مكتبي</text>
+</svg>

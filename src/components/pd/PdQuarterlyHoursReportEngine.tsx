@@ -120,7 +120,7 @@ export const PdQuarterlyHoursReportEngine: React.FC<
             type="button"
             onClick={() => void handleExportPdf()}
             disabled={isExporting}
-            className="min-h-[40px] px-4 py-2 rounded-lg bg-[#7C1D34] hover:bg-[#631629] disabled:opacity-60 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+            className="min-h-[40px] px-4 py-2 rounded-lg bg-[#477B59] hover:bg-[#386347] disabled:opacity-60 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
           >
             <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>{isExporting ? 'جاري التصدير...' : 'تصدير التقرير الفصلي PDF'}</span>
@@ -203,7 +203,7 @@ export const PdQuarterlyHoursReportEngine: React.FC<
                     <td className="p-2.5 border-l border-stone-200 text-center tabular-nums">
                       {row.beneficiariesCount > 0 ? row.beneficiariesCount : '—'}
                     </td>
-                    <td className="p-2.5 text-center font-bold text-[#7C1D34] tabular-nums">
+                    <td className="p-2.5 text-center font-bold text-[#477B59] tabular-nums">
                       {row.hoursCount}
                     </td>
                   </tr>
@@ -228,7 +228,7 @@ export const PdQuarterlyHoursReportEngine: React.FC<
           <button
             type="button"
             onClick={handleAddManualExtraBeneficiary}
-            className="min-h-[36px] px-3 py-1.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs font-semibold text-[#7C1D34] inline-flex items-center gap-1 cursor-pointer"
+            className="min-h-[36px] px-3 py-1.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs font-semibold text-[#477B59] inline-flex items-center gap-1 cursor-pointer"
           >
             <Plus className="w-3.5 h-3.5" aria-hidden="true" />
             <span>{pdTerms.addExtraBeneficiaryLabel}</span>
@@ -328,7 +328,7 @@ export const PdQuarterlyHoursReportEngine: React.FC<
                     <td className="p-2.5 border-l border-stone-200 text-center font-mono tracking-wider tabular-nums">
                       {ben.nationalId || '—'}
                     </td>
-                    <td className="p-2.5 text-center font-bold text-[#7C1D34] tabular-nums">
+                    <td className="p-2.5 text-center font-bold text-[#477B59] tabular-nums">
                       {ben.totalHours}
                     </td>
                   </tr>
@@ -342,7 +342,7 @@ export const PdQuarterlyHoursReportEngine: React.FC<
                 </td>
                 <td
                   data-testid="pd-quarterly-total-hours"
-                  className="p-3 text-center text-base text-[#7C1D34] tabular-nums"
+                  className="p-3 text-center text-base text-[#477B59] tabular-nums"
                 >
                   {derived.totalSchoolHours}
                 </td>

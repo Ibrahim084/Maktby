@@ -210,7 +210,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-stone-100 flex items-start justify-between gap-3 bg-stone-50/80">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#1E4D8C]">
+            <div className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#416B91]">
               <FilePlus2 className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
                 {mode === 'edit'
@@ -252,7 +252,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
               {loadWarning && (
                 <div
                   role="alert"
-                  className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-xs font-bold text-amber-900"
+                  className="rounded-xl border border-[#E8C9BA] bg-[#FDF2ED] px-4 py-2.5 text-xs font-bold text-[#9A4A2E]"
                 >
                   {loadWarning}
                 </div>
@@ -288,7 +288,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
                           .value as TeacherStandaloneEvidenceType,
                       }))
                     }
-                    className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-900 focus:outline-none focus:border-[#416B91]"
                   >
                     {TEACHER_STANDALONE_EVIDENCE_TYPES.map((opt) => (
                       <option key={opt.id} value={opt.id}>
@@ -320,7 +320,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
                       }))
                     }
                     placeholder="مثال: 1447/05/12هـ"
-                    className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
               </div>
@@ -354,7 +354,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
                   className={`w-full min-h-[42px] px-3.5 py-2 rounded-xl border bg-white text-xs sm:text-sm text-stone-900 focus:outline-none ${
                     validationErrors.title
                       ? 'border-red-400 focus:border-red-600'
-                      : 'border-stone-300 focus:border-[#2563EB]'
+                      : 'border-stone-300 focus:border-[#416B91]'
                   }`}
                 />
                 {validationErrors.title && (
@@ -390,7 +390,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
                     }))
                   }
                   placeholder="مثال: الصف الخامس الابتدائي / أولياء الأمور / معلمو التخصص"
-                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </div>
 
@@ -424,7 +424,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
                   className={`w-full px-3.5 py-2.5 rounded-xl border bg-white text-xs sm:text-sm text-stone-900 leading-relaxed focus:outline-none ${
                     validationErrors.description
                       ? 'border-red-400 focus:border-red-600'
-                      : 'border-stone-300 focus:border-[#2563EB]'
+                      : 'border-stone-300 focus:border-[#416B91]'
                   }`}
                 />
                 {validationErrors.description && (
@@ -457,7 +457,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
                     setFormData((prev) => ({ ...prev, impact: e.target.value }))
                   }
                   placeholder="مثال: تحسن مشاركة الطلاب وتفاعلهم مع الأنشطة الصفية..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#2563EB]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#416B91]"
                 />
               </div>
 
@@ -504,7 +504,7 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
             type="submit"
             disabled={isLoading || isSubmitting}
             data-testid="save-standalone-evidence-btn"
-            className="min-h-[42px] px-5 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors shadow-2xs"
+            className="min-h-[42px] px-5 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer transition-colors shadow-2xs"
           >
             <Save className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>
@@ -527,8 +527,8 @@ export const PortfolioStandaloneEvidenceModal: React.FC<
             className="absolute inset-0 z-20 bg-black/50 flex items-center justify-center p-4"
           >
             <div className="bg-white rounded-2xl border border-stone-200 w-full max-w-md p-6 space-y-4 shadow-2xl">
-              <div className="flex items-center gap-3 text-amber-700">
-                <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 text-[#9A4A2E]">
+                <div className="w-10 h-10 rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] flex items-center justify-center shrink-0">
                   <AlertTriangle className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <h4

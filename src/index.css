@@ -137,36 +137,129 @@
 }
 
 @theme {
-  --color-plc: #0F766E;
-  --color-plc-hover: #115E59;
-  --color-plc-soft: #F0FDFA;
-  --color-plc-soft-hover: #CCFBF1;
-  --color-plc-border: #99F6E4;
+  /* Maktby Calm Petrol Blue Primary Identity Tokens */
+  --color-brand: #5D8C91;
+  --color-brand-hover: #376B70;
+  --color-brand-deep: #315E62;
+  --color-brand-soft: #EAF2F1;
+  --color-brand-soft-hover: #DCE9E8;
+  --color-brand-border: #C4D8D6;
+
+  /* Light Warm Surfaces, Borders & WCAG 2.2 Text Hierarchy */
+  --color-cream: #F9F8F5;
+  --color-cream-subtle: #FBFBF9;
+  --color-surface: #FFFFFF;
+  --color-ink: #292F33;
+  --color-ink-secondary: #626D72;
+  --color-muted: #9AA5AA;
+  --color-muted-text: #626D72;
+  --color-border-warm: #E2E5E6;
+
+  /* Section-Specific Calm Palettes */
+  --color-sec-teacher: #416B91;
+  --color-sec-teacher-deep: #335675;
+  --color-sec-teacher-bg: #DCEAF5;
+  --color-sec-teacher-border: #B8D2E8;
+
+  --color-sec-pd: #477B59;
+  --color-sec-pd-deep: #386347;
+  --color-sec-pd-bg: #E1EFE5;
+  --color-sec-pd-border: #BBD8C4;
+
+  --color-sec-plc: #60776B;
+  --color-sec-plc-deep: #495D53;
+  --color-sec-plc-bg: #E5E9E7;
+  --color-sec-plc-border: #C5D0CA;
+
+  --color-sec-gifted: #956C2E;
+  --color-sec-gifted-deep: #785522;
+  --color-sec-gifted-bg: #F7EBD5;
+  --color-sec-gifted-border: #E5CFA7;
+
+  --color-sec-certs: #376B70;
+  --color-sec-certs-deep: #315E62;
+  --color-sec-certs-bg: #EAF2F1;
+  --color-sec-certs-border: #C4D8D6;
+
+  --color-sec-settings: #65727A;
+  --color-sec-settings-deep: #4E5A61;
+  --color-sec-settings-bg: #EEF0F3;
+  --color-sec-settings-border: #D2D8DE;
+
+  /* Semantic Status Tokens (WCAG 2.2 AA Accessible & Harmonized) */
+  --color-success: #2F6846;
+  --color-success-bg: #ECF5EF;
+  --color-success-border: #BDD9C6;
+  --color-warning: #8A531E;
+  --color-warning-bg: #FBF3E7;
+  --color-warning-border: #E5CFA7;
+  --color-danger: #A63A32;
+  --color-danger-bg: #FDF1F0;
+  --color-danger-border: #EBC5C2;
+
+  /* PLC Dedicated Section Aliases (#E5E9E7 / #60776B) */
+  --color-plc: #60776B;
+  --color-plc-hover: #495D53;
+  --color-plc-soft: #E5E9E7;
+  --color-plc-soft-hover: #D6DFDA;
+  --color-plc-border: #C5D0CA;
 }
 
 @layer base {
   :root {
-    --font-display: 'Tajawal', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
-    --font-sans: 'IBM Plex Sans Arabic', 'Tajawal', system-ui, -apple-system, sans-serif;
-    --bg-cream: #FAF8F5;
+    --font-display: 'Tajawal', 'Cairo', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Cairo', 'Tajawal', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    --bg-cream: #F9F8F5;
+    --bg-cream-subtle: #FBFBF9;
     --surface-card: #FFFFFF;
-    --color-plc: #0F766E;
-    --color-plc-hover: #115E59;
-    --color-plc-soft: #F0FDFA;
-    --color-plc-soft-hover: #CCFBF1;
-    --color-plc-border: #99F6E4;
+    --ink-primary: #292F33;
+    --ink-secondary: #626D72;
+    --ink-muted: #9AA5AA;
+    --border-warm: #E2E5E6;
+    --brand-primary: #5D8C91;
+    --brand-action: #376B70;
+    --brand-hover: #315E62;
+    --brand-soft: #EAF2F1;
+    --shadow-card: 0 1px 2px rgba(41, 47, 51, 0.04), 0 4px 14px rgba(41, 47, 51, 0.03);
+    --shadow-elevated: 0 8px 24px rgba(41, 47, 51, 0.08);
+    --color-plc: #60776B;
+    --color-plc-hover: #495D53;
+    --color-plc-soft: #E5E9E7;
+    --color-plc-soft-hover: #D6DFDA;
+    --color-plc-border: #C5D0CA;
   }
 
   html {
     direction: rtl;
     font-family: var(--font-sans);
     background-color: var(--bg-cream);
-    color: #1C1917;
+    color: var(--ink-primary);
+    scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--ink-primary);
+    font-family: var(--font-sans);
   }
 
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
+  }
+
+  /* Consistent accessible focus states in Dark Petrol Blue (#376B70) */
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #376B70;
+    outline-offset: 2px;
+  }
+
+  table {
+    border-color: var(--border-warm);
   }
 }
 
@@ -195,13 +288,14 @@
 
   body {
     background-color: #FFFFFF !important;
-    color: #1C1917 !important;
+    color: #292F33 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  body > #root > div > header,
-  body > #root > div > footer {
+  body > #root header,
+  body > #root aside,
+  body > #root footer {
     display: none !important;
   }
 

@@ -188,7 +188,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
               onClick={handleAddVessel}
               className="min-h-[40px] px-3.5 py-2 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs sm:text-sm font-semibold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
-              <Plus className="w-4 h-4 text-[#7C1D34]" aria-hidden="true" />
+              <Plus className="w-4 h-4 text-[#477B59]" aria-hidden="true" />
               <span>إضافة وعاء تطوير مهني</span>
             </button>
 
@@ -196,7 +196,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
               type="button"
               onClick={handleExportPdf}
               disabled={isExporting}
-              className="min-h-[40px] px-4 py-2 rounded-lg bg-[#7C1D34] hover:bg-[#631629] disabled:opacity-60 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="min-h-[40px] px-4 py-2 rounded-lg bg-[#477B59] hover:bg-[#386347] disabled:opacity-60 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
               <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>{isExporting ? 'جاري التصدير...' : 'تصدير الخطة PDF'}</span>
@@ -294,7 +294,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                                 handleVesselNameChange(vessel.id, e.target.value)
                               }
                               placeholder="اكتب اسم الوعاء هنا..."
-                              className="w-full px-2.5 py-1.5 rounded-md border border-stone-300 bg-white text-xs font-semibold text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-[#7C1D34]"
+                              className="w-full px-2.5 py-1.5 rounded-md border border-stone-300 bg-white text-xs font-semibold text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-[#477B59]"
                             />
                             {plan.vessels.length > 1 && (
                               <button
@@ -330,7 +330,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                               )
                             }
                             placeholder="الموضوع..."
-                            className="flex-1 min-w-0 px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                            className="flex-1 min-w-0 px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
                           />
                         </div>
                       </td>
@@ -349,7 +349,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                               e.target.value
                             )
                           }
-                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
                         />
                       </td>
 
@@ -367,7 +367,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                               e.target.value
                             )
                           }
-                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
                         />
                       </td>
 
@@ -386,7 +386,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                             )
                           }
                           placeholder="مثال: 1448/4/15"
-                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 tabular-nums focus:outline-none focus:border-[#7C1D34]"
+                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 tabular-nums focus:outline-none focus:border-[#477B59]"
                         />
                       </td>
 
@@ -406,7 +406,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                               e.target.value
                             )
                           }
-                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-center text-stone-900 tabular-nums focus:outline-none focus:border-[#7C1D34]"
+                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-center text-stone-900 tabular-nums focus:outline-none focus:border-[#477B59]"
                         />
                       </td>
 
@@ -424,7 +424,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                               e.target.value
                             )
                           }
-                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
                         />
                       </td>
 
@@ -437,7 +437,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                           onChange={() =>
                             handleToggleStatus(vessel.id, row.id, 'executed')
                           }
-                          className="w-4 h-4 accent-[#7C1D34] cursor-pointer"
+                          className="w-4 h-4 accent-[#477B59] cursor-pointer"
                         />
                       </td>
 
@@ -474,7 +474,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                                 ? 'اذكر السبب...'
                                 : ''
                             }
-                            className="flex-1 min-w-0 px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                            className="flex-1 min-w-0 px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
                           />
                           {vessel.rows.length > 1 && (
                             <button
@@ -497,7 +497,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                       <button
                         type="button"
                         onClick={() => handleAddRowToVessel(vessel.id)}
-                        className="px-3 py-1.5 rounded-md border border-stone-300 bg-white hover:bg-stone-100 text-xs font-semibold text-[#7C1D34] inline-flex items-center gap-1.5 cursor-pointer"
+                        className="px-3 py-1.5 rounded-md border border-stone-300 bg-white hover:bg-stone-100 text-xs font-semibold text-[#477B59] inline-flex items-center gap-1.5 cursor-pointer"
                       >
                         <Plus className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>إضافة صف موضوع جديد للوعاء ({vIdx + 1})</span>
@@ -514,7 +514,7 @@ export const PdGeneralPlanEngine: React.FC<PdGeneralPlanEngineProps> = ({
                 </td>
                 <td
                   data-testid="pd-plan-executed-hours-total"
-                  className="p-3 border-l border-stone-300 text-center text-base text-[#7C1D34] tabular-nums"
+                  className="p-3 border-l border-stone-300 text-center text-base text-[#477B59] tabular-nums"
                 >
                   {totalExecutedHours}
                 </td>

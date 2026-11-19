@@ -1548,7 +1548,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
       className="space-y-6"
     >
       {/* Top Navigation & Quick Actions Card */}
-      <div className="bg-white rounded-2xl border border-[#C5D7EE] p-5 sm:p-6 space-y-4 print:hidden">
+      <div className="bg-white rounded-2xl border border-[#E2E5E6] p-5 sm:p-6 space-y-4 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -1578,8 +1578,8 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               onClick={() => setIsArchiveOpen((prev) => !prev)}
               className={`min-h-[40px] px-3.5 py-2 rounded-xl border text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isArchiveOpen
-                  ? 'border-[#1E4D8C] bg-[#1E4D8C] text-white'
-                  : 'border-[#C5D7EE] bg-white hover:bg-[#F0F5FA] text-[#1E4D8C]'
+                  ? 'border-[#416B91] bg-[#376B70] text-white'
+                  : 'border-[#E2E5E6] bg-white hover:bg-[#DCEAF5] text-[#416B91]'
               }`}
             >
               <Archive className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -1602,7 +1602,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               data-testid="save-program-activity-to-archive-btn"
               disabled={isSavingArchive || isEditingLockedBySyncIssue}
               onClick={handleSaveToArchive}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -1619,7 +1619,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               data-testid="init-load-individual-sample-btn"
               disabled={isEditingLockedBySyncIssue}
               onClick={() => handleLoadSample('مبادرة فردية')}
-              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#F0F5FA] hover:bg-[#E1ECF7] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#DCEAF5] hover:bg-[#CCE0F0] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Wand2 className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>تعبئة نموذجية (مبادرة فردية)</span>
@@ -1630,7 +1630,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               data-testid="init-load-group-sample-btn"
               disabled={isEditingLockedBySyncIssue}
               onClick={() => handleLoadSample('مبادرة جماعية')}
-              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#EEF5EE] hover:bg-[#DFEFE0] border border-[#C5DCC7] text-[#2F6846] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Users className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>تعبئة نموذجية (مبادرة جماعية)</span>
@@ -1659,14 +1659,14 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
             {activeArchivedRecordId ? (
               <span
                 data-testid="program-activity-active-record-status-text"
-                className="text-emerald-800"
+                className="text-[#2F6846]"
               >
                 سجل محفوظ في الأرشيف (المعرف الثابت: {activeArchivedRecordId})
               </span>
             ) : (
               <span
                 data-testid="program-activity-active-record-status-text"
-                className="text-[#1E4D8C]"
+                className="text-[#416B91]"
               >
                 مسودة قيد التحرير (لا تُحتسب شاهدًا إلا بعد الحفظ والربط لاحقًا)
               </span>
@@ -1678,7 +1678,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                 type="button"
                 data-testid="resume-unsaved-program-activity-draft-btn"
                 onClick={handleResumeUnsavedDraft}
-                className="text-xs font-bold text-amber-700 hover:underline cursor-pointer"
+                className="text-xs font-bold text-[#9A4A2E] hover:underline cursor-pointer"
               >
                 استئناف المسودة غير المحفوظة
               </button>
@@ -1687,7 +1687,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               <button
                 type="button"
                 onClick={() => setIsArchiveOpen(true)}
-                className="text-xs font-bold text-[#2563EB] hover:underline cursor-pointer"
+                className="text-xs font-bold text-[#416B91] hover:underline cursor-pointer"
               >
                 استعراض {savedRecords.length} سجل محفوظ
               </button>
@@ -1708,9 +1708,9 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               {pendingCreateNewDialog.step === 'choose' ? (
                 <>
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] flex items-center justify-center shrink-0">
                       <AlertTriangle
-                        className="w-5 h-5 text-amber-700"
+                        className="w-5 h-5 text-[#9A4A2E]"
                         aria-hidden="true"
                       />
                     </div>
@@ -1745,7 +1745,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                       disabled={isSavingArchive}
                       data-testid="guard-save-and-create-new-btn"
                       onClick={handleGuardSaveAndCreateNew}
-                      className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer disabled:opacity-60"
+                      className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer disabled:opacity-60"
                     >
                       <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
                       <span>حفظ المسودة الحالية في الأرشيف ثم إنشاء مبادرة جديدة</span>
@@ -1840,7 +1840,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
         {isArchiveOpen && (
           <div
             data-testid="programs-activities-archive-panel"
-            className="rounded-2xl border border-[#BFDBFE] bg-[#F8FAFC] p-4 sm:p-5 space-y-4"
+            className="rounded-2xl border border-[#E2E5E6] bg-[#FBFBF9] p-4 sm:p-5 space-y-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
               <div>
@@ -1874,7 +1874,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     value={archiveSearchQuery}
                     onChange={(e) => setArchiveSearchQuery(e.target.value)}
                     placeholder="ابحث باسم المبادرة أو النطاق أو المشاركين أو المعرف..."
-                    className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
                 <select
@@ -1886,7 +1886,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                       e.target.value as InitiativeExecutionNatureOption | 'all'
                     )
                   }
-                  className="min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-[#1E4D8C]"
+                  className="min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-[#416B91]"
                 >
                   <option value="all">جميع المبادرات</option>
                   <option value="مبادرة فردية">المبادرات الفردية فقط</option>
@@ -1903,7 +1903,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                 className={`rounded-xl border p-4 space-y-3 ${
                   pendingDeleteTarget.impact.isLinked
                     ? 'border-red-300 bg-red-50 text-red-950'
-                    : 'border-amber-300 bg-amber-50 text-amber-950'
+                    : 'border-[#E8C9BA] bg-[#FDF2ED] text-[#9A4A2E]'
                 }`}
               >
                 <div className="flex items-start gap-2.5">
@@ -1985,7 +1985,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                         data-testid={`program-activity-archive-record-item-${rec.id}`}
                         className={`rounded-xl border bg-white p-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 ${
                           isCurrent
-                            ? 'border-[#2563EB] ring-1 ring-[#2563EB]/20'
+                            ? 'border-[#416B91] ring-1 ring-[#416B91]/20'
                             : 'border-stone-200'
                         }`}
                       >
@@ -2009,7 +2009,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                             type="button"
                             data-testid={`open-program-activity-archive-record-${rec.id}`}
                             onClick={() => handleOpenArchivedRecord(rec)}
-                            className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#BFDBFE] bg-[#EFF6FF] hover:bg-[#DBEAFE] text-xs font-bold text-[#1E40AF] inline-flex items-center gap-1.5 cursor-pointer"
+                            className="min-h-[36px] px-3 py-1.5 rounded-lg border border-[#E2E5E6] bg-[#DCEAF5] hover:bg-[#CCE0F0] text-xs font-bold text-[#294660] inline-flex items-center gap-1.5 cursor-pointer"
                           >
                             <FolderOpen
                               className="w-3.5 h-3.5"
@@ -2041,7 +2041,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
         {/* Form Header & Export Action */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="space-y-1.5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0F5FA] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCEAF5] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold">
               <Lightbulb className="w-3.5 h-3.5" aria-hidden="true" />
               <span>
                 قسم المعلم · البرامج والأنشطة التعليمية · {modelMeta.badge}
@@ -2062,7 +2062,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               onClick={() =>
                 setActiveTab((prev) => (prev === 'edit' ? 'preview' : 'edit'))
               }
-              className="xl:hidden min-h-[44px] px-4 py-2.5 rounded-xl border border-[#C5D7EE] bg-[#F0F5FA] text-[#1E4D8C] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer"
+              className="xl:hidden min-h-[44px] px-4 py-2.5 rounded-xl border border-[#E2E5E6] bg-[#DCEAF5] text-[#416B91] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer"
             >
               <Eye className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -2077,7 +2077,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               data-testid="export-initiative-pdf-btn"
               disabled={isExporting}
               onClick={handleExportPdf}
-              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
+              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
             >
               <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -2106,7 +2106,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                   onClick={() => handleSelectTemplate(tpl)}
                   className={`min-h-[34px] px-3 py-1.5 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
                     isSelected
-                      ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                      ? 'bg-[#376B70] text-white border-[#416B91]'
                       : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-stone-100'
                   }`}
                 >
@@ -2118,7 +2118,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-extrabold text-stone-700 inline-flex items-center gap-1">
-              <Palette className="w-3.5 h-3.5 text-[#1E4D8C]" />
+              <Palette className="w-3.5 h-3.5 text-[#416B91]" />
               <span>النظام اللوني:</span>
             </span>
             {ALL_COLOR_SYSTEMS.map((col) => {
@@ -2201,7 +2201,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     onClick={() =>
                       handleResolveDualStoreDivergence('keep-archive')
                     }
-                    className="min-h-[40px] px-4 py-2 rounded-xl bg-[#1E4D8C] hover:bg-[#163B6B] text-white text-xs font-extrabold cursor-pointer disabled:opacity-60"
+                    className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold cursor-pointer disabled:opacity-60"
                   >
                     اعتماد نسخة مخزن الأرشيف ومزامنتها
                   </button>
@@ -2245,8 +2245,8 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               statusBanner.type === 'error'
                 ? 'bg-red-50 border-red-200 text-red-900'
                 : statusBanner.type === 'info'
-                  ? 'bg-[#EFF6FF] border-[#BFDBFE] text-[#1E3A8A]'
-                  : 'bg-emerald-50 border-emerald-200 text-emerald-900'
+                  ? 'bg-[#DCEAF5] border-[#E2E5E6] text-[#294660]'
+                  : 'bg-[#EEF5EE] border-[#C5DCC7] text-[#2F6846]'
             }`}
           >
             <CheckCircle2
@@ -2254,8 +2254,8 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                 statusBanner.type === 'error'
                   ? 'text-red-600'
                   : statusBanner.type === 'info'
-                    ? 'text-[#2563EB]'
-                    : 'text-emerald-600'
+                    ? 'text-[#416B91]'
+                    : 'text-[#2F6846]'
               }`}
             />
             <span>{statusBanner.text}</span>
@@ -2324,7 +2324,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }))
                   }
                   placeholder="مثال: مبادرة «تحدي الإتقان الصباحي» لتعزيز المفاهيم الأساسية"
-                  className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </div>
 
@@ -2347,7 +2347,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                           .value as InitiativeScopeOption,
                       }))
                     }
-                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   >
                     {INITIATIVE_SCOPE_OPTIONS.map((opt) => (
                       <option key={opt} value={opt}>
@@ -2374,7 +2374,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                         initiativeType: e.target.value as InitiativeTypeOption,
                       }))
                     }
-                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   >
                     {INITIATIVE_TYPE_OPTIONS.map((opt) => (
                       <option key={opt} value={opt}>
@@ -2405,7 +2405,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                       }))
                     }
                     placeholder="اكتب نوع المبادرة المخصص..."
-                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#1E4D8C] bg-[#F0F5FA]/40 text-sm text-stone-900 focus:outline-none"
+                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#416B91] bg-[#DCEAF5]/40 text-sm text-stone-900 focus:outline-none"
                   />
                 </div>
               )}
@@ -2430,7 +2430,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                           .value as InitiativeBeneficiariesOption,
                       }))
                     }
-                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   >
                     {INITIATIVE_BENEFICIARIES_OPTIONS.map((opt) => (
                       <option key={opt} value={opt}>
@@ -2467,7 +2467,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                           ? 'مثال: الصف الثاني المتوسط (٢/أ)'
                           : 'مثال: صفوف الأول والثاني والثالث المتوسط'
                       }
-                      className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#1E4D8C] bg-[#F0F5FA]/40 text-sm text-stone-900 focus:outline-none"
+                      className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#416B91] bg-[#DCEAF5]/40 text-sm text-stone-900 focus:outline-none"
                     />
                   </div>
                 )}
@@ -2493,7 +2493,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                         }))
                       }
                       placeholder="اكتب الفئة المستفيدة من المبادرة..."
-                      className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#1E4D8C] bg-[#F0F5FA]/40 text-sm text-stone-900 focus:outline-none"
+                      className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#416B91] bg-[#DCEAF5]/40 text-sm text-stone-900 focus:outline-none"
                     />
                   </div>
                 )}
@@ -2520,7 +2520,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                       }))
                     }
                     placeholder="مثال: الفصل الدراسي الثاني ١٤٤٧هـ — لمدة ٤ أسابيع"
-                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
 
@@ -2543,7 +2543,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                       }))
                     }
                     placeholder="مثال: القاعة الصفية / مركز مصادر التعلم"
-                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                    className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                   />
                 </div>
               </div>
@@ -2582,7 +2582,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }
                     className={`min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border inline-flex items-center justify-center gap-2 transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-[#1E4D8C] text-white border-[#1E4D8C]'
+                        ? 'bg-[#376B70] text-white border-[#416B91]'
                         : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-stone-100'
                     }`}
                   >
@@ -2617,7 +2617,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }))
                   }
                   placeholder="أدخل اسم المعلم منفذ المبادرة..."
-                  className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                 />
               </div>
             ) : (
@@ -2634,7 +2634,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     type="button"
                     data-testid="init-add-participant-btn"
                     onClick={handleAddParticipant}
-                    className="min-h-[36px] px-3.5 py-1.5 rounded-xl bg-[#F0F5FA] hover:bg-[#E1ECF7] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+                    className="min-h-[36px] px-3.5 py-1.5 rounded-xl bg-[#DCEAF5] hover:bg-[#CCE0F0] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <Plus className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>إضافة مشارك</span>
@@ -2660,7 +2660,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                           handleUpdateParticipantName(idx, e.target.value)
                         }
                         placeholder={`أدخل اسم المشارك (${idx + 1})...`}
-                        className="flex-1 min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#1E4D8C]"
+                        className="flex-1 min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#416B91]"
                       />
                       <button
                         type="button"
@@ -2711,7 +2711,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }))
                   }
                   placeholder="وضّح الهدف التربوي أو التعليمي الذي تسعى المبادرة إلى تحقيقه..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#416B91]"
                 />
               </div>
 
@@ -2734,7 +2734,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }))
                   }
                   placeholder="اشرح فكرة المبادرة ومحتواها التربوي أو المهاري باختصار..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#416B91]"
                 />
               </div>
 
@@ -2757,7 +2757,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }))
                   }
                   placeholder="وضّح خطوات وآلية تطبيق المبادرة عملياً..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#416B91]"
                 />
               </div>
 
@@ -2784,7 +2784,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                     }))
                   }
                   placeholder="صف أبرز النتائج والأثر الملاحظ بعد تنفيذ المبادرة..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#1E4D8C]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#416B91]"
                 />
               </div>
             </div>
@@ -2814,7 +2814,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                 }))
               }
               placeholder="أي توصيات أو ملاحظات إضافية حول المبادرة (اختياري)..."
-              className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#1E4D8C]"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#416B91]"
             />
           </div>
 
@@ -2823,7 +2823,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div>
                 <h3 className="text-base sm:text-lg font-extrabold font-display text-stone-900 inline-flex items-center gap-2">
-                  <Camera className="w-4 h-4 text-[#1E4D8C]" />
+                  <Camera className="w-4 h-4 text-[#416B91]" />
                   <span>الشواهد (اختياري – بحد أقصى صورتان)</span>
                 </h3>
                 <p className="text-xs text-stone-500 mt-0.5">
@@ -2924,7 +2924,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                   type="button"
                   data-testid="init-upload-photo-btn"
                   onClick={() => addPhotoInputRef.current?.click()}
-                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#F0F5FA] hover:bg-[#E1ECF7] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
+                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#DCEAF5] hover:bg-[#CCE0F0] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
                 >
                   <ImagePlus className="w-4 h-4 shrink-0" />
                   <span>رفع صورة من الجهاز (JPG / PNG / WebP)</span>
@@ -2945,7 +2945,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
             {mediaNotice && (
               <div
                 data-testid="init-media-store-notice"
-                className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-900"
+                className="rounded-xl border border-[#C5DCC7] bg-[#EEF5EE] px-3 py-2 text-xs font-bold text-[#2F6846]"
               >
                 {mediaNotice}
               </div>
@@ -2960,7 +2960,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div>
                 <h3 className="text-base sm:text-lg font-extrabold font-display text-stone-900 inline-flex items-center gap-2">
-                  <QrCode className="w-4 h-4 text-[#1E4D8C]" />
+                  <QrCode className="w-4 h-4 text-[#416B91]" />
                   <span>روابط إلكترونية</span>
                 </h3>
                 <p className="text-xs text-stone-500 mt-0.5">
@@ -3025,7 +3025,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                             className={`w-full min-h-[40px] px-3 py-1.5 rounded-lg border bg-white text-xs sm:text-sm text-stone-900 text-left focus:outline-none ${
                               trimmedUrl && !isUrlValid
                                 ? 'border-red-400 focus:border-red-600'
-                                : 'border-stone-300 focus:border-[#1E4D8C]'
+                                : 'border-stone-300 focus:border-[#416B91]'
                             }`}
                           />
                           {trimmedUrl && !isUrlValid && (
@@ -3047,7 +3047,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                               rel="noopener noreferrer"
                               data-testid={`init-link-qr-preview-${idx + 1}`}
                               title="انقر لفتح الرابط أو امسح رمز QR"
-                              className="w-14 h-14 rounded-lg bg-white border border-stone-200 p-1 flex items-center justify-center shrink-0 hover:border-[#1E4D8C] transition-colors"
+                              className="w-14 h-14 rounded-lg bg-white border border-stone-200 p-1 flex items-center justify-center shrink-0 hover:border-[#416B91] transition-colors"
                             >
                               <img
                                 src={qrSvgDataUrl}
@@ -3080,7 +3080,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                   type="button"
                   data-testid="init-add-link-btn"
                   onClick={handleAddLink}
-                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#F0F5FA] hover:bg-[#E1ECF7] border border-[#C5D7EE] text-[#1E4D8C] text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
+                  className="min-h-[40px] px-4 py-2 rounded-xl bg-[#DCEAF5] hover:bg-[#CCE0F0] border border-[#E2E5E6] text-[#416B91] text-xs font-extrabold inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Link2 className="w-4 h-4 shrink-0" />
                   <span>
@@ -3101,7 +3101,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
             activeTab === 'edit' ? 'hidden xl:block' : 'block'
           }`}
         >
-          <div className="bg-white rounded-2xl border border-[#C5D7EE] p-4 sm:p-5 space-y-4">
+          <div className="bg-white rounded-2xl border border-[#E2E5E6] p-4 sm:p-5 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div>
                 <h3 className="text-sm sm:text-base font-extrabold font-display text-stone-900">
@@ -3113,7 +3113,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
               </div>
               <span
                 data-testid="init-preview-page-count-badge"
-                className="px-2.5 py-1 rounded-lg bg-[#F0F5FA] border border-[#C5D7EE] text-xs font-extrabold text-[#1E4D8C]"
+                className="px-2.5 py-1 rounded-lg bg-[#DCEAF5] border border-[#E2E5E6] text-xs font-extrabold text-[#416B91]"
               >
                 عدد الصفحات: {paginatedPages.length}
               </span>
@@ -3160,7 +3160,7 @@ export const TeacherProgramsAndActivitiesForm: React.FC<
                                 width: `${(lnk.wPx / page.pixelWidth) * 100}%`,
                                 height: `${(lnk.hPx / page.pixelHeight) * 100}%`,
                               }}
-                              className="block cursor-pointer hover:ring-2 hover:ring-[#1E4D8C]/60 rounded-md transition-all"
+                              className="block cursor-pointer hover:ring-2 hover:ring-[#416B91]/60 rounded-md transition-all"
                             >
                               <span className="sr-only">
                                 فتح الرابط الإلكتروني ({lIdx + 1})

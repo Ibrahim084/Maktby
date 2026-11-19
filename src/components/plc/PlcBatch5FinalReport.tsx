@@ -395,25 +395,25 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
     badgeText?: string
   ) => (
     <div
-      className="rounded-2xl border-2 border-[#C5A15D] bg-[#153C43] text-white p-4 sm:p-5 shadow-xs mb-6"
+      className="rounded-2xl border-2 border-[#C5D0CA] bg-[#495D53] text-white p-4 sm:p-5 shadow-xs mb-6"
       data-testid={`plc-section-banner-${sectionNumber}`}
     >
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#C5A15D] text-[#153C43] font-black text-xl sm:text-2xl flex items-center justify-center shrink-0 shadow-xs">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#C5D0CA] text-[#495D53] font-black text-xl sm:text-2xl flex items-center justify-center shrink-0 shadow-xs">
             {sectionNumber}
           </div>
           <div className="text-center sm:text-right">
             <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight">
               {title}
             </h3>
-            <p className="text-xs sm:text-sm font-medium text-[#F2EFE7] mt-0.5">
+            <p className="text-xs sm:text-sm font-medium text-[#F4F6F5] mt-0.5">
               {subtitle}
             </p>
           </div>
         </div>
         {badgeText && (
-          <div className="px-3.5 py-1.5 rounded-xl bg-[#145B59] border border-[#C5A15D] text-white text-xs font-extrabold shrink-0">
+          <div className="px-3.5 py-1.5 rounded-xl bg-[#3A4B42] border border-[#C5D0CA] text-white text-xs font-extrabold shrink-0">
             {badgeText}
           </div>
         )}
@@ -432,25 +432,25 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
       <div
         key={chart.id}
         data-testid={`plc-report-chart-${chart.id}`}
-        className="bg-white rounded-2xl border-2 border-[#B8C9CB] overflow-hidden shadow-xs flex flex-col justify-between"
+        className="bg-white rounded-2xl border-2 border-[#E2E5E6] overflow-hidden shadow-xs flex flex-col justify-between"
       >
-        <div className="bg-[#F2EFE7] px-5 py-3.5 border-b border-[#B8C9CB]">
+        <div className="bg-[#F4F6F5] px-5 py-3.5 border-b border-[#E2E5E6]">
           <div className="flex items-center justify-between gap-2 mb-0.5">
-            <h4 className="text-sm font-extrabold text-[#153C43] flex items-center gap-2">
-              <BarChart3 className="w-4 h-4 text-[#145B59] shrink-0" />
+            <h4 className="text-sm font-extrabold text-[#495D53] flex items-center gap-2">
+              <BarChart3 className="w-4 h-4 text-[#3A4B42] shrink-0" />
               <span>{chart.title}</span>
             </h4>
-            <span className="text-xs font-bold text-[#145B59]">
+            <span className="text-xs font-bold text-[#3A4B42]">
               {chart.hasSufficientData ? 'بيانات موثقة' : 'بيانات غير كافية'}
             </span>
           </div>
-          <p className="text-xs font-medium text-[#0D262A]">{chart.subtitle}</p>
+          <p className="text-xs font-medium text-[#292F33]">{chart.subtitle}</p>
         </div>
 
         <div className="p-5">
           {!chart.hasSufficientData ? (
-            <div className="bg-[#F2EFE7] border border-[#C5A15D] rounded-xl p-4 text-center my-2">
-              <p className="text-xs font-bold text-[#153C43]">{chart.emptyMessage}</p>
+            <div className="bg-[#F4F6F5] border border-[#C5D0CA] rounded-xl p-4 text-center my-2">
+              <p className="text-xs font-bold text-[#495D53]">{chart.emptyMessage}</p>
             </div>
           ) : (
             <div className="space-y-3.5">
@@ -473,20 +473,20 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
 
                 return (
                   <div key={item.id} className="space-y-1.5">
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-extrabold text-[#0D262A]">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-extrabold text-[#292F33]">
                       <span className="leading-snug">{item.label}</span>
                       {chart.chartKind === 'paired_bar' &&
                       item.secondaryValue !== undefined ? (
-                        <span className="text-[#0D262A] tabular-nums">
-                          المستهدف: <strong className="text-[#C5A15D]">{item.value}</strong>{' '}
+                        <span className="text-[#292F33] tabular-nums">
+                          المستهدف: <strong className="text-[#C5D0CA]">{item.value}</strong>{' '}
                           | الفعلي:{' '}
-                          <strong className="text-[#153C43]">
+                          <strong className="text-[#495D53]">
                             {item.secondaryValue}
                           </strong>{' '}
                           {item.unit || ''}
                         </span>
                       ) : (
-                        <span className="text-[#153C43] tabular-nums">
+                        <span className="text-[#495D53] tabular-nums">
                           {item.value} {item.unit || ''}{' '}
                           {!item.unit && totalSingleSum > 0 ? `(${sharePct}٪)` : ''}
                         </span>
@@ -495,7 +495,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
 
                     {chart.chartKind === 'paired_bar' && secondaryPct !== null ? (
                       <div className="space-y-1">
-                        <div className="w-full h-2.5 bg-[#F2EFE7] rounded-full overflow-hidden">
+                        <div className="w-full h-2.5 bg-[#F4F6F5] rounded-full overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all"
                             style={{
@@ -504,7 +504,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                             }}
                           />
                         </div>
-                        <div className="w-full h-2.5 bg-[#F2EFE7] rounded-full overflow-hidden">
+                        <div className="w-full h-2.5 bg-[#F4F6F5] rounded-full overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all"
                             style={{
@@ -515,7 +515,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                         </div>
                       </div>
                     ) : (
-                      <div className="w-full h-3 bg-[#F2EFE7] rounded-full overflow-hidden">
+                      <div className="w-full h-3 bg-[#F4F6F5] rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all"
                           style={{
@@ -595,17 +595,17 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
   return (
     <div className="space-y-8" dir="rtl" data-testid="plc-model-9-final-report">
       {/* شريط التحكم العلوي للنموذج التاسع (بالهوية البصرية الرسمية: الأخضر البترولي والتركواز والذهبي والعاجي) */}
-      <div className="bg-white rounded-2xl border-2 border-[#153C43] p-5 shadow-xs">
+      <div className="bg-white rounded-2xl border-2 border-[#495D53] p-5 shadow-xs">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-extrabold text-[#145B59] mb-1.5">
-              <FileCheck2 className="w-4 h-4 shrink-0 text-[#153C43]" />
+            <div className="flex items-center gap-2 text-xs font-extrabold text-[#3A4B42] mb-1.5">
+              <FileCheck2 className="w-4 h-4 shrink-0 text-[#495D53]" />
               <span>النموذج التاسع (٩) · التقرير النهائي والتفصيلي لمجتمع التعلّم المهني</span>
             </div>
-            <h2 className="text-xl font-extrabold text-[#153C43] leading-snug">
+            <h2 className="text-xl font-extrabold text-[#495D53] leading-snug">
               التقرير النهائي لمجتمع التعلّم المهني — {report.communityName}
             </h2>
-            <p className="text-sm font-medium text-[#0D262A] mt-1">
+            <p className="text-sm font-medium text-[#292F33] mt-1">
               وثيقة مدرسية رسمية تعرض حصيلة أعمال المجتمع المهني بنسختين معتمدتين: التقرير النهائي المختصر (٦ صفحات) والتقرير التفصيلي الشامل للنماذج التسعة ومستودع الشواهد.
             </p>
           </div>
@@ -616,9 +616,9 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 type="button"
                 onClick={handleRegenerateReport}
                 data-testid="plc-regenerate-report-btn"
-                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#153C43] bg-white hover:bg-[#F2EFE7] text-[#153C43] text-sm font-extrabold transition cursor-pointer"
+                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#495D53] bg-white hover:bg-[#F4F6F5] text-[#495D53] text-sm font-extrabold transition cursor-pointer"
               >
-                <RefreshCw className="w-4 h-4 text-[#145B59] shrink-0" />
+                <RefreshCw className="w-4 h-4 text-[#3A4B42] shrink-0" />
                 <span>إعادة توليد التقرير</span>
               </button>
             )}
@@ -627,9 +627,9 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               type="button"
               onClick={() => handleOpenPdfPreview('concise')}
               data-testid="plc-preview-pdf-btn"
-              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#C5A15D] bg-[#F2EFE7] hover:bg-[#E8E3D6] text-[#153C43] text-sm font-extrabold transition cursor-pointer"
+              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#C5D0CA] bg-[#F4F6F5] hover:bg-[#D8DFDC] text-[#495D53] text-sm font-extrabold transition cursor-pointer"
             >
-              <Eye className="w-4 h-4 text-[#153C43] shrink-0" />
+              <Eye className="w-4 h-4 text-[#495D53] shrink-0" />
               <span>معاينة التقريرين (A4)</span>
             </button>
 
@@ -638,12 +638,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               onClick={handleExportConcisePdf}
               disabled={isExportingAnyPdf}
               data-testid="plc-export-pdf-btn"
-              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#153C43] hover:bg-[#145B59] disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-extrabold border border-[#C5A15D] shadow-xs transition cursor-pointer"
+              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#495D53] hover:bg-[#3A4B42] disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-extrabold border border-[#C5D0CA] shadow-xs transition cursor-pointer"
             >
               {isExportingConcisePdf ? (
                 <Loader2 className="w-4 h-4 animate-spin shrink-0" />
               ) : (
-                <Download className="w-4 h-4 shrink-0 text-[#C5A15D]" />
+                <Download className="w-4 h-4 shrink-0 text-[#C5D0CA]" />
               )}
               <span>
                 {isExportingConcisePdf
@@ -657,12 +657,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               onClick={handleExportDetailedPdf}
               disabled={isExportingAnyPdf}
               data-testid="plc-export-detailed-pdf-btn"
-              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#145B59] hover:bg-[#153C43] disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-extrabold border-2 border-[#C5A15D] shadow-xs transition cursor-pointer"
+              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#3A4B42] hover:bg-[#495D53] disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-extrabold border-2 border-[#C5D0CA] shadow-xs transition cursor-pointer"
             >
               {isExportingDetailedPdf ? (
                 <Loader2 className="w-4 h-4 animate-spin shrink-0" />
               ) : (
-                <Layers className="w-4 h-4 shrink-0 text-[#C5A15D]" />
+                <Layers className="w-4 h-4 shrink-0 text-[#C5D0CA]" />
               )}
               <span>
                 {isExportingDetailedPdf
@@ -674,8 +674,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         </div>
 
         {/* روابط سريعة للعودة واستعراض/تعديل البيانات من النماذج 1-8 */}
-        <div className="mt-4 pt-4 border-t border-[#B8C9CB] flex flex-wrap items-center gap-2">
-          <span className="text-xs font-extrabold text-[#153C43] ml-2">
+        <div className="mt-4 pt-4 border-t border-[#E2E5E6] flex flex-wrap items-center gap-2">
+          <span className="text-xs font-extrabold text-[#495D53] ml-2">
             {readOnly
               ? 'التنقل السريع بين نماذج المجتمع التجريبي:'
               : 'العودة لتعديل البيانات المصدرية:'}
@@ -694,7 +694,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               key={f.num}
               type="button"
               onClick={() => onNavigateForm(f.num)}
-              className="px-3 py-1.5 rounded-lg bg-[#F2EFE7] hover:bg-[#153C43] hover:text-white text-[#153C43] border border-[#B8C9CB] text-xs font-bold transition cursor-pointer"
+              className="px-3 py-1.5 rounded-lg bg-[#F4F6F5] hover:bg-[#495D53] hover:text-white text-[#495D53] border border-[#E2E5E6] text-xs font-bold transition cursor-pointer"
             >
               {f.label}
             </button>
@@ -704,9 +704,9 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {statusFeedback && (
           <div
             data-testid="plc-report-export-success"
-            className="mt-3 p-3 rounded-xl bg-[#EBF3F2] border border-[#145B59] text-[#153C43] text-xs font-extrabold flex items-center gap-2"
+            className="mt-3 p-3 rounded-xl bg-[#E5E9E7] border border-[#3A4B42] text-[#495D53] text-xs font-extrabold flex items-center gap-2"
           >
-            <CheckCircle2 className="w-4 h-4 text-[#145B59] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#3A4B42] shrink-0" />
             <span>{statusFeedback}</span>
           </div>
         )}
@@ -729,15 +729,15 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
          ===================================================================== */}
       <section
         data-testid="plc-report-cover-card"
-        className="bg-[#F2EFE7] rounded-3xl border-4 border-[#153C43] p-4 sm:p-8 shadow-sm relative overflow-hidden"
+        className="bg-[#F4F6F5] rounded-3xl border-4 border-[#495D53] p-4 sm:p-8 shadow-sm relative overflow-hidden"
       >
-        <div className="bg-white rounded-2xl border-2 border-[#C5A15D] p-6 sm:p-10 space-y-8">
+        <div className="bg-white rounded-2xl border-2 border-[#C5D0CA] p-6 sm:p-10 space-y-8">
           {/* شريط علوي رسمي بالأخضر البترولي والذهبي */}
-          <div className="h-3 bg-[#153C43] border-b-4 border-[#C5A15D] rounded-full" />
+          <div className="h-3 bg-[#495D53] border-b-4 border-[#C5D0CA] rounded-full" />
 
           {/* الشعار الرسمي والهوية الوزارية والمدرسية في 4 سطور مستقلة موسّطة */}
           <div className="flex flex-col items-center justify-center text-center space-y-2 pt-2">
-            <div className="p-4 rounded-2xl bg-[#F2EFE7] border-2 border-[#C5A15D] shadow-2xs">
+            <div className="p-4 rounded-2xl bg-[#F4F6F5] border-2 border-[#C5D0CA] shadow-2xs">
               <img
                 src="./moe-logo.png"
                 alt="شعار وزارة التعليم"
@@ -746,49 +746,49 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
             </div>
             <p
               data-testid="plc-cover-line-1"
-              className="text-base sm:text-lg font-extrabold text-[#153C43] pt-1"
+              className="text-base sm:text-lg font-extrabold text-[#495D53] pt-1"
             >
               المملكة العربية السعودية
             </p>
             <p
               data-testid="plc-cover-line-2"
-              className="text-base sm:text-lg font-extrabold text-[#153C43]"
+              className="text-base sm:text-lg font-extrabold text-[#495D53]"
             >
               وزارة التعليم
             </p>
             <p
               data-testid="plc-cover-line-3"
-              className="text-sm sm:text-base font-bold text-[#145B59]"
+              className="text-sm sm:text-base font-bold text-[#3A4B42]"
             >
               {eduDeptDisplay}
             </p>
             <p
               data-testid="plc-cover-line-4"
-              className="text-base sm:text-lg font-extrabold text-[#0D262A]"
+              className="text-base sm:text-lg font-extrabold text-[#292F33]"
             >
               {schoolNameDisplay}
             </p>
-            <div className="w-36 h-1 bg-[#C5A15D] rounded-full mx-auto" />
+            <div className="w-36 h-1 bg-[#C5D0CA] rounded-full mx-auto" />
           </div>
 
           {/* اللوحة المركزية لعنوان التقرير واسم المجتمع المهني (في منتصف الغلاف) */}
-          <div className="rounded-2xl bg-[#153C43] text-white p-6 sm:p-10 text-center border-2 border-[#C5A15D] space-y-4 max-w-4xl mx-auto shadow-xs">
-            <div className="inline-block px-5 py-1.5 rounded-full bg-[#145B59] border border-[#C5A15D] text-[#F2EFE7] text-xs sm:text-sm font-extrabold">
+          <div className="rounded-2xl bg-[#495D53] text-white p-6 sm:p-10 text-center border-2 border-[#C5D0CA] space-y-4 max-w-4xl mx-auto shadow-xs">
+            <div className="inline-block px-5 py-1.5 rounded-full bg-[#3A4B42] border border-[#C5D0CA] text-[#F4F6F5] text-xs sm:text-sm font-extrabold">
               وثيقة مدرسية رسمية • مجتمعات التعلّم المهنية
             </div>
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
               التقرير النهائي لمجتمع التعلّم المهني
             </h1>
-            <div className="w-32 h-1.5 bg-[#C5A15D] mx-auto rounded-full" />
-            <div className="bg-white text-[#153C43] rounded-2xl px-6 py-4 max-w-3xl mx-auto border-2 border-[#C5A15D] shadow-xs">
+            <div className="w-32 h-1.5 bg-[#C5D0CA] mx-auto rounded-full" />
+            <div className="bg-white text-[#495D53] rounded-2xl px-6 py-4 max-w-3xl mx-auto border-2 border-[#C5D0CA] shadow-xs">
               <p className="text-lg sm:text-2xl font-extrabold leading-relaxed">
                 {report.communityName}
               </p>
             </div>
-            <p className="text-sm sm:text-base font-bold text-[#F2EFE7] pt-1">
+            <p className="text-sm sm:text-base font-bold text-[#F4F6F5] pt-1">
               المجال / التخصص: {s1.specialty}
             </p>
-            <p className="text-xs sm:text-sm font-extrabold text-[#C5A15D]">
+            <p className="text-xs sm:text-sm font-extrabold text-[#C5D0CA]">
               العام الدراسي: {s1.academicYear}   |   فترة التنفيذ: {s1.semesterLabel}
             </p>
           </div>
@@ -796,26 +796,26 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           {/* بطاقة تعريفية موجزة برؤية المجتمع ونطاق عمله (لتعزيز توازن الغلاف وتكامل عناصره) */}
           <div
             data-testid="plc-cover-vision-scope-card"
-            className="rounded-2xl bg-[#F2EFE7] border-2 border-[#145B59] overflow-hidden max-w-4xl mx-auto text-center shadow-2xs"
+            className="rounded-2xl bg-[#F4F6F5] border-2 border-[#3A4B42] overflow-hidden max-w-4xl mx-auto text-center shadow-2xs"
           >
-            <div className="bg-[#145B59] text-white py-2 px-4 text-xs sm:text-sm font-extrabold border-b border-[#C5A15D]">
+            <div className="bg-[#3A4B42] text-white py-2 px-4 text-xs sm:text-sm font-extrabold border-b border-[#C5D0CA]">
               التعريف الموجز برؤية المجتمع ونطاق عمله المهني
             </div>
             <div className="p-4 space-y-2">
-              <p className="text-xs sm:text-sm font-bold text-[#0D262A] leading-relaxed">
+              <p className="text-xs sm:text-sm font-bold text-[#292F33] leading-relaxed">
                 {s2.visionDisplay !== 'بيانات هذا القسم غير مكتملة.'
                   ? s2.visionDisplay
                   : s2.missionDisplay !== 'بيانات هذا القسم غير مكتملة.'
                   ? s2.missionDisplay
                   : `مجتمع تعلّم مهني متخصص في (${s1.specialty}) يُعنى بتطوير الممارسات التدريسية التشاركية وتحسين نواتج التعلم.`}
               </p>
-              <div className="pt-2 border-t border-[#D6CEBF] flex flex-wrap items-center justify-center gap-3 text-xs font-extrabold text-[#153C43]">
+              <div className="pt-2 border-t border-[#D6CEBF] flex flex-wrap items-center justify-center gap-3 text-xs font-extrabold text-[#495D53]">
                 <span>أعضاء المجتمع: {s1.membersCount}</span>
-                <span className="text-[#C5A15D]">•</span>
+                <span className="text-[#C5D0CA]">•</span>
                 <span>إجراءات الخطة: {s4.completedCount}/{s4.totalActionsCount}</span>
-                <span className="text-[#C5A15D]">•</span>
+                <span className="text-[#C5D0CA]">•</span>
                 <span>الاجتماعات الموثقة: {s5.totalMeetingsCount}</span>
-                <span className="text-[#C5A15D]">•</span>
+                <span className="text-[#C5D0CA]">•</span>
                 <span>البرامج والأنشطة: {executedActivitiesCount}/{s6.totalRecordsCount}</span>
               </div>
             </div>
@@ -834,12 +834,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-[#F2EFE7] border-2 border-[#B8C9CB] text-center"
+                className="p-4 rounded-xl bg-[#F4F6F5] border-2 border-[#E2E5E6] text-center"
               >
-                <span className="block text-xs font-extrabold text-[#145B59]">
+                <span className="block text-xs font-extrabold text-[#3A4B42]">
                   {item.label}
                 </span>
-                <span className="block text-sm font-extrabold text-[#0D262A] mt-1.5 leading-snug">
+                <span className="block text-sm font-extrabold text-[#292F33] mt-1.5 leading-snug">
                   {item.value}
                 </span>
               </div>
@@ -855,11 +855,11 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
             <div
               dir="rtl"
               data-testid="plc-cover-principal-left"
-              className="rounded-2xl bg-white border-2 border-[#145B59] overflow-hidden text-center shadow-2xs"
+              className="rounded-2xl bg-white border-2 border-[#3A4B42] overflow-hidden text-center shadow-2xs"
             >
-              <div className="h-2.5 bg-[#145B59] border-b border-[#C5A15D]" />
+              <div className="h-2.5 bg-[#3A4B42] border-b border-[#C5D0CA]" />
               <div className="p-5 flex items-center justify-center text-center">
-                <p className="text-base sm:text-lg font-extrabold text-[#0D262A]">
+                <p className="text-base sm:text-lg font-extrabold text-[#292F33]">
                   {principalNameDisplay}
                 </p>
               </div>
@@ -869,37 +869,37 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
             <div
               dir="rtl"
               data-testid="plc-cover-leader-right"
-              className="rounded-2xl bg-white border-2 border-[#153C43] overflow-hidden text-center shadow-2xs"
+              className="rounded-2xl bg-white border-2 border-[#495D53] overflow-hidden text-center shadow-2xs"
             >
-              <div className="h-2.5 bg-[#153C43] border-b border-[#C5A15D]" />
+              <div className="h-2.5 bg-[#495D53] border-b border-[#C5D0CA]" />
               <div className="p-5 flex items-center justify-center text-center">
-                <p className="text-base sm:text-lg font-extrabold text-[#0D262A]">
+                <p className="text-base sm:text-lg font-extrabold text-[#292F33]">
                   {s1.leaderNameDisplay}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="h-3 bg-[#153C43] border-t-4 border-[#C5A15D] rounded-full" />
+          <div className="h-3 bg-[#495D53] border-t-4 border-[#C5D0CA] rounded-full" />
         </div>
       </section>
 
       {/* بيان حالة اكتمال التوثيق (عرض معلوماتي هادئ) */}
       <div
-        className="bg-white rounded-2xl border-2 border-[#B8C9CB] p-5 shadow-xs select-text"
+        className="bg-white rounded-2xl border-2 border-[#E2E5E6] p-5 shadow-xs select-text"
         data-testid="plc-report-completeness-card"
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
           <div>
-            <h3 className="text-sm font-extrabold text-[#153C43] flex items-center gap-2">
-              <ClipboardCheck className="w-4 h-4 text-[#145B59]" />
+            <h3 className="text-sm font-extrabold text-[#495D53] flex items-center gap-2">
+              <ClipboardCheck className="w-4 h-4 text-[#3A4B42]" />
               <span>حالة اكتمال سجلات التوثيق المصدرية للمجتمع</span>
             </h3>
-            <p className="text-xs font-medium text-[#0D262A] mt-0.5">
+            <p className="text-xs font-medium text-[#292F33] mt-0.5">
               {report.completeness.overallSummaryText}
             </p>
           </div>
-          <div className="text-xs font-extrabold text-[#153C43] tabular-nums">
+          <div className="text-xs font-extrabold text-[#495D53] tabular-nums">
             المجالات المكتملة: {report.completeness.completedSectionsCount} /{' '}
             {report.completeness.totalSectionsCount}
           </div>
@@ -908,15 +908,15 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {!report.completeness.allComplete && (
           <div
             data-testid="plc-report-incomplete-notice"
-            className="mb-3 p-3.5 rounded-xl bg-[#F9F4E8] border border-[#C5A15D] text-[#0D262A] text-xs space-y-1"
+            className="mb-3 p-3.5 rounded-xl bg-[#F4F6F5] border border-[#C5D0CA] text-[#292F33] text-xs space-y-1"
           >
-            <div className="font-extrabold flex items-center gap-1.5 text-[#153C43]">
-              <AlertCircle className="w-4 h-4 text-[#C5A15D] shrink-0" />
+            <div className="font-extrabold flex items-center gap-1.5 text-[#495D53]">
+              <AlertCircle className="w-4 h-4 text-[#C5D0CA] shrink-0" />
               <span>
                 تنبيه معلوماتي: يوجد ({report.completeness.incompleteSectionsCount}) قسم غير مكتمل في سجلات المجتمع الحالية
               </span>
             </div>
-            <p className="text-[#0D262A] leading-relaxed">
+            <p className="text-[#292F33] leading-relaxed">
               الأقسام التي ينقصها بيانات:{' '}
               <strong>
                 {report.completeness.sections
@@ -936,19 +936,19 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               data-testid={`plc-completeness-item-${sec.id}`}
               className={`p-2.5 rounded-xl border text-xs text-center ${
                 sec.isComplete
-                  ? 'bg-[#EBF3F2] border-[#145B59] text-[#0D262A]'
-                  : 'bg-[#F9F4E8] border-[#C5A15D] text-[#0D262A]'
+                  ? 'bg-[#E5E9E7] border-[#3A4B42] text-[#292F33]'
+                  : 'bg-[#F4F6F5] border-[#C5D0CA] text-[#292F33]'
               }`}
             >
               <div className="flex items-center justify-center gap-1">
                 <span className="font-extrabold leading-tight">{sec.label}</span>
                 {sec.isComplete ? (
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#145B59] shrink-0" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#3A4B42] shrink-0" />
                 ) : (
-                  <AlertCircle className="w-3.5 h-3.5 text-[#C5A15D] shrink-0" />
+                  <AlertCircle className="w-3.5 h-3.5 text-[#C5D0CA] shrink-0" />
                 )}
               </div>
-              <p className="text-[11px] font-medium text-[#153C43] mt-1 leading-snug">
+              <p className="text-[11px] font-medium text-[#495D53] mt-1 leading-snug">
                 {sec.isComplete ? sec.detailsText : sec.statusText}
               </p>
             </div>
@@ -961,7 +961,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
          ===================================================================== */}
       <section
         data-testid="plc-report-general-analysis"
-        className="bg-white rounded-2xl border-2 border-[#B8C9CB] p-6 shadow-xs space-y-6"
+        className="bg-white rounded-2xl border-2 border-[#E2E5E6] p-6 shadow-xs space-y-6"
       >
         {renderSectionBanner(
           '01',
@@ -977,52 +977,52 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               label: 'عدد الاجتماعات',
               value: `${s5.totalMeetingsCount}`,
               sub: `${completedRecsCount}/${s5.recommendationsRows.length} توصية منجزة`,
-              headerBg: 'bg-[#153C43]',
+              headerBg: 'bg-[#495D53]',
             },
             {
               label: 'البرامج والأنشطة',
               value: `${executedActivitiesCount}/${s6.totalRecordsCount}`,
               sub: 'برامج · أنشطة · زيارات · شراكات',
-              headerBg: 'bg-[#145B59]',
+              headerBg: 'bg-[#3A4B42]',
             },
             {
               label: 'مؤشرات الأداء',
               value: `${achievedKpisCount}/${s7.kpiRows.length}`,
               sub: 'مؤشرات متحققة فعليًا',
-              headerBg: 'bg-[#153C43]',
+              headerBg: 'bg-[#495D53]',
             },
             {
               label: 'تنفيذ الخطة',
               value: s4.completionDisplay,
               sub: `${s4.completedCount} من ${s4.totalActionsCount} إجراءات مكتملة`,
-              headerBg: 'bg-[#145B59]',
+              headerBg: 'bg-[#3A4B42]',
             },
             {
               label: 'الشواهد المختارة',
               value: `${selectedEvidences.length}/${s9.totalEvidencesCount}`,
               sub: `شواهد مرتبطة: ${s9.linkedEvidencesCount}`,
-              headerBg: 'bg-[#153C43]',
+              headerBg: 'bg-[#495D53]',
             },
             {
               label: 'سجلات قياس الأثر',
               value: `${s8.totalImpactRecordsCount}`,
               sub: `${s8.verifiedImpactsCount} أثر تعليمي مقاس`,
-              headerBg: 'bg-[#145B59]',
+              headerBg: 'bg-[#3A4B42]',
             },
           ].map((stat, i) => (
             <div
               key={i}
-              className="rounded-xl bg-white border-2 border-[#153C43] overflow-hidden flex flex-col justify-between text-center shadow-2xs"
+              className="rounded-xl bg-white border-2 border-[#495D53] overflow-hidden flex flex-col justify-between text-center shadow-2xs"
             >
               <div className={`h-2 ${stat.headerBg}`} />
               <div className="p-3.5 flex flex-col items-center justify-between flex-1">
-                <span className="text-xs font-extrabold text-[#153C43]">
+                <span className="text-xs font-extrabold text-[#495D53]">
                   {stat.label}
                 </span>
-                <span className="text-2xl font-black text-[#153C43] my-1.5 tabular-nums">
+                <span className="text-2xl font-black text-[#495D53] my-1.5 tabular-nums">
                   {stat.value}
                 </span>
-                <span className="text-[11px] font-bold text-[#0D262A] leading-tight">
+                <span className="text-[11px] font-bold text-[#292F33] leading-tight">
                   {stat.sub}
                 </span>
               </div>
@@ -1033,13 +1033,13 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* المسار البصري المهم: الاحتياج → الهدف → الإجراء → النتيجة */}
         <div
           data-testid="plc-report-traceability-chain"
-          className="rounded-2xl bg-[#F2EFE7] border-2 border-[#153C43] overflow-hidden"
+          className="rounded-2xl bg-[#F4F6F5] border-2 border-[#495D53] overflow-hidden"
         >
-          <div className="bg-[#145B59] text-white px-5 py-3 text-center border-b-2 border-[#C5A15D]">
+          <div className="bg-[#3A4B42] text-white px-5 py-3 text-center border-b-2 border-[#C5D0CA]">
             <h4 className="text-sm sm:text-base font-extrabold">
               مسار الترابط المهني: الاحتياج ← الهدف ← الإجراء ← النتيجة
             </h4>
-            <p className="text-xs text-[#F2EFE7] mt-0.5">
+            <p className="text-xs text-[#F4F6F5] mt-0.5">
               {s3.traceabilitySummary}
             </p>
           </div>
@@ -1054,21 +1054,21 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 stage: 'الاحتياج',
                 headline: `الاحتياجات المرصودة (${s3.totalNeedsCount})`,
                 detail: primaryNeedText,
-                headerBg: 'bg-[#153C43]',
+                headerBg: 'bg-[#495D53]',
               },
               {
                 step: '٢',
                 stage: 'الهدف',
                 headline: `الأهداف المعتمدة (${s2.goals.length})`,
                 detail: primaryGoalText,
-                headerBg: 'bg-[#145B59]',
+                headerBg: 'bg-[#3A4B42]',
               },
               {
                 step: '٣',
                 stage: 'الإجراء',
                 headline: `تنفيذ الخطة (${s4.completionDisplay})`,
                 detail: primaryActionText,
-                headerBg: 'bg-[#153C43]',
+                headerBg: 'bg-[#495D53]',
               },
               {
                 step: '٤',
@@ -1078,26 +1078,26 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                     ? `أثر مقاس (${s8.verifiedImpactsCount})`
                     : `مؤشرات متحققة (${achievedKpisCount})`,
                 detail: primaryResultText,
-                headerBg: 'bg-[#145B59]',
+                headerBg: 'bg-[#3A4B42]',
               },
             ].map((st, idx) => (
               <div
                 key={idx}
-                className="relative flex flex-col justify-between rounded-xl bg-white border-2 border-[#153C43] overflow-hidden text-center shadow-2xs"
+                className="relative flex flex-col justify-between rounded-xl bg-white border-2 border-[#495D53] overflow-hidden text-center shadow-2xs"
               >
-                <div className={`${st.headerBg} text-[#C5A15D] py-2 px-3 text-xs sm:text-sm font-extrabold flex items-center justify-center gap-1.5`}>
+                <div className={`${st.headerBg} text-[#C5D0CA] py-2 px-3 text-xs sm:text-sm font-extrabold flex items-center justify-center gap-1.5`}>
                   <span>
                     {st.step}. {st.stage}
                   </span>
                   {idx < 3 && (
-                    <ArrowLeft className="w-3.5 h-3.5 text-[#C5A15D] hidden md:inline-block" />
+                    <ArrowLeft className="w-3.5 h-3.5 text-[#C5D0CA] hidden md:inline-block" />
                   )}
                 </div>
                 <div className="p-4 space-y-1.5 flex-1 flex flex-col justify-center">
-                  <p className="text-xs font-extrabold text-[#153C43]">
+                  <p className="text-xs font-extrabold text-[#495D53]">
                     {st.headline}
                   </p>
-                  <p className="text-xs font-bold text-[#0D262A] leading-relaxed">
+                  <p className="text-xs font-bold text-[#292F33] leading-relaxed">
                     {st.detail}
                   </p>
                 </div>
@@ -1109,13 +1109,13 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* الخلاصة العامة للأداء في نقاط مختصرة، كل فكرة في سطر مستقل بمحاذاة لليمين */}
         <div
           data-testid="plc-report-section-9-3"
-          className="p-5 rounded-xl bg-[#EBF3F2] border-2 border-[#145B59] text-right space-y-2.5"
+          className="p-5 rounded-xl bg-[#E5E9E7] border-2 border-[#3A4B42] text-right space-y-2.5"
         >
-          <h4 className="text-xs sm:text-sm font-extrabold text-[#153C43] flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 shrink-0 text-[#145B59]" />
+          <h4 className="text-xs sm:text-sm font-extrabold text-[#495D53] flex items-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 shrink-0 text-[#3A4B42]" />
             <span>الخلاصة العامة للأداء</span>
           </h4>
-          <ul className="space-y-1.5 text-xs font-bold text-[#0D262A] leading-relaxed text-right">
+          <ul className="space-y-1.5 text-xs font-bold text-[#292F33] leading-relaxed text-right">
             <li>• الرؤية والرسالة: {s2.visionDisplay.replace(/التنفيذية|التنفيذي/g, '')} — {s2.missionDisplay.replace(/التنفيذية|التنفيذي/g, '')}</li>
             <li>• تشخيص الاحتياجات: {s3.traceabilitySummary.replace(/التنفيذية|التنفيذي/g, '')}</li>
             {report.generalAnalysis.paragraphs.map((p, idx) => (
@@ -1127,12 +1127,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* القراءة التحليلية المشتقة من بيانات الرسمين البيانيين */}
         <div
           data-testid="plc-page2-charts-analytical-reading"
-          className="p-4 rounded-xl bg-[#F2EFE7] border-2 border-[#153C43] text-right space-y-1.5"
+          className="p-4 rounded-xl bg-[#F4F6F5] border-2 border-[#495D53] text-right space-y-1.5"
         >
-          <h5 className="text-xs font-extrabold text-[#153C43] text-right">
+          <h5 className="text-xs font-extrabold text-[#495D53] text-right">
             قراءة تحليلية لتوازن التنفيذ وتنوع الأنشطة:
           </h5>
-          <p className="text-xs font-bold text-[#0D262A] leading-relaxed text-right">
+          <p className="text-xs font-bold text-[#292F33] leading-relaxed text-right">
             • تُظهر مقارنة مسارات العمل توازناً منهجياً بين إجراءات الخطة المعتمدة وتنوع البرامج التطويرية والزيارات التبادلية والشراكات المساندة؛ مما يعكس انتقال المجتمع من التخطيط النظري إلى التطبيق الصفي المباشر وتكامل أدوات المتابعة الميدانية.
           </p>
         </div>
@@ -1143,8 +1143,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           className="space-y-5 pt-2"
         >
           {/* ١. المؤشرات الدائرية الثلاثة (Donut Progress Indicators) */}
-          <div className="rounded-2xl bg-[#F2EFE7] border-2 border-[#153C43] overflow-hidden">
-            <div className="bg-[#153C43] text-white px-5 py-2.5 text-center border-b-2 border-[#C5A15D]">
+          <div className="rounded-2xl bg-[#F4F6F5] border-2 border-[#495D53] overflow-hidden">
+            <div className="bg-[#495D53] text-white px-5 py-2.5 text-center border-b-2 border-[#C5D0CA]">
               <h5 className="text-xs sm:text-sm font-extrabold">
                 مؤشرات الإنجاز والتحقق الدائرية (بناءً على بيانات المجتمع الفعلية)
               </h5>
@@ -1163,7 +1163,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                     0,
                     s4.totalActionsCount - s4.completedCount - s4.inProgressCount
                   )}`,
-                  strokeColor: '#153C43',
+                  strokeColor: '#495D53',
                 },
                 {
                   title: 'مؤشر تحقق المستهدفات القياسية',
@@ -1175,7 +1175,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   sub: `المؤشرات المقاسة كميًا: ${
                     s7.kpiRows.filter((k) => k.isCalculated).length
                   } من ${s7.kpiRows.length}`,
-                  strokeColor: '#145B59',
+                  strokeColor: '#3A4B42',
                 },
                 {
                   title: 'مؤشر تنفيذ قرارات الاجتماعات',
@@ -1187,7 +1187,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                       : 0,
                   ratio: `${completedRecsCount} من ${s5.recommendationsRows.length} توصية منجزة`,
                   sub: `عبر ${s5.totalMeetingsCount} اجتماعات موثقة`,
-                  strokeColor: '#C5A15D',
+                  strokeColor: '#C5D0CA',
                 },
               ].map((d, idx) => {
                 const clamped = Math.max(0, Math.min(100, d.pct));
@@ -1198,7 +1198,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 return (
                   <div
                     key={idx}
-                    className="rounded-xl bg-white border-2 border-[#B8C9CB] p-4 flex items-center gap-4 shadow-2xs"
+                    className="rounded-xl bg-white border-2 border-[#E2E5E6] p-4 flex items-center gap-4 shadow-2xs"
                   >
                     <div className="relative w-24 h-24 shrink-0 flex items-center justify-center">
                       <svg className="w-24 h-24 -rotate-90" viewBox="0 0 96 96">
@@ -1222,18 +1222,18 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                           strokeLinecap="round"
                         />
                       </svg>
-                      <span className="absolute text-base font-black text-[#153C43] tabular-nums">
+                      <span className="absolute text-base font-black text-[#495D53] tabular-nums">
                         {clamped}%
                       </span>
                     </div>
                     <div className="text-right space-y-1 flex-1">
-                      <p className="text-xs font-extrabold text-[#153C43]">
+                      <p className="text-xs font-extrabold text-[#495D53]">
                         {d.title}
                       </p>
-                      <p className="text-xs font-bold text-[#145B59]">
+                      <p className="text-xs font-bold text-[#3A4B42]">
                         {d.ratio}
                       </p>
-                      <p className="text-[11px] font-medium text-[#0D262A]">
+                      <p className="text-[11px] font-medium text-[#292F33]">
                         {d.sub}
                       </p>
                     </div>
@@ -1246,8 +1246,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           {/* ٢. بطاقتان تحليليتان متقابلتان: التوزيع البصري للأنشطة + مقارنة المستهدف بالمتحقق */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* البطاقة اليمنى: التوزيع البصري للأعمال والأنشطة بحسب تصنيفاتها */}
-            <div className="rounded-2xl bg-[#F2EFE7] border-2 border-[#153C43] overflow-hidden">
-              <div className="bg-[#145B59] text-white px-4 py-2.5 text-center border-b-2 border-[#C5A15D]">
+            <div className="rounded-2xl bg-[#F4F6F5] border-2 border-[#495D53] overflow-hidden">
+              <div className="bg-[#3A4B42] text-white px-4 py-2.5 text-center border-b-2 border-[#C5D0CA]">
                 <h5 className="text-xs sm:text-sm font-extrabold">
                   التوزيع البصري للأعمال والأنشطة بحسب تصنيفاتها ({executedActivitiesCount}/{s6.totalRecordsCount} منفذ)
                 </h5>
@@ -1258,25 +1258,25 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                     label: 'البرامج التدريبية وورش العمل',
                     executed: s6.byType.program.executed,
                     total: s6.byType.program.total,
-                    barBg: 'bg-[#153C43]',
+                    barBg: 'bg-[#495D53]',
                   },
                   {
                     label: 'الأنشطة التطبيقية والممارسات الصفية',
                     executed: s6.byType.activity.executed,
                     total: s6.byType.activity.total,
-                    barBg: 'bg-[#145B59]',
+                    barBg: 'bg-[#3A4B42]',
                   },
                   {
                     label: 'الزيارات التبادلة والملاحظة الصفية',
                     executed: s6.byType.mutual_visit.executed,
                     total: s6.byType.mutual_visit.total,
-                    barBg: 'bg-[#C5A15D]',
+                    barBg: 'bg-[#C5D0CA]',
                   },
                   {
                     label: 'الشراكات المجتمعية والمهنية',
                     executed: s6.byType.community_partnership.executed,
                     total: s6.byType.community_partnership.total,
-                    barBg: 'bg-[#153C43]',
+                    barBg: 'bg-[#495D53]',
                   },
                 ].map((cat, idx) => {
                   const pct =
@@ -1286,8 +1286,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   return (
                     <div key={idx} className="space-y-1">
                       <div className="flex items-center justify-between text-xs font-extrabold">
-                        <span className="text-[#0D262A]">{cat.label}</span>
-                        <span className="text-[#153C43] tabular-nums">
+                        <span className="text-[#292F33]">{cat.label}</span>
+                        <span className="text-[#495D53] tabular-nums">
                           {cat.executed} / {cat.total} منفذ ({pct}%)
                         </span>
                       </div>
@@ -1304,8 +1304,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
             </div>
 
             {/* البطاقة اليسرى: مقارنة المستهدف بالمتحقق وترابط الاحتياجات بالأثر */}
-            <div className="rounded-2xl bg-[#F2EFE7] border-2 border-[#153C43] overflow-hidden">
-              <div className="bg-[#153C43] text-white px-4 py-2.5 text-center border-b-2 border-[#C5A15D]">
+            <div className="rounded-2xl bg-[#F4F6F5] border-2 border-[#495D53] overflow-hidden">
+              <div className="bg-[#495D53] text-white px-4 py-2.5 text-center border-b-2 border-[#C5D0CA]">
                 <h5 className="text-xs sm:text-sm font-extrabold">
                   مقارنة المستهدف بالمتحقق وترابط الاحتياجات بالأثر
                 </h5>
@@ -1319,10 +1319,10 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   return (
                     <div key={idx} className="space-y-1">
                       <div className="flex items-center justify-between text-xs font-extrabold gap-2">
-                        <span className="text-[#0D262A] truncate">
+                        <span className="text-[#292F33] truncate">
                           {k.indicatorName}
                         </span>
-                        <span className="text-[#145B59] shrink-0 tabular-nums">
+                        <span className="text-[#3A4B42] shrink-0 tabular-nums">
                           المستهدف: {k.targetDisplay} | المتحقق: {k.actualDisplay} ({k.achievementDisplay})
                         </span>
                       </div>
@@ -1330,10 +1330,10 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                         <div
                           className={`h-full rounded-full ${
                             pct >= 100
-                              ? 'bg-[#153C43]'
+                              ? 'bg-[#495D53]'
                               : pct >= 75
-                              ? 'bg-[#145B59]'
-                              : 'bg-[#C5A15D]'
+                              ? 'bg-[#3A4B42]'
+                              : 'bg-[#C5D0CA]'
                           }`}
                           style={{ width: `${Math.max(pct, 8)}%` }}
                         />
@@ -1341,7 +1341,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                     </div>
                   );
                 })}
-                <div className="pt-2 border-t border-[#D6CEBF] flex flex-wrap items-center justify-between gap-2 text-[11px] font-extrabold text-[#153C43]">
+                <div className="pt-2 border-t border-[#D6CEBF] flex flex-wrap items-center justify-between gap-2 text-[11px] font-extrabold text-[#495D53]">
                   <span>الاحتياجات المهنية: {s3.totalNeedsCount}</span>
                   <span>•</span>
                   <span>الأثر المقاس: {s8.verifiedImpactsCount}/{s8.totalImpactRecordsCount}</span>
@@ -1359,7 +1359,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
          ===================================================================== */}
       <section
         data-testid="plc-report-section-9-6"
-        className="bg-white rounded-2xl border-2 border-[#B8C9CB] p-6 shadow-xs space-y-8"
+        className="bg-white rounded-2xl border-2 border-[#E2E5E6] p-6 shadow-xs space-y-8"
       >
         {renderSectionBanner(
           '02',
@@ -1370,23 +1370,23 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
 
         {/* ١. أبرز الأعمال والنتائج المحققة (نقاط واضحة، كل فكرة في سطر مستقل، بمحاذاة لليمين) */}
         <div data-testid="plc-report-section-9-10" className="space-y-3">
-          <h4 className="text-sm font-extrabold text-[#153C43] text-right flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-[#145B59]" />
+          <h4 className="text-sm font-extrabold text-[#495D53] text-right flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#3A4B42]" />
             <span>١. أبرز الأعمال والنتائج المحققة</span>
           </h4>
           {s10.items.length === 0 ? (
-            <p className="text-xs font-bold text-[#0D262A] bg-[#F2EFE7] p-4 rounded-xl border border-[#B8C9CB] text-right">
+            <p className="text-xs font-bold text-[#292F33] bg-[#F4F6F5] p-4 rounded-xl border border-[#E2E5E6] text-right">
               • {s10.emptyMessage}
             </p>
           ) : (
-            <div className="p-4 rounded-xl bg-[#F2EFE7] border-2 border-[#145B59] text-right space-y-2">
+            <div className="p-4 rounded-xl bg-[#F4F6F5] border-2 border-[#3A4B42] text-right space-y-2">
               {s10.items.map((item) => (
                 <p
                   key={item.id}
-                  className="text-xs font-bold leading-relaxed text-[#0D262A] text-right"
+                  className="text-xs font-bold leading-relaxed text-[#292F33] text-right"
                 >
                   • {item.statement.replace(/التنفيذية|التنفيذي/g, '').replace(/\s+/g, ' ').trim()}{' '}
-                  <span className="inline-block px-2 py-0.5 rounded-md bg-[#153C43] text-white text-[10px] font-bold mr-1">
+                  <span className="inline-block px-2 py-0.5 rounded-md bg-[#495D53] text-white text-[10px] font-bold mr-1">
                     {item.source.split('(')[0].trim()}
                   </span>
                 </p>
@@ -1398,10 +1398,10 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* ٢. الجدول الأول: البرامج والأنشطة والزيارات والشراكات */}
         <div className="space-y-3">
           <div className="text-center space-y-1">
-            <h4 className="text-sm font-extrabold text-[#153C43]">
+            <h4 className="text-sm font-extrabold text-[#495D53]">
               ٢. جدول البرامج والأنشطة والزيارات التبادلية والشراكات المنفذة
             </h4>
-            <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold text-[#145B59]">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold text-[#3A4B42]">
               <span>برامج: {s6.byType.program.executed}/{s6.byType.program.total}</span>
               <span>•</span>
               <span>أنشطة: {s6.byType.activity.executed}/{s6.byType.activity.total}</span>
@@ -1413,41 +1413,41 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           </div>
 
           {s6.rows.length === 0 ? (
-            <div className="p-4 rounded-xl bg-[#F9F4E8] border border-[#C5A15D] text-[#153C43] text-xs font-extrabold text-center">
+            <div className="p-4 rounded-xl bg-[#F4F6F5] border border-[#C5D0CA] text-[#495D53] text-xs font-extrabold text-center">
               لم تُسجل برامج أو أنشطة أو زيارات تبادلية في هذا المجتمع حتى الآن.
             </div>
           ) : (
-            <div className="overflow-x-auto rounded-xl border-2 border-[#7E999D]">
+            <div className="overflow-x-auto rounded-xl border-2 border-[#626D72]">
               <table className="w-full text-center border-collapse text-xs">
                 <thead>
-                  <tr className="bg-[#153C43] text-white font-extrabold border-b-4 border-[#C5A15D]">
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                  <tr className="bg-[#495D53] text-white font-extrabold border-b-4 border-[#C5D0CA]">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       الممارسة / البرنامج المنفذ
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       النوع والفئة المستهدفة
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       حالة التنفيذ
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       أبرز المخرجات والنتائج المباشرة
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white">
                   {s6.rows.map((r) => (
-                    <tr key={r.recordId} className="bg-white hover:bg-[#F8F6F1]">
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#153C43] text-center">
+                    <tr key={r.recordId} className="bg-white hover:bg-[#F4F6F5]">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#495D53] text-center">
                         {r.title}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-bold text-[#0D262A] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-bold text-[#292F33] text-center">
                         {r.typeLabel} — {r.targetAudienceDisplay}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#145B59] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#3A4B42] text-center">
                         {r.statusLabel}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-semibold text-[#0D262A] leading-relaxed text-center">
+                      <td className="p-3.5 border border-[#626D72] font-semibold text-[#292F33] leading-relaxed text-center">
                         {r.executiveResultsDisplay
                           .replace(/^النتائج التنفيذية المباشرة:\s*/, '')
                           .replace(/التنفيذية|التنفيذي/g, '')
@@ -1467,47 +1467,47 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           className="space-y-3 pt-2"
         >
           <div className="text-center space-y-1">
-            <h4 className="text-sm font-extrabold text-[#153C43]">
+            <h4 className="text-sm font-extrabold text-[#495D53]">
               ٣. جدول تنفيذ إجراءات الخطة التشغيلية ({s4.totalActionsCount}) — الإنجاز: {s4.completionDisplay}
             </h4>
           </div>
 
           {s4.rows.length === 0 ? (
-            <p className="text-xs text-[#153C43] font-bold text-center bg-[#F9F4E8] p-4 rounded-xl border border-[#C5A15D]">
+            <p className="text-xs text-[#495D53] font-bold text-center bg-[#F4F6F5] p-4 rounded-xl border border-[#C5D0CA]">
               بيانات الخطة التشغيلية غير مكتملة.
             </p>
           ) : (
-            <div className="overflow-x-auto rounded-xl border-2 border-[#7E999D]">
+            <div className="overflow-x-auto rounded-xl border-2 border-[#626D72]">
               <table className="w-full text-center border-collapse text-xs">
                 <thead>
-                  <tr className="bg-[#153C43] text-white font-extrabold border-b-4 border-[#C5A15D]">
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                  <tr className="bg-[#495D53] text-white font-extrabold border-b-4 border-[#C5D0CA]">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       الإجراء التشغيلي
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       الهدف المرتبط
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       المسؤول والفترة
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       الحالة والإنجاز
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white">
                   {s4.rows.map((r) => (
-                    <tr key={r.actionId} className="bg-white hover:bg-[#F8F6F1]">
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#153C43] text-center">
+                    <tr key={r.actionId} className="bg-white hover:bg-[#F4F6F5]">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#495D53] text-center">
                         {r.actionTitle}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-semibold text-[#0D262A] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-semibold text-[#292F33] text-center">
                         {r.goalDisplay}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-bold text-[#0D262A] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-bold text-[#292F33] text-center">
                         {r.responsibleDisplay} ({r.periodDisplay})
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#145B59] tabular-nums text-center">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#3A4B42] tabular-nums text-center">
                         {r.statusLabel} ({r.completionDisplay})
                       </td>
                     </tr>
@@ -1521,14 +1521,14 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* ٤. حصيلة الاجتماعات المهنية (نقاط مرقمة ١. ٢. ٣. بمحاذاة لليمين) + أعضاء الفريق في بطاقات مستقلة */}
         <div
           data-testid="plc-report-section-9-1"
-          className="p-5 rounded-2xl bg-[#F2EFE7] border-2 border-[#B8C9CB] space-y-4 text-right"
+          className="p-5 rounded-2xl bg-[#F4F6F5] border-2 border-[#E2E5E6] space-y-4 text-right"
         >
           <div data-testid="plc-report-section-9-5" className="space-y-2">
-            <h4 className="text-xs sm:text-sm font-extrabold text-[#153C43] flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-[#145B59]" />
+            <h4 className="text-xs sm:text-sm font-extrabold text-[#495D53] flex items-center gap-1.5">
+              <Users className="w-4 h-4 text-[#3A4B42]" />
               <span>٤. حصيلة الاجتماعات المهنية</span>
             </h4>
-            <div className="space-y-1.5 text-xs font-bold text-[#0D262A] leading-relaxed text-right">
+            <div className="space-y-1.5 text-xs font-bold text-[#292F33] leading-relaxed text-right">
               <p>
                 ١. عُقدت ({s5.totalMeetingsCount}) اجتماعات مهنية موثقة بحضور تراكمي بلغ ({s5.totalPresentEntries}) مشاركاً من أعضاء المجتمع.
               </p>
@@ -1542,8 +1542,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           </div>
 
           {s1.members.length > 0 && (
-            <div className="space-y-2 pt-2 border-t border-[#B8C9CB]">
-              <h5 className="text-xs font-extrabold text-[#153C43] text-right">
+            <div className="space-y-2 pt-2 border-t border-[#E2E5E6]">
+              <h5 className="text-xs font-extrabold text-[#495D53] text-right">
                 أعضاء فريق مجتمع التعلّم المهني ({s1.membersCount} أعضاء — كل اسم في بطاقة مستقلة):
               </h5>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -1551,14 +1551,14 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   <div
                     key={m.id}
                     data-testid={`plc-team-member-card-${m.id}`}
-                    className="bg-white rounded-xl border-2 border-[#153C43] overflow-hidden text-center shadow-2xs"
+                    className="bg-white rounded-xl border-2 border-[#495D53] overflow-hidden text-center shadow-2xs"
                   >
-                    <div className="h-1.5 bg-[#153C43]" />
+                    <div className="h-1.5 bg-[#495D53]" />
                     <div className="p-3 space-y-1">
-                      <span className="block text-xs font-extrabold text-[#153C43]">
+                      <span className="block text-xs font-extrabold text-[#495D53]">
                         {m.name}
                       </span>
-                      <span className="block text-[11px] font-bold text-[#145B59]">
+                      <span className="block text-[11px] font-bold text-[#3A4B42]">
                         {m.rolesLabels.join(' · ')} — {m.specialty || s1.specialty}
                       </span>
                     </div>
@@ -1575,7 +1575,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
          ===================================================================== */}
       <section
         data-testid="plc-report-section-9-7"
-        className="bg-white rounded-2xl border-2 border-[#B8C9CB] p-6 shadow-xs space-y-6"
+        className="bg-white rounded-2xl border-2 border-[#E2E5E6] p-6 shadow-xs space-y-6"
       >
         {renderSectionBanner(
           '03',
@@ -1585,20 +1585,20 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         )}
 
         {s7.kpiRows.length === 0 ? (
-          <div className="p-4 rounded-xl bg-[#F9F4E8] border border-[#C5A15D] text-[#153C43] text-xs font-extrabold text-center">
+          <div className="p-4 rounded-xl bg-[#F4F6F5] border border-[#C5D0CA] text-[#495D53] text-xs font-extrabold text-center">
             لا تتوفر مؤشرات أداء مدخلة في هذا المجتمع؛ وتُعد الحالة غير قابلة للحكم الرقمي.
           </div>
         ) : (
-          <div className="overflow-x-auto rounded-xl border-2 border-[#7E999D]">
+          <div className="overflow-x-auto rounded-xl border-2 border-[#626D72]">
             <table className="w-full text-center border-collapse text-xs">
               <thead>
-                <tr className="bg-[#153C43] text-white font-extrabold border-b-4 border-[#C5A15D]">
-                  <th className="p-3.5 border border-[#7E999D] text-center">المؤشر</th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">خط الأساس</th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">المستهدف</th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">الفعلي</th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">اتجاه المؤشر</th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">الحالة</th>
+                <tr className="bg-[#495D53] text-white font-extrabold border-b-4 border-[#C5D0CA]">
+                  <th className="p-3.5 border border-[#626D72] text-center">المؤشر</th>
+                  <th className="p-3.5 border border-[#626D72] text-center">خط الأساس</th>
+                  <th className="p-3.5 border border-[#626D72] text-center">المستهدف</th>
+                  <th className="p-3.5 border border-[#626D72] text-center">الفعلي</th>
+                  <th className="p-3.5 border border-[#626D72] text-center">اتجاه المؤشر</th>
+                  <th className="p-3.5 border border-[#626D72] text-center">الحالة</th>
                 </tr>
               </thead>
               <tbody className="bg-white">
@@ -1617,29 +1617,29 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                       : `دون المستهدف (${k.achievementDisplay})`;
 
                   return (
-                    <tr key={k.kpiId} className="bg-white hover:bg-[#F8F6F1]">
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#153C43] text-center">
+                    <tr key={k.kpiId} className="bg-white hover:bg-[#F4F6F5]">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#495D53] text-center">
                         {k.indicatorName}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-bold text-[#0D262A] tabular-nums text-center">
+                      <td className="p-3.5 border border-[#626D72] font-bold text-[#292F33] tabular-nums text-center">
                         {k.baselineDisplay}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#0D262A] tabular-nums text-center">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#292F33] tabular-nums text-center">
                         {k.targetDisplay}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-black text-[#153C43] tabular-nums text-center">
+                      <td className="p-3.5 border border-[#626D72] font-black text-[#495D53] tabular-nums text-center">
                         {k.actualDisplay}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-bold text-[#145B59] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-bold text-[#3A4B42] text-center">
                         {k.directionLabel}
                       </td>
                       <td
-                        className={`p-3.5 border border-[#7E999D] font-extrabold tabular-nums text-center ${
+                        className={`p-3.5 border border-[#626D72] font-extrabold tabular-nums text-center ${
                           k.direction === 'not_applicable' || !k.isCalculated
-                            ? 'text-[#0D262A]'
+                            ? 'text-[#292F33]'
                             : isMet
-                            ? 'text-[#145B59]'
-                            : 'text-[#153C43]'
+                            ? 'text-[#3A4B42]'
+                            : 'text-[#495D53]'
                         }`}
                       >
                         {statusLabel}
@@ -1655,12 +1655,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* القراءة التحليلية لنتائج المؤشرات (كل مؤشر في سطر مستقل وبمحاذاة لليمين) */}
         <div
           data-testid="plc-kpi-analytical-reading-box"
-          className="p-5 rounded-xl bg-[#F2EFE7] border-2 border-[#153C43] text-right space-y-2"
+          className="p-5 rounded-xl bg-[#F4F6F5] border-2 border-[#495D53] text-right space-y-2"
         >
-          <h4 className="text-xs sm:text-sm font-extrabold text-[#153C43] text-right">
+          <h4 className="text-xs sm:text-sm font-extrabold text-[#495D53] text-right">
             ٢. القراءة التحليلية لنتائج المؤشرات (كل مؤشر في سطر مستقل)
           </h4>
-          <div className="space-y-1.5 text-xs font-bold text-[#0D262A] leading-relaxed text-right">
+          <div className="space-y-1.5 text-xs font-bold text-[#292F33] leading-relaxed text-right">
             {s7.kpiRows.map((k) => (
               <p key={k.kpiId} className="text-right">
                 • {k.indicatorName} ({k.directionLabel}): خط الأساس [{k.baselineDisplay}] ← المستهدف [{k.targetDisplay}] ← المتحقق [{k.actualDisplay}] — {k.descriptiveComparison}
@@ -1680,12 +1680,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* القراءة التحليلية القصيرة أسفل الرسم البياني للمؤشرات */}
         <div
           data-testid="plc-kpi-chart-analytical-reading"
-          className="p-4 rounded-xl bg-[#EBF3F2] border-2 border-[#145B59] text-right space-y-1.5"
+          className="p-4 rounded-xl bg-[#E5E9E7] border-2 border-[#3A4B42] text-right space-y-1.5"
         >
-          <h5 className="text-xs font-extrabold text-[#153C43] text-right">
+          <h5 className="text-xs font-extrabold text-[#495D53] text-right">
             قراءة تحليلية للرسم البياني ومؤشرات الأداء:
           </h5>
-          <p className="text-xs font-bold text-[#0D262A] leading-relaxed text-right">
+          <p className="text-xs font-bold text-[#292F33] leading-relaxed text-right">
             • في المؤشرات التصاعدية (كلما ارتفع كان أفضل) تجاوزت القراءة الفعلية القيمة المستهدفة، وفي المؤشرات التنازلية (كلما انخفض كان أفضل) انخفضت القراءة الفعلية دون السقف المستهدف؛ مما يؤكد اتساق اتجاه التحسن الكمي عبر جميع المؤشرات المقاسة وتكاملها مع مخرجات البرامج المنفذة.
           </p>
         </div>
@@ -1696,7 +1696,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
          ===================================================================== */}
       <section
         data-testid="plc-report-section-9-8"
-        className="bg-white rounded-2xl border-2 border-[#B8C9CB] p-6 shadow-xs space-y-6"
+        className="bg-white rounded-2xl border-2 border-[#E2E5E6] p-6 shadow-xs space-y-6"
       >
         {renderSectionBanner(
           '04',
@@ -1707,43 +1707,43 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
 
         {/* بطاقات التمييز المنهجي الثلاث (موسّطة) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="rounded-xl bg-white border-2 border-[#153C43] overflow-hidden text-center">
-            <div className="bg-[#153C43] text-white py-2.5 px-3 text-xs font-extrabold">
+          <div className="rounded-xl bg-white border-2 border-[#495D53] overflow-hidden text-center">
+            <div className="bg-[#495D53] text-white py-2.5 px-3 text-xs font-extrabold">
               ١. مخرجات التنفيذ (ما تم فعليًا)
             </div>
             <div className="p-4 space-y-1.5">
-              <p className="text-sm font-extrabold text-[#153C43] tabular-nums">
+              <p className="text-sm font-extrabold text-[#495D53] tabular-nums">
                 {executedActivitiesCount} برامج/أنشطة منفذة · {s4.completedCount} إجراءات مكتملة
               </p>
-              <p className="text-xs font-semibold text-[#0D262A] leading-relaxed">
+              <p className="text-xs font-semibold text-[#292F33] leading-relaxed">
                 إتمام الاجتماعات والورش والزيارات التبادلية وإعداد الأدوات؛ وهي مخرجات عمل مباشرة.
               </p>
             </div>
           </div>
 
-          <div className="rounded-xl bg-[#F9F4E8] border-2 border-[#C5A15D] overflow-hidden text-center">
-            <div className="bg-[#145B59] text-white py-2.5 px-3 text-xs font-extrabold">
+          <div className="rounded-xl bg-[#F4F6F5] border-2 border-[#C5D0CA] overflow-hidden text-center">
+            <div className="bg-[#3A4B42] text-white py-2.5 px-3 text-xs font-extrabold">
               ٢. التحسن المهني (ممارسة الفريق)
             </div>
             <div className="p-4 space-y-1.5">
-              <p className="text-sm font-extrabold text-[#145B59] tabular-nums">
+              <p className="text-sm font-extrabold text-[#3A4B42] tabular-nums">
                 {s8.describedOutcomesCount} سجل تحسن مهني مرصود
               </p>
-              <p className="text-xs font-semibold text-[#0D262A] leading-relaxed">
+              <p className="text-xs font-semibold text-[#292F33] leading-relaxed">
                 تطور الممارسات التدريسية وتبادل الخبرات بين المعلمين المرصود عبر الملاحظة الصفية والتقويم النوعي.
               </p>
             </div>
           </div>
 
-          <div className="rounded-xl bg-[#EBF3F2] border-2 border-[#145B59] overflow-hidden text-center">
-            <div className="bg-[#153C43] text-white py-2.5 px-3 text-xs font-extrabold">
+          <div className="rounded-xl bg-[#E5E9E7] border-2 border-[#3A4B42] overflow-hidden text-center">
+            <div className="bg-[#495D53] text-white py-2.5 px-3 text-xs font-extrabold">
               ٣. الأثر التعليمي المقاس (النتيجة)
             </div>
             <div className="p-4 space-y-1.5">
-              <p className="text-sm font-extrabold text-[#153C43] tabular-nums">
+              <p className="text-sm font-extrabold text-[#495D53] tabular-nums">
                 {s8.verifiedImpactsCount} سجل أثر كمي مقاس ومثبت
               </p>
-              <p className="text-xs font-semibold text-[#0D262A] leading-relaxed">
+              <p className="text-xs font-semibold text-[#292F33] leading-relaxed">
                 {s8.verifiedImpactsCount > 0
                   ? 'تحسن فعلي مقاس بأدوات قبلية وبعدية ومقارنة رقمية بين خط الأساس والمستهدف والمتحقق.'
                   : 'لم تُسجل قراءات قياس كمية قبلية/بعدية كافية لإثبات أثر رقمي مقارن.'}
@@ -1754,55 +1754,55 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
 
         {/* جدول خلاصة قياس الأثر (موسّط وواضح) */}
         {s8.rows.length > 0 && (
-          <div className="overflow-x-auto rounded-xl border-2 border-[#7E999D]">
+          <div className="overflow-x-auto rounded-xl border-2 border-[#626D72]">
             <table className="w-full text-center border-collapse text-xs">
               <thead>
-                <tr className="bg-[#153C43] text-white font-extrabold border-b-4 border-[#C5A15D]">
-                  <th className="p-3.5 border border-[#7E999D] text-center">
+                <tr className="bg-[#495D53] text-white font-extrabold border-b-4 border-[#C5D0CA]">
+                  <th className="p-3.5 border border-[#626D72] text-center">
                     الفئة المستهدفة والمجال
                   </th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">
+                  <th className="p-3.5 border border-[#626D72] text-center">
                     أداة وطريقة القياس
                   </th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">
+                  <th className="p-3.5 border border-[#626D72] text-center">
                     الأساس ← المستهدف ← الفعلي
                   </th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">
+                  <th className="p-3.5 border border-[#626D72] text-center">
                     خلاصة الأثر وقرار التحسين
                   </th>
-                  <th className="p-3.5 border border-[#7E999D] text-center">
+                  <th className="p-3.5 border border-[#626D72] text-center">
                     تصنيف الدليل
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white">
                 {s8.rows.map((imp) => (
-                  <tr key={imp.impactId} className="bg-white hover:bg-[#F8F6F1]">
-                    <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#153C43] text-center">
+                  <tr key={imp.impactId} className="bg-white hover:bg-[#F4F6F5]">
+                    <td className="p-3.5 border border-[#626D72] font-extrabold text-[#495D53] text-center">
                       {imp.beneficiaryCategoryDisplay}
-                      <div className="text-[11px] font-bold text-[#145B59] mt-0.5">
+                      <div className="text-[11px] font-bold text-[#3A4B42] mt-0.5">
                         {imp.activityDisplay !== 'غير مرتبط بنشاط محدد'
                           ? imp.activityDisplay
                           : imp.goalDisplay}
                       </div>
                     </td>
-                    <td className="p-3.5 border border-[#7E999D] font-bold text-[#0D262A] text-center">
+                    <td className="p-3.5 border border-[#626D72] font-bold text-[#292F33] text-center">
                       {imp.measurementMethodDisplay}
                     </td>
-                    <td className="p-3.5 border border-[#7E999D] font-bold text-[#0D262A] tabular-nums text-center">
+                    <td className="p-3.5 border border-[#626D72] font-bold text-[#292F33] tabular-nums text-center">
                       أساس: {imp.baselineDisplay} | مستهدف: {imp.targetDisplay} | فعلي:{' '}
-                      <strong className="text-[#153C43]">{imp.actualResultDisplay}</strong>
+                      <strong className="text-[#495D53]">{imp.actualResultDisplay}</strong>
                     </td>
-                    <td className="p-3.5 border border-[#7E999D] text-[#0D262A] leading-relaxed text-center">
-                      <p className="font-bold text-[#0D262A]">
+                    <td className="p-3.5 border border-[#626D72] text-[#292F33] leading-relaxed text-center">
+                      <p className="font-bold text-[#292F33]">
                         {imp.impactDescriptionDisplay}
                       </p>
-                      <span className="text-[11px] font-extrabold text-[#145B59]">
+                      <span className="text-[11px] font-extrabold text-[#3A4B42]">
                         قرار التحسين: {imp.improvementDecisionDisplay}
                       </span>
                     </td>
-                    <td className="p-3.5 border border-[#7E999D] font-extrabold text-center">
-                      <span className="text-[#153C43]">{imp.classificationLabel}</span>
+                    <td className="p-3.5 border border-[#626D72] font-extrabold text-center">
+                      <span className="text-[#495D53]">{imp.classificationLabel}</span>
                     </td>
                   </tr>
                 ))}
@@ -1814,22 +1814,22 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* الشواهد المختارة الأكثر دلالة على الإنجاز (مع رموز QR مكبرة وقابلة للضغط + رابط نصي مباشر بجوارها) */}
         <div
           data-testid="plc-report-section-9-9"
-          className="pt-3 border-t border-[#B8C9CB] space-y-3"
+          className="pt-3 border-t border-[#E2E5E6] space-y-3"
         >
           <div className="text-center space-y-1">
-            <h4 className="text-sm font-extrabold text-[#153C43] flex items-center justify-center gap-2">
-              <FolderOpen className="w-4 h-4 text-[#145B59]" />
+            <h4 className="text-sm font-extrabold text-[#495D53] flex items-center justify-center gap-2">
+              <FolderOpen className="w-4 h-4 text-[#3A4B42]" />
               <span>
                 الشواهد المختارة الأكثر دلالة على الإنجاز ({s9.totalEvidencesCount} شواهد مسجلة، {selectedEvidences.length} شواهد مختارة للعرض)
               </span>
             </h4>
-            <p className="text-xs font-bold text-[#0D262A]">
+            <p className="text-xs font-bold text-[#292F33]">
               جميع الشواهد الـ ({s9.totalEvidencesCount}) معروضة بالكامل مع المرفقات البصرية في «التقرير التفصيلي للمجتمع» — مرتبطة بالأثر: ({s9.impactLinkedEvidencesCount}) · مرتبطة بالمؤشرات: ({s9.kpiLinkedEvidencesCount})
             </p>
           </div>
 
           {selectedEvidences.length === 0 ? (
-            <div className="p-4 rounded-xl bg-[#F9F4E8] border border-[#C5A15D] text-[#153C43] text-xs font-extrabold text-center">
+            <div className="p-4 rounded-xl bg-[#F4F6F5] border border-[#C5D0CA] text-[#495D53] text-xs font-extrabold text-center">
               لا توجد شواهد مسجلة في مستودع الشواهد الموحد حتى الآن.
             </div>
           ) : (
@@ -1860,22 +1860,22 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   <div
                     key={ev.evidenceId}
                     data-testid={`plc-selected-evidence-card-${ev.evidenceId}`}
-                    className="p-4 rounded-xl bg-[#F2EFE7] border-2 border-[#153C43] flex flex-col sm:flex-row items-center justify-between gap-4"
+                    className="p-4 rounded-xl bg-[#F4F6F5] border-2 border-[#495D53] flex flex-col sm:flex-row items-center justify-between gap-4"
                   >
                     <div className="space-y-1.5 flex-1 min-w-0 text-right w-full">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="text-xs sm:text-sm font-extrabold text-[#153C43]">
+                        <span className="text-xs sm:text-sm font-extrabold text-[#495D53]">
                           {ev.title}
                         </span>
-                        <span className="text-[11px] font-bold text-[#145B59]">
+                        <span className="text-[11px] font-bold text-[#3A4B42]">
                           ({ev.typeLabel})
                         </span>
                       </div>
-                      <p className="text-xs font-semibold text-[#0D262A] leading-relaxed">
-                        <strong className="text-[#153C43]">ما يثبته الشاهد:</strong>{' '}
+                      <p className="text-xs font-semibold text-[#292F33] leading-relaxed">
+                        <strong className="text-[#495D53]">ما يثبته الشاهد:</strong>{' '}
                         {ev.whatItProves}
                       </p>
-                      <p className="text-[11px] font-extrabold text-[#145B59]">
+                      <p className="text-[11px] font-extrabold text-[#3A4B42]">
                         الارتباط: {ev.linkedSummary}
                       </p>
 
@@ -1887,7 +1887,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                           rel="noopener noreferrer"
                           onClick={handleOpenEvidenceAction}
                           data-testid={`plc-evidence-text-link-${ev.evidenceId}`}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EBF3F2] hover:bg-[#145B59] text-[#145B59] hover:text-white border border-[#145B59] text-xs font-extrabold underline transition cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E5E9E7] hover:bg-[#3A4B42] text-[#3A4B42] hover:text-white border border-[#3A4B42] text-xs font-extrabold underline transition cursor-pointer"
                         >
                           <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                           <span>فتح الشاهد / عرض الرابط</span>
@@ -1903,7 +1903,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                         onClick={handleOpenEvidenceAction}
                         data-testid={`plc-evidence-qr-link-${ev.evidenceId}`}
                         title={`فتح الشاهد: ${ev.title}`}
-                        className="shrink-0 flex flex-col items-center gap-1.5 bg-white p-2.5 rounded-xl border-2 border-[#153C43] hover:border-[#C5A15D] shadow-2xs transition cursor-pointer"
+                        className="shrink-0 flex flex-col items-center gap-1.5 bg-white p-2.5 rounded-xl border-2 border-[#495D53] hover:border-[#C5D0CA] shadow-2xs transition cursor-pointer"
                       >
                         <img
                           src={qrDataUrl}
@@ -1911,8 +1911,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                           className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
                           style={{ imageRendering: 'pixelated' }}
                         />
-                        <span className="text-[10px] font-extrabold text-[#153C43] flex items-center gap-1">
-                          <QrCode className="w-3 h-3 text-[#145B59]" />
+                        <span className="text-[10px] font-extrabold text-[#495D53] flex items-center gap-1">
+                          <QrCode className="w-3 h-3 text-[#3A4B42]" />
                           <span>امسح أو اضغط للفتح</span>
                         </span>
                       </a>
@@ -1928,7 +1928,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
       {/* =====================================================================
           الصفحة ٦: 05 التحديات والتوصيات والخطوات القادمة + التوقيع والختم
          ===================================================================== */}
-      <section className="bg-white rounded-2xl border-2 border-[#B8C9CB] p-6 shadow-xs space-y-8">
+      <section className="bg-white rounded-2xl border-2 border-[#E2E5E6] p-6 shadow-xs space-y-8">
         {renderSectionBanner(
           '05',
           'التحديات والتوصيات والخطوات القادمة',
@@ -1940,44 +1940,44 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           data-testid="plc-report-section-9-11"
           className="space-y-3"
         >
-          <h4 className="text-sm font-extrabold text-[#153C43] text-center flex items-center justify-center gap-2">
-            <AlertCircle className="w-4 h-4 text-[#C5A15D] shrink-0" />
+          <h4 className="text-sm font-extrabold text-[#495D53] text-center flex items-center justify-center gap-2">
+            <AlertCircle className="w-4 h-4 text-[#C5D0CA] shrink-0" />
             <span>١. التحديات الفعلية المرصودة وأسبابها الموثقة</span>
           </h4>
           {s11.items.length === 0 ? (
-            <p className="text-xs font-bold text-[#0D262A] text-center bg-[#F2EFE7] p-4 rounded-xl border border-[#B8C9CB]">
+            <p className="text-xs font-bold text-[#292F33] text-center bg-[#F4F6F5] p-4 rounded-xl border border-[#E2E5E6]">
               {s11.emptyMessage}
             </p>
           ) : (
-            <div className="overflow-x-auto rounded-xl border-2 border-[#7E999D]">
+            <div className="overflow-x-auto rounded-xl border-2 border-[#626D72]">
               <table className="w-full text-center border-collapse text-xs">
                 <thead>
-                  <tr className="bg-[#153C43] text-white font-extrabold border-b-4 border-[#C5A15D]">
-                    <th className="p-3.5 border border-[#7E999D] text-center w-14">م</th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                  <tr className="bg-[#495D53] text-white font-extrabold border-b-4 border-[#C5D0CA]">
+                    <th className="p-3.5 border border-[#626D72] text-center w-14">م</th>
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       التحدي الفعلي المرصود
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       السبب / الملاحظة الموثقة
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center">
+                    <th className="p-3.5 border border-[#626D72] text-center">
                       مصدر الرصد
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white">
                   {s11.items.slice(0, 5).map((item, idx) => (
-                    <tr key={item.id} className="bg-white hover:bg-[#F8F6F1]">
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#153C43] text-center">
+                    <tr key={item.id} className="bg-white hover:bg-[#F4F6F5]">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#495D53] text-center">
                         {idx + 1}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#0D262A] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#292F33] text-center">
                         {item.statement}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-semibold text-[#0D262A] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-semibold text-[#292F33] text-center">
                         {item.recordedNote || 'مرصود أثناء متابعة التنفيذ والقياس'}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-bold text-[#145B59] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-bold text-[#3A4B42] text-center">
                         {item.source}
                       </td>
                     </tr>
@@ -1993,38 +1993,38 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
           data-testid="plc-report-section-9-12"
           className="space-y-3"
         >
-          <h4 className="text-sm font-extrabold text-[#153C43] text-center flex items-center justify-center gap-2">
-            <BookOpen className="w-4 h-4 text-[#145B59] shrink-0" />
+          <h4 className="text-sm font-extrabold text-[#495D53] text-center flex items-center justify-center gap-2">
+            <BookOpen className="w-4 h-4 text-[#3A4B42] shrink-0" />
             <span>٢. التوصيات الإجرائية والأولويات القادمة للتحسين المستمر</span>
           </h4>
           {s12.extractedRecommendations.length === 0 ? (
-            <p className="text-xs text-[#0D262A] font-bold text-center bg-[#F2EFE7] p-4 rounded-xl border border-[#B8C9CB]">
+            <p className="text-xs text-[#292F33] font-bold text-center bg-[#F4F6F5] p-4 rounded-xl border border-[#E2E5E6]">
               لا توجد توصيات مستخرجة آليًا في السجلات الحالية.
             </p>
           ) : (
-            <div className="overflow-x-auto rounded-xl border-2 border-[#7E999D]">
+            <div className="overflow-x-auto rounded-xl border-2 border-[#626D72]">
               <table className="w-full text-center border-collapse text-xs">
                 <thead>
-                  <tr className="bg-[#153C43] text-white font-extrabold border-b-4 border-[#C5A15D]">
-                    <th className="p-3.5 border border-[#7E999D] text-center w-[10%]">م</th>
-                    <th className="p-3.5 border border-[#7E999D] text-center w-[58%]">
+                  <tr className="bg-[#495D53] text-white font-extrabold border-b-4 border-[#C5D0CA]">
+                    <th className="p-3.5 border border-[#626D72] text-center w-[10%]">م</th>
+                    <th className="p-3.5 border border-[#626D72] text-center w-[58%]">
                       التوصية الإجرائية / الأولوية القادمة
                     </th>
-                    <th className="p-3.5 border border-[#7E999D] text-center w-[32%]">
+                    <th className="p-3.5 border border-[#626D72] text-center w-[32%]">
                       الجهة المسؤولة / القرار
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white">
                   {s12.extractedRecommendations.slice(0, 5).map((rec, idx) => (
-                    <tr key={rec.id} className="bg-white hover:bg-[#F8F6F1]">
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#153C43] text-center">
+                    <tr key={rec.id} className="bg-white hover:bg-[#F4F6F5]">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#495D53] text-center">
                         {idx + 1}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-extrabold text-[#0D262A] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-extrabold text-[#292F33] text-center">
                         {rec.statement.replace(/\d{4}[-/]\d{2}[-/]\d{2}/g, '').trim()}
                       </td>
-                      <td className="p-3.5 border border-[#7E999D] font-bold text-[#145B59] text-center">
+                      <td className="p-3.5 border border-[#626D72] font-bold text-[#3A4B42] text-center">
                         {(rec.responsibleOrDecision || 'فريق المجتمع المهني').replace(/\d{4}[-/]\d{2}[-/]\d{2}/g, '').trim()}
                       </td>
                     </tr>
@@ -2038,14 +2038,14 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {/* ٣. الملاحظات والمرئيات الختامية (بدون لفظ التنفيذية + عناوين فرعية ملونة متبوعة بنصها في نفس السطر) */}
         <div
           data-testid="plc-report-closing-notes-box"
-          className="p-5 rounded-xl bg-[#F2EFE7] border-2 border-[#153C43] text-right space-y-2.5"
+          className="p-5 rounded-xl bg-[#F4F6F5] border-2 border-[#495D53] text-right space-y-2.5"
         >
-          <h4 className="text-xs sm:text-sm font-extrabold text-[#153C43] text-right">
+          <h4 className="text-xs sm:text-sm font-extrabold text-[#495D53] text-right">
             ٣. الملاحظات والمرئيات الختامية
           </h4>
-          <div className="space-y-2 text-xs font-semibold text-[#0D262A] leading-relaxed text-right">
+          <div className="space-y-2 text-xs font-semibold text-[#292F33] leading-relaxed text-right">
             <p className="text-right">
-              <strong className="font-extrabold text-[#145B59]">• خلاصة: </strong>
+              <strong className="font-extrabold text-[#3A4B42]">• خلاصة: </strong>
               <span>
                 {(s12.customExecutiveNotes || report.generalAnalysis.paragraphs[0] || 'انتظم عمل المجتمع المهني وفق خطته المعتمدة وحقق تكاملاً بين البرامج المنفذة وأدوات القياس.')
                   .replace(/التنفيذية|التنفيذي/g, '')
@@ -2054,7 +2054,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               </span>
             </p>
             <p className="text-right">
-              <strong className="font-extrabold text-[#153C43]">• التشخيص الدقيق للاحتياجات: </strong>
+              <strong className="font-extrabold text-[#495D53]">• التشخيص الدقيق للاحتياجات: </strong>
               <span>
                 {(s3.rows.length > 0
                   ? `ارتكزت تدخلات المجتمع على معالجة (${s3.rows[0].needDescription}) وربطها مباشرة بأهداف التحسين الصفي.`
@@ -2066,7 +2066,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               </span>
             </p>
             <p className="text-right">
-              <strong className="font-extrabold text-[#145B59]">• الأولويات القادمة: </strong>
+              <strong className="font-extrabold text-[#3A4B42]">• الأولويات القادمة: </strong>
               <span>
                 {(
                   s12.customClosingNotes ||
@@ -2083,9 +2083,9 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         </div>
 
         {/* الحقل اليدوي الوحيد المسموح: تعديل الملاحظات والمرئيات الختامية لرئيس المجتمع */}
-        <div className="pt-4 border-t border-[#B8C9CB] space-y-3">
+        <div className="pt-4 border-t border-[#E2E5E6] space-y-3">
           <div className="flex items-center justify-between">
-            <h4 className="text-xs font-extrabold text-[#153C43]">
+            <h4 className="text-xs font-extrabold text-[#495D53]">
               تخصيص الملاحظات والتوصيات الختامية لرئيس المجتمع (تُحفظ وتبقى عند إعادة التوليد)
             </h4>
             {!readOnly && (
@@ -2093,7 +2093,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 type="button"
                 onClick={handleSaveClosingNotes}
                 data-testid="plc-save-closing-notes-btn"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#153C43] hover:bg-[#145B59] text-white text-xs font-bold transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#495D53] hover:bg-[#3A4B42] text-white text-xs font-bold transition cursor-pointer"
               >
                 <Save className="w-3.5 h-3.5" />
                 <span>حفظ الملاحظات الختامية</span>
@@ -2103,7 +2103,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-extrabold text-[#153C43] mb-1">
+              <label className="block text-xs font-extrabold text-[#495D53] mb-1">
                 ملاحظات ختامية إضافية لرئيس المجتمع (اختياري)
               </label>
               <textarea
@@ -2115,12 +2115,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 }}
                 data-testid="plc-custom-executive-notes-input"
                 placeholder="أدخل أي ملاحظات ختامية تخص أعمال المجتمع..."
-                className="w-full rounded-xl border-2 border-[#B8C9CB] px-3 py-2 text-xs text-[#0D262A] focus:outline-none focus:ring-2 focus:ring-[#153C43] read-only:bg-[#F2EFE7]"
+                className="w-full rounded-xl border-2 border-[#E2E5E6] px-3 py-2 text-xs text-[#292F33] focus:outline-none focus:ring-2 focus:ring-[#495D53] read-only:bg-[#F4F6F5]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-extrabold text-[#153C43] mb-1">
+              <label className="block text-xs font-extrabold text-[#495D53] mb-1">
                 توصيات ختامية وأولويات التحسين للدورة القادمة (اختياري)
               </label>
               <textarea
@@ -2132,7 +2132,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 }}
                 data-testid="plc-custom-closing-notes-input"
                 placeholder="أدخل التوصيات الختامية المقترحة لتطوير أعمال المجتمع..."
-                className="w-full rounded-xl border-2 border-[#B8C9CB] px-3 py-2 text-xs text-[#0D262A] focus:outline-none focus:ring-2 focus:ring-[#153C43] read-only:bg-[#F2EFE7]"
+                className="w-full rounded-xl border-2 border-[#E2E5E6] px-3 py-2 text-xs text-[#292F33] focus:outline-none focus:ring-2 focus:ring-[#495D53] read-only:bg-[#F4F6F5]"
               />
             </div>
           </div>
@@ -2146,16 +2146,16 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
            =================================================================== */}
         <div
           data-testid="plc-report-official-signoff"
-          className="rounded-2xl bg-[#F2EFE7] border-2 border-[#153C43] overflow-hidden space-y-4"
+          className="rounded-2xl bg-[#F4F6F5] border-2 border-[#495D53] overflow-hidden space-y-4"
         >
-          <div className="bg-[#153C43] text-white py-3 px-4 text-center border-b-2 border-[#C5A15D]">
+          <div className="bg-[#495D53] text-white py-3 px-4 text-center border-b-2 border-[#C5D0CA]">
             <h4 className="text-sm sm:text-base font-extrabold text-white">
               التوقيع والختم الرسمي
             </h4>
           </div>
 
           <div className="px-5 pt-1 pb-5 space-y-4">
-            <p className="text-xs font-bold text-[#0D262A] text-center max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-[#292F33] text-center max-w-3xl mx-auto">
               وثّق هذا التقرير النهائي حصيلة أعمال وشواهد «{report.communityName}» خلال {s1.semesterLabel} من العام الدراسي {s1.academicYear}.
             </p>
 
@@ -2168,13 +2168,13 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               <div
                 dir="rtl"
                 data-testid="plc-report-signoff-principal-left"
-                className="rounded-xl bg-white border-2 border-[#145B59] overflow-hidden shadow-2xs flex flex-col justify-between text-center"
+                className="rounded-xl bg-white border-2 border-[#3A4B42] overflow-hidden shadow-2xs flex flex-col justify-between text-center"
               >
-                <div className="px-3 py-2 bg-[#145B59] text-white text-xs font-extrabold text-center">
+                <div className="px-3 py-2 bg-[#3A4B42] text-white text-xs font-extrabold text-center">
                   {genderedLabels.principalTitle}
                 </div>
                 <div className="p-5 flex items-center justify-center text-center">
-                  <p className="text-sm sm:text-base font-extrabold text-[#0D262A]">
+                  <p className="text-sm sm:text-base font-extrabold text-[#292F33]">
                     {principalNameDisplay}
                   </p>
                 </div>
@@ -2186,7 +2186,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 data-testid="plc-report-signoff-stamp-center"
                 className="py-6 flex items-center justify-center text-center"
               >
-                <span className="text-base sm:text-lg font-extrabold text-[#153C43]">
+                <span className="text-base sm:text-lg font-extrabold text-[#495D53]">
                   الختم
                 </span>
               </div>
@@ -2195,16 +2195,16 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               <div
                 dir="rtl"
                 data-testid="plc-report-signoff-leader-right"
-                className="rounded-xl bg-white border-2 border-[#153C43] overflow-hidden shadow-2xs flex flex-col justify-between text-center"
+                className="rounded-xl bg-white border-2 border-[#495D53] overflow-hidden shadow-2xs flex flex-col justify-between text-center"
               >
-                <div className="px-3 py-2 bg-[#153C43] text-white text-xs font-extrabold text-center">
+                <div className="px-3 py-2 bg-[#495D53] text-white text-xs font-extrabold text-center">
                   رئيس مجتمع التعلّم المهني
                 </div>
                 <div className="p-4 space-y-1.5 text-center">
-                  <p className="text-sm sm:text-base font-extrabold text-[#0D262A]">
+                  <p className="text-sm sm:text-base font-extrabold text-[#292F33]">
                     {s1.leaderNameDisplay}
                   </p>
-                  <p className="text-xs font-bold text-[#145B59]">
+                  <p className="text-xs font-bold text-[#3A4B42]">
                     {s1.leaderSpecialtyDisplay}
                   </p>
                 </div>
@@ -2217,19 +2217,19 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
       {/* شريط التنقل السفلي وتنزيل التقريرين (المختصر والتفصيلي) PDF */}
       <div
         data-testid="plc-report-footer-bar"
-        className="bg-white rounded-2xl border-2 border-[#153C43] p-4 sm:p-5 shadow-xs space-y-3"
+        className="bg-white rounded-2xl border-2 border-[#495D53] p-4 sm:p-5 shadow-xs space-y-3"
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div className="space-y-0.5">
             <p
               data-testid="plc-report-readiness-text"
-              className="text-xs sm:text-sm font-extrabold text-[#153C43]"
+              className="text-xs sm:text-sm font-extrabold text-[#495D53]"
             >
               {report.completeness.allComplete
                 ? 'حالة التقرير النهائي: مكتمل بالكامل (٩ / ٩ أقسام) وجاهز للتنزيل بالنسختين المختصرة والتفصيلية بصيغة PDF.'
                 : `حالة التقرير النهائي: مكتمل جزئياً (${report.completeness.completedSectionsCount} / ${report.completeness.totalSectionsCount} أقسام) ومتاح للتنزيل بصيغة PDF بالبيانات المتوفرة.`}
             </p>
-            <p className="text-[11px] font-medium text-[#0D262A]">
+            <p className="text-[11px] font-medium text-[#292F33]">
               يمكنك تنزيل «التقرير النهائي المختصر» (٦ صفحات A4) أو «التقرير التفصيلي للمجتمع» الشامل للنماذج التسعة ومستودع الشواهد الكامل والمرفقات البصرية.
             </p>
           </div>
@@ -2239,7 +2239,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               type="button"
               onClick={() => onNavigateForm(8)}
               data-testid="plc-report-back-to-form8-btn"
-              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#153C43] bg-white hover:bg-[#F2EFE7] text-[#153C43] text-xs sm:text-sm font-extrabold transition cursor-pointer"
+              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#495D53] bg-white hover:bg-[#F4F6F5] text-[#495D53] text-xs sm:text-sm font-extrabold transition cursor-pointer"
             >
               <ArrowRight className="w-4 h-4 shrink-0" />
               <span>النموذج السابق (٨. الشواهد)</span>
@@ -2249,9 +2249,9 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               type="button"
               onClick={() => handleOpenPdfPreview('concise')}
               data-testid="plc-footer-preview-pdf-btn"
-              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#C5A15D] bg-[#F2EFE7] hover:bg-[#E8E3D6] text-[#153C43] text-xs sm:text-sm font-extrabold transition cursor-pointer"
+              className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#C5D0CA] bg-[#F4F6F5] hover:bg-[#D8DFDC] text-[#495D53] text-xs sm:text-sm font-extrabold transition cursor-pointer"
             >
-              <Eye className="w-4 h-4 text-[#153C43] shrink-0" />
+              <Eye className="w-4 h-4 text-[#495D53] shrink-0" />
               <span>معاينة PDF</span>
             </button>
 
@@ -2260,12 +2260,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               onClick={handleExportConcisePdf}
               disabled={isExportingAnyPdf}
               data-testid="plc-footer-export-pdf-btn"
-              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#153C43] hover:bg-[#145B59] disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-extrabold border border-[#C5A15D] shadow-xs transition cursor-pointer"
+              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#495D53] hover:bg-[#3A4B42] disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-extrabold border border-[#C5D0CA] shadow-xs transition cursor-pointer"
             >
               {isExportingConcisePdf ? (
                 <Loader2 className="w-4 h-4 animate-spin shrink-0" />
               ) : (
-                <Download className="w-4 h-4 shrink-0 text-[#C5A15D]" />
+                <Download className="w-4 h-4 shrink-0 text-[#C5D0CA]" />
               )}
               <span>
                 {isExportingConcisePdf
@@ -2279,12 +2279,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               onClick={handleExportDetailedPdf}
               disabled={isExportingAnyPdf}
               data-testid="plc-footer-export-detailed-pdf-btn"
-              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#145B59] hover:bg-[#153C43] disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-extrabold border-2 border-[#C5A15D] shadow-xs transition cursor-pointer"
+              className="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#3A4B42] hover:bg-[#495D53] disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-extrabold border-2 border-[#C5D0CA] shadow-xs transition cursor-pointer"
             >
               {isExportingDetailedPdf ? (
                 <Loader2 className="w-4 h-4 animate-spin shrink-0" />
               ) : (
-                <Layers className="w-4 h-4 shrink-0 text-[#C5A15D]" />
+                <Layers className="w-4 h-4 shrink-0 text-[#C5D0CA]" />
               )}
               <span>
                 {isExportingDetailedPdf
@@ -2298,9 +2298,9 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
         {statusFeedback && (
           <div
             data-testid="plc-report-footer-export-success"
-            className="p-3 rounded-xl bg-[#EBF3F2] border border-[#145B59] text-[#153C43] text-xs font-extrabold flex items-center gap-2"
+            className="p-3 rounded-xl bg-[#E5E9E7] border border-[#3A4B42] text-[#495D53] text-xs font-extrabold flex items-center gap-2"
           >
-            <CheckCircle2 className="w-4 h-4 text-[#145B59] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#3A4B42] shrink-0" />
             <span>{statusFeedback}</span>
           </div>
         )}
@@ -2319,16 +2319,16 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
       {/* نافذة استعراض الشاهد والمرفق البصري عند الضغط على رمز QR أو رابط الشاهد */}
       {activeEvidenceModal && (
         <div
-          className="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#292F33]/75 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto"
           data-testid="plc-evidence-viewer-modal"
         >
-          <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border-2 border-[#153C43] overflow-hidden">
-            <div className="p-4 bg-[#153C43] text-white border-b-2 border-[#C5A15D] flex items-center justify-between gap-3">
+          <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border-2 border-[#495D53] overflow-hidden">
+            <div className="p-4 bg-[#495D53] text-white border-b-2 border-[#C5D0CA] flex items-center justify-between gap-3">
               <div>
                 <h3 className="text-sm sm:text-base font-extrabold">
                   معاينة الشاهد الموثق: {activeEvidenceModal.title}
                 </h3>
-                <p className="text-xs text-[#C5A15D] mt-0.5">
+                <p className="text-xs text-[#C5D0CA] mt-0.5">
                   النوع: {activeEvidenceModal.typeLabel}
                 </p>
               </div>
@@ -2336,45 +2336,45 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                 type="button"
                 onClick={() => setActiveEvidenceModal(null)}
                 data-testid="plc-close-evidence-viewer-btn"
-                className="px-3 py-1.5 rounded-lg bg-white text-[#153C43] text-xs font-extrabold cursor-pointer"
+                className="px-3 py-1.5 rounded-lg bg-white text-[#495D53] text-xs font-extrabold cursor-pointer"
               >
                 إغلاق
               </button>
             </div>
             <div className="p-5 space-y-4 text-right">
-              <div className="p-3.5 rounded-xl bg-[#F2EFE7] border border-[#B8C9CB] space-y-1.5 text-xs">
-                <p className="font-bold text-[#0D262A]">
-                  <strong className="text-[#153C43]">ما يثبته الشاهد:</strong>{' '}
+              <div className="p-3.5 rounded-xl bg-[#F4F6F5] border border-[#E2E5E6] space-y-1.5 text-xs">
+                <p className="font-bold text-[#292F33]">
+                  <strong className="text-[#495D53]">ما يثبته الشاهد:</strong>{' '}
                   {activeEvidenceModal.whatItProves}
                 </p>
-                <p className="font-bold text-[#145B59]">
+                <p className="font-bold text-[#3A4B42]">
                   <strong>الارتباط بالسجلات:</strong> {activeEvidenceModal.linkedSummary}
                 </p>
               </div>
 
               {activeEvidenceModal.fileDataUrl && (
-                <div className="p-3 rounded-xl bg-white border-2 border-[#153C43] text-center space-y-2">
-                  <p className="text-xs font-extrabold text-[#153C43]">
+                <div className="p-3 rounded-xl bg-white border-2 border-[#495D53] text-center space-y-2">
+                  <p className="text-xs font-extrabold text-[#495D53]">
                     المرفق البصري المضمن في الشاهد:
                   </p>
                   <img
                     src={activeEvidenceModal.fileDataUrl}
                     alt={activeEvidenceModal.title}
-                    className="max-h-80 w-auto mx-auto rounded-lg border border-[#B8C9CB]"
+                    className="max-h-80 w-auto mx-auto rounded-lg border border-[#E2E5E6]"
                   />
                 </div>
               )}
 
               {activeEvidenceModal.linkUrl && (
-                <div className="p-3 rounded-xl bg-[#EBF3F2] border border-[#145B59] flex items-center justify-between gap-2 text-xs">
-                  <span className="font-bold text-[#153C43] truncate" dir="ltr">
+                <div className="p-3 rounded-xl bg-[#E5E9E7] border border-[#3A4B42] flex items-center justify-between gap-2 text-xs">
+                  <span className="font-bold text-[#495D53] truncate" dir="ltr">
                     {activeEvidenceModal.linkUrl}
                   </span>
                   <a
                     href={activeEvidenceModal.linkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#153C43] text-white font-extrabold"
+                    className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#495D53] text-white font-extrabold"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     <span>فتح الرابط الخارجي</span>
@@ -2389,21 +2389,21 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
       {/* نافذة معاينة صفحات PDF المطابقة (A4) للتقرير المختصر والتقرير التفصيلي */}
       {showPdfPreviewModal && (
         <div
-          className="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#292F33]/75 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto"
           data-testid="plc-pdf-preview-modal"
         >
-          <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl border-2 border-[#153C43] overflow-hidden">
-            <div className="p-4 border-b border-[#B8C9CB] flex flex-wrap items-center justify-between gap-3 bg-[#F2EFE7]">
+          <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl border-2 border-[#495D53] overflow-hidden">
+            <div className="p-4 border-b border-[#E2E5E6] flex flex-wrap items-center justify-between gap-3 bg-[#F4F6F5]">
               <div>
-                <h3 className="text-base font-extrabold text-[#153C43] flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-[#145B59]" />
+                <h3 className="text-base font-extrabold text-[#495D53] flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-[#3A4B42]" />
                   <span>
                     {previewMode === 'detailed'
                       ? `معاينة التقرير التفصيلي للمجتمع (${previewPageImages.length} صفحات A4)`
                       : `معاينة التقرير النهائي المختصر (${previewPageImages.length} صفحات A4)`}
                   </span>
                 </h3>
-                <p className="text-xs font-medium text-[#0D262A]">
+                <p className="text-xs font-medium text-[#292F33]">
                   المعاينة مطابقة تمامًا لملف PDF المصدّر شاملة الغلاف الرسمي وشعار وزارة التعليم والزخارف الهندسية ورموز QR القابلة للمسح والضغط والتوقيع والختم.
                 </p>
               </div>
@@ -2414,8 +2414,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   data-testid="plc-preview-mode-concise"
                   className={`px-3 py-1.5 rounded-xl text-xs font-extrabold border transition cursor-pointer ${
                     previewMode === 'concise'
-                      ? 'bg-[#153C43] text-white border-[#C5A15D]'
-                      : 'bg-white text-[#153C43] border-[#153C43]'
+                      ? 'bg-[#495D53] text-white border-[#C5D0CA]'
+                      : 'bg-white text-[#495D53] border-[#495D53]'
                   }`}
                 >
                   التقرير المختصر (٦ صفحات)
@@ -2426,8 +2426,8 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   data-testid="plc-preview-mode-detailed"
                   className={`px-3 py-1.5 rounded-xl text-xs font-extrabold border transition cursor-pointer ${
                     previewMode === 'detailed'
-                      ? 'bg-[#145B59] text-white border-[#C5A15D]'
-                      : 'bg-white text-[#145B59] border-[#145B59]'
+                      ? 'bg-[#3A4B42] text-white border-[#C5D0CA]'
+                      : 'bg-white text-[#3A4B42] border-[#3A4B42]'
                   }`}
                 >
                   التقرير التفصيلي الشامل
@@ -2441,12 +2441,12 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   }
                   disabled={isExportingAnyPdf}
                   data-testid="plc-modal-export-pdf-btn"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#153C43] hover:bg-[#145B59] disabled:opacity-60 text-white text-xs font-extrabold border border-[#C5A15D] transition cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#495D53] hover:bg-[#3A4B42] disabled:opacity-60 text-white text-xs font-extrabold border border-[#C5D0CA] transition cursor-pointer"
                 >
                   {isExportingAnyPdf ? (
                     <Loader2 className="w-3.5 h-3.5 animate-spin" />
                   ) : (
-                    <Download className="w-3.5 h-3.5 text-[#C5A15D]" />
+                    <Download className="w-3.5 h-3.5 text-[#C5D0CA]" />
                   )}
                   <span>
                     {previewMode === 'detailed'
@@ -2458,7 +2458,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   type="button"
                   onClick={() => setShowPdfPreviewModal(false)}
                   data-testid="plc-close-pdf-preview-btn"
-                  className="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-white border border-[#153C43] hover:bg-[#EBF3F2] text-[#153C43] text-xs font-extrabold cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-white border border-[#495D53] hover:bg-[#E5E9E7] text-[#495D53] text-xs font-extrabold cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                   <span>إغلاق المعاينة</span>
@@ -2466,14 +2466,14 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
               </div>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-6 bg-[#F2EFE7]/70">
+            <div className="p-6 overflow-y-auto space-y-6 bg-[#F4F6F5]/70">
               {previewPageImages.map((imgUrl, idx) => (
                 <div
                   key={idx}
                   data-testid={`plc-pdf-preview-page-${idx + 1}`}
-                  className="bg-white rounded-xl shadow-md border-2 border-[#B8C9CB] p-2 max-w-3xl mx-auto"
+                  className="bg-white rounded-xl shadow-md border-2 border-[#E2E5E6] p-2 max-w-3xl mx-auto"
                 >
-                  <div className="text-xs font-extrabold text-[#153C43] mb-2 px-2 flex justify-between">
+                  <div className="text-xs font-extrabold text-[#495D53] mb-2 px-2 flex justify-between">
                     <span>
                       {idx === 0
                         ? 'الصفحة ١ — الغلاف الرسمي'
@@ -2484,7 +2484,7 @@ export const PlcBatch5FinalReport: React.FC<PlcBatch5FinalReportProps> = ({
                   <img
                     src={imgUrl}
                     alt={`صفحة ${idx + 1} من التقرير`}
-                    className="w-full h-auto rounded-lg border border-[#B8C9CB]"
+                    className="w-full h-auto rounded-lg border border-[#E2E5E6]"
                   />
                 </div>
               ))}

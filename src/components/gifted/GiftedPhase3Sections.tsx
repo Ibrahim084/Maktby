@@ -456,15 +456,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
       {activeSection === 8 && (
         <section data-testid="gifted-section-8-view" className="space-y-6">
           {/* Header Banner */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#7F1D3F] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
+              <div className="w-12 h-12 rounded-xl bg-[#8A6125] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
                 08
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#7F1D3F] rotate-45 inline-block" />
-                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#26323B]">
+                  <span className="w-2 h-2 bg-[#8A6125] rotate-45 inline-block" />
+                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]">
                     مستودع الشواهد المصورة والروابط الإلكترونية
                   </h3>
                 </div>
@@ -477,16 +477,16 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
             <div className="flex flex-wrap items-center gap-2.5 shrink-0">
               <div
                 data-testid="s8-total-photos-badge"
-                className="px-3.5 py-2 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] text-xs font-bold text-[#26323B] flex items-center gap-2"
+                className="px-3.5 py-2 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] text-xs font-bold text-[#292F33] flex items-center gap-2"
               >
-                <ImageIcon className="w-4 h-4 text-[#7F1D3F]" />
+                <ImageIcon className="w-4 h-4 text-[#956C2E]" />
                 <span>إجمالي الصور المحفوظة: {totalSavedPhotosCount}</span>
               </div>
               <div
                 data-testid="s8-total-links-badge"
-                className="px-3.5 py-2 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] text-xs font-bold text-[#26323B] flex items-center gap-2"
+                className="px-3.5 py-2 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] text-xs font-bold text-[#292F33] flex items-center gap-2"
               >
-                <QrCode className="w-4 h-4 text-[#7F1D3F]" />
+                <QrCode className="w-4 h-4 text-[#956C2E]" />
                 <span>إجمالي روابط QR: {totalSavedLinksCount}</span>
               </div>
             </div>
@@ -497,7 +497,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               data-testid="s8-evidence-alert"
               className={`rounded-xl px-4 py-3 text-xs sm:text-sm font-bold flex items-center justify-between gap-3 border ${
                 evidenceAlert.type === 'success'
-                  ? 'bg-emerald-50 text-emerald-900 border-emerald-200'
+                  ? 'bg-[#EEF5EE] text-[#2F6846] border-[#C5DCC7]'
                   : 'bg-red-50 text-red-900 border-red-200'
               }`}
             >
@@ -521,8 +521,8 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             {/* Right Sidebar: Target Selector (Ministerial Programs, Initiatives, Competitions) */}
-            <div className="lg:col-span-4 bg-white rounded-2xl border border-[#E6C7D0] overflow-hidden">
-              <div className="bg-[#26323B] text-white px-5 py-3.5 flex items-center justify-between">
+            <div className="lg:col-span-4 bg-white rounded-2xl border border-[#E5CFA7] overflow-hidden">
+              <div className="bg-[#292F33] text-white px-5 py-3.5 flex items-center justify-between">
                 <span className="font-bold text-sm">
                   اختر السجل المراد توثيق شواهده
                 </span>
@@ -532,7 +532,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               </div>
 
               {/* Category Filter Tabs */}
-              <div className="p-3 bg-[#FAF7F5] border-b border-[#E6C7D0]/70 grid grid-cols-4 gap-1.5 text-[11px] font-bold">
+              <div className="p-3 bg-[#FBF6EC] border-b border-[#E5CFA7]/70 grid grid-cols-4 gap-1.5 text-[11px] font-bold">
                 {(
                   [
                     { key: 'all', label: 'الكل' },
@@ -548,8 +548,8 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     onClick={() => setTargetCategoryFilter(tab.key)}
                     className={`py-1.5 px-2 rounded-lg transition-colors cursor-pointer ${
                       targetCategoryFilter === tab.key
-                        ? 'bg-[#7F1D3F] text-white'
-                        : 'bg-white text-[#26323B] border border-stone-200 hover:bg-[#F9EFF2]'
+                        ? 'bg-[#8A6125] text-white'
+                        : 'bg-white text-[#292F33] border border-stone-200 hover:bg-[#F7EBD5]'
                     }`}
                   >
                     {tab.label}
@@ -568,7 +568,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       onClick={() => setSelectedTargetId(item.targetId)}
                       className={`w-full text-right px-4 py-3.5 transition-colors flex flex-col gap-1.5 cursor-pointer ${
                         isSelected
-                          ? 'bg-[#F9EFF2] border-r-4 border-r-[#7F1D3F]'
+                          ? 'bg-[#F7EBD5] border-r-4 border-r-[#956C2E]'
                           : 'bg-white hover:bg-stone-50'
                       }`}
                     >
@@ -576,22 +576,22 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                         <span
                           className={`text-[11px] px-2 py-0.5 rounded font-bold ${
                             isSelected
-                              ? 'bg-[#7F1D3F] text-white'
+                              ? 'bg-[#8A6125] text-white'
                               : 'bg-stone-100 text-stone-700'
                           }`}
                         >
                           {item.categoryLabel}
                         </span>
                         <div className="flex items-center gap-1.5 text-[11px] font-bold tabular-nums">
-                          <span className="px-2 py-0.5 rounded bg-white border border-stone-200 text-[#7F1D3F]">
+                          <span className="px-2 py-0.5 rounded bg-white border border-stone-200 text-[#956C2E]">
                             صور: {item.photosCount}/{MAX_GIFTED_EVIDENCE_PHOTOS}
                           </span>
-                          <span className="px-2 py-0.5 rounded bg-white border border-stone-200 text-[#26323B]">
+                          <span className="px-2 py-0.5 rounded bg-white border border-stone-200 text-[#292F33]">
                             روابط: {item.linksCount}/{MAX_GIFTED_EVIDENCE_LINKS}
                           </span>
                         </div>
                       </div>
-                      <div className="text-xs sm:text-sm font-extrabold text-[#26323B]">
+                      <div className="text-xs sm:text-sm font-extrabold text-[#292F33]">
                         {item.title}
                       </div>
                       <div className="text-[11px] text-stone-500 flex items-center justify-between">
@@ -612,14 +612,14 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
             {selectedTargetMeta && (
               <div className="lg:col-span-8 space-y-6">
                 {/* Selected Target Summary & Report Visibility Master Toggle */}
-                <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="space-y-1">
-                    <div className="inline-flex items-center gap-2 text-xs font-bold text-[#7F1D3F]">
+                    <div className="inline-flex items-center gap-2 text-xs font-bold text-[#956C2E]">
                       <span>{selectedTargetMeta.categoryLabel}</span>
                       <span>•</span>
                       <span>{selectedTargetMeta.stageLabel}</span>
                     </div>
-                    <h4 className="text-base sm:text-lg font-extrabold text-[#26323B]">
+                    <h4 className="text-base sm:text-lg font-extrabold text-[#292F33]">
                       {selectedTargetMeta.title}
                     </h4>
                     <p className="text-xs text-stone-500">
@@ -630,7 +630,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   <label
                     data-testid="s8-master-show-in-report-toggle"
-                    className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-[#E6C7D0] bg-[#FAF7F5] cursor-pointer select-none shrink-0"
+                    className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-[#E5CFA7] bg-[#FBF6EC] cursor-pointer select-none shrink-0"
                   >
                     <input
                       type="checkbox"
@@ -645,11 +645,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           )
                         );
                       }}
-                      className="w-4 h-4 accent-[#7F1D3F] rounded cursor-pointer"
+                      className="w-4 h-4 accent-[#956C2E] rounded cursor-pointer"
                     />
-                    <span className="text-xs font-bold text-[#26323B] flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-[#292F33] flex items-center gap-1.5">
                       {activeEvidenceBundle.showEvidencesInReport ? (
-                        <Eye className="w-4 h-4 text-[#7F1D3F]" />
+                        <Eye className="w-4 h-4 text-[#956C2E]" />
                       ) : (
                         <EyeOff className="w-4 h-4 text-stone-400" />
                       )}
@@ -659,8 +659,8 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                 </div>
 
                 {/* 1. Photographic Evidences Card (Max 4 Photos in IndexedDB) */}
-                <div className="bg-white rounded-2xl border border-[#E6C7D0] overflow-hidden">
-                  <div className="bg-[#7F1D3F] text-white px-5 py-3.5 flex items-center justify-between">
+                <div className="bg-white rounded-2xl border border-[#E5CFA7] overflow-hidden">
+                  <div className="bg-[#8A6125] text-white px-5 py-3.5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <ImageIcon className="w-4 h-4" />
                       <span className="font-bold text-sm">
@@ -678,10 +678,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   <div className="p-5 space-y-5">
                     {/* Upload Photo Form */}
-                    <div className="rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] p-4 space-y-3">
+                    <div className="rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] p-4 space-y-3">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-bold text-[#26323B] mb-1">
+                          <label className="block text-xs font-bold text-[#292F33] mb-1">
                             عنوان الشاهد المصور
                           </label>
                           <input
@@ -694,11 +694,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               activeEvidenceBundle.photos.length >=
                               MAX_GIFTED_EVIDENCE_PHOTOS
                             }
-                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#7F1D3F] disabled:opacity-60"
+                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#956C2E] disabled:opacity-60"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-bold text-[#26323B] mb-1">
+                          <label className="block text-xs font-bold text-[#292F33] mb-1">
                             وصف مختصر (اختياري)
                           </label>
                           <input
@@ -711,13 +711,13 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               activeEvidenceBundle.photos.length >=
                               MAX_GIFTED_EVIDENCE_PHOTOS
                             }
-                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#7F1D3F] disabled:opacity-60"
+                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#956C2E] disabled:opacity-60"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#26323B]">
+                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#292F33]">
                           <label className="inline-flex items-center gap-1.5 cursor-pointer">
                             <input
                               type="checkbox"
@@ -725,7 +725,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               onChange={(e) =>
                                 setPhotoForProgramReport(e.target.checked)
                               }
-                              className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                              className="w-3.5 h-3.5 accent-[#956C2E]"
                             />
                             <span>إظهار في تقرير البرنامج</span>
                           </label>
@@ -736,7 +736,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               onChange={(e) =>
                                 setPhotoForFinalRecord(e.target.checked)
                               }
-                              className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                              className="w-3.5 h-3.5 accent-[#956C2E]"
                             />
                             <span>إظهار في التقرير الختامي</span>
                           </label>
@@ -760,7 +760,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                 MAX_GIFTED_EVIDENCE_PHOTOS
                             }
                             onClick={() => photoFileInputRef.current?.click()}
-                            className="min-h-[38px] px-4 py-1.5 rounded-lg bg-[#7F1D3F] hover:bg-[#681633] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="min-h-[38px] px-4 py-1.5 rounded-lg bg-[#8A6125] hover:bg-[#704E1D] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             <Upload className="w-3.5 h-3.5" />
                             <span>
@@ -789,9 +789,9 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                             <div
                               key={photo.id}
                               data-testid={`s8-photo-card-${idx + 1}`}
-                              className="rounded-xl border border-[#E6C7D0] bg-white overflow-hidden flex flex-col justify-between"
+                              className="rounded-xl border border-[#E5CFA7] bg-white overflow-hidden flex flex-col justify-between"
                             >
-                              <div className="h-40 bg-[#FAF7F5] border-b border-stone-200 flex items-center justify-center overflow-hidden relative">
+                              <div className="h-40 bg-[#FBF6EC] border-b border-stone-200 flex items-center justify-center overflow-hidden relative">
                                 {previewUrl ? (
                                   <img
                                     src={previewUrl}
@@ -799,12 +799,12 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                     className="w-full h-full object-cover"
                                   />
                                 ) : (
-                                  <div className="text-center p-4 text-xs text-[#7F1D3F] font-bold">
+                                  <div className="text-center p-4 text-xs text-[#956C2E] font-bold">
                                     <ImageIcon className="w-7 h-7 mx-auto mb-1 opacity-75" />
                                     <span>محفوظ في IndexedDB ({photo.blobKey})</span>
                                   </div>
                                 )}
-                                <span className="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#26323B]/85 text-white text-[11px] font-bold tabular-nums">
+                                <span className="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#292F33]/85 text-white text-[11px] font-bold tabular-nums">
                                   صورة {idx + 1} من {MAX_GIFTED_EVIDENCE_PHOTOS}
                                 </span>
                               </div>
@@ -812,7 +812,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               <div className="p-3.5 space-y-2.5">
                                 <div className="flex items-start justify-between gap-2">
                                   <div>
-                                    <div className="text-xs font-extrabold text-[#26323B]">
+                                    <div className="text-xs font-extrabold text-[#292F33]">
                                       {photo.title}
                                     </div>
                                     {photo.caption && (
@@ -838,7 +838,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                   </button>
                                 </div>
 
-                                <div className="pt-2 border-t border-stone-200/80 flex flex-wrap items-center gap-3 text-[11px] font-bold text-[#26323B]">
+                                <div className="pt-2 border-t border-stone-200/80 flex flex-wrap items-center gap-3 text-[11px] font-bold text-[#292F33]">
                                   <label className="inline-flex items-center gap-1.5 cursor-pointer">
                                     <input
                                       type="checkbox"
@@ -855,7 +855,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                           )
                                         );
                                       }}
-                                      className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                                      className="w-3.5 h-3.5 accent-[#956C2E]"
                                     />
                                     <span>إظهار في تقرير البرنامج</span>
                                   </label>
@@ -876,7 +876,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                           )
                                         );
                                       }}
-                                      className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                                      className="w-3.5 h-3.5 accent-[#956C2E]"
                                     />
                                     <span>إظهار في التقرير الختامي</span>
                                   </label>
@@ -891,10 +891,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                 </div>
 
                 {/* 2. Electronic Links & Auto QR Generator Card (Max 4 Links) */}
-                <div className="bg-white rounded-2xl border border-[#E6C7D0] overflow-hidden">
-                  <div className="bg-[#26323B] text-white px-5 py-3.5 flex items-center justify-between">
+                <div className="bg-white rounded-2xl border border-[#E5CFA7] overflow-hidden">
+                  <div className="bg-[#292F33] text-white px-5 py-3.5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <QrCode className="w-4 h-4 text-[#F6D5DF]" />
+                      <QrCode className="w-4 h-4 text-[#EFE0C2]" />
                       <span className="font-bold text-sm">
                         ثانياً: الروابط الإلكترونية الاختيارية (مع توليد QR تلقائياً لكل رابط)
                       </span>
@@ -911,11 +911,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                   <div className="p-5 space-y-5">
                     <form
                       onSubmit={handleAddEvidenceLink}
-                      className="rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] p-4 space-y-3"
+                      className="rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] p-4 space-y-3"
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-bold text-[#26323B] mb-1">
+                          <label className="block text-xs font-bold text-[#292F33] mb-1">
                             عنوان الرابط الإلكتروني
                           </label>
                           <input
@@ -928,11 +928,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               activeEvidenceBundle.links.length >=
                               MAX_GIFTED_EVIDENCE_LINKS
                             }
-                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#7F1D3F] disabled:opacity-60"
+                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold focus:outline-none focus:border-[#956C2E] disabled:opacity-60"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-bold text-[#26323B] mb-1">
+                          <label className="block text-xs font-bold text-[#292F33] mb-1">
                             الرابط الإلكتروني (URL)
                           </label>
                           <input
@@ -946,13 +946,13 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               activeEvidenceBundle.links.length >=
                               MAX_GIFTED_EVIDENCE_LINKS
                             }
-                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold text-left focus:outline-none focus:border-[#7F1D3F] disabled:opacity-60"
+                            className="w-full min-h-[38px] px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-xs font-semibold text-left focus:outline-none focus:border-[#956C2E] disabled:opacity-60"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#26323B]">
+                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#292F33]">
                           <label className="inline-flex items-center gap-1.5 cursor-pointer">
                             <input
                               type="checkbox"
@@ -960,7 +960,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               onChange={(e) =>
                                 setLinkForProgramReport(e.target.checked)
                               }
-                              className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                              className="w-3.5 h-3.5 accent-[#956C2E]"
                             />
                             <span>إظهار في تقرير البرنامج</span>
                           </label>
@@ -971,7 +971,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               onChange={(e) =>
                                 setLinkForFinalRecord(e.target.checked)
                               }
-                              className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                              className="w-3.5 h-3.5 accent-[#956C2E]"
                             />
                             <span>إظهار في التقرير الختامي</span>
                           </label>
@@ -984,7 +984,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                             activeEvidenceBundle.links.length >=
                             MAX_GIFTED_EVIDENCE_LINKS
                           }
-                          className="min-h-[38px] px-4 py-1.5 rounded-lg bg-[#26323B] hover:bg-[#1B242B] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="min-h-[38px] px-4 py-1.5 rounded-lg bg-[#292F33] hover:bg-[#292F33] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <Plus className="w-3.5 h-3.5" />
                           <span>
@@ -1006,7 +1006,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                         {activeEvidenceBundle.links.map((linkItem, idx) => {
                           const qrDataUrl = generateQrSvgDataUrl(
                             linkItem.url,
-                            '#26323B',
+                            '#292F33',
                             '#FFFFFF',
                             2
                           );
@@ -1014,7 +1014,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                             <div
                               key={linkItem.id}
                               data-testid={`s8-link-card-${idx + 1}`}
-                              className="rounded-xl border border-[#E6C7D0] bg-white p-4 flex items-start gap-3.5"
+                              className="rounded-xl border border-[#E5CFA7] bg-white p-4 flex items-start gap-3.5"
                             >
                               <img
                                 src={qrDataUrl}
@@ -1025,7 +1025,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               <div className="flex-1 min-w-0 space-y-2">
                                 <div className="flex items-start justify-between gap-2">
                                   <div className="min-w-0">
-                                    <div className="text-xs font-extrabold text-[#26323B] truncate">
+                                    <div className="text-xs font-extrabold text-[#292F33] truncate">
                                       {linkItem.title}
                                     </div>
                                     <a
@@ -1033,7 +1033,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       dir="ltr"
-                                      className="text-[11px] text-[#7F1D3F] hover:underline inline-flex items-center gap-1 truncate max-w-full mt-0.5"
+                                      className="text-[11px] text-[#956C2E] hover:underline inline-flex items-center gap-1 truncate max-w-full mt-0.5"
                                     >
                                       <ExternalLink className="w-3 h-3 shrink-0" />
                                       <span className="truncate">{linkItem.url}</span>
@@ -1058,7 +1058,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                   </button>
                                 </div>
 
-                                <div className="pt-2 border-t border-stone-200/80 flex flex-wrap items-center gap-3 text-[11px] font-bold text-[#26323B]">
+                                <div className="pt-2 border-t border-stone-200/80 flex flex-wrap items-center gap-3 text-[11px] font-bold text-[#292F33]">
                                   <label className="inline-flex items-center gap-1.5 cursor-pointer">
                                     <input
                                       type="checkbox"
@@ -1075,7 +1075,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                           )
                                         );
                                       }}
-                                      className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                                      className="w-3.5 h-3.5 accent-[#956C2E]"
                                     />
                                     <span>إظهار في تقرير البرنامج</span>
                                   </label>
@@ -1096,7 +1096,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                           )
                                         );
                                       }}
-                                      className="w-3.5 h-3.5 accent-[#7F1D3F]"
+                                      className="w-3.5 h-3.5 accent-[#956C2E]"
                                     />
                                     <span>إظهار في التقرير الختامي</span>
                                   </label>
@@ -1121,15 +1121,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
       {activeSection === 9 && (
         <section data-testid="gifted-section-9-view" className="space-y-6">
           {/* Header Banner */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#7F1D3F] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
+              <div className="w-12 h-12 rounded-xl bg-[#8A6125] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
                 09
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#7F1D3F] rotate-45 inline-block" />
-                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#26323B]">
+                  <span className="w-2 h-2 bg-[#8A6125] rotate-45 inline-block" />
+                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]">
                     المتابعة والتقييم الختامي
                   </h3>
                 </div>
@@ -1141,7 +1141,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
             <div
               data-testid="s9-non-executed-count-badge"
-              className="px-4 py-2.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] text-xs font-extrabold text-[#7F1D3F] flex items-center gap-2 shrink-0 tabular-nums"
+              className="px-4 py-2.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] text-xs font-extrabold text-[#956C2E] flex items-center gap-2 shrink-0 tabular-nums"
             >
               <XCircle className="w-4 h-4" />
               <span>إجمالي البنود بحالة «لم ينفذ»: {nonExecutedItems.length}</span>
@@ -1149,10 +1149,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
           </div>
 
           {/* 1. Automatic Read-Only Table of Non-Executed Items & Reasons */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] overflow-hidden">
-            <div className="bg-[#26323B] text-white px-5 py-3.5 flex flex-wrap items-center justify-between gap-2">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] overflow-hidden">
+            <div className="bg-[#292F33] text-white px-5 py-3.5 flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
-                <ClipboardList className="w-4 h-4 text-[#F6D5DF]" />
+                <ClipboardList className="w-4 h-4 text-[#EFE0C2]" />
                 <span className="font-bold text-sm">
                   أولاً: بيان تلقائي بالبرامج والمبادرات والمسابقات والإجراءات التي حالتها «لم ينفذ»
                 </span>
@@ -1166,13 +1166,13 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               {nonExecutedItems.length === 0 ? (
                 <div
                   data-testid="s9-empty-non-executed"
-                  className="rounded-xl bg-emerald-50/70 border border-emerald-200 p-5 text-center space-y-1"
+                  className="rounded-xl bg-[#EEF5EE] border border-[#C5DCC7] p-5 text-center space-y-1"
                 >
-                  <CheckCircle2 className="w-6 h-6 text-emerald-700 mx-auto" />
-                  <div className="text-xs sm:text-sm font-extrabold text-emerald-950">
+                  <CheckCircle2 className="w-6 h-6 text-[#2F6846] mx-auto" />
+                  <div className="text-xs sm:text-sm font-extrabold text-[#2F6846]">
                     لا توجد أي برامج أو مبادرات أو مسابقات أو إجراءات مسجلة بحالة «لم ينفذ» حالياً.
                   </div>
-                  <p className="text-xs text-emerald-800">
+                  <p className="text-xs text-[#2F6846]">
                     عند تغيير حالة أي بند أو إجراء قياسي إلى «لم ينفذ» في الأقسام (٢ أو ٣ أو ٦) سيظهر هنا تلقائياً مع سبب عدم التنفيذ المسجل.
                   </p>
                 </div>
@@ -1183,7 +1183,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     className="w-full text-right border-collapse text-xs"
                   >
                     <thead>
-                      <tr className="bg-[#FAF7F5] text-[#26323B] border-b border-[#E6C7D0]">
+                      <tr className="bg-[#FBF6EC] text-[#292F33] border-b border-[#E5CFA7]">
                         <th className="py-3 px-3 font-extrabold w-10">#</th>
                         <th className="py-3 px-3 font-extrabold">المصدر</th>
                         <th className="py-3 px-3 font-extrabold">
@@ -1205,20 +1205,20 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                         <tr
                           key={item.id}
                           data-testid={`s9-non-executed-row-${idx + 1}`}
-                          className="hover:bg-[#FAF7F5]/60"
+                          className="hover:bg-[#FBF6EC]/60"
                         >
                           <td className="py-3 px-3 font-bold tabular-nums text-stone-500">
                             {idx + 1}
                           </td>
                           <td className="py-3 px-3">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded bg-[#F9EFF2] text-[#7F1D3F] font-bold text-[11px]">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded bg-[#F7EBD5] text-[#956C2E] font-bold text-[11px]">
                               {item.sourceTypeLabel}
                             </span>
                           </td>
-                          <td className="py-3 px-3 font-bold text-[#26323B]">
+                          <td className="py-3 px-3 font-bold text-[#292F33]">
                             {item.parentTitle}
                           </td>
-                          <td className="py-3 px-3 font-semibold text-[#26323B] max-w-md">
+                          <td className="py-3 px-3 font-semibold text-[#292F33] max-w-md">
                             {item.itemTitle}
                           </td>
                           <td className="py-3 px-3">
@@ -1233,10 +1233,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                               onClick={() =>
                                 onNavigateToSection(item.sourceSectionNumber)
                               }
-                              className="px-2.5 py-1 rounded-lg bg-white border border-stone-300 hover:border-[#7F1D3F] text-[11px] font-bold text-[#26323B] inline-flex items-center gap-1 cursor-pointer"
+                              className="px-2.5 py-1 rounded-lg bg-white border border-stone-300 hover:border-[#956C2E] text-[11px] font-bold text-[#292F33] inline-flex items-center gap-1 cursor-pointer"
                             >
                               <span>القسم 0{item.sourceSectionNumber}</span>
-                              <ArrowUpLeft className="w-3 h-3 text-[#7F1D3F]" />
+                              <ArrowUpLeft className="w-3 h-3 text-[#956C2E]" />
                             </button>
                           </td>
                         </tr>
@@ -1249,10 +1249,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
           </div>
 
           {/* 2. The 4 Approved Final Evaluation Fields ONLY */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] overflow-hidden">
-            <div className="bg-[#7F1D3F] text-white px-5 py-3.5 flex items-center justify-between">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] overflow-hidden">
+            <div className="bg-[#8A6125] text-white px-5 py-3.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#F6D5DF]" />
+                <Sparkles className="w-4 h-4 text-[#EFE0C2]" />
                 <span className="font-bold text-sm">
                   ثانياً: حقول التقييم الختامي المعتمدة للسجل (٤ محاور أساسية)
                 </span>
@@ -1264,10 +1264,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
             <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
               {/* 1. الإيجابيات ونقاط القوة */}
-              <div className="rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] p-4 space-y-2">
+              <div className="rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] p-4 space-y-2">
                 <label
                   htmlFor="s9-eval-strengths"
-                  className="block text-xs sm:text-sm font-extrabold text-[#7F1D3F]"
+                  className="block text-xs sm:text-sm font-extrabold text-[#956C2E]"
                 >
                   ١. الإيجابيات ونقاط القوة
                 </label>
@@ -1286,15 +1286,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     );
                   }}
                   placeholder="اكتب الإيجابيات ونقاط القوة المرصودة..."
-                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#26323B] focus:outline-none focus:border-[#7F1D3F]"
+                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#292F33] focus:outline-none focus:border-[#956C2E]"
                 />
               </div>
 
               {/* 2. الصعوبات والتحديات */}
-              <div className="rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] p-4 space-y-2">
+              <div className="rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] p-4 space-y-2">
                 <label
                   htmlFor="s9-eval-challenges"
-                  className="block text-xs sm:text-sm font-extrabold text-[#7F1D3F]"
+                  className="block text-xs sm:text-sm font-extrabold text-[#956C2E]"
                 >
                   ٢. الصعوبات والتحديات
                 </label>
@@ -1313,15 +1313,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     );
                   }}
                   placeholder="اكتب الصعوبات والتحديات المرصودة..."
-                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#26323B] focus:outline-none focus:border-[#7F1D3F]"
+                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#292F33] focus:outline-none focus:border-[#956C2E]"
                 />
               </div>
 
               {/* 3. الجهات الداعمة إن وجدت */}
-              <div className="rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] p-4 space-y-2">
+              <div className="rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] p-4 space-y-2">
                 <label
                   htmlFor="s9-eval-supporting-entities"
-                  className="block text-xs sm:text-sm font-extrabold text-[#7F1D3F]"
+                  className="block text-xs sm:text-sm font-extrabold text-[#956C2E]"
                 >
                   ٣. الجهات الداعمة إن وجدت
                 </label>
@@ -1342,15 +1342,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     );
                   }}
                   placeholder="مثال: قسم الموهوبين بالإدارة التعليمية، إدارة المدرسة، أولياء الأمور..."
-                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#26323B] focus:outline-none focus:border-[#7F1D3F]"
+                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#292F33] focus:outline-none focus:border-[#956C2E]"
                 />
               </div>
 
               {/* 4. المقترحات التطويرية */}
-              <div className="rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] p-4 space-y-2">
+              <div className="rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] p-4 space-y-2">
                 <label
                   htmlFor="s9-eval-improvement-proposals"
-                  className="block text-xs sm:text-sm font-extrabold text-[#7F1D3F]"
+                  className="block text-xs sm:text-sm font-extrabold text-[#956C2E]"
                 >
                   ٤. المقترحات التطويرية
                 </label>
@@ -1371,7 +1371,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     );
                   }}
                   placeholder="اكتب المقترحات التطويرية..."
-                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#26323B] focus:outline-none focus:border-[#7F1D3F]"
+                  className="w-full p-3 rounded-lg bg-white border border-stone-300 text-xs sm:text-sm font-medium text-[#292F33] focus:outline-none focus:border-[#956C2E]"
                 />
               </div>
             </div>
@@ -1385,15 +1385,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
       {activeSection === 10 && (
         <section data-testid="gifted-section-10-view" className="space-y-6">
           {/* Header Banner */}
-          <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#7F1D3F] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
+              <div className="w-12 h-12 rounded-xl bg-[#8A6125] text-white font-extrabold text-lg flex items-center justify-center shrink-0 tabular-nums">
                 10
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#7F1D3F] rotate-45 inline-block" />
-                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#26323B]">
+                  <span className="w-2 h-2 bg-[#8A6125] rotate-45 inline-block" />
+                  <h3 className="text-lg sm:text-xl font-extrabold font-display text-[#292F33]">
                     التقارير النهائية والدورية المعتمدة (توليد تلقائي وتصدير A4 PDF)
                   </h3>
                 </div>
@@ -1408,7 +1408,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               data-testid="s10-export-pdf-btn"
               disabled={isExportingPdf}
               onClick={() => void handleExportCurrentReportPdf()}
-              className="min-h-[42px] px-5 py-2.5 rounded-xl bg-[#7F1D3F] hover:bg-[#681633] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer shrink-0 disabled:opacity-60"
+              className="min-h-[42px] px-5 py-2.5 rounded-xl bg-[#8A6125] hover:bg-[#704E1D] text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer shrink-0 disabled:opacity-60"
             >
               <Download className="w-4 h-4" />
               <span>
@@ -1422,7 +1422,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
           {pdfFeedback && (
             <div
               data-testid="s10-pdf-feedback"
-              className="rounded-xl bg-[#F9EFF2] border border-[#E6C7D0] px-4 py-3 text-xs sm:text-sm font-bold text-[#7F1D3F] flex items-center justify-between gap-3"
+              className="rounded-xl bg-[#F7EBD5] border border-[#E5CFA7] px-4 py-3 text-xs sm:text-sm font-bold text-[#956C2E] flex items-center justify-between gap-3"
             >
               <div className="flex items-center gap-2">
                 <FileCheck2 className="w-4 h-4 shrink-0" />
@@ -1446,16 +1446,16 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               onClick={() => setActiveReportTab('program_or_event')}
               className={`text-right rounded-2xl p-4 border transition-all cursor-pointer flex flex-col justify-between gap-2 ${
                 activeReportTab === 'program_or_event'
-                  ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-xs'
-                  : 'bg-white hover:bg-[#FAF7F5] text-[#26323B] border-[#E6C7D0]'
+                  ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-xs'
+                  : 'bg-white hover:bg-[#FBF6EC] text-[#292F33] border-[#E5CFA7]'
               }`}
             >
               <div className="flex items-center justify-between w-full">
                 <span
                   className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${
                     activeReportTab === 'program_or_event'
-                      ? 'bg-white text-[#7F1D3F]'
-                      : 'bg-[#F9EFF2] text-[#7F1D3F]'
+                      ? 'bg-white text-[#956C2E]'
+                      : 'bg-[#F7EBD5] text-[#956C2E]'
                   }`}
                 >
                   النموذج الأول (ص ١١ و ٢٤)
@@ -1484,16 +1484,16 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               onClick={() => setActiveReportTab('innovation_space_progress')}
               className={`text-right rounded-2xl p-4 border transition-all cursor-pointer flex flex-col justify-between gap-2 ${
                 activeReportTab === 'innovation_space_progress'
-                  ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-xs'
-                  : 'bg-white hover:bg-[#FAF7F5] text-[#26323B] border-[#E6C7D0]'
+                  ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-xs'
+                  : 'bg-white hover:bg-[#FBF6EC] text-[#292F33] border-[#E5CFA7]'
               }`}
             >
               <div className="flex items-center justify-between w-full">
                 <span
                   className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${
                     activeReportTab === 'innovation_space_progress'
-                      ? 'bg-white text-[#7F1D3F]'
-                      : 'bg-[#F9EFF2] text-[#7F1D3F]'
+                      ? 'bg-white text-[#956C2E]'
+                      : 'bg-[#F7EBD5] text-[#956C2E]'
                   }`}
                 >
                   النموذج الثاني (ص ٢١)
@@ -1522,16 +1522,16 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               onClick={() => setActiveReportTab('final_administrative_record')}
               className={`text-right rounded-2xl p-4 border transition-all cursor-pointer flex flex-col justify-between gap-2 ${
                 activeReportTab === 'final_administrative_record'
-                  ? 'bg-[#7F1D3F] text-white border-[#7F1D3F] shadow-xs'
-                  : 'bg-white hover:bg-[#FAF7F5] text-[#26323B] border-[#E6C7D0]'
+                  ? 'bg-[#8A6125] text-white border-[#956C2E] shadow-xs'
+                  : 'bg-white hover:bg-[#FBF6EC] text-[#292F33] border-[#E5CFA7]'
               }`}
             >
               <div className="flex items-center justify-between w-full">
                 <span
                   className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${
                     activeReportTab === 'final_administrative_record'
-                      ? 'bg-white text-[#7F1D3F]'
-                      : 'bg-[#F9EFF2] text-[#7F1D3F]'
+                      ? 'bg-white text-[#956C2E]'
+                      : 'bg-[#F7EBD5] text-[#956C2E]'
                   }`}
                 >
                   النموذج الثالث (الختامي الموحد)
@@ -1564,10 +1564,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               className="space-y-5"
             >
               {/* Program/Event Selector + Optional Completion Fields */}
-              <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 space-y-4">
+              <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-stone-200/80 pb-4">
                   <div>
-                    <h4 className="text-sm sm:text-base font-extrabold text-[#26323B]">
+                    <h4 className="text-sm sm:text-base font-extrabold text-[#292F33]">
                       إعدادات «تقرير برنامج أو فعالية» (مطابق لصفحتي ١١ و ٢٤)
                     </h4>
                     <p className="text-xs text-stone-500 mt-0.5">
@@ -1578,7 +1578,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                   <div className="min-w-[260px]">
                     <label
                       htmlFor="s10-program-report-select"
-                      className="block text-xs font-bold text-[#7F1D3F] mb-1"
+                      className="block text-xs font-bold text-[#956C2E] mb-1"
                     >
                       البرنامج / الفعالية المستهدفة بالتقرير
                     </label>
@@ -1587,7 +1587,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       data-testid="s10-program-report-select"
                       value={reportTargetId}
                       onChange={(e) => setReportTargetId(e.target.value)}
-                      className="w-full min-h-[38px] px-3 py-1.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] text-xs font-bold text-[#26323B] focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[38px] px-3 py-1.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] text-xs font-bold text-[#292F33] focus:outline-none focus:border-[#956C2E]"
                     >
                       {targetsCatalog.map((t) => (
                         <option key={t.targetId} value={t.targetId}>
@@ -1601,7 +1601,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                 {/* Optional Override Inputs (Day, Duration, Beneficiaries) */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       اليوم (استكمال اختياري)
                     </label>
                     <input
@@ -1622,11 +1622,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           )
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       مدة التنفيذ (استكمال اختياري)
                     </label>
                     <input
@@ -1649,11 +1649,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           )
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       عدد المستفيدين (يُحسب تلقائياً أو يُعدل)
                     </label>
                     <input
@@ -1676,7 +1676,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           )
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                 </div>
@@ -1685,12 +1685,12 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               {/* Official A4 Preview of Report 1 (Pages 11 & 24) */}
               <div
                 data-testid="s10-program-report-a4-preview"
-                className="bg-white rounded-2xl border-2 border-[#E6C7D0] overflow-hidden shadow-xs"
+                className="bg-white rounded-2xl border-2 border-[#E5CFA7] overflow-hidden shadow-xs"
               >
                 {/* Official Report Header */}
-                <div className="bg-gradient-to-l from-[#26323B] to-[#7F1D3F] text-white p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="bg-[#8A6125] text-white p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="space-y-1">
-                    <div className="text-xs font-bold text-[#F6D5DF]">
+                    <div className="text-xs font-bold text-[#EFE0C2]">
                       المملكة العربية السعودية • وزارة التعليم •{' '}
                       {programOrEventReportModel.basicInfo.educationDepartment}
                     </div>
@@ -1712,35 +1712,35 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                 <div className="p-5 sm:p-6 space-y-6">
                   {/* أولاً: معلومات عامة */}
                   <div className="space-y-3">
-                    <div className="bg-[#7F1D3F] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold flex items-center justify-between">
+                    <div className="bg-[#8A6125] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold flex items-center justify-between">
                       <span>أولاً: معلومات عامة</span>
-                      <span className="text-[11px] text-[#F6D5DF]">
+                      <span className="text-[11px] text-[#EFE0C2]">
                         {programOrEventReportModel.targetCategoryLabel}
                       </span>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">اسم الفعالية</div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">اسم الفعالية</div>
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {programOrEventReportModel.generalInfo.eventName}
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">اليوم</div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">اليوم</div>
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {programOrEventReportModel.generalInfo.dayLabel}
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">التاريخ</div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">التاريخ</div>
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {programOrEventReportModel.generalInfo.executionDate}
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">مدة التنفيذ</div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">مدة التنفيذ</div>
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {programOrEventReportModel.generalInfo.durationLabel}
                         </div>
                       </div>
@@ -1749,31 +1749,31 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   {/* ثانياً: بيانات عن الفعالية */}
                   <div className="space-y-3">
-                    <div className="bg-[#26323B] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold">
+                    <div className="bg-[#292F33] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold">
                       ثانياً: بيانات عن الفعالية
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                      <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">الهدف</div>
-                        <div className="font-bold text-[#26323B] mt-1 leading-relaxed">
+                      <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">الهدف</div>
+                        <div className="font-bold text-[#292F33] mt-1 leading-relaxed">
                           {programOrEventReportModel.eventData.objective}
                         </div>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                          <div className="text-[#7F1D3F] font-bold">
+                        <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                          <div className="text-[#956C2E] font-bold">
                             الفئة المستهدفة
                           </div>
-                          <div className="font-bold text-[#26323B] mt-1">
+                          <div className="font-bold text-[#292F33] mt-1">
                             {programOrEventReportModel.eventData.targetAudience}
                           </div>
                         </div>
-                        <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                          <div className="text-[#7F1D3F] font-bold">
+                        <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                          <div className="text-[#956C2E] font-bold">
                             عدد المستفيدين
                           </div>
-                          <div className="font-extrabold text-[#26323B] mt-1">
+                          <div className="font-extrabold text-[#292F33] mt-1">
                             {
                               programOrEventReportModel.eventData
                                 .beneficiariesCount
@@ -1783,29 +1783,29 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0] text-xs space-y-1">
-                      <div className="text-[#7F1D3F] font-extrabold">
+                    <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7] text-xs space-y-1">
+                      <div className="text-[#956C2E] font-extrabold">
                         آلية التنفيذ (مسحوبة تلقائياً من الإجراءات المنفذة)
                       </div>
-                      <div className="font-semibold text-[#26323B] whitespace-pre-line leading-relaxed">
+                      <div className="font-semibold text-[#292F33] whitespace-pre-line leading-relaxed">
                         {programOrEventReportModel.eventData.executionMechanism}
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                      <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-extrabold">
+                      <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-extrabold">
                           الصعوبات
                         </div>
-                        <div className="font-semibold text-[#26323B] mt-1">
+                        <div className="font-semibold text-[#292F33] mt-1">
                           {programOrEventReportModel.eventData.difficulties}
                         </div>
                       </div>
-                      <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-extrabold">
+                      <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-extrabold">
                           الاقتراحات
                         </div>
-                        <div className="font-semibold text-[#26323B] mt-1">
+                        <div className="font-semibold text-[#292F33] mt-1">
                           {programOrEventReportModel.eventData.suggestions}
                         </div>
                       </div>
@@ -1814,10 +1814,10 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     {/* شواهد التنفيذ المختارة فقط */}
                     <div
                       data-testid="s10-prog-report-evidences-box"
-                      className="p-4 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] space-y-3"
+                      className="p-4 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] space-y-3"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-extrabold text-[#7F1D3F]">
+                        <span className="text-xs font-extrabold text-[#956C2E]">
                           شواهد التنفيذ (تظهر فقط عند اختيارها من قِبل المنسق في القسم ٨)
                         </span>
                         <span className="text-[11px] font-bold text-stone-600 tabular-nums">
@@ -1850,11 +1850,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                         className="w-full h-24 object-cover rounded"
                                       />
                                     ) : (
-                                      <div className="h-24 rounded bg-[#F9EFF2] flex items-center justify-center text-[11px] font-bold text-[#7F1D3F]">
+                                      <div className="h-24 rounded bg-[#F7EBD5] flex items-center justify-center text-[11px] font-bold text-[#956C2E]">
                                         شاهد مصور
                                       </div>
                                     )}
-                                    <div className="text-[11px] font-bold text-[#26323B] truncate">
+                                    <div className="text-[11px] font-bold text-[#292F33] truncate">
                                       {p.title}
                                     </div>
                                   </div>
@@ -1875,7 +1875,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                     <img
                                       src={generateQrSvgDataUrl(
                                         l.url,
-                                        '#26323B',
+                                        '#292F33',
                                         '#FFFFFF',
                                         2
                                       )}
@@ -1883,12 +1883,12 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                       className="w-14 h-14 rounded border border-stone-200 shrink-0"
                                     />
                                     <div className="min-w-0">
-                                      <div className="text-xs font-extrabold text-[#26323B] truncate">
+                                      <div className="text-xs font-extrabold text-[#292F33] truncate">
                                         {l.title}
                                       </div>
                                       <div
                                         dir="ltr"
-                                        className="text-[11px] text-[#7F1D3F] truncate"
+                                        className="text-[11px] text-[#956C2E] truncate"
                                       >
                                         {l.url}
                                       </div>
@@ -1905,22 +1905,22 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   {/* Official Signoff Strip */}
                   <div className="grid grid-cols-2 gap-4 pt-3 border-t border-stone-200 text-center text-xs">
-                    <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="font-bold text-[#7F1D3F]">
+                    <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="font-bold text-[#956C2E]">
                         {programOrEventReportModel.basicInfo.coordinatorTitle}
                       </div>
-                      <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="font-extrabold text-[#292F33] mt-1">
                         {programOrEventReportModel.basicInfo.coordinatorName}
                       </div>
                       <div className="text-stone-500 font-semibold mt-1.5">
                         التوقيع
                       </div>
                     </div>
-                    <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="font-bold text-[#7F1D3F]">
+                    <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="font-bold text-[#956C2E]">
                         {programOrEventReportModel.basicInfo.principalTitle}
                       </div>
-                      <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="font-extrabold text-[#292F33] mt-1">
                         {programOrEventReportModel.basicInfo.principalName}
                       </div>
                       <div className="text-stone-500 font-semibold mt-1.5">
@@ -1942,9 +1942,9 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               className="space-y-5"
             >
               {/* Optional Completion Controls for Page 21 */}
-              <div className="bg-white rounded-2xl border border-[#E6C7D0] p-5 space-y-4">
+              <div className="bg-white rounded-2xl border border-[#E5CFA7] p-5 space-y-4">
                 <div>
-                  <h4 className="text-sm sm:text-base font-extrabold text-[#26323B]">
+                  <h4 className="text-sm sm:text-base font-extrabold text-[#292F33]">
                     استكمال حقول «التقرير المرحلي لبرنامج مساحة الابتكار» (مطابق لصفحة ٢١)
                   </h4>
                   <p className="text-xs text-stone-500 mt-0.5">
@@ -1954,7 +1954,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       {innovationProgressReportModel.basicData.innovationTeacherTitle}
                     </label>
                     <input
@@ -1976,11 +1976,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           })
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       الوحدة الإثرائية
                     </label>
                     <input
@@ -2001,11 +2001,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           })
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       عدد المخرجات
                     </label>
                     <input
@@ -2026,11 +2026,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           })
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                   <div>
-                    <label className="block font-bold text-[#26323B] mb-1">
+                    <label className="block font-bold text-[#292F33] mb-1">
                       عدد المخرجات المتميزة
                     </label>
                     <input
@@ -2052,7 +2052,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           })
                         );
                       }}
-                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FAF7F5] border border-stone-300 font-semibold focus:outline-none focus:border-[#7F1D3F]"
+                      className="w-full min-h-[36px] px-3 py-1 rounded-lg bg-[#FBF6EC] border border-stone-300 font-semibold focus:outline-none focus:border-[#956C2E]"
                     />
                   </div>
                 </div>
@@ -2061,11 +2061,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               {/* Official A4 Preview of Report 2 (Page 21) */}
               <div
                 data-testid="s10-innovation-report-a4-preview"
-                className="bg-white rounded-2xl border-2 border-[#E6C7D0] overflow-hidden shadow-xs"
+                className="bg-white rounded-2xl border-2 border-[#E5CFA7] overflow-hidden shadow-xs"
               >
-                <div className="bg-gradient-to-l from-[#26323B] to-[#7F1D3F] text-white p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="bg-[#8A6125] text-white p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="space-y-1">
-                    <div className="text-xs font-bold text-[#F6D5DF]">
+                    <div className="text-xs font-bold text-[#EFE0C2]">
                       المملكة العربية السعودية • وزارة التعليم •{' '}
                       {innovationProgressReportModel.basicData.educationDepartment}
                     </div>
@@ -2085,62 +2085,62 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                 <div className="p-5 sm:p-6 space-y-6">
                   {/* أولاً: البيانات الأساسية */}
                   <div className="space-y-3">
-                    <div className="bg-[#7F1D3F] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold">
+                    <div className="bg-[#8A6125] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold">
                       أولاً: البيانات الأساسية
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           الإدارة التعليمية
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.basicData
                               .educationDepartment
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           الفصل الدراسي
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {innovationProgressReportModel.basicData.semesterLabel}
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">المدرسة</div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">المدرسة</div>
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {innovationProgressReportModel.basicData.schoolName}
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           {innovationProgressReportModel.basicData.principalTitle}
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {innovationProgressReportModel.basicData.principalName}
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           المرحلة التعليمية
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.basicData
                               .educationalStage
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           {
                             innovationProgressReportModel.basicData
                               .innovationTeacherTitle
                           }
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.basicData
                               .innovationTeacherName
@@ -2152,9 +2152,9 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   {/* ثانياً: بيانات التنفيذ */}
                   <div className="space-y-3">
-                    <div className="bg-[#26323B] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold flex items-center justify-between">
+                    <div className="bg-[#292F33] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-extrabold flex items-center justify-between">
                       <span>ثانياً: بيانات التنفيذ</span>
-                      <span className="text-[11px] text-[#F6D5DF] tabular-nums">
+                      <span className="text-[11px] text-[#EFE0C2] tabular-nums">
                         الإجراءات القياسية المنفذة:{' '}
                         {
                           innovationProgressReportModel.executionData
@@ -2169,66 +2169,66 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           الوحدة الإثرائية
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.executionData
                               .enrichmentUnit
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           المرحلة الدراسية
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.executionData
                               .targetGrade
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           عدد المستفيدين
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1 tabular-nums">
+                        <div className="font-extrabold text-[#292F33] mt-1 tabular-nums">
                           {
                             innovationProgressReportModel.executionData
                               .beneficiariesCount
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           عدد المخرجات
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1 tabular-nums">
+                        <div className="font-extrabold text-[#292F33] mt-1 tabular-nums">
                           {
                             innovationProgressReportModel.executionData
                               .outputsCount
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           عدد المخرجات المتميزة
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1 tabular-nums">
+                        <div className="font-extrabold text-[#292F33] mt-1 tabular-nums">
                           {
                             innovationProgressReportModel.executionData
                               .distinguishedOutputsCount
                           }
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-bold">
+                      <div className="p-3 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-bold">
                           الجهات الداعمة إن وجدت
                         </div>
-                        <div className="font-extrabold text-[#26323B] mt-1">
+                        <div className="font-extrabold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.executionData
                               .supportingEntities
@@ -2237,11 +2237,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0] text-xs">
-                      <div className="text-[#7F1D3F] font-extrabold">
+                    <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7] text-xs">
+                      <div className="text-[#956C2E] font-extrabold">
                         وصف مختصر للمخرجات المتميزة
                       </div>
-                      <div className="font-semibold text-[#26323B] mt-1 leading-relaxed">
+                      <div className="font-semibold text-[#292F33] mt-1 leading-relaxed">
                         {
                           innovationProgressReportModel.executionData
                             .distinguishedOutputsSummary
@@ -2250,27 +2250,27 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-                      <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-extrabold">
+                      <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-extrabold">
                           الإيجابيات
                         </div>
-                        <div className="font-semibold text-[#26323B] mt-1">
+                        <div className="font-semibold text-[#292F33] mt-1">
                           {innovationProgressReportModel.executionData.strengths}
                         </div>
                       </div>
-                      <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-extrabold">
+                      <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-extrabold">
                           التحديات
                         </div>
-                        <div className="font-semibold text-[#26323B] mt-1">
+                        <div className="font-semibold text-[#292F33] mt-1">
                           {innovationProgressReportModel.executionData.challenges}
                         </div>
                       </div>
-                      <div className="p-3.5 rounded-xl bg-white border border-[#E6C7D0]">
-                        <div className="text-[#7F1D3F] font-extrabold">
+                      <div className="p-3.5 rounded-xl bg-white border border-[#E5CFA7]">
+                        <div className="text-[#956C2E] font-extrabold">
                           المقترحات التطويرية
                         </div>
-                        <div className="font-semibold text-[#26323B] mt-1">
+                        <div className="font-semibold text-[#292F33] mt-1">
                           {
                             innovationProgressReportModel.executionData
                               .improvementProposals
@@ -2293,9 +2293,9 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               className="space-y-5"
             >
               {/* Mode Selector Bar (Concise Default vs Detailed) */}
-              <div className="bg-white rounded-2xl border border-[#E6C7D0] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="bg-white rounded-2xl border border-[#E5CFA7] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <h4 className="text-sm sm:text-base font-extrabold text-[#26323B]">
+                  <h4 className="text-sm sm:text-base font-extrabold text-[#292F33]">
                     مستوى عرض «التقرير الإداري الختامي»
                   </h4>
                   <p className="text-xs text-stone-500 mt-0.5">
@@ -2303,15 +2303,15 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                   </p>
                 </div>
 
-                <div className="inline-flex rounded-xl bg-[#FAF7F5] p-1 border border-[#E6C7D0] shrink-0">
+                <div className="inline-flex rounded-xl bg-[#FBF6EC] p-1 border border-[#E5CFA7] shrink-0">
                   <button
                     type="button"
                     data-testid="s10-final-mode-concise"
                     onClick={() => setFinalReportMode('concise')}
                     className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-colors cursor-pointer ${
                       finalReportMode === 'concise'
-                        ? 'bg-[#7F1D3F] text-white'
-                        : 'text-[#26323B] hover:bg-white'
+                        ? 'bg-[#8A6125] text-white'
+                        : 'text-[#292F33] hover:bg-white'
                     }`}
                   >
                     نسخة تنفيذية مختصرة (افتراضي)
@@ -2322,8 +2322,8 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     onClick={() => setFinalReportMode('detailed')}
                     className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-colors cursor-pointer ${
                       finalReportMode === 'detailed'
-                        ? 'bg-[#7F1D3F] text-white'
-                        : 'text-[#26323B] hover:bg-white'
+                        ? 'bg-[#8A6125] text-white'
+                        : 'text-[#292F33] hover:bg-white'
                     }`}
                   >
                     تضمين التفاصيل الكاملة
@@ -2334,12 +2334,12 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
               {/* Official A4 Preview of Final Administrative Report */}
               <div
                 data-testid="s10-final-report-a4-preview"
-                className="bg-white rounded-2xl border-2 border-[#E6C7D0] overflow-hidden shadow-xs space-y-6"
+                className="bg-white rounded-2xl border-2 border-[#E5CFA7] overflow-hidden shadow-xs space-y-6"
               >
                 {/* Header */}
-                <div className="bg-gradient-to-l from-[#26323B] via-[#312332] to-[#7F1D3F] text-white p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="bg-[#8A6125] text-white p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="space-y-1">
-                    <div className="text-xs font-bold text-[#F6D5DF]">
+                    <div className="text-xs font-bold text-[#EFE0C2]">
                       المملكة العربية السعودية • وزارة التعليم •{' '}
                       {finalRecordReportModel.basicInfo.educationDepartment}
                     </div>
@@ -2359,7 +2359,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                         ? 'نسخة شاملة ومفصلة'
                         : 'نسخة تنفيذية مختصرة وشاملة'}
                     </span>
-                    <span className="text-[11px] text-[#F6D5DF]">
+                    <span className="text-[11px] text-[#EFE0C2]">
                       {finalRecordReportModel.basicInfo.coordinatorTitle}:{' '}
                       {finalRecordReportModel.basicInfo.coordinatorName}
                     </span>
@@ -2369,11 +2369,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                 <div className="px-6 pb-6 space-y-6">
                   {/* 1. Dual Completion Indicators Summary */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="text-[#7F1D3F] font-bold">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="text-[#956C2E] font-bold">
                         مؤشر إنجاز الخطة التنفيذية (القسم ٢)
                       </div>
-                      <div className="text-xl font-extrabold text-[#26323B] mt-1 tabular-nums">
+                      <div className="text-xl font-extrabold text-[#292F33] mt-1 tabular-nums">
                         {
                           finalRecordReportModel.completionMetrics
                             .executivePlanMetrics.completionPercentage
@@ -2394,11 +2394,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="text-[#7F1D3F] font-bold">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="text-[#956C2E] font-bold">
                         مؤشر إنجاز إجراءات البرامج (القسم ٦)
                       </div>
-                      <div className="text-xl font-extrabold text-[#26323B] mt-1 tabular-nums">
+                      <div className="text-xl font-extrabold text-[#292F33] mt-1 tabular-nums">
                         {
                           finalRecordReportModel.completionMetrics
                             .programActionsMetrics.completionPercentage
@@ -2420,11 +2420,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="text-[#7F1D3F] font-bold">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="text-[#956C2E] font-bold">
                         إجمالي الطلبة الموهوبين (القسم ٧)
                       </div>
-                      <div className="text-xl font-extrabold text-[#26323B] mt-1 tabular-nums">
+                      <div className="text-xl font-extrabold text-[#292F33] mt-1 tabular-nums">
                         {finalRecordReportModel.studentsSummary.totalStudents}
                       </div>
                       <div className="text-[11px] text-stone-500 mt-0.5 tabular-nums">
@@ -2441,11 +2441,11 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="text-[#7F1D3F] font-bold">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="text-[#956C2E] font-bold">
                         الشواهد المختارة للتقرير الختامي
                       </div>
-                      <div className="text-xl font-extrabold text-[#26323B] mt-1 tabular-nums">
+                      <div className="text-xl font-extrabold text-[#292F33] mt-1 tabular-nums">
                         {finalRecordReportModel.selectedEvidenceGroups.reduce(
                           (acc, g) => acc + g.photos.length + g.links.length,
                           0
@@ -2461,12 +2461,12 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   {/* 2. Applicable Ministerial Programs Table */}
                   <div className="space-y-2.5">
-                    <div className="bg-[#7F1D3F] text-white px-4 py-2 rounded-lg text-xs font-extrabold flex items-center justify-between">
+                    <div className="bg-[#8A6125] text-white px-4 py-2 rounded-lg text-xs font-extrabold flex items-center justify-between">
                       <span>
                         ملخص البرامج الوزارية المطبقة على مرحلة المدرسة (
                         {finalRecordReportModel.applicablePrograms.length} برامج)
                       </span>
-                      <span className="text-[11px] text-[#F6D5DF]">
+                      <span className="text-[11px] text-[#EFE0C2]">
                         تُحتسب النسبة من الإجراءات القياسية المفعلة
                       </span>
                     </div>
@@ -2474,7 +2474,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                     <div className="overflow-x-auto">
                       <table className="w-full text-right border-collapse text-xs">
                         <thead>
-                          <tr className="bg-[#FAF7F5] text-[#26323B] border-b border-[#E6C7D0]">
+                          <tr className="bg-[#FBF6EC] text-[#292F33] border-b border-[#E5CFA7]">
                             <th className="py-2.5 px-3 font-extrabold">
                               البرنامج الوزاري
                             </th>
@@ -2493,7 +2493,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           {finalRecordReportModel.applicablePrograms.map(
                             (prog) => (
                               <tr key={prog.id}>
-                                <td className="py-2.5 px-3 font-extrabold text-[#26323B]">
+                                <td className="py-2.5 px-3 font-extrabold text-[#292F33]">
                                   {prog.title}
                                 </td>
                                 <td className="py-2.5 px-3 text-stone-600">
@@ -2502,7 +2502,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                 <td className="py-2.5 px-3 font-bold tabular-nums">
                                   {prog.executedCount} / {prog.totalCount}
                                 </td>
-                                <td className="py-2.5 px-3 font-extrabold text-[#7F1D3F] tabular-nums">
+                                <td className="py-2.5 px-3 font-extrabold text-[#956C2E] tabular-nums">
                                   {prog.completionPercentage}%
                                 </td>
                               </tr>
@@ -2517,9 +2517,9 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                   {finalReportMode === 'detailed' && (
                     <div
                       data-testid="s10-final-detailed-breakdown"
-                      className="space-y-4 pt-2 border-t border-[#E6C7D0]"
+                      className="space-y-4 pt-2 border-t border-[#E5CFA7]"
                     >
-                      <div className="bg-[#26323B] text-white px-4 py-2 rounded-lg text-xs font-extrabold">
+                      <div className="bg-[#292F33] text-white px-4 py-2 rounded-lg text-xs font-extrabold">
                         ملحق تفصيلي: الإجراءات المنفذة فعلياً وقائمة الطلبة المشاركين (يظهر في الوضع الشامل المفصل)
                       </div>
 
@@ -2527,9 +2527,9 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                         {finalRecordReportModel.applicablePrograms.map((p) => (
                           <div
                             key={p.id}
-                            className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] space-y-1.5"
+                            className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] space-y-1.5"
                           >
-                            <div className="font-extrabold text-[#7F1D3F] flex items-center justify-between">
+                            <div className="font-extrabold text-[#956C2E] flex items-center justify-between">
                               <span>{p.title}</span>
                               <span className="tabular-nums">
                                 {p.executedCount}/{p.totalCount}
@@ -2540,7 +2540,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                                 لا توجد إجراءات منفذة مسجلة بعد.
                               </div>
                             ) : (
-                              <ul className="list-disc list-inside space-y-1 text-[11px] text-[#26323B] font-medium">
+                              <ul className="list-disc list-inside space-y-1 text-[11px] text-[#292F33] font-medium">
                                 {p.executedActionsTexts.map((txt, i) => (
                                   <li key={i}>{txt}</li>
                                 ))}
@@ -2558,7 +2558,7 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                       data-testid="s10-final-selected-evidences"
                       className="space-y-3"
                     >
-                      <div className="bg-[#26323B] text-white px-4 py-2 rounded-lg text-xs font-extrabold">
+                      <div className="bg-[#292F33] text-white px-4 py-2 rounded-lg text-xs font-extrabold">
                         الشواهد المختارة للتقرير الختامي (بحسب اختيار المنسق في القسم الثامن)
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -2566,12 +2566,12 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
                           (group) => (
                             <div
                               key={group.targetId}
-                              className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0] space-y-2 text-xs"
+                              className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7] space-y-2 text-xs"
                             >
-                              <div className="font-extrabold text-[#7F1D3F]">
+                              <div className="font-extrabold text-[#956C2E]">
                                 [{group.targetCategoryLabel}] {group.targetTitle}
                               </div>
-                              <div className="text-[11px] text-[#26323B] font-semibold">
+                              <div className="text-[11px] text-[#292F33] font-semibold">
                                 صور مختارة: {group.photos.length} • روابط QR
                                 مختارة: {group.links.length}
                               </div>
@@ -2584,38 +2584,38 @@ export const GiftedPhase3Sections: React.FC<GiftedPhase3SectionsProps> = ({
 
                   {/* 4. Final Evaluation (4 Fields) & Non-Executed Summary */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="font-extrabold text-[#7F1D3F]">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="font-extrabold text-[#956C2E]">
                         ١. الإيجابيات ونقاط القوة
                       </div>
-                      <div className="font-semibold text-[#26323B] mt-1">
+                      <div className="font-semibold text-[#292F33] mt-1">
                         {finalRecordReportModel.evaluation.strengths ||
                           'لا توجد بيانات مسجلة'}
                       </div>
                     </div>
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="font-extrabold text-[#7F1D3F]">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="font-extrabold text-[#956C2E]">
                         ٢. الصعوبات والتحديات
                       </div>
-                      <div className="font-semibold text-[#26323B] mt-1">
+                      <div className="font-semibold text-[#292F33] mt-1">
                         {finalRecordReportModel.evaluation.challenges ||
                           'لا توجد بيانات مسجلة'}
                       </div>
                     </div>
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="font-extrabold text-[#7F1D3F]">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="font-extrabold text-[#956C2E]">
                         ٣. الجهات الداعمة إن وجدت
                       </div>
-                      <div className="font-semibold text-[#26323B] mt-1">
+                      <div className="font-semibold text-[#292F33] mt-1">
                         {finalRecordReportModel.evaluation.supportingEntities ||
                           'لا توجد بيانات مسجلة'}
                       </div>
                     </div>
-                    <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E6C7D0]">
-                      <div className="font-extrabold text-[#7F1D3F]">
+                    <div className="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E5CFA7]">
+                      <div className="font-extrabold text-[#956C2E]">
                         ٤. المقترحات التطويرية
                       </div>
-                      <div className="font-semibold text-[#26323B] mt-1">
+                      <div className="font-semibold text-[#292F33] mt-1">
                         {finalRecordReportModel.evaluation
                           .improvementProposals ||
                           'لا توجد بيانات مسجلة'}

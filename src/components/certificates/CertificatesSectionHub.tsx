@@ -1136,7 +1136,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
       className="space-y-6"
     >
       {/* شريط العنوان والإجراءات السريعة والأرشيف */}
-      <div className="bg-white rounded-2xl border border-[#BFDBFE] p-5 sm:p-6 space-y-4 print:hidden">
+      <div className="bg-white rounded-2xl border border-[#C4D8D6] p-5 sm:p-6 space-y-4 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
           <div className="flex flex-wrap items-center gap-2">
             {onBackToTeacherHub && (
@@ -1144,7 +1144,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                 type="button"
                 data-testid="back-from-certificates-to-teacher-btn"
                 onClick={handleBackToTeacherHubSafe}
-                className="min-h-[42px] px-4 py-2 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] active:bg-[#BFDBFE] border border-[#BFDBFE] text-xs sm:text-sm font-bold text-[#2563EB] inline-flex items-center gap-2 transition-colors cursor-pointer"
+                className="min-h-[42px] px-4 py-2 rounded-xl bg-[#EAF2F1] hover:bg-[#DCE9E8] active:bg-[#C4D8D6] border border-[#C4D8D6] text-xs sm:text-sm font-bold text-[#376B70] inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>العودة إلى أقسام المعلم</span>
@@ -1157,8 +1157,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               onClick={() => setIsArchiveOpen((prev) => !prev)}
               className={`min-h-[40px] px-3.5 py-2 rounded-xl border text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer ${
                 isArchiveOpen
-                  ? 'border-[#2563EB] bg-[#2563EB] text-white'
-                  : 'border-[#BFDBFE] bg-white hover:bg-[#EFF6FF] text-[#2563EB]'
+                  ? 'border-[#376B70] bg-[#376B70] text-white'
+                  : 'border-[#C4D8D6] bg-white hover:bg-[#EAF2F1] text-[#376B70]'
               }`}
             >
               <Archive className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -1181,7 +1181,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               data-testid="save-certificate-to-archive-btn"
               disabled={isSavingArchive || isEditingLockedBySyncIssue}
               onClick={handleSaveToArchive}
-              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <BookmarkCheck className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -1198,7 +1198,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               data-testid="cert-restore-defaults-btn"
               disabled={isEditingLockedBySyncIssue}
               onClick={handleRestoreDefaultTexts}
-              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] active:bg-[#BFDBFE] border border-[#BFDBFE] text-[#2563EB] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#EAF2F1] hover:bg-[#DCE9E8] active:bg-[#C4D8D6] border border-[#C4D8D6] text-[#376B70] text-xs font-extrabold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Sparkles className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
               <span>استعادة النص الافتراضي</span>
@@ -1209,7 +1209,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               data-testid="cert-reset-all-btn"
               disabled={isEditingLockedBySyncIssue}
               onClick={handleResetAll}
-              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-[#EFF6FF] hover:text-[#2563EB] text-stone-700 text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-[#EAF2F1] hover:text-[#376B70] text-stone-700 text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <RotateCcw className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
               <span>إعادة ضبط</span>
@@ -1223,7 +1223,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               onClick={() =>
                 setMobileTab((prev) => (prev === 'edit' ? 'preview' : 'edit'))
               }
-              className="xl:hidden min-h-[44px] px-4 py-2 rounded-xl border border-[#BFDBFE] bg-[#EFF6FF] hover:bg-[#DBEAFE] active:bg-[#BFDBFE] text-[#2563EB] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer"
+              className="xl:hidden min-h-[44px] px-4 py-2 rounded-xl border border-[#C4D8D6] bg-[#EAF2F1] hover:bg-[#DCE9E8] active:bg-[#C4D8D6] text-[#376B70] text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer"
             >
               <Eye className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -1238,7 +1238,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               data-testid="cert-export-pdf-btn"
               disabled={isExporting}
               onClick={handleExportAllPdf}
-              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer"
+              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 transition-colors cursor-pointer"
             >
               <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>
@@ -1262,7 +1262,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
             {activeArchivedRecordId ? (
               <span
                 data-testid="certificate-active-record-status-text"
-                className="text-[#1D4ED8]"
+                className="text-[#315E62]"
               >
                 سجل شهادة محفوظ في الأرشيف (المعرف الثابت:{' '}
                 {activeArchivedRecordId})
@@ -1270,7 +1270,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
             ) : (
               <span
                 data-testid="certificate-active-record-status-text"
-                className="text-[#2563EB]"
+                className="text-[#376B70]"
               >
                 مسودة قيد التحرير (لا تُحتسب شاهدًا إلا بعد الحفظ والربط لاحقًا)
               </span>
@@ -1282,7 +1282,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                 type="button"
                 data-testid="resume-unsaved-certificate-draft-btn"
                 onClick={handleResumeUnsavedDraft}
-                className="text-xs font-bold text-amber-700 hover:underline cursor-pointer"
+                className="text-xs font-bold text-[#9A4A2E] hover:underline cursor-pointer"
               >
                 استئناف المسودة غير المحفوظة
               </button>
@@ -1291,7 +1291,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               <button
                 type="button"
                 onClick={() => setIsArchiveOpen(true)}
-                className="text-xs font-bold text-[#2563EB] hover:underline cursor-pointer"
+                className="text-xs font-bold text-[#376B70] hover:underline cursor-pointer"
               >
                 استعراض {savedRecords.length} سجل محفوظ
               </button>
@@ -1312,9 +1312,9 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               {pendingCreateNewDialog.step === 'choose' ? (
                 <>
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#FDF2ED] border border-[#E8C9BA] flex items-center justify-center shrink-0">
                       <AlertTriangle
-                        className="w-5 h-5 text-amber-700"
+                        className="w-5 h-5 text-[#9A4A2E]"
                         aria-hidden="true"
                       />
                     </div>
@@ -1349,7 +1349,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                       disabled={isSavingArchive}
                       data-testid="guard-cert-save-and-create-new-btn"
                       onClick={handleGuardSaveAndCreateNew}
-                      className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer disabled:opacity-60"
+                      className="w-full min-h-[44px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 transition-colors cursor-pointer disabled:opacity-60"
                     >
                       <BookmarkCheck
                         className="w-4 h-4 shrink-0"
@@ -1452,7 +1452,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
         {isArchiveOpen && (
           <div
             data-testid="certificates-archive-panel"
-            className="rounded-2xl border border-[#BFDBFE] bg-[#F8FAFC] p-4 sm:p-5 space-y-4"
+            className="rounded-2xl border border-[#C4D8D6] bg-[#FBFBF9] p-4 sm:p-5 space-y-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
               <div>
@@ -1488,7 +1488,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     value={archiveSearchQuery}
                     onChange={(e) => setArchiveSearchQuery(e.target.value)}
                     placeholder="ابحث باسم المستفيد أو عنوان الشهادة أو الفئة أو المعرف..."
-                    className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[38px] pr-9 pl-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                   />
                 </div>
                 <select
@@ -1500,7 +1500,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                       e.target.value as CertificateCategoryType | 'all'
                     )
                   }
-                  className="min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-[#2563EB]"
+                  className="min-h-[38px] px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-[#376B70]"
                 >
                   <option value="all">جميع أنواع الشهادات</option>
                   <option value="appreciation">شهادة شكر وتقدير</option>
@@ -1518,7 +1518,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                 className={`rounded-xl border p-4 space-y-3 ${
                   pendingDeleteTarget.impact.isLinked
                     ? 'border-red-300 bg-red-50 text-red-950'
-                    : 'border-amber-300 bg-amber-50 text-amber-950'
+                    : 'border-[#E8C9BA] bg-[#FDF2ED] text-[#9A4A2E]'
                 }`}
               >
                 <div className="flex items-start gap-2.5">
@@ -1622,7 +1622,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                       data-testid={`certificate-archive-record-card-${rec.id}`}
                       className={`rounded-xl border p-3.5 bg-white flex flex-col justify-between gap-3 transition-all ${
                         isCurrent
-                          ? 'border-2 border-[#2563EB] shadow-xs'
+                          ? 'border-2 border-[#376B70] shadow-xs'
                           : 'border-stone-200 hover:border-stone-300'
                       }`}
                     >
@@ -1631,7 +1631,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                           <div className="font-extrabold text-xs sm:text-sm text-stone-900 line-clamp-1">
                             {rec.title}
                           </div>
-                          <span className="shrink-0 px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] text-[11px] font-bold">
+                          <span className="shrink-0 px-2 py-0.5 rounded-md bg-[#EAF2F1] text-[#376B70] border border-[#C4D8D6] text-[11px] font-bold">
                             {typeLabel}
                           </span>
                         </div>
@@ -1654,7 +1654,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                           type="button"
                           data-testid={`open-certificate-archive-record-${rec.id}`}
                           onClick={() => handleOpenArchivedRecord(rec.id)}
-                          className="min-h-[32px] px-2.5 py-1 rounded-lg bg-[#EFF6FF] hover:bg-[#DBEAFE] text-[#2563EB] text-xs font-bold inline-flex items-center gap-1 cursor-pointer"
+                          className="min-h-[32px] px-2.5 py-1 rounded-lg bg-[#EAF2F1] hover:bg-[#DCE9E8] text-[#376B70] text-xs font-bold inline-flex items-center gap-1 cursor-pointer"
                         >
                           <FolderOpen
                             className="w-3.5 h-3.5"
@@ -1700,7 +1700,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
         )}
 
         <div className="space-y-1">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-[#2563EB]">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-[#376B70]">
             <span>قسم المعلم · المجموعة السابعة</span>
             <span aria-hidden="true">·</span>
             <span>إصدار الشهادات المدرسية الفردية والجماعية (A4 أفقي)</span>
@@ -1768,7 +1768,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     onClick={() =>
                       handleResolveDualStoreDivergence('keep-archive')
                     }
-                    className="min-h-[40px] px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold cursor-pointer disabled:opacity-60"
+                    className="min-h-[40px] px-4 py-2 rounded-xl bg-[#376B70] hover:bg-[#315E62] text-white text-xs font-extrabold cursor-pointer disabled:opacity-60"
                   >
                     اعتماد نسخة مخزن الأرشيف ومزامنتها
                   </button>
@@ -1811,14 +1811,14 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
             className={`rounded-xl border px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 ${
               statusBanner.type === 'error'
                 ? 'bg-red-50 border-red-200 text-red-900'
-                : 'bg-[#EFF6FF] border-[#BFDBFE] text-[#1E3A8A]'
+                : 'bg-[#EAF2F1] border-[#C4D8D6] text-[#284D50]'
             }`}
           >
             <CheckCircle2
               className={`w-4 h-4 shrink-0 ${
                 statusBanner.type === 'error'
                   ? 'text-red-600'
-                  : 'text-[#2563EB]'
+                  : 'text-[#376B70]'
               }`}
             />
             <span>{statusBanner.text}</span>
@@ -1902,8 +1902,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                       }
                       className={`min-h-[46px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border inline-flex items-center justify-center gap-2 transition-colors cursor-pointer whitespace-nowrap ${
                         isSelected
-                          ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                          : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                          ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                          : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                       }`}
                     >
                       {item.icon}
@@ -1950,8 +1950,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         }
                         className={`min-h-[42px] px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors cursor-pointer whitespace-nowrap ${
                           isSelected
-                            ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                            : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                            ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                            : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                         }`}
                       >
                         {role.label}
@@ -1998,8 +1998,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         }
                         className={`min-h-[44px] px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors cursor-pointer ${
                           isSelected
-                            ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                            : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                            ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                            : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                         }`}
                       >
                         {variant.label}
@@ -2027,8 +2027,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     }
                     className={`min-h-[42px] px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors cursor-pointer whitespace-nowrap ${
                       formState.recipientGender === 'male'
-                        ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                        : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                        ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                        : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                     }`}
                   >
                     مذكر (طالب / معلم)
@@ -2043,8 +2043,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     }
                     className={`min-h-[42px] px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors cursor-pointer whitespace-nowrap ${
                       formState.recipientGender === 'female'
-                        ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                        : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                        ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                        : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                     }`}
                   >
                     مؤنث (طالبة / معلمة)
@@ -2054,7 +2054,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
 
               <div className="space-y-1.5">
                 <span className="block text-xs sm:text-sm font-extrabold text-stone-800 inline-flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-[#2563EB]" />
+                  <Globe className="w-3.5 h-3.5 text-[#376B70]" />
                   <span>لغة الشهادة:</span>
                 </span>
                 <div className="grid grid-cols-2 gap-2.5">
@@ -2077,8 +2077,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         }
                         className={`min-h-[42px] px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors cursor-pointer whitespace-nowrap ${
                           isSelected
-                            ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                            : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                            ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                            : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                         }`}
                       >
                         {lang.label}
@@ -2102,7 +2102,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               {/* القوالب بأرقام فقط: قالب 1، قالب 2، قالب 3 */}
               <div className="space-y-2">
                 <span className="text-xs sm:text-sm font-extrabold text-stone-800 inline-flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-[#2563EB]" />
+                  <Layers className="w-4 h-4 text-[#376B70]" />
                   <span>القالب:</span>
                 </span>
                 <div className="grid grid-cols-3 gap-2.5">
@@ -2121,8 +2121,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         }
                         className={`min-h-[44px] px-3 py-2 rounded-xl text-xs sm:text-sm font-extrabold border transition-colors cursor-pointer whitespace-nowrap ${
                           isSelected
-                            ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                            : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                            ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                            : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                         }`}
                       >
                         {tpl.uiLabel}
@@ -2135,7 +2135,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
               {/* أنظمة الألوان بأرقام فقط: 1، 2، 3، 4 */}
               <div className="space-y-2">
                 <span className="text-xs sm:text-sm font-extrabold text-stone-800 inline-flex items-center gap-1.5">
-                  <Palette className="w-4 h-4 text-[#2563EB]" />
+                  <Palette className="w-4 h-4 text-[#376B70]" />
                   <span>نظام الألوان:</span>
                 </span>
                 <div className="grid grid-cols-4 gap-2.5">
@@ -2156,8 +2156,8 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                           }
                           className={`min-h-[44px] px-2.5 py-2 rounded-xl text-sm font-extrabold border inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer tabular-nums ${
                             isSelected
-                              ? 'bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] text-white border-[#2563EB]'
-                              : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-[#BFDBFE]'
+                              ? 'bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] text-white border-[#376B70]'
+                              : 'bg-stone-50 text-stone-800 border-stone-200 hover:bg-[#EAF2F1] hover:text-[#376B70] hover:border-[#C4D8D6]'
                           }`}
                         >
                           <span
@@ -2209,7 +2209,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         }))
                       }
                       placeholder="مثال: الأول الثانوي / الثالث المتوسط"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                     />
                   </div>
                 )}
@@ -2232,7 +2232,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         handleStageOrYearChange('academicStage', e.target.value)
                       }
                       placeholder="مثال: الثانوية / المتوسطة"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                     />
                   </div>
 
@@ -2252,7 +2252,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         handleStageOrYearChange('academicYear', e.target.value)
                       }
                       placeholder="مثال: ٢٠٢٦م / ١٤٤٧هـ"
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                     />
                   </div>
                 </div>
@@ -2277,7 +2277,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                 type="button"
                 data-testid="cert-load-batch-sample-btn"
                 onClick={handleLoadBatchSample}
-                className="min-h-[36px] px-3 py-1.5 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="min-h-[36px] px-3 py-1.5 rounded-xl bg-[#EAF2F1] hover:bg-[#DCE9E8] border border-[#C4D8D6] text-[#376B70] text-xs font-bold inline-flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <Users className="w-3.5 h-3.5 shrink-0" />
                 <span>تجربة إدخال عدة مستفيدين</span>
@@ -2304,7 +2304,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     certificateTitle: e.target.value,
                   }))
                 }
-                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm font-bold text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm font-bold text-stone-900 focus:outline-none focus:border-[#376B70]"
               />
             </div>
 
@@ -2328,7 +2328,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     openingText: e.target.value,
                   }))
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#2563EB]"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#376B70]"
               />
             </div>
 
@@ -2344,7 +2344,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                 </label>
                 <span
                   data-testid="cert-beneficiaries-count"
-                  className="text-xs font-bold text-[#2563EB] tabular-nums"
+                  className="text-xs font-bold text-[#376B70] tabular-nums"
                 >
                   عدد الشهادات المستقلة: {beneficiaryNames.length}
                 </span>
@@ -2366,7 +2366,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     ? 'Enter one beneficiary name per line...'
                     : 'أدخل اسم المستفيد (أو عدة مستفيدين، كل مستفيد في سطر مستقل)...'
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm font-bold text-stone-900 leading-relaxed focus:outline-none focus:border-[#2563EB]"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm font-bold text-stone-900 leading-relaxed focus:outline-none focus:border-[#376B70]"
               />
             </div>
 
@@ -2390,7 +2390,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     mainText: e.target.value,
                   }))
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#2563EB]"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#376B70]"
               />
             </div>
 
@@ -2436,7 +2436,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     ? 'Optional additional closing text (leave blank to hide completely)...'
                     : 'نص إضافي اختياري (إذا تُرك فارغاً لا يظهر أي فراغ أو عنوان له)...'
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#2563EB]"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 leading-relaxed focus:outline-none focus:border-[#376B70]"
               />
             </div>
           </div>
@@ -2474,7 +2474,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     }))
                   }
                   placeholder="الإدارة العامة للتعليم بمنطقة .........."
-                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                 />
               </div>
 
@@ -2493,7 +2493,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                   value={formState.schoolName}
                   onChange={(e) => handleSchoolNameChange(e.target.value)}
                   placeholder="اسم المدرسة..."
-                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                  className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                 />
               </div>
             </div>
@@ -2510,7 +2510,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                       isPresenterSameAsPrincipal: e.target.checked,
                     }))
                   }
-                  className="w-4 h-4 rounded border-stone-300 text-[#2563EB] focus:ring-[#2563EB]"
+                  className="w-4 h-4 rounded border-stone-300 text-[#376B70] focus:ring-[#376B70]"
                 />
                 <span>
                   مقدم الشهادة هو مدير المدرسة (عدم تكرار توقيع المدير مرتين)
@@ -2543,7 +2543,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                           ? 'e.g. Subject Teacher / Student Advisor'
                           : 'مثال: معلم المادة / الموجه الطلابي'
                       }
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                     />
                   </div>
 
@@ -2559,7 +2559,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         type="button"
                         data-testid="cert-fill-presenter-from-settings-btn"
                         onClick={handleFillPresenterFromSettings}
-                        className="text-xs font-bold text-[#2563EB] hover:underline inline-flex items-center gap-1 cursor-pointer"
+                        className="text-xs font-bold text-[#376B70] hover:underline inline-flex items-center gap-1 cursor-pointer"
                       >
                         <UserCheck
                           className="w-3.5 h-3.5 shrink-0"
@@ -2585,7 +2585,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                           ? 'Leave empty to hide presenter signature'
                           : 'اتركه فارغاً لإخفاء توقيع مقدم الشهادة'
                       }
-                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                      className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                     />
                   </div>
                 </div>
@@ -2611,7 +2611,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         principalTitle: e.target.value,
                       }))
                     }
-                    className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                   />
                 </div>
 
@@ -2639,7 +2639,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         ? 'Leave empty to hide principal signature'
                         : 'اتركه فارغاً لإخفاء توقيع مدير المدرسة'
                     }
-                    className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#2563EB]"
+                    className="w-full min-h-[42px] px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-sm text-stone-900 focus:outline-none focus:border-[#376B70]"
                   />
                 </div>
               </div>
@@ -2653,7 +2653,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
             mobileTab === 'edit' ? 'hidden xl:block' : 'block'
           }`}
         >
-          <div className="bg-white rounded-2xl border border-[#BFDBFE] p-4 sm:p-5 space-y-4">
+          <div className="bg-white rounded-2xl border border-[#C4D8D6] p-4 sm:p-5 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div>
                 <h3 className="text-sm sm:text-base font-extrabold font-display text-stone-900">
@@ -2675,14 +2675,14 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                     onClick={() =>
                       setActivePageIndex((prev) => Math.max(0, prev - 1))
                     }
-                    className="min-h-[34px] px-2.5 py-1 rounded-lg bg-[#EFF6FF] hover:bg-[#DBEAFE] disabled:opacity-40 text-[#2563EB] cursor-pointer"
+                    className="min-h-[34px] px-2.5 py-1 rounded-lg bg-[#EAF2F1] hover:bg-[#DCE9E8] disabled:opacity-40 text-[#376B70] cursor-pointer"
                     aria-label="المستفيد السابق"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
                   <span
                     data-testid="cert-page-indicator"
-                    className="text-xs font-extrabold text-[#2563EB] px-2 tabular-nums"
+                    className="text-xs font-extrabold text-[#376B70] px-2 tabular-nums"
                   >
                     {activePageIndex + 1} / {renderedPages.length}
                   </span>
@@ -2695,7 +2695,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                         Math.min(renderedPages.length - 1, prev + 1)
                       )
                     }
-                    className="min-h-[34px] px-2.5 py-1 rounded-lg bg-[#EFF6FF] hover:bg-[#DBEAFE] disabled:opacity-40 text-[#2563EB] cursor-pointer"
+                    className="min-h-[34px] px-2.5 py-1 rounded-lg bg-[#EAF2F1] hover:bg-[#DCE9E8] disabled:opacity-40 text-[#376B70] cursor-pointer"
                     aria-label="المستفيد التالي"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -2727,7 +2727,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                 data-testid="cert-preview-export-all-btn"
                 disabled={isExporting}
                 onClick={handleExportAllPdf}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] active:bg-[#1E40AF] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#376B70] hover:bg-[#315E62] active:bg-[#284D50] disabled:opacity-60 text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
                 <FileDown className="w-4 h-4 shrink-0" />
                 <span>
@@ -2743,7 +2743,7 @@ export const CertificatesSectionHub: React.FC<CertificatesSectionHubProps> = ({
                   data-testid="cert-preview-export-single-btn"
                   disabled={isExporting}
                   onClick={handleExportSingleCurrentPdf}
-                  className="w-full min-h-[42px] px-4 py-2 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] active:bg-[#BFDBFE] border border-[#BFDBFE] text-[#2563EB] text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="w-full min-h-[42px] px-4 py-2 rounded-xl bg-[#EAF2F1] hover:bg-[#DCE9E8] active:bg-[#C4D8D6] border border-[#C4D8D6] text-[#376B70] text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <FileDown className="w-4 h-4 shrink-0" />
                   <span>

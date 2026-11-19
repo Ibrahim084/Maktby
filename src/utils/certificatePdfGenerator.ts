@@ -23,6 +23,8 @@ export interface OfficialCertificateTextContent {
   principalTitle: string;
   principalName: string;
   stampLabel: string;
+  introLine: string;
+  recipientLine: string;
   line1: string;
   line2: string;
   line3: string;
@@ -113,7 +115,9 @@ export function buildOfficialCertificateContent(
       ? gendered.trainerExecutedPhrase
       : gendered.traineeAttendedPhrase;
 
-  const line1 = `تشهد إدارة مدرسة ${schoolName} بأن ${gendered.honorific} ${beneficiaryName}`;
+  const introLine = `تشهد إدارة مدرسة ${schoolName} بأن`;
+  const recipientLine = `${gendered.honorific} ${beneficiaryName}`;
+  const line1 = `${introLine} ${recipientLine}`;
   const line2 = `رقم الهوية / ${nationalId}`;
   const line3 = `${actionVerbPhrase} ${programTitle} ضمن مشروع توطين التطوير المهني بالمدارس`;
   const line4 = `لمدة ( ${daysCount} ) أيام بواقع ( ${hoursCount} ) ساعات`;
@@ -144,6 +148,8 @@ export function buildOfficialCertificateContent(
     principalTitle: gendered.principalTitle,
     principalName,
     stampLabel: 'ختم مركز التطوير المهني',
+    introLine,
+    recipientLine,
     line1,
     line2,
     line3,
@@ -272,6 +278,75 @@ function loadBackgroundImage(url: string): Promise<HTMLImageElement> {
   });
 }
 
+export const CERTIFICATE_RECIPIENT_SAFE_WIDTH_PX = 1460;
+export const CERTIFICATE_RECIPIENT_MAX_FONT_PX = 44;
+export const CERTIFICATE_RECIPIENT_MIN_FONT_PX = 24;
+
+export interface SingleLineAutoFitOptions {
+  maxFontSizePx?: number;
+  minFontSizePx?: number;
+  stepPx?: number;
+}
+
+export interface SingleLineAutoFitResult {
+  fontSizePx: number;
+  measuredWidthPx: number;
+  didScaleDown: boolean;
+  reachedMinFontSize: boolean;
+  fitsWithinMaxWidth: boolean;
+}
+
+/**
+ * Dynamically scales a single-line text font size downward so long recipient names
+ * stay on ONE independent centered line within the certificate's safe width,
+ * respecting a clear minimum readable font size floor.
+ */
+export function computeSingleLineAutoFitFontSize(
+  text: string,
+  maxWidthPx: number,
+  measureWidthAtSize: (fontSizePx: number) => number,
+  options: SingleLineAutoFitOptions = {}
+): SingleLineAutoFitResult {
+  const maxFontSizePx = options.maxFontSizePx ?? CERTIFICATE_RECIPIENT_MAX_FONT_PX;
+  const minFontSizePx = Math.min(
+    maxFontSizePx,
+    options.minFontSizePx ?? CERTIFICATE_RECIPIENT_MIN_FONT_PX
+  );
+  const stepPx = Math.max(0.5, options.stepPx ?? 1);
+  const safeText = text.trim();
+
+  if (!safeText || maxWidthPx <= 0) {
+    return {
+      fontSizePx: maxFontSizePx,
+      measuredWidthPx: 0,
+      didScaleDown: false,
+      reachedMinFontSize: false,
+      fitsWithinMaxWidth: true,
+    };
+  }
+
+  let currentSize = maxFontSizePx;
+  let measuredWidth = measureWidthAtSize(currentSize);
+
+  while (measuredWidth > maxWidthPx && currentSize - stepPx >= minFontSizePx) {
+    currentSize = Number((currentSize - stepPx).toFixed(2));
+    measuredWidth = measureWidthAtSize(currentSize);
+  }
+
+  if (measuredWidth > maxWidthPx && currentSize > minFontSizePx) {
+    currentSize = minFontSizePx;
+    measuredWidth = measureWidthAtSize(currentSize);
+  }
+
+  return {
+    fontSizePx: currentSize,
+    measuredWidthPx: measuredWidth,
+    didScaleDown: currentSize < maxFontSizePx,
+    reachedMinFontSize: currentSize <= minFontSizePx,
+    fitsWithinMaxWidth: measuredWidth <= maxWidthPx,
+  };
+}
+
 /**
  * Word-wraps a single Arabic RTL text line onto a 2D canvas without shrinking font size,
  * preventing any clipping or overflow beyond the allowed safe width.
@@ -303,6 +378,8 @@ function wrapCanvasTextLines(
 
 /**
  * Renders the official certificate onto a high-resolution 2400x1697 A4 Landscape HTML5 Canvas.
+ * Ensures the recipient name ALWAYS renders on ONE independent non-wrapping centered line
+ * with progressive auto-fit font scaling, followed by the national ID on its own clean line.
  */
 export async function renderCertificateToCanvas(
   content: OfficialCertificateTextContent
@@ -335,46 +412,121 @@ export async function renderCertificateToCanvas(
     // Fallback if image load fails in restricted test context
   }
 
-  // 3. Configure Arabic RTL typography (fixed, readable font scale — never auto-shrunk)
+  // 3. Configure Arabic RTL typography
   ctx.direction = 'rtl';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillStyle = '#18181b';
 
   const centerX = 1230; // Centered in the white space between left hexagons and right honeycomb
-  const maxLineWidth = 1520; // Safe margin inside A4 landscape width
-  const bodyFont = '700 40px "Tajawal", "Cairo", sans-serif';
-  ctx.font = bodyFont;
+  const maxBodyWidth = 1500; // Safe margin inside A4 landscape width
+  const recipientSafeWidth = CERTIFICATE_RECIPIENT_SAFE_WIDTH_PX;
+  const bodyFont = '700 38px "Tajawal", "Cairo", sans-serif';
+  const idFont = '700 36px "Tajawal", "Cairo", sans-serif';
 
-  const bodyLines = [
-    content.line1,
-    content.line2,
-    content.line3,
-    content.line4,
-    content.line5,
-    content.line6,
+  // Compute auto-fit single-line font size for the recipient name
+  const recipientFit = computeSingleLineAutoFitFontSize(
+    content.recipientLine,
+    recipientSafeWidth,
+    (fontSizePx) => {
+      ctx.font = `800 ${fontSizePx}px "Tajawal", "Cairo", sans-serif`;
+      return ctx.measureText(content.recipientLine).width;
+    },
+    {
+      maxFontSizePx: CERTIFICATE_RECIPIENT_MAX_FONT_PX,
+      minFontSizePx: CERTIFICATE_RECIPIENT_MIN_FONT_PX,
+      stepPx: 1,
+    }
+  );
+  const recipientFont = `800 ${recipientFit.fontSizePx}px "Tajawal", "Cairo", sans-serif`;
+
+  ctx.font = bodyFont;
+  const introLines = wrapCanvasTextLines(ctx, content.introLine, maxBodyWidth);
+  const programLines = wrapCanvasTextLines(ctx, content.line3, maxBodyWidth);
+  const durationLines = wrapCanvasTextLines(ctx, content.line4, maxBodyWidth);
+  const periodLines = wrapCanvasTextLines(ctx, content.line5, maxBodyWidth);
+  const closingLines = wrapCanvasTextLines(ctx, content.line6, maxBodyWidth);
+
+  interface CanvasTextRow {
+    lines: string[];
+    font: string;
+    color: string;
+    spacingAfter: number;
+    singleLineMaxWidth?: number;
+  }
+
+  const rows: CanvasTextRow[] = [
+    {
+      lines: introLines,
+      font: bodyFont,
+      color: '#18181b',
+      spacingAfter: 78,
+    },
+    {
+      // Dedicated single non-wrapping line for recipient name
+      lines: [content.recipientLine],
+      font: recipientFont,
+      color: '#14191c',
+      spacingAfter: 76,
+      singleLineMaxWidth: recipientSafeWidth,
+    },
+    {
+      // Dedicated separate line for National ID cleanly below the recipient name
+      lines: [content.line2],
+      font: idFont,
+      color: '#27272a',
+      spacingAfter: 82,
+    },
+    {
+      lines: programLines,
+      font: bodyFont,
+      color: '#18181b',
+      spacingAfter: 82,
+    },
+    {
+      lines: durationLines,
+      font: bodyFont,
+      color: '#18181b',
+      spacingAfter: 80,
+    },
+    {
+      lines: periodLines,
+      font: bodyFont,
+      color: '#18181b',
+      spacingAfter: 80,
+    },
+    {
+      lines: closingLines,
+      font: bodyFont,
+      color: '#18181b',
+      spacingAfter: 0,
+    },
   ];
 
-  // Calculate wrapped lines first so vertical centering stays balanced
-  const wrappedGroups = bodyLines.map((line) =>
-    wrapCanvasTextLines(ctx, line, maxLineWidth)
-  );
-  const totalVisualLines = wrappedGroups.reduce((sum, g) => sum + g.length, 0);
+  const wrappedSubLineSpacing = 58;
+  const totalBlockHeight = rows.reduce((acc, row, idx) => {
+    const subLinesHeight = Math.max(0, row.lines.length - 1) * wrappedSubLineSpacing;
+    const gap = idx < rows.length - 1 ? row.spacingAfter : 0;
+    return acc + subLinesHeight + gap;
+  }, 0);
 
-  // Start Y around 470px (or slightly higher if long names/programs wrapped into extra lines)
-  const extraLines = Math.max(0, totalVisualLines - 6);
-  let currentY = Math.max(415, 475 - extraLines * 26);
-  const groupSpacing = 92;
-  const wrappedSubLineSpacing = 64;
+  // Vertically center the text block cleanly between the top emblem and the bottom signatures
+  let currentY = Math.max(430, Math.min(505, Math.round(775 - totalBlockHeight / 2)));
 
-  for (const group of wrappedGroups) {
-    for (let i = 0; i < group.length; i++) {
-      ctx.fillText(group[i], centerX, currentY);
-      if (i < group.length - 1) {
+  for (const row of rows) {
+    ctx.font = row.font;
+    ctx.fillStyle = row.color;
+    for (let i = 0; i < row.lines.length; i++) {
+      if (row.singleLineMaxWidth) {
+        // Hard safety maxWidth prevents any clipping or border overlap even on extreme names
+        ctx.fillText(row.lines[i], centerX, currentY, row.singleLineMaxWidth);
+      } else {
+        ctx.fillText(row.lines[i], centerX, currentY);
+      }
+      if (i < row.lines.length - 1) {
         currentY += wrappedSubLineSpacing;
       }
     }
-    currentY += groupSpacing;
+    currentY += row.spacingAfter;
   }
 
   // 4. Bottom Row: Right = ختم مركز التطوير المهني, Left = مدير/مديرة المدرسة + الاسم

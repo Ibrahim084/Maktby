@@ -190,7 +190,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
               disabled={isExporting}
               className="min-h-[40px] px-3.5 py-2 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs font-semibold text-stone-800 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
-              <Printer className="w-4 h-4 text-[#7C1D34]" aria-hidden="true" />
+              <Printer className="w-4 h-4 text-[#477B59]" aria-hidden="true" />
               <span>طباعة نموذج فارغ PDF</span>
             </button>
 
@@ -199,7 +199,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                 type="button"
                 onClick={() => void handleExportPdf('current')}
                 disabled={isExporting}
-                className="min-h-[40px] px-4 py-2 rounded-lg bg-[#7C1D34] hover:bg-[#631629] disabled:opacity-60 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+                className="min-h-[40px] px-4 py-2 rounded-lg bg-[#477B59] hover:bg-[#386347] disabled:opacity-60 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
               >
                 <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>تصدير هذا التقييم PDF</span>
@@ -211,7 +211,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                 type="button"
                 onClick={() => void handleExportPdf('all')}
                 disabled={isExporting}
-                className="min-h-[40px] px-3.5 py-2 rounded-lg border border-[#7C1D34] text-[#7C1D34] hover:bg-[#FAF1F3] text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+                className="min-h-[40px] px-3.5 py-2 rounded-lg border border-[#477B59] text-[#477B59] hover:bg-[#E1EFE5] text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
               >
                 <FileDown className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>تصدير الكل ({evaluations.length})</span>
@@ -230,7 +230,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
               id="pd-eval-source-program"
               value={selectedSourceProgramId}
               onChange={(e) => setSelectedSourceProgramId(e.target.value)}
-              className="min-h-[38px] px-3 py-1.5 rounded-lg border border-stone-300 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+              className="min-h-[38px] px-3 py-1.5 rounded-lg border border-stone-300 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
             >
               <option value="">إدخال يدوي لبيانات البرنامج</option>
               {recordedPrograms.map((p) => (
@@ -245,7 +245,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
               onClick={() =>
                 handleCreateEvaluation(selectedSourceProgramId || undefined)
               }
-              className="min-h-[38px] px-3.5 py-1.5 rounded-lg bg-[#7C1D34] hover:bg-[#631629] text-white text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="min-h-[38px] px-3.5 py-1.5 rounded-lg bg-[#477B59] hover:bg-[#386347] text-white text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
               <Plus className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{pdTerms.createEvaluationForTraineeLabel}</span>
@@ -273,8 +273,8 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                   aria-pressed={isCurrent}
                   className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap ${
                     isCurrent
-                      ? 'bg-[#7C1D34] text-white'
-                      : 'bg-white border border-stone-300 text-stone-700 hover:border-[#7C1D34]'
+                      ? 'bg-[#477B59] text-white'
+                      : 'bg-white border border-stone-300 text-stone-700 hover:border-[#477B59]'
                   }`}
                 >
                   {label}
@@ -296,7 +296,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
             onClick={() =>
               handleCreateEvaluation(selectedSourceProgramId || undefined)
             }
-            className="min-h-[42px] px-5 py-2 rounded-lg bg-[#7C1D34] hover:bg-[#631629] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer"
+            className="min-h-[42px] px-5 py-2 rounded-lg bg-[#477B59] hover:bg-[#386347] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 cursor-pointer"
           >
             <Plus className="w-4 h-4" aria-hidden="true" />
             <span>بدء أول نموذج تقييم برنامج</span>
@@ -459,7 +459,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                                 handleRatingChange(item.id, '');
                               }
                             }}
-                            className="w-4 h-4 accent-[#7C1D34] cursor-pointer"
+                            className="w-4 h-4 accent-[#477B59] cursor-pointer"
                           />
                         </td>
                       ))}
@@ -477,7 +477,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                               ? 'اذكر السبب...'
                               : ''
                           }
-                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                          className="w-full px-2 py-1.5 rounded border border-stone-200 bg-white text-xs text-stone-900 focus:outline-none focus:border-[#477B59]"
                         />
                       </td>
                     </tr>
@@ -495,7 +495,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                 rows={4}
                 value={activeEval.positives}
                 onChange={(e) => handleMetaChange('positives', e.target.value)}
-                className="w-full min-h-[108px] px-3 py-2.5 rounded-lg border border-stone-300 bg-white text-sm font-normal text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                className="w-full min-h-[108px] px-3 py-2.5 rounded-lg border border-stone-300 bg-white text-sm font-normal text-stone-900 focus:outline-none focus:border-[#477B59]"
               />
             </label>
             <label className="block space-y-1.5 text-xs font-bold text-stone-800">
@@ -504,7 +504,7 @@ export const PdEvaluationEngine: React.FC<PdEvaluationEngineProps> = ({
                 rows={4}
                 value={activeEval.challenges}
                 onChange={(e) => handleMetaChange('challenges', e.target.value)}
-                className="w-full min-h-[108px] px-3 py-2.5 rounded-lg border border-stone-300 bg-white text-sm font-normal text-stone-900 focus:outline-none focus:border-[#7C1D34]"
+                className="w-full min-h-[108px] px-3 py-2.5 rounded-lg border border-stone-300 bg-white text-sm font-normal text-stone-900 focus:outline-none focus:border-[#477B59]"
               />
             </label>
           </div>
